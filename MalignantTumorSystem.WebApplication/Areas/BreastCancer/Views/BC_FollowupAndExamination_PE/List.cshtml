@@ -1,0 +1,49 @@
+﻿ @{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>列表页</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script>
+        function Alert() {
+            alert("只有该患者的责任医师才能进行此操作！")
+        }
+    </script>
+</head>
+<body>
+    <div style="padding:0px;">
+        <table style="width:100%;height:22px;">
+            <tr>
+                <td class="listTableHeadTR" style="height: 23px;">
+                    <img height="16" src="/images/imgs/Query.gif" width="16" style="vertical-align: middle" />健康体检专用表信息查询结果
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table id="tbList" class="listTable" cellspacing="1" cellpadding="0" style="width:100%;">
+            <tr class="listTableTitleRow">
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+                <td>身份证号码</td>
+                <td>家庭常住地址</td>
+                <td>最近体检日期</td>
+                <td>最近体检</td>
+                <td>全部体检</td>
+                <td>修改</td>
+            </tr>
+        </table>
+        @Html.ShowPager(1, 15, 0)
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<%@ page language="C#" autoeventwireup="true" inherits="MyLogin, App_Web_bvaz-8-v" %>
+<%@ Import Namespace="Framework.Common" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>居民健康档案</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE20 a:hover {font-size:16px;color:#ffffff;text-decoration: none;}{	font-size: 15px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.click a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.STYLE79 a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}
+a:link {
+	text-decoration: none;
+	color: #0000FF;
+}
+a:visited {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:active {
+	color: #0000FF;
+	text-decoration: none;
+}
+
+a {
+ color:#000080;
+}
+.STYLE56 {font-size: 15px; color: #FFFFFF;}
+BODY {
+	COLOR: #009933; FONT-SIZE: 10pt
+}
+UL {
+	FONT-SIZE: 10pt
+}
+.STYLE69 {font-size: 10pt; line-height: 20px; color: #009933}
+.STYLE76 {font-size: 14px; }
+.STYLE81 {
+	font-size: 18pt;
+	color: #3333ff;
+	font-weight: bold;
+}
+.STYLE82 {color: #000080}
+-->
+</style>
+</head>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 rightmargin="0" bottommargin="0" style="overflow-x:hidden ">
+    <form name="form1" id="form1" runat="server">
+    <center>
+<table width="1000" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td height="114" colspan="3"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="95" height="111" bgcolor="#008080">&nbsp;<a href="/default.aspx" target="_blank"><img src="images/biaotou4.gif" alt="s"  width="81" height="102" border="0" align="absmiddle" /></a></td>
+      <td width="905" height="111"><table width="905" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="905" height="76"><img src="images/titou.jpg" alt="d"  width="905" height="75" border="0" usemap="#Map" /></td>
+          </tr>
+          <tr>
+            <td height="35" bgcolor="#008080"><table width="768" height="35" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#008080">
+                <tr>
+                  <td width="55" align="right"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">首页&nbsp;</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="92" align="center"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">电子健康档案</a></span></td>
+                  <td width="14" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="65" align="center"><span class="click STYLE76"><a href="yyzn.html" target="_blank" class="STYLE76"style="color: #FFFFFF">用药指南</a></span></td>
+                  <td width="14" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="60" align="center"><span class="click STYLE76"><a href="zyzy.html" target="_blank" class="STYLE76" style="color: #FFFFFF">中医中药</a></span></td>
+                  <td width="17" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="60" align="center"><span class="click STYLE76"><a href="yxbk.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医学百科</a></span></td>
+                  <td width="15" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="72" align="center"><span class="click STYLE76"><a href="yyfg.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药法规</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="79" align="center"><span class="click STYLE76"><a href="yxtsg.html" target="_blank" class="STYLE76" style="color: #FFFFFF">医学图书馆</a></span></td>
+                  <td width="17" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="68" align="center"><span class="click STYLE76"><a href="yysd.html" target="_blank" class="STYLE76"style="color: #FFFFFF">药品价格</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="101" align="center"><span class="click STYLE76"><a href="jbmcsy.html" target="_blank"style="color: #ffffff">疾病名称索引</a></span></td>
+                </tr>
+            </table></td>
+          </tr>
+      </table></td>
+    </tr>
+  </table>
+    <map name="Map" id="Map2">
+      <area shape="rect" coords="319,32,661,74" href="/default.aspx" target="_blank" />
+      <area shape="rect" coords="778,3,843,45" href="/english.aspx" target="_blank" />
+    </map>
+    <map name="Map" id="Map2">
+      <area shape="rect" coords="725,6,795,31" href="../english.aspx" target="_blank" />
+    </map></td>
+</tr>
+<tr>
+    <td width="143" height="707"><table width="0" height="728" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="144" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56 "><a href="cjjbsy.html" target="_blank" style="color: #FFFFFF" >常见疾病索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="183"><UL>
+            <li class="STYLE69">
+              <div align="left"><a href="cjjbsy/gxy.html" target="_blank"style="color: #000080">高血压</a></div>
+            </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjjbsy/tnb.html" target="_blank"style="color: #000080">糖尿病</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"> <a href="cjjbsy/gxb.html" target="_blank"style="color: #000080">冠心病</a></div>
+          </li>
+              <li class="STYLE69">
+                <div align="left"> <a href="cjjbsy/sb.html" target="_blank"style="color: #000080">肾病</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="cjjbsy/xnxgb.html" target="_blank"style="color: #000080">心脑血管病</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="cjjbsy/bnz.html" target="_blank"style="color: #000080">白内障</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="cjjbsy/az.html" target="_blank"style="color: #000080">癌症</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="cjjbsy/azb.html" target="_blank"style="color: #000080">艾滋病</a></div>
+              </li>
+            <li class="STYLE69">
+              <div align="left"><a href="cjjbsy.html" target="_blank">更多内容</a><img src="../images/gif163.gif" width="16" height="16" align="top"></div>
+            </li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="cjzzsy.html"target="_blank"style="color: #FFFFFF">常见症状索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="210"><UL>
+            <li class="STYLE69">
+              <div align="left"><a href="cjzzsy/fr.html" target="_blank"style="color: #000080">发热</a></div>
+            </li>
+          <li class="STYLE69">
+              <div align="left"><a href="cjzzsy/tt.html" target="_blank"style="color: #000080">头痛</a></div>
+          </li>
+          <li class="STYLE69">
+		  <div align="left"><a href="cjzzsy/xt.html" target="_blank"style="color: #000080">胸痛</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjzzsy/ft.html" target="_blank"style="color: #000080">腹痛</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjzzsy/exyot.html" target="_blank"style="color: #000080">恶心与呕吐</a></div>
+          </div></li>
+          <li class="STYLE69">
+              <div align="left"><a href="cjzzsy/ksykt.html" target="_blank"style="color: #000080">咳嗽与咯痰</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjzzsy/hxkn.html" target="_blank"style="color: #000080">呼吸困难</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="cjzzsy/fx.html" target="_blank"style="color: #000080">腹泻</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjzzsy/bm.html" target="_blank"style="color: #000080">便秘</a></div>           
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="cjzzsy.html" target="_blank">更多内容</a><img src="../images/gif163.gif" alt="d" width="16" height="16" align="top"></div>
+          </li>
+        </ul>            </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="yyzk.html" target="_blank"style="color: #FFFFFF">医院专科</a></span></td>
+      </tr>
+      <tr>
+        <td height="167"><ul>
+            <li class="STYLE69">
+              <div align="left"><a href="yyzk/nk.html" target="_blank"style="color: #000080">内科</a></div>
+            </li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk/wk.html" target="_blank"style="color: #000080">外科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk/fck.html" target="_blank"style="color: #000080">妇产科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk/ek.html" target="_blank"style="color: #000080">儿科</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="yyzk/pfk.html"target="_blank"style="color: #000080">皮肤科</a></div></li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk/zlk.html" target="_blank"style="color: #000080">肿瘤科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk/crk.html" target="_blank"style="color: #000080">传染科</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="yyzk/yk.html"target="_blank"style="color: #000080">眼科</a></div></li>
+          <li class="STYLE69"><div align="left"><a href="yyzk/ebyhk.html"target="_blank"style="color: #000080">耳鼻咽喉科</a></div></li>
+          <li class="STYLE69">
+            <div align="left"><a href="yyzk.html" target="_blank">更多内容</a><img src="../images/gif163.gif" alt="d" width="16" height="16" align="top"></div>
+          </li>
+        </ul>            </td>
+      </tr>
+    </table></td>
+    <td width="652"><table width="652" height="691" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="691" align="center"><table width="651" border="0" cellpadding="0">
+          <tr>
+            <td><span class="STYLE81"> &nbsp;最新医药法规</span></td>
+          </tr>
+          <tr>
+            <td height="10"><img src="images/gif066.gif" alt="f" width="630" height="2" align="right" /></td>
+          </tr>
+          <tr>
+            <td><ul><li>
+                  <p align="left" class="STYLE82"><a href="yyfg/dzblgfl.html" target="_blank">《电子病历基本规范
+（试行）
+》</a>—2010年4月1日起施行。</p>
+            </li>
+                <li>
+                  <p align="left" class="STYLE82"><a href="yyfg/qmjstl.html" target="_blank">《全民健身条例》</a>—2009年10月1日起施行。</p>
+                </li>
+                <li>
+                  <p align="left" class="STYLE82"><a href="yyfg/gjjbywml.html" target="_blank">《国家基本药物目录（基层医疗卫生机构配备使用部分）》（2009版）</a>—2009年9月21日起施行。</p>
+                </li>
+                <li>
+                  <p align="left"class="STYLE82"><a href="yyfg/hstl.html" target="_blank">护士条例</a></a>—2008年5月12日起施行。</p>
+                </li>
+                <li>
+                <p align="left"class="STYLE82"><a href="yyfg/dcxjblbf.html" target="_blank">单采血浆站管理办法</a>—2008年3月1日起施行。</p>
+              </li>
+              <li>
+                <p align="left"class="STYLE82"><a href="yyfg/xzyspglbf.html" target="_blank">新资源食品管理办法</a>—2007年12月1日起施行。</p>
+              </li>
+              <li>
+                <p align="left"class="STYLE82"><a href="yyfg/fsgzryzyjkglbf.html" target="_blank">放射工作人员职业健康管理办法</a>—2007年11月1日起施行。 </p>
+              </li>
+              <li>
+                <p align="left"class="STYLE82"><a href="yyfg/cfglbf.html" target="_blank">处方管理办法</a>—2007年5月1日起施行。</p>
+              </li>
+              <li>
+                <p align="left"class="STYLE82"><a href="yyfg/wsxfgzbftl.html" target="_blank">卫生信访工作办法</a>—2007年3月15日起施行。</p>
+              </li>
+              </ul></td>
+          </tr>
+          
+        </table>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p></td>
+      </tr>
+      
+      
+    </table></td>
+    <td width="204"><table width="204" height="707" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="204" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="ylwsyjr.html" target="_blank"style="color: #FFFFFF">总目录</a></span></td>
+      </tr>
+      <tr>
+        <td height="175" align="left"><ul>
+              <li class="STYLE69"><a href="yyfg.html" target="_self">最新医药法规</a> </li>
+              <li class="STYLE69"><font color="#000080"><a href="yyfg/yyfg2000-2005.html" target="_self">医药法规（2000-2005）</a> </font></li>
+              <li class="STYLE69"><font color="#000080"><a href="yyfg/yyfg1990-1999.html" target="_self">医药法规（1990-1999）</a> </font></li>
+              <li class="STYLE69"><font color="#000080"><a href="yyfg/yyfg1980-1989.html" target="_self">医药法规（1980-1989）</a> </font></li>
+              <li class="STYLE69"><font color="#000080">医药法规（1970-1979） </font></li>
+              <li class="STYLE69"><font color="#000080">医药法规（1960-1969）</font> </li>
+              <li class="STYLE69"><font color="#000080">医药法规（1949-1959） </font></li>
+              </ul>          </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="zgyyw.html"target="_blank" style="color: #FFFFFF">其他法律法规</a></span></td>
+      </tr>
+      <tr>
+        <td height="260"><ul>
+          <li class="STYLE69"><font color="#000080">互联网法律法规</font></li>
+          <li class="STYLE69"><font color="#000080">食品保健法类法规</font></li>
+          <li class="STYLE69"><font color="#000080">中华人民共和国保险法</font></li>
+          <li class="STYLE69"><font color="#000080">房地产及建筑类法律法规</font></li>
+          <li class="STYLE69"><font color="#000080">道路交通事故处理办法</font></li>
+          <li class="STYLE69"><font color="#000080">2008年加工贸易禁止类商品目录</font></li>
+          <li class="STYLE69"><font color="#000080">民间纠纷处理办法</font></li>
+          <li class="STYLE69"><font color="#000080">妇女儿童权益保护法</font></li>
+          <li class="STYLE69"><font color="#000080">中华人民共和国老年人权益保障法</font></li>
+          <li class="STYLE69"><font color="#000080">中华人民共和国宪法</font></li>
+          <li class="STYLE69"><font color="#000080">中华人民共和国刑法</font></li>
+        </ul>          </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="yqlj.html"target="_blank" style="color: #FFFFFF">友情链接</a></span></td>
+      </tr>
+      <tr>
+        <td height="186"><ul>
+          <li class="STYLE69"><a href="http://www.chinalawedu.com/web/flcs/" target="_blank"style="color: #000080">法律常识</a></li>
+          <li class="STYLE69"><a href="http://www.chnlaw.net" target="_blank"style="color: #000080">中国法律网 </a></li>
+          <li class="STYLE69"><a href="http://www.gov.cn/flfg/index.htm" target="_blank"style="color: #000080">中国政府网</a></li>
+          <li class="STYLE69"><a href="http://www.1488.com/" target="_blank"style="color: #000080">中法网</a></li>
+          <li class="STYLE69"><a href="http://www.bokee.net/company/company_indexCompany/10178.html" target="_blank"style="color: #000080">法易行</a></li>
+          <li class="STYLE69"><a href="http://www.lawqz.cn/Index.html" target="_blank"style="color: #000080">法律法规网 </a></li>
+          <li class="STYLE69"><a href="http://www.lawtime.net/" target="_blank"style="color: #000080">法律咨询网</a></li>
+          <li class="STYLE69"><a href="http://www.elaws.com.cn/" target="_blank"style="color: #000080">法网律师在线</a></li>
+        </ul>          </td>
+      </tr>
+      
+      
+    </table>
+      </td>
+</tr>
+</table>
+</center>
+</form>
+
+<map name="Map" id="Map"><area shape="rect" coords="722,3,797,33" href="../english.aspx" target="_blank" />
+</map></body>
+</html>

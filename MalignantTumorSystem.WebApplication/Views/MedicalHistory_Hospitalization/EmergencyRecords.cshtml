@@ -1,0 +1,204 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>住院病历</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MedicalHistory_Hospitalization/Record.js"></script>
+    <style type="text/css">
+        body {
+            width: 98%;
+        }
+
+        #d1 {
+            margin-top: 62.5px;
+            text-align: center;
+        }
+
+        #d2 {
+            width: 98%;
+        }
+
+        #d3 {
+            width: 75px;
+            float: left;
+            text-align: center;
+            /*height: 1123px;*/
+            padding-top: 45%;
+        }
+
+        #d4 {
+            width: 84%;
+            float: left;
+            padding-top: 20px;
+        }
+
+        #d5 {
+            width: 3%;
+            text-align: center;
+            margin-left: 5px;
+            float: left;
+            /*height: 1123px;*/
+            padding-top: 38%;
+        }
+         
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+    </script>
+</head>
+<body>
+    <form id="form1" >
+
+        <!--startprint1-->
+        <div id="d1">
+            <a style="font-size: 24px;"><b id="hospital"></b></a>
+            <br />
+            <br />
+            <a style="font-size: 28px; font-family: 隶书"><b>住 院 病 历</b></a>
+        </div>
+
+        <div id="d2">
+            <div id="d3">
+                装<br />
+                <br />
+                订<br />
+                <br />
+                线
+            </div>
+            <div id="d4">
+                <table style="width: 98%; text-align: center">
+                    <tr style="height: 30px; text-align: left">
+                        <td>
+                            <table style="width: 100%; margin-top: 5px;">
+                                <tr style="height: 30px; text-align: left">
+                                    <td style="width: 8%">姓名</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 20%" id="name"></td>
+                                    <td style="width: 8%">性别</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 30%" id="sex"></td>
+                                    <td style="width: 8%">年龄</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 11%" id="age"></td>
+                                    <td style="width: 15%">岁（月）</td>
+                                </tr>
+                            </table>
+                            <table style="width: 100%; margin-top: 5px;">
+                                <tr style="height: 30px; text-align: left">
+                                    <td style="width: 8%">婚姻</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 20%" id="hy"></td>
+                                    <td style="width: 8%">职业</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 30%" id="zy"></td>
+                                    <td style="width: 14%">入院日期</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 20%" id="time"></td>
+                                </tr>
+                            </table>
+                            <table style="width: 100%; margin-top: 5px;">
+                                <tr style="height: 30px; text-align: left">
+                                    <td style="width: 14%">药物过敏史</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 14%" id="gms"></td>
+                                    <td style="width: 8%">住址</td>
+                                    <td style="border-bottom: 1px solid black; text-align: center; font-size: 14px; width: 64%" id="address"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+
+                <table style="width: 98%;">
+                    <tr>
+                        <td style="text-align: center" colspan="2"><a style="font-size: 20px;"><b>病 史 录</b></a></td>
+                    </tr>
+                    <tr style="height: 30px; font-size: 14px;">
+                        <td style="border-bottom: 1px dotted black;" id="Td3" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>主<a style='padding-left:2em'></a>诉：</b></td>
+                    </tr>
+                    <tr style="height: 30px; font-size: 14px;">
+                        <td style="border-bottom: 1px dotted black;" id="zs" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>现<a style='padding-left:0.5em'></a>病<a style='padding-left:0.5em'></a>史：</b></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="xbs" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>既<a style='padding-left:0.5em'></a>往<a style='padding-left:0.5em'></a>史：</b></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="jws" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>体格检查：</b></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" id="tgjc" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;" id="tr1">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" id="Td1" colspan="2"></td>
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>会诊记录：</b></td>
+                    </tr>
+                    <tr style="height: 30px;" id="tr7">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="Td5" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>病<a style='padding-left:0.5em'></a>程<a style='padding-left:0.5em'></a>录：</b></td>
+                    </tr>
+                    <tr style="height: 30px;" id="tr2">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="Td2" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>出院小结：</b></td>
+                    </tr>
+                    <tr style="height: 30px;" id="tr4">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="Td4" colspan="2"></td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;" colspan="2"><b>住院费用：</b></td>
+                    </tr>
+                    <tr style="height: 30px;" id="tr6">
+                        <td style="border-bottom: 1px dotted black; font-size: 14px;line-height:25px" id="Td6" colspan="2"></td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div id="d5">
+                第<br />
+                一<br />
+                联<br />
+                <br />
+                患<br />
+                者<br />
+                保<br />
+                管<br />
+                <br />
+                就<br />
+                诊<br />
+                带<br />
+                来
+            </div>
+        </div>
+
+        <!--endprint1-->
+        <div style="margin-bottom: 62.5px; margin-top: 50px; text-align: center">
+            <span class="print">
+                <input type="button" name="button_print" value="打印" onclick="window.print()" style="width: 80px; height: 35px;" />
+            </span>
+            @*<span id="printview">
+                <input id="btnPrint" type="button" value="打印预览" onclick="preview(1)" style="width: 80px; height: 35px;" />
+                <input id="btnPrint" type="button" value="打印预览" style="width: 80px; height: 35px;" />
+            </span>*@
+        </div>
+    </form>
+</body>
+</html>

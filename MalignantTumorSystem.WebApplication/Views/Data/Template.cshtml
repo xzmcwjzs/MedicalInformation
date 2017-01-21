@@ -1,0 +1,78 @@
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.Chronic_disease_Data_DiseaseName>>
+@using MalignantTumorSystem.Common;
+@using MalignantTumorSystem.WebApplication.Common.ComunityCode;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>病史模板</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            height: 20px;
+        }
+    </style>
+    <script type="text/javascript">
+        function UpdateMain(reason, typed) {
+            if (typed == "主诉") {
+                window.dialogArguments.document.getElementById("zs").value = reason;
+            } else if (typed == "现病史") {
+                window.dialogArguments.document.getElementById("xbs").value = reason;
+            } else if (typed == "既往史") {
+                window.dialogArguments.document.getElementById("jws").value = reason;
+            } else if (typed == "流行病学史") {
+                // window.dialogArguments.document.getElementById("xj").value = reason;
+            }
+            window.close();
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <form id="form1">
+        <div>
+            <table class="listTable" cellspacing="1" cellpadding="0" style="width:100%;">
+                <tr class="listTableTitleRow">
+                    <td style="width:5%">编号</td>
+                    @if (ViewBag.types == "主诉" || ViewBag.types == "现病史")
+                    {
+                        <td style="width:15%">疾病名称</td>
+                    }
+                    <td style="width:78%;text-align:center">病史</td>
+                </tr>
+                @for (int i = 0; i < Model.EntityList.Count; i++)
+                {
+
+                    var item = Model.EntityList[i];
+                    string id, no;
+                    string type, reason, name;
+                    no = CommonFunc.SafeGetStringFromObj((ViewBag.PageIndex - 1) * ViewBag.PageSize + i + 1);
+                    id = CommonFunc.SafeGetStringFromObj(item.id);
+                    type = CommonFunc.SafeGetStringFromObj(item.classfy);
+                    name = CommonFunc.SafeGetStringFromObj(item.disease_name);
+                    reason = CommonFunc.SafeGetStringFromObj(item.pathogeny);
+                    <tr class="listTableContentRow" onmouseover="this.className='listTableContentRowMouseOver' " onmouseout="this.className='listTableContentRow'" onclick="UpdateMain('@reason','@type')">
+
+                        <td class="auto-style1">@no&nbsp;</td>
+                        @if (ViewBag.types == "主诉" || ViewBag.types == "现病史")
+                        {
+                            <td class="auto-style1">@name&nbsp;</td>
+                        }
+                        <td class="auto-style1;" style="text-align:left">@reason&nbsp;</td>
+                    </tr>
+                }
+            </table>
+            @Html.ShowPager(Model.Pager.PageIndex, Model.Pager.PageSize, Model.Pager.TotalCount)
+        </div>
+    </form>
+</body>
+</html>

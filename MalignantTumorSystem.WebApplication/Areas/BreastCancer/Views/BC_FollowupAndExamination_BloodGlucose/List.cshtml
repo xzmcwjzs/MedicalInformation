@@ -1,0 +1,150 @@
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.Chronic_disease_BloodGlucose>>
+@using MalignantTumorSystem.Common;
+@using MalignantTumorSystem.WebApplication.Common.ComunityCode;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>列表页</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script>
+        function Alert() {
+            alert("只有该患者的责任医师才能进行此操作！")
+        }
+    </script>
+</head>
+<body>
+    <div style="padding:0px;">
+        <table style="width:100%;height:22px;">
+            <tr>
+                <td class="listTableHeadTR" style="height: 23px;">
+                    <img height="16" src="/images/imgs/Query.gif" width="16" style="vertical-align: middle" />血糖监测信息查询结果
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <table id="tbList" class="listTable" cellspacing="1" cellpadding="0" style="width:100%;">
+            <tr class="listTableTitleRow">
+                <td>姓名</td>
+                <td>性别</td>
+                <td>年龄</td>
+                <td>身份证号码</td>
+                <td>家庭常住地址</td>
+                <td>最近监测日期</td>
+                <td>最近一周监测</td>
+                <td>全部监测</td>
+                <td>全部监测数据</td>
+            </tr>
+            <tbody>
+
+                @for (int i = 0; i < Model.EntityList.Count; i++)
+                {
+
+                    var item = Model.EntityList[i];
+                    string id, no;
+                    string family_detail_address = "", name = "", sex = "", id_card = "", resident_id = "";
+                    string monitor_day;
+                    string strAge = "", type = "";
+                    string worker_user_name = "";
+                    name = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.name), 0);
+                    no = CommonFunc.SafeGetStringFromObj((ViewBag.PageIndex - 1) * ViewBag.PageSize + i + 1);
+                    id = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id), 0);
+
+                    sex = (CommonFunc.SafeGetStringFromObj(item.sex) == "01") ? "男" : "女";
+                    id_card = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id_card_number), 0);
+                    if (!string.IsNullOrEmpty(item.community_code.ToString()))
+                    {
+                        if (item.community_code.ToString().Length == 2)
+                        {
+                            family_detail_address = new Address().GetForwardAddress4(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 4)
+                        {
+                            family_detail_address = new Address().GetForwardAddress3(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 6)
+                        {
+                            family_detail_address = new Address().GetForwardAddress1(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 9)
+                        {
+                            family_detail_address = new Address().GetForwardAddress2(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 12)
+                        {
+                            family_detail_address = new Address().GetForwardAddress(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_address), 0);
+                        }
+
+                    }
+
+                    string tempBirthDate = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.birth_date, "yyyy-MM-dd");
+                    if (!string.IsNullOrEmpty(tempBirthDate))
+                    {
+                        DateTime dtBirthDate = Convert.ToDateTime(tempBirthDate);
+                        int age = DateTime.Now.Year - dtBirthDate.Year;
+                        if (age > 0)
+                        { strAge = age.ToString() + "岁"; }
+                        else if (age == 0)
+                        {
+                            int month = DateTime.Now.Month - dtBirthDate.Month;
+                            if (month > 0)
+                            { strAge = month.ToString() + "月"; }
+                            else if (month == 0)
+                            {
+                                int day = DateTime.Now.Day - dtBirthDate.Day;
+                                if (day > 0)
+                                { strAge = day.ToString() + "天"; }
+                            }
+                        }
+                    }
+                    monitor_day = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.create_time, "yyyy-MM-dd");
+                    id_card = CommonFunc.SafeGetStringFromObj(item.id_card_number);
+                    worker_user_name = CommonFunc.SafeGetStringFromObj(item.worker_user_name);
+                    <tr class="listTableContentRow" onmouseover="this.className='listTableContentRowMouseOver' " onmouseout="this.className='listTableContentRow'">
+                        @if (name.Length == 2)
+                        {
+                            <td style="height:21px;">@name.Substring(0, 1)<a style="padding-left:1em"></a>@name.Substring(1, 1)</td>
+                        }
+                        else
+                        {
+                            <td style="height:21px;">@name</td>
+                        }
+                        <td>@sex &nbsp;</td>
+                        <td>@strAge</td>
+                        <td>@id_card</td>
+                        <td style="text-align:left;padding-left:1em">@family_detail_address &nbsp;</td>
+                        <td>@monitor_day</td>
+                        <td>
+                            <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_BloodGlucose/Show?id=@id',1020,650)" href="javascript:void(0)">
+                                <img alt="查看详细资料" src="/images/imgs/icon_show.gif" />
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_BloodGlucose/ShowAll?id=@id',1020,650)" href="javascript:void(0)">
+                                <img alt="查看详细资料" src="/images/imgs/icon_show.gif" />
+                            </a>
+                        </td>
+
+                        <td>
+                            <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_BloodGlucose/ShowAllDataBase?id=@id',1020,650)" href="javascript:void(0)">
+                                <img alt="查看详细资料" src="/images/imgs/icon_show.gif" />
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.ShowPager(Model.Pager.PageIndex, Model.Pager.PageSize, Model.Pager.TotalCount)
+    </div>
+
+</body>
+</html>

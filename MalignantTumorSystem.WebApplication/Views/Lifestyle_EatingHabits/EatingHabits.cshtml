@@ -1,0 +1,602 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>饮食起居</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/Lifestyle_EatingHabits/Query.js"></script>
+    <script src="~/Scripts/Lifestyle_EatingHabits/Update.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style26 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebf0;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 7%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            height: 25px;
+            text-align: left;
+            padding: 2px;
+            width: 85%;
+            border: 1px solid white;
+        }
+
+        .auto-style42 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            /*width:750px;*/
+            border: 1px white solid;
+        }
+
+        .auto-style50 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            width: 120px;
+            border: 1px white solid;
+        }
+
+        .auto-style51 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style52 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style53 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        input[type=checkbox] {
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div style="text-align: center">
+            <table border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable" id="tab1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">饮食起居</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style26">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style1">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style29">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 75px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style1">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 20%; height: 14px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style29">邮政编码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="zipCode" name="zipCode" style="width: 90px;" />
+                    </td>
+                    <td class="auto-style29">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" rowspan="3" valign="top" style="padding-top: 5px">起居规律</td>
+                    <td class="auto-style27">起床时间</td>
+                    <td class="auto-style42" colspan="8" id="td11">
+                        @*<input type="radio" name="morning" value="1" />5点之前<a style="padding-left: 5.5em"></a>
+                        <input type="radio" name="morning" value="2" />5-6点<a style="padding-left: 6em"></a>
+                        <input type="radio" name="morning" value="3" />6-7点<a style="padding-left: 6em"></a>
+                        <input type="radio" name="morning" value="4" />7-8点<a style="padding-left: 6em"></a>
+                        <input type="radio" name="morning" value="5" />8-9点<a style="padding-left: 7em"></a>
+                        <input type="radio" name="morning" value="6" />9点之后*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">午休时长</td>
+                    <td class="auto-style42" colspan="8" id="td12">
+                        @*<input type="radio" name="noon" value="1" />小于20分钟<a style="padding-left: 4em"></a>
+                        <input type="radio" name="noon" value="2" />20-40分钟<a style="padding-left: 4em"></a>
+                        <input type="radio" name="noon" value="3" />40-60分钟<a style="padding-left: 4em"></a>
+                        <input type="radio" name="noon" value="4" />1-1.5小时<a style="padding-left: 4.2em"></a>
+                        <input type="radio" name="noon" value="5" />大于1.5小时<a style="padding-left: 4.1em"></a>
+                        <input type="radio" name="noon" value="6" />不休息*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">睡觉时间<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style42" colspan="8" id="td13">
+                        @*<input type="radio" name="night" value="1" />21:30之前<a style="padding-left: 4.7em"></a>
+                        <input type="radio" name="night" value="2" />21:30-22点<a style="padding-left: 3.8em"></a>
+                        <input type="radio" name="night" value="3" />22点-22:30<a style="padding-left: 3.7em"></a>
+                        <input type="radio" name="night" value="4" />22:30-23点<a style="padding-left: 3.8em"></a>
+                        <input type="radio" name="night" value="5" />23点-24点<a style="padding-left: 5em"></a>
+                        <input type="radio" name="night" value="6" />24点以后*@
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="auto-style1" rowspan="20" valign="top" style="padding-top: 5px">饮食习惯</td>
+                    <td class="auto-style27">三餐定时<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style42" colspan="8">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>
+                                    <input type="radio" name="law" value="1" checked="checked" />是
+                                    <input type="radio" name="law" value="2" />否
+                                </td>
+                                <td style="background-color: #e2ebfb; width: 35px">主食<span style="color: #ff0000">*</span></td>
+                                <td>
+                                    <input type="radio" name="food" value="1" />大米<a style="padding-left: 2em"></a>
+                                    <input type="radio" name="food" value="2" />面食<a style="padding-left: 2em"></a>
+                                    <input type="radio" name="food" value="3" />豆谷<a style="padding-left: 2em"></a>
+                                    <input type="radio" name="food" value="4" />蔬菜<a style="padding-left: 2em"></a>
+                                    <input type="radio" name="food" value="5" />水果
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style27">每日喜食</td>
+                    <td class="auto-style42" colspan="8" id="td9">
+                        @*<input type="checkbox" name="taste" value="1" />酸<a style="padding-left: 4em"></a>
+                        <input type="checkbox" name="taste" value="2" />甜<a style="padding-left: 4em"></a>
+                        <input type="checkbox" name="taste" value="3" />苦<a style="padding-left: 4em"></a>
+                        <input type="checkbox" name="taste" value="4" />辛辣<a style="padding-left: 4em"></a>
+                        <input type="checkbox" name="taste" value="5" />咸<a style="padding-left: 4em"></a>
+                        其他<input type="text" id="taste_other" name="taste_other" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">常用油盐</td>
+                    <td class="auto-style42" colspan="8" id="td10">
+                        @*<input type="checkbox" name="oil_salt" value="1" />橄榄油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="2" />葵花油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="3" />菜籽油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="4" />芝麻油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="5" />动物油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="6" />低钠盐<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="7" />无碘盐<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="8" />加碘盐<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="9" />醋<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="oil_salt" value="10" />酱<a style="padding-left: 1em"></a>
+                        其他<input type="text" id="oil_salt_other" name="oil_salt_other" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">油盐摄入量</td>
+                    <td class="auto-style36" colspan="9">
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="background-color: #e2ebfb; width: 65px">日摄盐量：</td>
+                                <td>
+                                    <input type="radio" name="salt_eat" value="1" />＜6g
+                                    <input type="radio" name="salt_eat" value="2" />6-10g
+                                    <input type="radio" name="salt_eat" value="3" />＞10g
+                                </td>
+                                <td style="background-color: #e2ebfb; width: 65px">日摄油量：</td>
+                                <td>
+                                    <input type="radio" name="oil_eat" value="1" />＜25g
+                                    <input type="radio" name="oil_eat" value="2" />25-50g
+                                    <input type="radio" name="oil_eat" value="3" />＞50g
+                                </td>
+                                <td style="background-color: #e2ebfb; width: 65px">日摄糖量：</td>
+                                <td>
+                                    <input type="radio" name="sugar_eat" value="1" />＜25g
+                                    <input type="radio" name="sugar_eat" value="2" />25-50g
+                                    <input type="radio" name="sugar_eat" value="3" />＞50g
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style27">每日饮水</td>
+                    <td class="auto-style36" colspan="9">
+                        <table style="width: 100%">
+                            <tr>
+                                <td>
+                                    <input type="radio" name="water" value="1" />晨起饮水
+                                </td>
+                                <td style="background-color: #e2ebfb; width: 65px">日饮水量：</td>
+                                <td>
+                                    <input type="radio" name="amount" value="1" />＜2.0L
+                                    <input type="radio" name="amount" value="2" />2.0-2.5L
+                                    <input type="radio" name="amount" value="3" />2.5-3.0L
+                                    <input type="radio" name="amount" value="4" />＞3.0L
+                                </td>
+                                <td style="background-color: #e2ebfb; width: 90px">饮水时间间隔：</td>
+                                <td>
+                                    <input type="radio" name="time" value="1" />＜1小时
+                                    <input type="radio" name="time" value="2" />1-2小时
+                                    <input type="radio" name="time" value="3" />＞2小时
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常用饮料</td>*@
+                    <td class="auto-style27" style="padding-top: 6px" valign="top">常用饮料</td>
+                    <td class="auto-style42" colspan="8" id="td1">
+                        @* <input type="checkbox" name="drink" value="1" />白开水<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="drink" value="2" />矿泉水<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="drink" value="3" />纯净水<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="drink" value="4" />绿茶<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="drink" value="5" />红茶<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="drink" value="6" />咖啡<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="drink" value="7" />牛奶<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="drink" value="8" />酸奶<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="drink" value="9" />豆奶<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="drink" value="10" />可乐<a style="padding-left: 2em"></a>*@
+                    </td>
+                </tr>
+                @*
+                <tr>
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="drink" value="11" />雪碧<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="drink" value="12" />王老吉<a style="padding-left: 1em"></a>
+                        其他<input type="text" id="other" name="other" style="width: 50px" />
+
+                    </td>
+                </tr>*@
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常食水果</td>*@
+                    <td class="auto-style27" valign="top" style="padding-top: 6px">常食水果</td>
+                    <td class="auto-style42" colspan="8" id="td2">
+                        @*<input type="checkbox" name="melon_fruit" value="1" />西瓜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="2" />梨<a style="padding-left: 3em"></a>
+                        <input type="checkbox" name="melon_fruit" value="3" />大枣<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="4" />桃<a style="padding-left: 3em"></a>
+                        <input type="checkbox" name="melon_fruit" value="5" />橘<a style="padding-left: 3em"></a>
+                        <input type="checkbox" name="melon_fruit" value="6" />金橘<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="7" />葡萄<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="8" />苹果<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="9" />香蕉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="10" />荔枝<a style="padding-left: 2em"></a>*@
+                    </td>
+                </tr>
+                @*
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="melon_fruit" value="11" />枇杷<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="12" />核桃<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="13" />桂圆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="melon_fruit" value="14" />芒果<a style="padding-left: 2em"></a>
+                    </td>
+                </tr>*@
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="3" valign="top" style="padding-top: 6px">常食蔬菜</td>*@
+                    <td class="auto-style27" valign="top" style="padding-top: 6px">常食蔬菜</td>
+                    <td class="auto-style42" colspan="8" id="td3">
+                        @*<input type="checkbox" name="vegetables" value="1" />白菜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="2" />圆白菜<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="3" />扁豆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="4" />白萝卜<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="5" />胡萝卜<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="6" />芹菜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="7" />韭菜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="8" />木耳<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="9" />冬瓜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="10" />洋葱
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="vegetables" value="11" />生菜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="12" />卷心菜<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="13" />菜花<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="14" />黄瓜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="15" />苦瓜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="16" />番茄<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="17" />西葫芦<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="18" />魔芋<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="19" />莴笋<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="20" />芦笋
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="vegetables" value="21" />银耳<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="22" />黑木耳<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="23" />草菇<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="24" />金针菇<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="25" />猴头菇<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="vegetables" value="26" />香椿<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="vegetables" value="27" />豆芽<a style="padding-left: 2em"></a>*@
+
+                    </td>
+                </tr>
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">五谷杂粮</td>*@
+                    <td class="auto-style27" valign="top" style="padding-top: 6px">五谷杂粮</td>
+                    <td class="auto-style42" colspan="8" id="td4">
+                        @*<input type="checkbox" name="grain" value="1" />玉米<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="2" />小米<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="3" />黑米<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="4" />黄豆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="5" />绿豆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="6" />黑豆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="7" />红豆<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="8" />豇豆<a style="padding-left: 2em"></a>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="grain" value="9" />花生<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="10" />芝麻<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="11" />大麦<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="12" />薏苡仁<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="grain" value="13" />燕麦<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="grain" value="14" />荞麦<a style="padding-left: 2em"></a>
+                        其他<input type="text" name="other_grain" id="other_grain" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">水产品</td>*@
+                    <td class="auto-style27" valign="top" style="padding-top: 6px">水产品</td>
+                    <td class="auto-style42" colspan="8" id="td5">
+                        @* <input type="checkbox" name="aquatic" value="1" />带鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="2" />鳗鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="3" />黄鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="4" />昌扁鱼<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="aquatic" value="5" />三文鱼<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="aquatic" value="6" />金枪鱼<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="aquatic" value="7" />牡蛎<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="8" />海参<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="9" />蛤蜊<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="10" />海带<a style="padding-left: 2em"></a>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="aquatic" value="11" />紫菜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="12" />海虾<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="13" />河虾<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="14" />鲫鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="15" />鲢鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="16" />鲤鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="17" />青鱼<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="18" />黄鳝<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="aquatic" value="19" />甲鱼<a style="padding-left: 2em"></a>
+                        其他<input type="text" name="other_aquatic" id="other_aquatic" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    @*
+                    <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常食畜禽蛋</td>*@
+                    <td class="auto-style27" valign="top" style="padding-top: 6px">常食畜禽蛋</td>
+                    <td class="auto-style42" colspan="8" id="td6">
+                        @*<input type="checkbox" name="meat" value="1" />猪肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="2" />猪肝<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="3" />牛肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="4" />羊肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="5" />鸡蛋<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="6" />雀肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="7" />鹿肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="8" />兔肉<a style="padding-left: 2em"></a>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style42" colspan="8">
+                        <input type="checkbox" name="meat" value="9" />鹌鹑<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="10" />鸡肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="11" />鸭肉<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="meat" value="12" />驴肉<a style="padding-left: 2em"></a>
+                        其他<input type="text" name="other_meat" id="other_meat" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">常用保健品</td>
+                    <td class="auto-style42" colspan="8" id="td7">
+                        @*<input type="checkbox" name="health_products" value="1" />人参<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="health_products" value="2" />西洋参<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="health_products" value="3" />枸杞<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="health_products" value="4" />黄芪<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="health_products" value="5" />鱼油<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="health_products" value="6" />阿胶<a style="padding-left: 1em"></a>
+                        <input type="checkbox" name="health_products" value="7" />燕窝<a style="padding-left: 2em"></a>
+
+                        其他<input type="text" name="other_health_products" id="other_health_products" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style27">其他饮食嗜好</td>
+                    <td class="auto-style42" colspan="8" id="td8">
+                        @*<input type="checkbox" name="other_diet" value="1" />生姜<a style="padding-left: 2em"></a>
+                        <input type="checkbox" name="other_diet" value="2" />大蒜<a style="padding-left: 2em"></a>
+                        其他<input type="text" name="other_diet_other" id="other_diet_other" style="width: 50px" />*@
+                    </td>
+                </tr>
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" onclick="sure()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

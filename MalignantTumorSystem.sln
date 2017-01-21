@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{22DD2980-88CB-47A6-9ABC-53DB24D99E8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{7CCCF6FD-1C95-4901-A6F5-C214D3337565}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{38AD5A2B-31D2-4CFA-B066-997D5842BA75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{6E01D229-B6FB-4D8A-919B-9FA61A8654BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{2703952B-EBD5-4A20-862B-34D5990184EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.Model", "MalignantTumorSystem.Model\MalignantTumorSystem.Model.csproj", "{1B546131-C4BB-4069-815A-48906C34FD1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.DAL", "MalignantTumorSystem.DAL\MalignantTumorSystem.DAL.csproj", "{7A3A2255-F1EC-4327-B42A-A33466FBE3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.IDAL", "MalignantTumorSystem.IDAL\MalignantTumorSystem.IDAL.csproj", "{FAD96E81-597C-4EE2-985C-38E3A72E83DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.BLL", "MalignantTumorSystem.BLL\MalignantTumorSystem.BLL.csproj", "{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.IBLL", "MalignantTumorSystem.IBLL\MalignantTumorSystem.IBLL.csproj", "{F5585894-3D8E-45EF-A4FA-89750793B2A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.Common", "MalignantTumorSystem.Common\MalignantTumorSystem.Common.csproj", "{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.ADO", "MalignantTumorSystem.ADO\MalignantTumorSystem.ADO.csproj", "{3CD866F8-59DE-4097-8C35-DED26192EE5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.DI", "MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj", "{4BF77F5F-4A09-46A6-82B0-56124189B29D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebAPI", "MalignantTumorSystem.WebAPI\MalignantTumorSystem.WebAPI.csproj", "{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC.Demo.SignalR", "MVC.Demo.SignalR\MVC.Demo.SignalR.csproj", "{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebApplication", "MalignantTumorSystem.WebApplication\MalignantTumorSystem.WebApplication.csproj", "{0E781B71-400C-4D26-A9EE-DAB921CED88A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebApplication.Tests", "MalignantTumorSystem.WebApplication.Tests\MalignantTumorSystem.WebApplication.Tests.csproj", "{11120C14-AA77-49B9-AB4B-D352A8CE4BD5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B546131-C4BB-4069-815A-48906C34FD1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B546131-C4BB-4069-815A-48906C34FD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B546131-C4BB-4069-815A-48906C34FD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B546131-C4BB-4069-815A-48906C34FD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3A2255-F1EC-4327-B42A-A33466FBE3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3A2255-F1EC-4327-B42A-A33466FBE3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3A2255-F1EC-4327-B42A-A33466FBE3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3A2255-F1EC-4327-B42A-A33466FBE3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD96E81-597C-4EE2-985C-38E3A72E83DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD96E81-597C-4EE2-985C-38E3A72E83DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD96E81-597C-4EE2-985C-38E3A72E83DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD96E81-597C-4EE2-985C-38E3A72E83DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5585894-3D8E-45EF-A4FA-89750793B2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5585894-3D8E-45EF-A4FA-89750793B2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5585894-3D8E-45EF-A4FA-89750793B2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5585894-3D8E-45EF-A4FA-89750793B2A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD866F8-59DE-4097-8C35-DED26192EE5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD866F8-59DE-4097-8C35-DED26192EE5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD866F8-59DE-4097-8C35-DED26192EE5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD866F8-59DE-4097-8C35-DED26192EE5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BF77F5F-4A09-46A6-82B0-56124189B29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BF77F5F-4A09-46A6-82B0-56124189B29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BF77F5F-4A09-46A6-82B0-56124189B29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BF77F5F-4A09-46A6-82B0-56124189B29D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E781B71-400C-4D26-A9EE-DAB921CED88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E781B71-400C-4D26-A9EE-DAB921CED88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E781B71-400C-4D26-A9EE-DAB921CED88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E781B71-400C-4D26-A9EE-DAB921CED88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11120C14-AA77-49B9-AB4B-D352A8CE4BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11120C14-AA77-49B9-AB4B-D352A8CE4BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11120C14-AA77-49B9-AB4B-D352A8CE4BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11120C14-AA77-49B9-AB4B-D352A8CE4BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1B546131-C4BB-4069-815A-48906C34FD1B} = {38AD5A2B-31D2-4CFA-B066-997D5842BA75}
+		{7A3A2255-F1EC-4327-B42A-A33466FBE3D4} = {22DD2980-88CB-47A6-9ABC-53DB24D99E8C}
+		{FAD96E81-597C-4EE2-985C-38E3A72E83DA} = {22DD2980-88CB-47A6-9ABC-53DB24D99E8C}
+		{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084} = {7CCCF6FD-1C95-4901-A6F5-C214D3337565}
+		{F5585894-3D8E-45EF-A4FA-89750793B2A4} = {7CCCF6FD-1C95-4901-A6F5-C214D3337565}
+		{D0749EC3-39FD-4E75-ADF0-D4A9A2B49FA2} = {38AD5A2B-31D2-4CFA-B066-997D5842BA75}
+		{3CD866F8-59DE-4097-8C35-DED26192EE5E} = {22DD2980-88CB-47A6-9ABC-53DB24D99E8C}
+		{4BF77F5F-4A09-46A6-82B0-56124189B29D} = {22DD2980-88CB-47A6-9ABC-53DB24D99E8C}
+		{FE3DDD5A-8E09-4A39-B994-9262A2517D0D} = {2703952B-EBD5-4A20-862B-34D5990184EB}
+		{11120C14-AA77-49B9-AB4B-D352A8CE4BD5} = {6E01D229-B6FB-4D8A-919B-9FA61A8654BD}
+	EndGlobalSection
+EndGlobal

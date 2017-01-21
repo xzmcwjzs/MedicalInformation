@@ -1,0 +1,340 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>血压监测</title> 
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script> 
+    @*<script src="~/Scripts/Common/matchName.show.js"></script>*@   
+    <script src="~/Scripts/ECharts/echarts-all.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_BloodPressure/DateDeal.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_BloodPressure/Control.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_BloodPressure/Init.js"></script>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script> 
+
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style11 {
+            text-align: left;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        #values {
+            width: 85px;
+        }
+
+        .auto-style133 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 9%;
+            border: 1px white solid;
+        }
+
+        .auto-style134 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 7%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style135 {
+            text-align: left;
+            height: 25px;
+            width: 24%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style137 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 6%;
+            border: 1px white solid;
+        }
+
+        .auto-style138 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 30px;
+            border: 1px white solid;
+        }
+
+        .auto-style139 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 8%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style140 {
+            text-align: left;
+            height: 25px;
+            width: 95px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+    </style> 
+</head>
+<body style="font-size: 12px;">
+    <form id="form1">
+        <div id="div1">
+            <table   border="1" style="border-collapse: collapse; width: 100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">新增血压监测</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style27">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style1">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 100px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style133">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 65px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style1">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 20%; height: 18px; padding-top: 2px" />
+                    </td>
+                     
+                    <td class="auto-style29">手机号码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="txtIndividualPhone" name="txtIndividualPhone" style="padding-top: 2px; width: 100px" />
+                    </td>
+                    <td class="auto-style133">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr> 
+            </table>
+            <table border="1" style="border-collapse: collapse; width: 100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td colspan="10" align="center" style="width:100%;border:1px solid white">
+                        <div id="container" style="width:1000px;height:500px"></div>
+                    </td>
+                </tr>
+            </table>
+            <table  border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr id="Tr1">
+                    <td colspan="12">
+                        <table style="width:100%">
+                            <tr>
+                                <td class="auto-style138">日期</td>
+                                <td class="auto-style139">
+                                    <input type="text" id="date0" name="date0" style="padding-top: 2px; width: 80px" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" onchange="changed()" />
+                                </td>
+                                <td class="auto-style138">时间</td>
+                                <td class="auto-style134">
+                                    <select id="ttime0" name="ttime0" onchange="adds()">
+                                        <option value="">=请选择=</option>
+                                    </select>
+                                </td>
+                                <td class="auto-style138">血压</td>
+                                <td class="auto-style135">
+                                    <input type="text" id="ssy0" style="height: 18px; width: 30px;" name="ssy0" />/
+                                    <input type="text" id="szy0" style="height: 18px; width: 30px;" name="szy0" />mmHg(
+
+                                    <input type="text" id="K_ssy0" style="height: 18px; width: 30px;" name="K_ssy0" />/
+                                    <input type="text" id="K_szy0" style="height: 18px; width: 30px;" name="K_szy0" />kPa
+                                    )
+                                </td>
+                                <td class="auto-style138">心率</td>
+                                <td class="auto-style140">
+                                    <input type="text" id="heart0" name="heart0" style="padding-top: 2px; width: 40px" />次/分钟
+                                </td>
+                                <td class="auto-style137">测量地点</td>
+                                <td class="auto-style19">
+                                    <select id="place0" name="place0" style="width: 75px">
+                                        <option value="">=请选择=</option>
+                                        <option value="1">家中</option>
+                                        <option value="2">社区</option>
+                                        <option value="3">医院</option>
+                                        <option value="4">办公室</option>
+                                    </select>
+                                </td>
+                                <td class="auto-style137">测量状态</td>
+                                <td class="auto-style19">
+                                    <select id="state0" name="state0" style="width: 75px">
+                                        <option value="">=请选择=</option>
+                                        <option value="1">正常</option>
+                                        <option value="2">酒后3小时内</option>
+                                        <option value="3">酒后3-6小时</option>
+                                        <option value="4">酒后6小时后</option>
+                                        <option value="5">运动后</option>
+                                        <option value="6">用药后</option>
+                                        <option value="7">停药后</option>
+                                        <option value="8">换药后</option>
+                                        <option value="9">兴奋</option>
+                                        <option value="10">郁闷</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td> 
+                </tr> 
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/4.jpg); border: none; height: 22px; width: 91px;" onclick="save()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div> 
+    </form> 
+</body>
+</html>

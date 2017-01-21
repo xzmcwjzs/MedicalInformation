@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>居民健康档案</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE20 a:hover {font-size:16px;color:#ffffff;text-decoration: none;}{	font-size: 15px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.click a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}
+.STYLE22 {
+	font-size: 12px;
+	vertical-align: 1%;
+	line-height: normal;
+}
+a:link {
+	text-decoration: none;
+	color: #0000FF;
+}
+a:visited {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:active {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a#FPcolor {
+ color:#ffffff;
+}
+a#FFcolor {
+ color:#ffffff;
+}
+a {
+ color:#000080;
+}
+.STYLE44 {color: #ffffff}
+.STYLE45 {font-size: 10pt; line-height: 20px; color: #000080; }
+.STYLE46 {font-size: 10pt}
+.STYLE51 {font-size: 15px; color: #FFFFFF; }
+.STYLE56 {font-size: 15px; color: #FFFFFF;}
+.STYLE58 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE59 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE60 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE68 {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+BODY {
+	COLOR: #009933; FONT-SIZE: 10pt
+}
+UL {
+	FONT-SIZE: 10pt
+}
+.STYLE69 {color: #009933}
+.STYLE72 {font-size: 14pt}
+.STYLE74 {color: #000080}
+.STYLE115 {
+	font-size: 18pt;
+	color: #3333FF;
+}
+.STYLE116 {font-size: 1pt; font-weight: bold; color: #0066CC; }
+.STYLE144 {	font-size: 14pt;
+	color: #000080;
+	font-weight: bold;
+}
+.STYLE75 {font-size: 15px}
+.STYLE76 {font-size: 14px; }
+.STYLE138 {font-size: 10pt}
+.STYLE138 {font-size: 10pt}
+.STYLE139 {font-size: 15px; color: #FFFFFF; }
+.STYLE139 {font-size: 15px; color: #FFFFFF; }
+.STYLE143 {color: #009933;
+	line-height: 20px;
+}
+.STYLE145 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE93 {color: #009933; line-height: 20px; font-size: 10pt; }
+-->
+</style>
+</head>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 rightmargin="0" bottommargin="0" style="overflow-x:hidden ">
+    <form id="form1" runat="server">
+    <center>
+      <table width="1000" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td height="114" colspan="2"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="95" height="111" bgcolor="#008080">&nbsp;<a href="/default.aspx" target="_blank"><img src="images/biaotou4.gif" alt="s"  width="81" height="102" border="0" align="absmiddle" /></a></td>
+      <td width="905" height="111"><table width="905" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="905" height="76"><img src="images/titou.jpg" alt="d"  width="905" height="75" border="0" usemap="#Map" /></td>
+          </tr>
+          <tr>
+            <td height="35" bgcolor="#008080"><table width="768" height="35" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#008080">
+                <tr>
+                  <td width="55" align="right"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">首页&nbsp;</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="92" align="center"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">电子健康档案</a></span></td>
+                  <td width="14" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="65" align="center"><span class="click STYLE76"><a href="yyzn.html" target="_blank" class="STYLE76"style="color: #FFFFFF">用药指南</a></span></td>
+                  <td width="14" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="60" align="center"><span class="click STYLE76"><a href="zyzy.html" target="_blank" class="STYLE76" style="color: #FFFFFF">中医中药</a></span></td>
+                  <td width="17" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="60" align="center"><span class="click STYLE76"><a href="yxbk.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医学百科</a></span></td>
+                  <td width="15" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="72" align="center"><span class="click STYLE76"><a href="yyfg.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药法规</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="79" align="center"><span class="click STYLE76"><a href="yxtsg.html" target="_blank" class="STYLE76" style="color: #FFFFFF">医学图书馆</a></span></td>
+                  <td width="17" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="68" align="center"><span class="click STYLE76"><a href="yysd.html" target="_blank" class="STYLE76"style="color: #FFFFFF">药品价格</a></span></td>
+                  <td width="13" align="center"><img src="images/poop.gif" alt="的" width="13" height="20" /></td>
+                  <td width="101" align="center"><span class="click STYLE76"><a href="jbmcsy.html" target="_blank"style="color: #ffffff">疾病名称索引</a></span></td>
+                </tr>
+            </table></td>
+          </tr>
+      </table></td>
+    </tr>
+  </table>
+    <map name="Map" id="Map2">
+      <area shape="rect" coords="319,32,661,74" href="/default.aspx" target="_blank" />
+      <area shape="rect" coords="778,3,843,45" href="/english.aspx" target="_blank" />
+    </map>
+    <map name="Map" id="Map2">
+      <area shape="rect" coords="725,6,795,31" href="../english.aspx" target="_blank" />
+    </map></td>
+</tr>
+<tr>
+    <td width="159" height="707"><table width="0" height="728" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="144" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56 "><a href="cjjbsy.html" target="_blank" style="color: #FFFFFF" >常见疾病索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="183"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/gxy.html" target="_blank"style="color: #000080">高血压</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/tnb.html" target="_blank"style="color: #000080">糖尿病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"> <a href="cjjbsy/gb.html" target="_blank"style="color: #000080">冠心病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/fpz.html" target="_blank"style="color: #000080">肥胖症 </a></div>
+          </li>
+          <li class="STYLE93">
+            <div align="left"><a href="cjjbsy/sb.html" target="_blank"style="color: #000080">肾病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/xnxgb.html" target="_blank"style="color: #000080">心脑血管病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/bnz.html" target="_blank"style="color: #000080">白内障</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy/az.html" target="_blank"style="color: #000080">癌症</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjjbsy.html" target="_blank">更多内容</a><img src="images/gif163.gif"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="cjzzsy.html"target="_blank"style="color: #FFFFFF">常见症状索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="210"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/fr.html" target="_blank"style="color: #000080">发热</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/tt.html" target="_blank"style="color: #000080">头痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/xt.html" target="_blank"style="color: #000080">胸痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/ft.html" target="_blank"style="color: #000080">腹痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="index/zzsy/kx.html" target="_blank"style="color: #000080"></a>
+                  <div align="left"><a href="cjzzsy/exyot.html" target="_blank"style="color: #000080">恶心与呕吐</a></div>
+              </div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/ksykt.html" target="_blank"style="color: #000080">咳嗽与咯痰</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/hxkn.html" target="_blank"style="color: #000080">呼吸困难</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy/fx.html" target="_blank"style="color: #000080">腹泻</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="index/zzsy/xy.html" target="_blank"style="color: #000080"></a><a href="cjzzsy/bm.html" target="_blank"style="color: #000080">便秘</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="cjzzsy.html" target="_blank">更多内容</a><img src="images/gif163.gif"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="yyzk.html" target="_self"style="color: #FFFFFF">医院专科</a></span></td>
+      </tr>
+      <tr>
+        <td height="167"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="yyzk/nk.html" target="_blank"style="color: #000080">内科</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/wk.html" target="_blank"style="color: #000080">外科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/fck.html" target="_blank"style="color: #000080">妇产科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/ek.html" target="_blank"style="color: #000080">儿科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/pfk.html"target="_blank"style="color: #000080">皮肤科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/zlk.html" target="_blank"style="color: #000080">肿瘤科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/crk.html" target="_blank"style="color: #000080">传染科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/yk.html"target="_blank"style="color: #000080">眼科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk/ebyhk.html"target="_blank"style="color: #000080">耳鼻咽喉科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="yyzk.html" target="_self">更多内容</a><img src="images/gif163.gif"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+    </table></td>
+    <td width="841" height="689"><table width="820"  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="37" align="left" valign="bottom"><span class="STYLE116">&nbsp;<span class="STYLE115">医院专科</span></span></td>
+      </tr>
+      <tr>
+        <td height="6" align="left" valign="bottom"><img src="images/gif066.gif" alt="f" width="810" height="2" align="bottom" /></td>
+      </tr>
+      <tr>
+        <td height="37" align="left" valign="bottom"><table width="820" height="529" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="42" align="left" valign="middle"><span class="STYLE72"><span class="STYLE74"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> 临床科室：<a href="yyzk/nk.html"style="color: #000080">内科</a></strong></span></span></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" height="21" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">呼吸内科</span></td>
+                  <td width="191" align="left"><span class="STYLE74"><a href="yyzk/nk/xhxtjb.html"style="color: #000080">消化内科</a></span></td>
+                  <td width="206" align="left"><span class="STYLE74">心血管内科</span></td>
+                  <td width="222" align="left"><span class="STYLE74">血液内科</span></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">肾内科</span></td>
+                  <td align="left"><span class="STYLE74">内分泌科</span></td>
+                  <td align="left"><span class="STYLE74">感染科</span></td>
+                  <td align="left"><span class="STYLE74">风湿免疫科</span></td>
+                </tr>
+                <tr>
+                  <td align="left" class="STYLE74">&nbsp;&nbsp;&nbsp;神经内科</td>
+                  <td align="left" class="STYLE74">肿瘤科</td>
+                  <td align="left" class="STYLE74">皮肤科</td>
+                  <td align="left" class="STYLE74">介入放射科</td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="1" colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="35" align="left"><span class="STYLE144"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> </strong>临床科室：外科</span></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" height="20" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">普外科</span></td>
+                  <td width="191" align="left"><span class="STYLE74">神经外科</span></td>
+                  <td width="207" align="left"><span class="STYLE74">骨科</span></td>
+                  <td width="221" align="left"><span class="STYLE74">泌尿外科</span></td>
+                </tr>
+                <tr>
+                  <td height="26" align="left" class="STYLE74">&nbsp;&nbsp;&nbsp;胸心外科</td>
+                  <td align="left" class="STYLE74">整形烧伤科</td>
+                  <td align="left" class="STYLE74">麻醉科</td>
+                  <td align="left" class="STYLE74">重症监护病房（ICU）</td>
+                </tr>
+                <tr>
+                  <td align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">康复医学科</span></td>
+                  <td align="left" class="STYLE74">血管外科</td>
+                  <td align="left" class="STYLE74">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="34" align="left"><span class="STYLE144"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> </strong>临床科室：五官科</span></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">眼科</span></td>
+                  <td width="190" align="left"><span class="STYLE74">口腔科</span></td>
+                  <td width="208" align="left"><span class="STYLE74">耳鼻咽喉科</span></td>
+                  <td width="221" align="left">&nbsp;</td>
+                </tr>
+              </table>
+                <table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr></tr>
+              </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="1" colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="37" align="left"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> </strong><strong class="STYLE144">临床科室：妇产科</strong></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="200" align="left" class="STYLE74">&nbsp;&nbsp;&nbsp;妇科</td>
+                  <td width="193" align="left" class="STYLE74">产科</td>
+                  <td width="206" align="left" class="STYLE74">生殖医学科</td>
+                  <td width="221" align="left" class="STYLE74">妇女保健科</td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="33" align="left"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> </strong><strong class="STYLE144">临床科室：儿科</strong></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">儿科</span></td>
+                  <td width="192" align="left"><span class="STYLE74">儿童保健科</span></td>
+                  <td width="206" align="left">&nbsp;</td>
+                  <td width="221" align="left">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="1" colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="40" align="left"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> </strong><strong class="STYLE144">门急诊科</strong></td>
+                  <td>&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">中医科</span></td>
+                  <td width="193" align="left"><span class="STYLE74">针灸科</span></td>
+                  <td width="205" align="left"><span class="STYLE74">临床心理科</span></td>
+                  <td width="221" align="left"><span class="STYLE74">急诊医学科</span></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="1" colspan="4" align="left"><hr style="width:820px;color:#bbb;" size="1" /></td>
+                </tr>
+                <tr>
+                  <td height="37" colspan="2" align="left" class="STYLE144"><strong><img src="images/标题点.jpg" alt="c " width="9" height="9" /> 医技科室</strong></td>
+                  <td align="right">&nbsp;</td>
+                  <td align="right">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="201" height="25" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">药剂科</span></td>
+                  <td width="194" align="left"><span class="STYLE74">医学检验科</span></td>
+                  <td width="204" align="left"><span class="STYLE74">放射科</span></td>
+                  <td width="221" align="left"><span class="STYLE74">介入放射科</span></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left">&nbsp;&nbsp;<span class="STYLE74">&nbsp;</span><span class="STYLE74">病理科</span></td>
+                  <td align="left"><span class="STYLE74">营养科</span></td>
+                  <td align="left"><span class="STYLE74">输血科</span></td>
+                  <td align="left"><span class="STYLE74">核医学科</span></td>
+                </tr>
+                <tr>
+                  <td height="24" align="left" class="STYLE74">&nbsp;&nbsp;&nbsp;超声诊断科</td>
+                  <td align="left" class="STYLE74">PET/CT室</td>
+                  <td align="left" class="STYLE74">HLA实验室</td>
+                  <td align="left" class="STYLE74">高压氧舱</td>
+                </tr>
+                <tr>
+                  <td align="left" class="STYLE74">&nbsp;&nbsp;&nbsp;临床试验研究室</td>
+                  <td align="left" class="STYLE74">&nbsp;</td>
+                  <td align="left" class="STYLE74">&nbsp;</td>
+                  <td align="left" class="STYLE74">&nbsp;</td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="28"><hr style="width:820px;color:#bbb;" size="1" /></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td height="27" align="left" valign="bottom"><p class="STYLE116">&nbsp;</p>          </td>
+      </tr>
+      
+    </table>
+      </td>
+</tr>
+</table>
+</center>
+    </form>
+
+<map name="Map" id="Map"><area shape="rect" coords="725,6,798,33" href="../english.aspx" target="_blank" />
+</map></body>
+</html>

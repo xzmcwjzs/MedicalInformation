@@ -1,0 +1,31 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Alert</title>
+</head>
+<body>
+    <form id="form1">
+        <div>
+            <table  border="0" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable" id="yujing">
+                <tr>
+                    <td height="24" style=" font-size:18px;">乳腺癌随访预警提示</td>
+                </tr>
+                <tr>
+                    <td> 
+                       <a href='/Frame/ListAlert'>乳腺癌随访(<span style='color:Red'>@ViewBag.count</span>)</a>&nbsp;&nbsp;
+                        
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+
+    </form>
+</body>
+</html>

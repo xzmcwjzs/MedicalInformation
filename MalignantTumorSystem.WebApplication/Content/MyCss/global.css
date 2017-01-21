@@ -1,0 +1,121 @@
+﻿* 
+{
+	margin:0;
+	padding:0;
+	font-size:12px;
+	scrollbar-face-color: #799Ae1;
+    scrollbar-3dlight-color:   #799Ae1;
+    scrollbar-darkshadow-color:  #799Ae1;
+    scrollbar-base-color:   #799Ae1;
+}
+img
+{
+	border:0;
+}
+
+/*主体部分左侧查询的样式*/
+.qryTable 
+{
+	border: #183789 1px solid; width: 100%; background-color:#fff;
+}
+.qryTable td
+{
+	padding-right: 1px; padding-left: 3px; background-color: #F1F3F5; padding-bottom: 1px; padding-top: 2px
+}
+.qryTable .button
+{
+	width:50px;border: #002D96 1px solid; padding: 2px; filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); cursor: hand; color: black;
+}
+/*主体部分列表样式*/
+.listTableHead
+{
+	border: #dedede 1px solid;background-color: #efefef
+}
+.listTableHeadTR
+{
+	background-image: url(../../images/TRQry.gif); font-weight:bold
+}
+.listTable
+{
+	border: #183789 1px solid; width: 100%; background-color:#fff; text-align:center;
+}
+.listTableTitleRow 
+{
+	font-weight: bold; background-image: url(../../images/admin_bg_1.jpg); color: white; background-color: #4455aa; height:20px;
+}
+.listTableContentRow 
+{
+	padding:2px;background-color: #f1f3f5;
+}
+.listTableContentRowMouseOver
+{
+	padding:2px;background-color: #c2d5ff;
+}
+/*信息添删和查看详情页面样式*/
+.detailTable
+{
+	width:98%;background-color:White;border:1px solid #183789;margin:auto;margin-top:2px;
+}
+.detailHead
+{
+	background-image:url(../../images/admin_bg_1.jpg);color:White;font-size:14px;font-weight:bold; text-align:center; height:24px;
+}
+.detailTitle
+{
+	background-color:#e2ebfb;padding:3px;color:Black; text-align:right
+}
+.myDetailTitle
+{
+	background-color:#e2ebfb;padding:3px;color:Black; text-align:center;font-size:14px;font-weight:bold;height:25px;
+}
+.myDetailContent
+{
+	background-color:#f1f3f5;padding:2px;text-align:center;
+}
+.detailContent
+{
+	background-color:#f1f3f5;padding:2px;
+}
+.detailTable .button
+{
+	width:50px;border: #002D96 1px solid; padding: 2px; filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); cursor: hand; color: black;
+}
+.detailTable input,.detailTable select
+{
+	margin:auto; border-width:1px;
+}
+.viewCommand
+{
+	width:95%;margin:auto;text-align:right;margin-top:2px;
+}
+.viewCommand .button
+{
+	width:50px;border: #002D96 1px solid; padding: 2px; filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#9DBCEA); cursor: hand; color: black;
+}
+
+TABLE.frmTable 
+{
+	border: 1px solid #CCCCCC;
+    border-collapse:collapse;
+    
+}
+TABLE.frmTable td
+{
+	border: 1px solid #CCCCCC;
+	text-align:center;
+	font-size:14px;
+}
+TABLE.titleTable 
+{
+	border: 0px;
+    border-collapse:collapse;
+    background-color:#F5F6F7;
+    cursor:pointer;
+}
+
+TABLE.titleTable td
+{
+	font-size:24px; 
+	font-weight:bold;
+	text-align:center;
+}

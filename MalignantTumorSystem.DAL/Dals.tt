@@ -1,0 +1,59 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic"#>
+<#@ import namespace="System.IO"#>
+<#@ import namespace="System.Reflection"#>
+<#@ import namespace="System.Text" #> 
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MalignantTumorSystem.Model;
+using MalignantTumorSystem.Model.Entities;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using MalignantTumorSystem.IDAL;
+namespace MalignantTumorSystem.DAL{
+
+<#
+            //string currentPath =Path.GetDirectoryName(this.Host.TemplateFile);
+            //string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\TumorManagementSystem.BLL"));
+            //string modelFile= Path.Combine(solutionPath, @"TumorManagementSystem.Model\bin\Debug\TumorManagementSystem.Model.dll");
+             ////byte[] buffer=File.ReadAllBytes(modelFile);
+            //Assembly assembly = Assembly.LoadFrom(modelFile);  
+            //Type[] ts = assembly.GetTypes();
+            //List<string> ClassName =new  List<string>();
+            //foreach (Type t in ts)
+            //{ 
+                //if (t.Namespace == "TumorManagementSystem.Model") {
+                    //ClassName.Add(t.Name);
+                //}
+            //}
+
+            string currentPath =Path.GetDirectoryName(this.Host.TemplateFile);
+            string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\MalignantTumorSystem.DAL"));
+            string txtFilePath= Path.Combine(solutionPath, @"MalignantTumorSystem.Model\ClassNameTxt\ClassName.txt");  
+            string[] ClassNameList =new string[]{""};
+            using(StreamReader reader=new StreamReader(txtFilePath)){
+                 string classNameStr=reader.ReadToEnd();
+                 int index=classNameStr.LastIndexOf(',');
+	             classNameStr=classNameStr.Substring(0,index);
+                 ClassNameList= classNameStr.Split(',');
+          }
+        #>
+<#
+    if(ClassNameList[0]!=""){
+foreach (string className in ClassNameList)
+{ 
+#>		
+	public partial class <#=className#>Dal:BaseDal<<#=className#>>,I<#=className#>Dal
+    {
+	}
+<#}
+}#>
+}

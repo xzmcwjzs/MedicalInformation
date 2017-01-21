@@ -1,0 +1,382 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>view</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 120px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style2 {
+            width: 60px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style3 {
+            width: 130px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style5 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style6 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style7 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style8 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style9 {
+            background-color: #f1f3f5;
+            width: 300px;
+        }
+
+        .head {
+            background-image: url(/images/admin_bg_1.jpg);
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 24px;
+        }
+
+        #body {
+            font-size: 12px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var id = "@ViewBag.id";
+        $(function () {
+            $.post("/MedicalHistory_TestReport_BMC/Show?id=" + id,
+            function (data) {
+                dts = eval(data);
+                if (dts != "") {
+                    $("#name").html(dts[0].names);
+                    if (dts[0].sex == "01") {
+                        $("#sex").html("男");
+                    }
+                    else if (dts[0].sex == "02") {
+                        $("#sex").html("女");
+                    }
+
+                    if (dts[0].birth_date != "") {
+                        var date = new Date(parseInt(dts[0].birth_date.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].birth_date.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        var dates = new Date();
+                        var year = dates.getFullYear() - date.getFullYear();
+                        if (year > 0) {
+                            $("#age").html(year + "岁");
+                        } else if (year == 0) {
+                            var month = dates.getMonth() - a1;
+                            if (month > 0) {
+                                $("#age").html(month + "月");
+                            } else if (month == 0) {
+                                var day = dates.getDay() - a2;
+                                if (day > 0) {
+                                    $("#age").html(day + "天");
+                                }
+                            }
+                        }
+                    }
+
+                    $("#id_card_number").html(dts[0].id_card_number);
+
+                    $.post("/Data/ProvinceName?code=" + dts[0].community_code.substring(0, 2),
+                   function (data1) {
+                       $.post("/Data/CityName?code=" + dts[0].community_code.substring(0, 4),
+                   function (data2) {
+                       $.post("/Data/CountyName?code=" + dts[0].community_code.substring(0, 6),
+                   function (data3) {
+                       $.post("/Data/StreetName?code=" + dts[0].community_code.substring(0, 9),
+                  function (data4) {
+                      $.post("/Data/CommunityName?code=" + dts[0].community_code.substring(0, 12),
+                  function (data5) {
+                      $("#address").html(data1 + data2 + data3 + data4 + data5 + dts[0].address);
+                  })
+                  })
+                   })
+                   })
+                   })
+                    $("#phone").html(dts[0].phone);
+                    $("#sampleId").html(dts[0].sample_id);
+                    $("#check_project").html(dts[0].check_project);
+                    $("#inspect_doctor").html(dts[0].inspect_doctor);
+                    $("#check_doctor").html(dts[0].check_doctor);
+                    $("#resport_doctor").html(dts[0].report_doctor);
+
+                    if (dts[0].name1 != "") {
+                        $("#td1").html("1");
+                        $("#td2").html(dts[0].name1);
+                        $("#td3").html(dts[0].result1);
+                        $("#td4").html(dts[0].unit1);
+                        $("#td5").html(dts[0].qujian1);
+                        $("#td6").html(dts[0].tishi1);
+                        $("#td7").html(dts[0].beizhu1);
+                    } else {
+                        document.getElementById("t1").style.display = "none";
+                    }
+
+                    if (dts[0].name2 != "") {
+                        $("#td8").html("2");
+                        $("#td9").html(dts[0].name2);
+                        $("#td10").html(dts[0].result2);
+                        $("#td11").html(dts[0].unit2);
+                        $("#td12").html(dts[0].qujian2);
+                        $("#td13").html(dts[0].tishi2);
+                        $("#td14").html(dts[0].beizhu2);
+                    } else {
+                        document.getElementById("t2").style.display = "none";
+                    }
+
+                    if (dts[0].name3 != "") {
+                        $("#td15").html("3");
+                        $("#td16").html(dts[0].name3);
+                        $("#td17").html(dts[0].result3);
+                        $("#td18").html(dts[0].unit3);
+                        $("#td19").html(dts[0].qujian3);
+                        $("#td20").html(dts[0].tishi3);
+                        $("#td21").html(dts[0].beizhu3);
+                    } else {
+                        document.getElementById("t3").style.display = "none";
+                    }
+
+                    if (dts[0].name4 != "") {
+                        $("#td22").html("4");
+                        $("#td23").html(dts[0].name4);
+                        $("#td24").html(dts[0].result4);
+                        $("#td25").html(dts[0].unit4);
+                        $("#td26").html(dts[0].qujian4);
+                        $("#td27").html(dts[0].tishi4);
+                        $("#td28").html(dts[0].beizhu4);
+                    } else {
+                        document.getElementById("t4").style.display = "none";
+                    }
+
+                    if (dts[0].name5 != "") {
+                        $("#td29").html("5");
+                        $("#td30").html(dts[0].name5);
+                        $("#td31").html(dts[0].result5);
+                        $("#td32").html(dts[0].unit5);
+                        $("#td33").html(dts[0].qujian5);
+                        $("#td34").html(dts[0].tishi5);
+                        $("#td35").html(dts[0].beizhu5);
+                    } else {
+                        document.getElementById("t5").style.display = "none";
+                    }
+
+                    if (dts[0].inspect_time != "") {
+                        var date = new Date(parseInt(dts[0].inspect_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                        $("#Text36").val(date.getFullYear()+ '-' + a1+ '-' + a2);
+                        //var a = dts[0].inspect_time.split('/');
+                        //$("#Text36").val(a[0] + '-' + a[1] + '-' + a[2].split(' ')[0]);
+                    }
+
+                    if (dts[0].report_time != "") {
+                        var date = new Date(parseInt(dts[0].report_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                        $("#Text37").val(date.getFullYear() + '-' + a1 + '-' + a2);
+
+                        //var b = dts[0].report_time.split('/');
+                        //$("#Text37").val(b[0] + '-' + b[1] + '-' + b[2].split(' ')[0]);
+                    }
+                    $.post("/MedicalHistory_TestReport_BMC/ShowAdd?id=" +id,
+                        function (datas) {
+                            dats = eval(datas);
+                            if (dats != "") {
+                                for (i = 1; i <= dats.length; i++) {
+                                    $("#tb1").append('<tr style="height: 25px" id="t_' + i + '">' +
+                                                    '<td id="td1_' + i + '"></td>' +
+                                                    '<td id="td2_' + i + '"></td>' +
+                                                    '<td id="td3_' + i + '"></td>' +
+                                                    '<td id="td4_' + i + '"></td>' +
+                                                    '<td id="td5_' + i + '"></td>' +
+                                                    '<td id="td6_' + i + '"></td>' +
+                                                    '<td id="td7_' + i + '"></td>' +
+                                            '</tr>');
+
+
+                                    $('#td1_' + i + '').html(5 + i);
+                                    $('#td2_' + i + '').html(dats[i - 1].name);
+                                    $('#td3_' + i + '').html(dats[i - 1].result);
+                                    $('#td4_' + i + '').html(dats[i - 1].unit);
+                                    $('#td5_' + i + '').html(dats[i - 1].qujian);
+                                    $('#td6_' + i + '').html(dats[i - 1].tishi);
+                                    $('#td7_' + i + '').html(dats[i - 1].beizhu);
+                                }
+                            }
+                        })
+
+                }
+            })
+        })
+
+    </script>
+
+</head>
+<body id="body">
+    <form id="form1">
+        <div style="width: 100%">
+            <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td align="center" colspan="8" class="head"><a id="titles" style="font-size: 14px;">骨髓检测</a></td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">姓名</td>
+                    <td class="auto-style1" id="name"></td>
+
+                    <td style="text-align: right" class="auto-style6">性别</td>
+                    <td class="auto-style2" id="sex"></td>
+                    <td style="text-align: right" class="auto-style7">身份证号码</td>
+                    <td class="auto-style3" id="id_card_number"></td>
+                    <td style="text-align: right" class="auto-style8">年龄</td>
+                    <td class="auto-style1" id="age"></td>
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">家庭常住地址</td>
+                    <td colspan="5" class="auto-style9" id="address"></td>
+                    <td style="text-align: right" class="auto-style8">手机号码</td>
+                    <td class="auto-style1" id="phone"></td>
+
+                </tr>
+
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">样本编号</td>
+                    <td class="auto-style1" id="sampleId"></td>
+                    <td style="text-align: right" class="auto-style6">送检医生</td>
+                    <td class="auto-style2" id="inspect_doctor"></td>
+
+
+                    <td style="text-align: right" class="auto-style7">检查医生</td>
+                    <td class="auto-style3" id="check_doctor"></td>
+
+                    <td style="text-align: right" class="auto-style8">报告医生</td>
+                    <td class="auto-style1" id="resport_doctor"></td>
+                </tr>
+            </table>
+
+
+
+            <table style="text-align: center; width:100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tb1">
+                <tr style="height: 30px;">
+                    <td style="text-align: center; width: 5%">№</td>
+                    <td style="text-align: center; width: 20%">项目名称</td>
+                    <td style="text-align: center; width: 15%">检验结果</td>
+                    <td style="text-align: center; width: 5%">单位</td>
+                    <td style="text-align: center; width: 25%">参考值区间</td>
+                    <td style="text-align: center; width: 5%">提示</td>
+                    <td style="text-align: center; width: 25%">备注</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="text-align: center">
+                        <hr />
+                    </td>
+                </tr>
+
+                <tr style="text-align: center; height: 25px" id="t1">
+                    <td id="td1"></td>
+                    <td id="td2"></td>
+                    <td id="td3"></td>
+                    <td id="td4"></td>
+                    <td id="td5"></td>
+                    <td id="td6"></td>
+                    <td id="td7"></td>
+                </tr>
+                <tr style="height: 25px" id="t2">
+                    <td id="td8"></td>
+                    <td id="td9"></td>
+                    <td id="td10"></td>
+                    <td id="td11"></td>
+                    <td id="td12"></td>
+                    <td id="td13"></td>
+                    <td id="td14"></td>
+                </tr>
+                <tr style="height: 25px" id="t3">
+                    <td id="td15"></td>
+                    <td id="td16"></td>
+                    <td id="td17"></td>
+                    <td id="td18"></td>
+                    <td id="td19"></td>
+                    <td id="td20"></td>
+                    <td id="td21"></td>
+                </tr>
+                <tr style="height: 25px" id="t4">
+                    <td id="td22"></td>
+                    <td id="td23"></td>
+                    <td id="td24"></td>
+                    <td id="td25"></td>
+                    <td id="td26"></td>
+                    <td id="td27"></td>
+                    <td id="td28"></td>
+                </tr>
+                <tr style="height: 25px" id="t5">
+                    <td id="td29"></td>
+                    <td id="td30"></td>
+                    <td id="td31"></td>
+                    <td id="td32"></td>
+                    <td id="td33"></td>
+                    <td id="td34"></td>
+                    <td id="td35"></td>
+                </tr>
+            </table>
+
+            <table style="width:100%;border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td style="text-align: center" colspan="3">
+                        <hr />
+                    </td>
+                </tr>
+                <tr style="height: 25px">
+                    <td style="width:450px;"></td>
+                    <td>送检日期<span style="color: #ff0000">*</span><input type="text" id="Text36" style="border: none;border-color: inherit; border-width: medium; width: 144px;" /></td>
+                    <td>报告日期<span style="color: #ff0000">*</span><input type="text" id="Text37" style="border: none; border-color: inherit; border-width: medium; width: 144px;" /></td>
+                </tr>
+            </table>
+            <table style="width:100%;">
+                <tr style="height: 25px;">
+                    <td style="text-align:center" colspan="3">
+                        <input id="Button1" type="button" value="关闭" style="width:80px;" onclick="window.close();" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

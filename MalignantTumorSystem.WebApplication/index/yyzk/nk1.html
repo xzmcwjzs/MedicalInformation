@@ -1,0 +1,298 @@
+<%@ page language="C#" autoeventwireup="true" inherits="MyLogin, App_Web_bvaz-8-v" %>
+<%@ Import Namespace="Framework.Common" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>中国健康档案</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE20 a:hover {font-size:16px;color:#ffffff;text-decoration: none;}{	font-size: 15px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.STYLE79 a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}
+a:link {
+	text-decoration: none;
+	color: #000080;
+}
+a:visited {
+	color: #000080;
+	text-decoration: none;
+}
+a:active {
+	color: #000080;
+	text-decoration: none;
+}
+.STYLE56 {font-size: 15px; color: #FFFFFF;}
+UL {
+	FONT-SIZE: 10pt
+}
+.STYLE69 {font-size: 10pt; line-height: 20px; color: #009933}
+.STYLE76 {font-size: 14px; }
+.STYLE79 {font-size: 15pt}
+.STYLE80 {
+	font-size: 24pt;
+	color: #3333ff;
+	font-weight: bold;
+	font-family: "黑体";
+}
+.STYLE81 {
+	font-size: 15px;
+	color: #000080;
+	line-height: 30px;
+}
+.STYLE84 {
+	font-size: 14px;
+	color: #000080;
+	line-height: 10px;
+}
+a:hover {
+	text-decoration: none;
+}
+.STYLE86 {
+	font-size: 18px;
+	font-family: "Times New Roman", Times, serif;
+}
+.STYLE87 {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #000080;
+}
+-->
+</style>
+</head>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 rightmargin="0" bottommargin="0" style="overflow-x:hidden ">
+    <form id="form1" runat="server">
+    <center>
+      <table width="1000" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td height="114" colspan="3"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="90" height="114"><img src="../../images/biaotou.gif" width="90" height="113"></td>
+      <td height="114"><table width="812" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="812" height="76"><img src="../images/tt.jpg"  width="812" height="75" /></td>
+        </tr>
+        <tr>
+          <td height="35" bgcolor="#008080"><table width="812" height="35" border="0" cellpadding="0" cellspacing="0" bgcolor="#008080">
+            <tr>
+              <td width="131" height="31" align="right"><span class="STYLE79 STYLE76"><a href="../../Login.aspx"target="_self" class="STYLE76"style="color: #FFFFFF">健康档案</a></span></td>
+              <td width="13"><img src="../images/poop.gif" width="13" height="20" /></td>
+              <td width="69" align="center"><span class="STYLE79 STYLE76"><a href="../yyzn.html" target="_blank" class="STYLE76"style="color: #FFFFFF">用药指南</a></span></td>
+              <td width="13"><img src="../images/poop.gif"  width="13" height="20" /></td>
+              <td width="68" align="center"><span class="STYLE79 STYLE76"><a href="../zyzy.html" target="_blank" class="STYLE76" style="color: #FFFFFF">中医中药</a></span></td>
+              <td width="13"><img src="../images/poop.gif" width="13" height="20" /></td>
+              <td width="68" align="center"><span class="STYLE79 STYLE76"><a href="../yxbk.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医学百科</a></span></td>
+              <td width="13"><img src="../images/poop.gif"  width="13" height="20" /></td>
+              <td width="64" align="center"><span class="STYLE79 STYLE76"><a href="../yyfg.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药法规</a></span></td>
+              <td width="13"><img src="../images/poop.gif"  width="13" height="20" /></td>
+              <td width="83" align="center"><span class="STYLE79 STYLE76"><a href="../yxtsg.html" target="_blank" class="STYLE76" style="color: #FFFFFF">医学图书馆</a></span></td>
+              <td width="13" ><img src="../images/poop.gif" width="13" height="20" /></td>
+              <td width="71" align="center"><span class="STYLE79 STYLE76"><a href="../yysd.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药书店</a></span></td>
+              <td width="13" ><img src="../images/poop.gif" width="13" height="20" /></td>
+              <td width="167" align="left"><span class="STYLE79 STYLE76"><a href="../jbmcsy.html" target="_blank"class="STYLE76"style="color: #ffffff">&nbsp;疾病名称索引</a></span></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+      <td width="90" height="114"><div align="center"><a href="../zgyyw.html"target="_blank"><img src="../../images/h.jpg" width="85" height="107" border="0" align="bottom" /></a></div></td>
+    </tr>
+  </table></td>
+</tr>
+<tr>
+    <td width="143" height="707"><table width="0" height="728" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="144" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56 "><a href="../cjjbsy.html" target="_blank" style="color: #FFFFFF" >常见疾病索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="183"><UL>
+            <li class="STYLE69">
+              <div align="left"><a href="../cjjbsy/gxy.html" target="_blank"style="color: #000080">高血压</a></div>
+            </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjjbsy/tnb.html" target="_blank"style="color: #000080">糖尿病</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"> <a href="../cjjbsy/gb.html" target="_blank"style="color: #000080">肝病</a></div>
+          </li>
+              <li class="STYLE69">
+                <div align="left"> <a href="../cjjbsy/sb.html" target="_blank"style="color: #000080">肾病</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="../cjjbsy/xnxgb.html" target="_blank"style="color: #000080">心脑血管病</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="../cjjbsy/bnz.html" target="_blank"style="color: #000080">白内障</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="../cjjbsy/az.html" target="_blank"style="color: #000080">癌症</a></div>
+              </li>
+              <li class="STYLE69">
+                <div align="left"><a href="../cjjbsy/azb.html" target="_blank"style="color: #000080">艾滋病</a></div>
+              </li>
+            <li class="STYLE69">
+              <div align="left"><a href="../cjjbsy.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../../images/gif163.gif"  width="16" height="16" align="top" /></div>
+            </li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../cjzzsy.html"target="_blank"style="color: #FFFFFF">常见症状索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="210"><UL>
+            <li class="STYLE69">
+              <div align="left"><a href="../cjzzsy/fr.html" target="_blank"style="color: #000080">发热</a></div>
+            </li>
+          <li class="STYLE69">
+              <div align="left"><a href="../cjzzsy/tt.html" target="_blank"style="color: #000080">头痛</a></div>
+          </li>
+          <li class="STYLE69">
+		  <div align="left"><a href="../cjzzsy/xt.html" target="_blank"style="color: #000080">胸痛</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjzzsy/ft.html" target="_blank"style="color: #000080">腹痛</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjzzsy/exyot.html" target="_blank"style="color: #000080">恶心与呕吐</a></div>
+          </div></li>
+          <li class="STYLE69">
+              <div align="left"><a href="../cjzzsy/ksykt.html" target="_blank"style="color: #000080">咳嗽与咯痰</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjzzsy/hxkn.html" target="_blank"style="color: #000080">呼吸困难</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="../cjzzsy/fx.html" target="_blank"style="color: #000080">腹泻</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjzzsy/bm.html" target="_blank"style="color: #000080">便秘</a></div>           
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="../cjzzsy.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../../images/gif163.gif" width="16" height="16" align="top" /></div>
+          </li>
+        </ul>            </td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../yyzk.html" target="_blank"style="color: #FFFFFF">医院专科</a></span></td>
+      </tr>
+      <tr>
+        <td height="167"><ul>
+            <li class="STYLE69">
+              <div align="left"><a href="nk.html" target="_blank"style="color: #000080">内科</a></div>
+            </li>
+          <li class="STYLE69">
+            <div align="left"><a href="wk.html" target="_blank"style="color: #000080">外科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="fck.html" target="_blank"style="color: #000080">妇产科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="ek.html" target="_blank"style="color: #000080">儿科</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="pfk.html"target="_blank"style="color: #000080">皮肤科</a></div></li>
+          <li class="STYLE69">
+            <div align="left"><a href="zlk.html" target="_blank"style="color: #000080">肿瘤科</a></div>
+          </li>
+          <li class="STYLE69">
+            <div align="left"><a href="crk.html" target="_blank"style="color: #000080">传染科</a></div>
+          </li>
+          <li class="STYLE69"><div align="left"><a href="yk.html"target="_blank"style="color: #000080">眼科</a></div></li>
+          <li class="STYLE69"><div align="left"><a href="ebyhk.html"target="_blank"style="color: #000080">耳鼻咽喉科</a></div></li>
+          <li class="STYLE69">
+            <div align="left"><a href="../yyzk.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../../images/gif163.gif"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul>            </td>
+      </tr>
+    </table></td>
+    <td width="641"><table width="641" height="610" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="641" height="610" align="center"><table width="625" border="0" cellpadding="0" cellspacing="0">
+          
+          <tr>
+            <td width="216" height="37" align="left"><div align="left"><span class="STYLE80"> 内 科</span></div></td>
+          </tr>
+          <tr>
+            <td height="2"><img src="../images/gif066.gif"width="615" height="2" align="bottom" /></td>
+          </tr>
+          <tr>
+            <td height="138"><span class="STYLE81"> &nbsp;&nbsp;&nbsp;&nbsp;内科学是临床医学领域中的一门学科，它在研究人体各系统疾病的诊断和防治中，以其治疗措施不具创伤性为特色。内科学的涉及面广，整体性强，其所阐述的内容在临床医学的理论和实践中具有普遍意义。所以，内科学又是临床医学中各学科的基础，并与它们存在着密切的联系。随着专业学科的形成和发展，内科学分化成许多分支专业学科，主要包括如下疾病：</span></td>
+          </tr>
+          <tr>
+            <td height="204"><table width="448" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td width="206"><ul>
+                    <li class="STYLE69"><span class="STYLE84"><a href="xhxtjb.html" target="_blank">消化系统疾病</a></span></li>
+                </ul></td>
+                <td width="215"><ul>
+                    <li class="STYLE69"><span class="STYLE84">循环系统疾病</span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">呼吸系统疾病 </span></li>
+                </ul></td>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">内分泌系统疾病 </span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">血液和造血系统疾病 </span></li>
+                </ul></td>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">泌尿系统疾病 </span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">风湿性疾病和骨关节病 </span></li>
+                </ul></td>
+                <td><ul>
+                    <li class="STYLE69" ><span class="STYLE84">神经系统疾病</span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">精神疾病</span></li>
+                </ul></td>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">营养代谢障碍性疾病 </span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">新陈代谢疾病</span></li>
+                </ul></td>
+                <td><ul>
+                    <li class="STYLE69"><span class="STYLE84">理化因素所致疾病</span></li>
+                </ul></td>
+              </tr>
+              <tr>
+                <td class="STYLE84"><ul>
+                    <li class="STYLE69"><span class="STYLE84">免疫性疾病 </span></li>
+                </ul></td>
+                <td class="STYLE84"><ul>
+                    <li class="STYLE69"><span class="STYLE84">感染性疾病 </span></li>
+                </ul></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td height="6"><hr /></td>
+          </tr
+          
+    >
+</table>
+</form>
+</body>
+</html>

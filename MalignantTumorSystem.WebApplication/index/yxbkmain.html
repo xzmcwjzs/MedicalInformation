@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<style type="text/css">
+<!--
+.STYLE69 {color: #FFFFFF}
+.bigfont {FONT-SIZE: 11pt
+}
+.midfon {FONT-SIZE: 31px
+}
+
+.normalfont {FONT-SIZE: 15px;
+	COLOR: #ffffff;
+	line-height: 25px;
+}
+.smallfont {FONT-SIZE: 9pt
+}
+.smallfont1 {color: #000088;
+}
+.STYLE115 {	font-size: 18pt;
+	color: #3333FF;
+}
+.STYLE116 {font-size: 1pt; font-weight: bold; color: #0066CC; }
+.STYLE74 {
+	font-size: 15px;
+	color: #000080;
+	line-height: 30px;
+}
+a:link {
+	color: #0000ff;
+	text-decoration: none;
+}
+a:visited {
+	color: #0000ff;
+	text-decoration: none;
+}
+a:active {
+	color: #FF9900;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+	color: #FF9900;
+}
+
+
+.STYLE165 {font-size: 10pt}
+.STYLE166 {FONT-SIZE: 11pt; font-weight: bold; }
+.STYLE168 {font-size: 10pt; font-weight: bold; }
+.STYLE172 {font-weight: bold}
+.STYLE177 {
+	font-size: 12pt;
+	font-weight: bold;
+}
+.STYLE181 {font-size: 10px}
+-->
+</style>
+</head>
+
+<body><table width="831"  border="0" align="left" cellpadding="0" cellspacing="0"oncontextmenu="return false" onselectstart="return false">
+  <tr>
+    <td width="7"><span class="STYLE69">3</span></td>
+    <td width="824"><table width="824" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="824" height="35" align="left" valign="bottom"><p class="STYLE116">&nbsp;<span class="STYLE115">医学百科</span></p></td>
+      </tr>
+      
+      <tr>
+        <td height="577"><table width="820" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td  height="10"><p><img src="gif066.gif" width="819" height="2" /></p>                </td>
+            </tr>
+            <tr >
+              <td  height="24" background="newimage/tt21.jpg"><div align="right" style="line-height:100%"><a href="../../page3.asp?id=40" class="newslink"></a></div></td>
+            </tr>
+            <tr>
+              <td height="142"><div class="fastnews3">
+                  <ul>
+                    <%
+'''''信息公告*5开始
+set rs=server.CreateObject("adodb.recordset")
+sql="select top 6 id,title,writetime from news where newstype=40 order by  writetime desc, sort desc,id desc"
+rs.open sql,conn,3,2
+while not rs.eof 
+	if(len(rs("title"))>26) then
+		response.Write("<li><span class=""timeSpan""><font color=""#666666"">"&year(rs("writetime"))&"-"&month(rs("writetime"))&"-"&day(rs("writetime"))&"</font></span><a href=""newsInfo3.asp?id="&rs("id")&""" class=""newslink"">&nbsp;"&left(rs("title"),24)&"...</a></li>")
+	else
+		response.Write("<li><span class=""timeSpan""><font color=""#666666"">"&year(rs("writetime"))&"-"&month(rs("writetime"))&"-"&day(rs("writetime"))&"</font></span><a href=""newsInfo3.asp?id="&rs("id")&""" class=""newslink"">&nbsp;"&left(rs("title"),26)&"</a></li>")
+	end if
+	rs.movenext
+wend
+'''信息公告结束
+%>
+                  </ul>
+              </div></td>
+            </tr>
+            <tr>
+              <td height="58" background="newimage/tt3.jpg">&nbsp;</td>
+            </tr>
+            
+            <tr>
+              <td><p><!-- SiteSearch Google -->
+<form method=get action="http://www.google.com/search">
+</form>
+<!-- SiteSearch Google --> </p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p></td>
+            </tr>
+            <tr>
+              <td height="51" valign="bottom"><div align="center"></div></td>
+            </tr>
+            <tr>
+              <td><table width="822" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                 
+                  <td width="822"align="left"></td>
+                </tr>
+              </table>                </td>
+            </tr>
+            <tr>
+              <td><table width="640" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr></tr>
+                </table>                </td>
+            </tr>
+            
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td><table width="820" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="820" height="1" align="left">&nbsp;</td>
+                  </tr>
+              </table></td>
+            </tr>
+        </table></td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+</table><div id="ShowAD" style="position:absolute;z-index:100;left: 813px;top: 700px;">
+<div style="width:135;height:18px;font-size:14px;font-weight:bold;text-align:left;cursor:hand;"><a href="ypjgmain.html#ml" class="STYLE181"></a><br>
+</div>
+</div>
+<script language="javascript">
+var bodyfrm = ( document.compatMode.toLowerCase()=="css1compat" ) ? document.documentElement : document.body;
+var adst = document.getElementById("ShowAD").style;
+adst.top = ( bodyfrm.clientHeight -530-22 ) + "px";
+adst.left = ( bodyfrm.clientWidth -155 ) + "px";
+function moveR() {
+adst.top = ( bodyfrm.scrollTop + bodyfrm.clientHeight - 341-22) + "px";
+adst.left = ( bodyfrm.scrollLeft + bodyfrm.clientWidth - 24 ) + "px";
+}
+setInterval("moveR();", 80);
+function closead()
+{
+adst.display='none';
+}
+</script>
+<div id="Content" style="height:900px;"></div>
+</body>
+</html>

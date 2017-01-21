@@ -1,0 +1,38 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ include file="ServicesTemplate.tt" #>
+
+<#
+    string currentPath = Path.GetDirectoryName(Host.TemplateFile);
+    string projectPath =currentPath.Substring(0, currentPath.IndexOf(@"\T4"));
+    string  servicesPath=Path.Combine(projectPath,"Services");
+    if(!Directory.Exists(servicesPath))
+    {
+        Directory.CreateDirectory(servicesPath);
+    }
+    string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\MalignantTumorSystem.BLL"));
+            string txtFilePath= Path.Combine(solutionPath, @"MalignantTumorSystem.Model\ClassNameTxt\ClassName.txt");  
+            string[] ClassNameList =new string[]{""};
+    using(StreamReader reader=new StreamReader(txtFilePath)){
+        string classNameStr=reader.ReadToEnd();
+        int index=classNameStr.LastIndexOf(',');
+        classNameStr=classNameStr.Substring(0,index);
+        ClassNameList= classNameStr.Split(',');
+    }
+    if(ClassNameList[0]!=""){
+        foreach(var className in ClassNameList){
+            ServicesTemplate config=new ServicesTemplate(className);
+            string serviceName=className+"Service";
+            string fileName=string.Format(@"{0}\{1}.cs",servicesPath,serviceName);
+             config.Output.Encoding=Encoding.UTF8;
+             //config.RenderToFile(fileName);
+             
+        }
+    } 
+#>

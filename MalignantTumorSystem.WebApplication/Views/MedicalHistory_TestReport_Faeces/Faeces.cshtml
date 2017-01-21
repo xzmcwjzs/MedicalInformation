@@ -1,0 +1,652 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>粪便检测</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MedicalHistory_TestReport_Faeces/Query.js"></script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 700px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style46 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 88px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .button {
+            width: 50px;
+        }
+
+        .auto-style178 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style179 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style180 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 183px;
+            text-align: right;
+        }
+
+        .auto-style184 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 83px;
+        }
+
+        .auto-style185 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 167px;
+        }
+
+        .auto-style188 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 352px;
+        }
+
+        .auto-style190 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 208px;
+        }
+
+        .auto-style192 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 208px;
+            text-align: left;
+        }
+
+        .auto-style193 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 147px;
+            text-align: left;
+        }
+
+        .auto-style195 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 61px;
+            text-align: center;
+        }
+
+        .auto-style197 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 70px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style199 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 102px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style200 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 99px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style202 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 181px;
+            text-align: left;
+        }
+
+        .auto-style211 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 17px;
+            width: 352px;
+            text-align: center;
+        }
+
+        .auto-style216 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 150px;
+        }
+
+        .auto-style217 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 205px;
+        }
+
+        .auto-style218 {
+            width: 34%;
+        }
+
+        .auto-style219 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 67px;
+            text-align: center;
+        }
+
+        .auto-style220 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            text-align: center;
+        }
+
+        #CheckCompany {
+            height: 25px;
+        }
+
+        .auto-style221 {
+            background-color: #e2ebfb;
+            width: 155px;
+        }
+
+        .auto-style222 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 67px;
+            text-align: center;
+        }
+
+        .auto-style223 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+            width: 130px;
+        }
+
+        .auto-style224 {
+            height: 30px;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="font-size: 12px;">
+    <form id="form1">
+        <div align="center"> 
+            <table border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">粪便检测 </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style199">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style200">
+                        <span class="ui-widget">
+                            <input type="text" style="padding-top: 2px; width: 140px; height: 20px; font-size: 12px;" id="name" name="name" />
+                        </span>
+                    </td>
+                    <td class="auto-style27">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style178">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style197">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style179">
+                        <input type="text" id="id_card_number" name="id_card_number" style="padding-top: 2px; height: 20px; width: 130px" />
+                    </td>
+                    <td class="auto-style46">年龄</td>
+                    <td class="auto-style223">
+                        <input type="text" id="age" name="age" style="padding-top: 2px; height: 20px; width: 120px" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style199">常住地址</td>
+                    <td class="auto-style4" colspan="5">
+                        <select style="width: 80px; height: 20px;" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 93px; height: 20px;" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px;height: 20px;" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 30%; height: 14px;padding-top:5px" />
+                        <input type="text" id="resident_id" name="resident_id" style="display:none" />
+                    </td>
+                    <td class="auto-style46" style="margin-right: 1px">手机号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style223">
+                        <input type="text" style="padding-top: 2px; width: 120px; height: 20px" id="phone" name="phone" />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td class="auto-style199">样本编号</td>
+                    <td class="auto-style200">
+                        <input type="text" id="numb" name="numb" style="padding-top: 2px; height: 25px; width: 140px; height: 20px;" />
+                    </td>
+                    <td class="auto-style27">送检医生</td>
+                    <td class="auto-style178">
+                        <input type="text" id="sjdoctor" name="sjdoctor" style="width: 100px; height: 20px; padding-top: 2px;" />
+                    </td>
+
+
+                    <td class="auto-style197">检测医生</td>
+                    <td class="auto-style179">
+                        <input type="text" id="jcdoctor" name="jcdoctor" style="width: 130px; height: 20px; padding-top: 2px;" />
+                    </td>
+
+                    <td class="auto-style46">报告医生</td>
+                    <td class="auto-style223">
+                        <input type="text" id="bgdoctor" name="bgdoctor" style="width: 120px; height: 20px; padding-top: 2px;" />
+                    </td>
+                </tr>
+            </table>
+            <div id="d1">
+                <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tab1">
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">№</td>
+                        <td class="auto-style185" style="margin: 0px auto">项目名称</td>
+                        <td class="auto-style216">检验结果</td>
+                        <td class="auto-style220">单位</td>
+                        <td class="auto-style211">&nbsp;&nbsp;参考区间</td>
+                        <td class="auto-style219">提示</td>
+                        <td class="auto-style217">备注</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">1</td>
+                        <td class="auto-style185">
+                            <select id="project1" name="project1" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select1" style="width: 150px;" name="Select1">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text1" name="Text1" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text2" name="Text2" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text3" name="Text3" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text4" name="Text4" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">2</td>
+                        <td class="auto-style185">
+                            <select id="project2" name="project2" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select2" style="width: 150px;" name="Select2">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text5" name="Text5" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text6" name="Text6" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text7" name="Text7" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text8" name="Text8" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">3</td>
+                        <td class="auto-style185">
+                            <select id="project3" name="project3" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select3" style="width: 150px;" name="Select3">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text9" name="Text9" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text10" name="Text10" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text11" name="Text11" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text12" name="Text12" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">4</td>
+                        <td class="auto-style185">
+                            <select id="project4" name="project4" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select4" style="width: 150px;" name="Select4">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text13" name="Text13" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text14" name="Text14" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text15" name="Text15" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text16" name="Text16" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">5</td>
+                        <td class="auto-style185">
+                            <select id="project5" name="project5" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select5" style="width: 150px;" name="Select5">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text17" name="Text17" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text18" name="Text18" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text19" name="Text19" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text20" name="Text20" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">6</td>
+                        <td class="auto-style185">
+                            <select id="project6" name="project6" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select6" style="width: 150px;" name="Select6">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text21" name="Text21" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text22" name="Text22" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text23" name="Text23" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text24" name="Text24" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">7</td>
+                        <td class="auto-style185">
+                            <select id="project7" name="project7" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select7" style="width: 150px;" name="Select7">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text25" name="Text25" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text26" name="Text26" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text27" name="Text27" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text28" name="Text28" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">8</td>
+                        <td class="auto-style185">
+                            <select id="project8" name="project8" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select8" style="width: 150px;" name="Select8">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text29" name="Text29" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text30" name="Text30" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text31" name="Text31" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text32" name="Text32" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">9</td>
+                        <td class="auto-style185">
+                            <select id="project9" name="project9" style="width: 180px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td style="background-color: #e2ebfb">
+                            <div>
+                                <select id="Select9" style="width: 150px;" name="Select9">
+                                    <option value="">==请选择==</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="Text33" name="Text33" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 60px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="Text34" name="Text34" style="text-align:center;overflow:hidden;border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;width:220px" />
+                        </td>
+
+                        <td class="auto-style222">
+                            <input type="text" id="Text35" name="Text35" style="text-align:center;border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 40px" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="Text36" name="Text36" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <table style="width: 100%;  border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr>
+                        <td colspan="1" style="background-color: #f1f3f5" class="auto-style218"></td>
+                        <td class="auto-style193"><span class="detailTitle" style="height: 25px; width: 78px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                        <td class="auto-style202">
+                            <span class="detailContent" style="height: 25px">
+                                <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 100px; height: 20px;" id="bgtime" name="bgtime" />
+                            </span>
+
+                        </td>
+                        <td class="auto-style180"><span class="detailTitle" style="height: 25px; width: 99px;">检测日期<span style="color: #ff0000">*</span></span></td>
+                        <td class="auto-style192">
+                            <span class="detailContent" style="height: 25px">
+                                <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 89px; height: 20px;" id="sjtime" name="sjtime" />
+                            </span>
+                        </td>
+                        <td class="auto-style221">建档日期:</td>
+                        <td>
+                            <input type="text" style="width: 89px; height: 20px;" id="create_time" name="create_time" value="@DateTime.Now.ToString("yyyy-MM-dd")" readonly="readonly"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="border-top: 1px solid black;">
+                            <div style="background-color: #f1f3f5;text-align:left">
+                                <a style="color:red;"> 注意:同一天的多份检验报告单请分别填写，分别提交。</a>
+                            </div>
+                            <div style="text-align:center;background-color: #f1f3f5;height: 30px;" id="d12">
+                                <input type="button" value="提交" onclick="sure()" style="width: 80px;  height: 30px; font-size: 20px; margin-top: 2px;" />
+                                <input type="button" value="重置" onclick="form1.reset();" style="width: 80px; height: 30px; font-size: 20px; margin-top: 2px;" />
+
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </form>
+</body>
+</html>

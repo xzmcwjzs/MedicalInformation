@@ -1,0 +1,743 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>吸烟与饮酒</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/Lifestyle_SmokeAndDrink/Control.js"></script>
+    <script src="~/Scripts/Lifestyle_SmokeAndDrink/Update.js"></script>
+    <style type="text/css">
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        input[type=checkbox] {
+            vertical-align: middle;
+        }
+
+        #cbdisability_yes_no input {
+            width: 20px;
+        }
+
+        #cbdrug_allergy_yes_no input {
+            width: 30px;
+        }
+
+        #cbldisability_type input {
+            width: 30px;
+        }
+
+        #cbldrug_allergy_type input {
+            width: 20px;
+        }
+
+        #rdlSex input {
+            width: 40px;
+        }
+
+        .detailAddTitle {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+        }
+
+        .detailRow {
+            color: #444444;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .detailTitle {
+            border: 1px white solid;
+        }
+
+        .auto-style10 {
+            color: Black;
+            text-align: right;
+            width: 8%;
+            border: 1px solid white;
+            padding: 3px;
+            background-color: #e2ebfb;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 13%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 7%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 70px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style38 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 670px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style40 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 70px;
+            border: 1px white solid;
+        }
+
+        .auto-style41 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 81px;
+            border: 1px white solid;
+        }
+
+        .auto-style42 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            /*width:750px;*/
+            border: 1px white solid;
+        }
+
+        .auto-style43 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 60px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style47 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 55px;
+            border: 1px white solid;
+        }
+
+        .auto-style50 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            width: 86px;
+            border: 1px white solid;
+        }
+
+        .auto-style51 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            width: 120px;
+            border: 1px white solid;
+        }
+
+        .auto-style52 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 72px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style54 {
+            text-align: left;
+            height: 25px;
+            width: 88px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style55 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 40px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style57 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 75px;
+            border: 1px white solid;
+        }
+
+        .auto-style58 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px white solid;
+        }
+
+        .auto-style59 {
+            text-align: left;
+            height: 25px;
+            width: 110px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div align="center" id="clear">
+            <table border="0" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td height="24" align="center" colspan="10" class="detailHead" style="border-left: 1px solid white; border-right: 1px solid white; border-top: 1px solid white">吸烟与饮酒</td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style27">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style1">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style29">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 75px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style1">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 17%; height: 14px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style29">邮政编码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="zipCode" name="zipCode" style="width: 90px;" />
+                    </td>
+                    <td class="auto-style29">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" valign="top" style="padding-top: 10px">吸烟史<span style="color: #ff0000">*</span></td>
+                    <td class="detailTitle" style="text-align: left;" colspan="9">
+                        <table style="width: 100%; border-right: 1px solid white" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="auto-style52">
+                                    <input type="checkbox" name="smoking" style="width: 20px" value="吸烟" />吸烟
+                                </td>
+                                <td class="auto-style41">开始吸烟年代</td>
+                                <td class="auto-style43">
+                                    <span style="position: relative;">
+                                        <select id="smoke_time" name="smoke_time" style="width: 60px" onchange="document.getElementById('times1').value=this.options[selectedIndex].text ">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <input id="times1" name="times1" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                    </span>
+                                </td>
+                                <td class="auto-style1">日吸烟量</td>
+                                <td class="auto-style38" colspan="3">
+                                    <input type="radio" name="day_smoke" value="1" /> <10支
+                                        <a style="padding-left: 2em"></a>
+                                        <input type="radio" name="day_smoke" value="2" />10~19支<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="day_smoke" value="3" />20~29支<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="day_smoke" value="4" />30~39支<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="day_smoke" value="5" />≥40支
+                                </td>
+                                <td class="auto-style40">烟龄</td>
+                                <td class="auto-style19">
+                                    <input type="text" style="width: 75px" id="smoke_age" name="smoke_age" readonly="readonly" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style52">
+                                    <input type="checkbox" name="smoked" style="width: 20px" value="已戒烟" />已戒烟
+                                </td>
+                                <td class="auto-style41">开始戒烟年代</td>
+                                <td class="auto-style43">
+                                    <span style="position: relative;">
+                                        <select id="smoked_time" name="smoked_time" style="width: 60px" onchange="document.getElementById('times2').value=this.options[selectedIndex].text ">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <input id="times2" name="times2" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                    </span>
+                                </td>
+                                <td class="auto-style1">何年复吸</td>
+                                <td class="auto-style28">
+                                    <span style="position: relative;">
+                                        <select id="smoke_again" name="smoke_again" style="width: 100px" onchange="document.getElementById('times3').value=this.options[selectedIndex].text ">
+                                            <option value="">==请选择==</option>
+                                        </select>
+                                        <input id="times3" name="times3" style="position: absolute; width: 80px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="==请选择==" />
+                                    </span>
+                                </td>
+                                <td class="auto-style29">戒烟时间</td>
+                                <td class="auto-style33">
+                                    <input type="text" style="width: 55px" id="smoked_long" name="smoked_long" readonly="readonly" />
+                                    <a style="padding-left: 3em">
+                                        <input type="checkbox" name="smoked_idea" value="1" />有戒烟意向
+                                    </a>
+                                </td>
+                                <td class="auto-style40">
+                                    <input type="checkbox" name="smoke_twice" value="1" />吸二手烟
+                                </td>
+
+                                <td class="auto-style19" style="text-align: right; padding-right: 2.2em">
+                                    <input type="radio" name="smoke" value="1" />从不吸烟
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10" valign="top" style="padding-top: 10px">饮酒史<span style="color: #ff0000">*</span></td>
+                    <td class="detailTitle" style="text-align: left;" colspan="9">
+                        <table style="width: 100%" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td class="auto-style52">
+                                    <input type="checkbox" name="drinking" style="width: 20px" value="饮酒" />饮酒
+                                </td>
+                                <td class="auto-style41">开始饮酒年代</td>
+                                <td class="auto-style43">
+                                    <span style="position: relative;">
+                                        <select id="drink_time" name="drink_time" style="width: 60px" onchange="document.getElementById('times4').value=this.options[selectedIndex].text ">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <input id="times4" name="times4" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                    </span>
+                                </td>
+                                <td class="auto-style47">酒龄</td>
+                                <td class="auto-style55">
+                                    <input type="text" id="drink_age" style="width: 40px" name="drink_age" readonly="readonly" />
+                                </td>
+                                <td class="auto-style57">戒酒年代</td>
+                                <td class="auto-style36">
+                                    <span style="position: relative;">
+                                        <select id="drunk_time" name="drunk_time" style="width: 60px" onchange="document.getElementById('times5').value=this.options[selectedIndex].text ">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <input id="times5" name="times5" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                    </span>
+                                </td>
+                                <td class="auto-style40">何年复饮</td>
+                                <td class="auto-style36">
+                                    <span style="position: relative;">
+                                        <select id="drink_again" name="drink_again" style="width: 60px" onchange="document.getElementById('times6').value=this.options[selectedIndex].text ">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <input id="times6" name="times6" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                    </span>
+                                </td>
+                                <td class="auto-style40">戒酒时间</td>
+                                <td class="auto-style36">
+                                    <input type="text" id="drunk_long" style="width: 60px" name="drunk_long" readonly="readonly" />
+                                </td>
+                                <td class="auto-style54" colspan="2" style="text-align: right; padding-right: 2.2em">
+                                    <input type="radio" name="drink" value="1" />从不饮酒
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"><a style="padding-left: 1.7em"></a>饮酒频率</td>
+                                <td class="auto-style41">
+                                    白酒
+                                </td>
+                                <td class="auto-style42" colspan="11">
+                                    <a style="color: #4e4a4a">（以50度计）</a>
+                                    <a style="padding-left: 0.5em"></a>
+                                    <input type="radio" name="frequency1" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency1" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency1" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency1" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency1" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    啤酒
+                                </td>
+                                <td class="auto-style42" colspan="11">
+                                    <a style="color: #4e4a4a">（以12度计）</a><a style="padding-left: 0.5em"></a>
+                                    <input type="radio" name="frequency2" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency2" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency2" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency2" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency2" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency2" value="6" />偶尔饮酒
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    红酒
+                                </td>
+                                <td class="auto-style42" colspan="11">
+                                    <a style="color: #4e4a4a">（以15度计）</a><a style="padding-left: 0.5em"></a>
+                                    <input type="radio" name="frequency3" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency3" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency3" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency3" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency3" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency3" value="6" />偶尔饮酒
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    黄酒
+                                </td>
+                                <td class="auto-style42" colspan="11">
+                                    <a style="color: #4e4a4a">（以15度计）</a><a style="padding-left: 0.5em"></a>
+                                    <input type="radio" name="frequency4" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency4" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency4" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency4" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency4" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency4" value="6" />偶尔饮酒
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    其他<input type="text" style="width: 52px" id="other" name="other" />
+                                </td>
+                                <td class="auto-style42" colspan="11">
+                                    酒精度<input type="text" id="other_du" name="other_du" style="width: 40px" />
+                                    <input type="radio" name="frequency5" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency5" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency5" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency5" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency5" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                    <input type="radio" name="frequency5" value="6" />偶尔饮酒
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"><a style="padding-left: 2.7em"></a>饮酒量</td>
+                                <td class="auto-style41">
+                                    白酒
+                                </td>
+                                <td colspan="11" class="auto-style42">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="2" />3-4两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="3" />5-6两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="4" />7-8两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="5" />1斤左右/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count1" value="6" />＞1斤/次
+                                            </td>
+                                            <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count1_dl" name="count1_dl" />当量</td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    啤酒
+                                </td>
+                                <td colspan="11" class="auto-style42">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="1" />＜半斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="2" />1斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="3" />1.5斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="4" />2斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="5" />3斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count2" value="6" /><a style="font-size: 20px;">≥</a>4斤/次
+                                            </td>
+                                            <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count2_dl" name="count2_dl" />当量</td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">红酒</td>
+                                <td colspan="11" class="auto-style42">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="2" />3-4两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="3" />5-6两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="4" />7-8两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="5" />1斤左右/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count3" value="6" />＞1斤/次
+                                            </td>
+                                            <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count3_dl" name="count3_dl" />当量</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    黄酒
+                                </td>
+                                <td colspan="11" class="auto-style42">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="1" />＜半斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="2" />1斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="3" />1.5斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="4" />2斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="5" />3斤/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count4" value="6" /><a style="font-size: 20px;">≥</a>4斤/次
+                                            </td>
+                                            <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count4_dl" name="count4_dl" />当量</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style52"></td>
+                                <td class="auto-style41">
+                                    其他<input type="text" id="other_wine" style="width: 52px" name="other_wine" />
+                                </td>
+                                <td colspan="11" class="auto-style42">
+                                    <table>
+                                        <tr>
+                                            <td class="auto-style50">酒精度<input type="text" id="wine_degree" style="width: 40px" name="wine_degree" /></td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count5" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count5" value="2" />3-5两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count5" value="3" />6-8两/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count5" value="4" />1斤左右/次
+                                            </td>
+                                            <td class="auto-style50">
+                                                <input type="radio" name="count5" value="5" />＞1斤/次
+                                            </td>
+                                            <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count5_dl" name="count5_dl" />当量</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style27"></td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style27"></td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style28"></td>
+                    <td class="auto-style58">填写人<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style59">
+                        <input type="text" id="fillIdentity" name="fillIdentity" style="padding-top: 2px; width: 90px" value="@ViewBag.real_name" readonly="readonly" />
+                    </td>
+                    <td class="auto-style1">登记日期<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style31">
+                        <input type="text" id="txtCreateTime" name="txtCreateTime" style="padding-top: 2px; width: 75px" value="@DateTime.Now.ToString("yyyy-MM-dd")" readonly="readonly" />
+                    </td>
+                </tr>
+
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(../../images/image/1.jpg); border: none; height: 22px; width: 91px;" onclick="sure()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(../../images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

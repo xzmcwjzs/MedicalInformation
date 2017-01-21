@@ -1,0 +1,115 @@
+﻿body {
+    margin:0 auto;
+    padding:0px;
+    font-size: 14px;
+    height: auto;
+    width:1000px;
+    text-align:center;
+    border:1px solid black;
+}
+
+.titles {
+    font-size:16px;
+}
+
+.table {
+    border:0px;
+    border-collapse:collapse; 
+    border-spacing:0;  
+}
+
+.auto-style1{
+    background-image: url('../../../images/admin_bg_1.jpg');
+    color: White;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    height: 26px;
+}
+
+.auto-style2 {
+    background-color: #e2ebfb;
+    padding: 3px;
+    text-align: right;
+    height: 25px;
+    width: 120px;
+    border: 1px solid white;
+}
+
+.auto-style3 {
+    background-color: #f1f3f5;
+    padding: 2px;
+    height: 30px;
+    width: 100px;
+    text-align: left;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.auto-style4 {
+    background-color: #f1f3f5;
+    height: 30px;
+    padding-left: 2px;
+    text-align: left;
+    border: 1px solid white;
+}
+.auto-style5 {
+    background-color: #f1f3f5;
+    height: 30px;
+    padding-left: 2px;
+    text-align: left;
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+input {
+    padding-top: 2px; 
+    height: 18px
+}
+
+.input1 {
+    width: 100px; 
+}
+
+.input2 {
+    width: 140px;
+}
+
+.input3{
+    width: 80px;
+}
+
+.address {
+    width: 99%;
+}
+
+input[type='radio'] {
+    width: 35px;
+    vertical-align:middle;
+}
+
+.bp {
+    width: 40px;
+}
+
+.bt1 {
+    cursor: pointer; 
+    background-image: url(../../../img/1.jpg); 
+    border: none; 
+    height: 22px; 
+    width: 91px;
+}
+
+.bt2 {
+    cursor: pointer; 
+    background-image: url(../../../img/2.jpg); 
+    border: none; 
+    height: 22px; 
+    width: 91px;
+}
+
+.div {
+    margin:10px auto;
+    text-align:center;
+}

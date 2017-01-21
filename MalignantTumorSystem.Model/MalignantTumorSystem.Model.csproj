@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B546131-C4BB-4069-815A-48906C34FD1B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MalignantTumorSystem.Model</RootNamespace>
+    <AssemblyName>MalignantTumorSystem.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBaseContext\MalignantTumorEntities1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MalignantTumorEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Chronic_disease_BloodGlucose.cs" />
+    <Compile Include="Entities\Chronic_disease_BloodGlucose_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_BloodPressure.cs" />
+    <Compile Include="Entities\Chronic_disease_BloodPressure_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Diagnostic.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_DiagnosticAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Humor.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_HumorAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_HumorProjectNames.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_HumorQuJian.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_HumorResult.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_HumorUnit.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Lung.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungProjectNames.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungQuJian.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungSexQuJian.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungTitle.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_LungUnit.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Medication.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_MedicationAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Medicine.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Operation.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_OperationAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Blood.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Blood_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_BMC.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_BMCAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_CSF.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_CSFAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Faeces.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_GeneDetection.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_GeneDetection_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_SCE.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_SCEAdd.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Sputum.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Urine.cs" />
+    <Compile Include="Entities\Chronic_disease_Comm_Testing_Urine_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_Constitution.cs" />
+    <Compile Include="Entities\Chronic_disease_DailyLife.cs" />
+    <Compile Include="Entities\Chronic_disease_Data_DiseaseName.cs" />
+    <Compile Include="Entities\Chronic_disease_Data_Names.cs" />
+    <Compile Include="Entities\Chronic_disease_Data_Results.cs" />
+    <Compile Include="Entities\Chronic_disease_Data_Sections.cs" />
+    <Compile Include="Entities\Chronic_disease_Data_Units.cs" />
+    <Compile Include="Entities\Chronic_disease_Diabetes_family.cs" />
+    <Compile Include="Entities\Chronic_disease_Diabetes_family_relation.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization_ConsultationRecord.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization_CourseRecord.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization_DischargeAbstract.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization_DischargeAbstract_Advice.cs" />
+    <Compile Include="Entities\Chronic_disease_Hospitalization_Expenses.cs" />
+    <Compile Include="Entities\Chronic_disease_Outpatient.cs" />
+    <Compile Include="Entities\Chronic_disease_Outpatient_AccessoryExamination.cs" />
+    <Compile Include="Entities\Chronic_disease_Outpatient_Judge.cs" />
+    <Compile Include="Entities\Chronic_disease_Outpatient_Prescription.cs" />
+    <Compile Include="Entities\Chronic_disease_PhysicalExercise.cs" />
+    <Compile Include="Entities\Chronic_disease_PhysicalExercise_Add.cs" />
+    <Compile Include="Entities\Chronic_disease_Pictures.cs" />
+    <Compile Include="Entities\Chronic_disease_SmokeAndDrink.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_CT.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_Heart.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_MRI.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_Stomach.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_US.cs" />
+    <Compile Include="Entities\Chronic_disease_Supplementary_Examination_X.cs" />
+    <Compile Include="Entities\Comm_EHR_Abstract.cs" />
+    <Compile Include="Entities\Comm_Platform_Worker.cs" />
+    <Compile Include="DataBaseContext\BackUp\MalignantTumorEntities.cs" />
+    <Compile Include="Entities\Comm_ResidentFile.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Change_Address.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Followup_Blood_Transfusion.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Followup_Disease.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Followup_Family_Disease.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Followup_Surgery.cs" />
+    <Compile Include="Entities\Comm_ResidentFile_Followup_Trauma.cs" />
+    <Compile Include="Entities\Comm_Tumour.cs" />
+    <Compile Include="Entities\ICD_10_old.cs" />
+    <Compile Include="Entities\ICD_9_old.cs" />
+    <Compile Include="Entities\MT_RoleInfo.cs" />
+    <Compile Include="Entities\MT_WorkerRoleInfo.cs" />
+    <Compile Include="Entities\Share_City.cs" />
+    <Compile Include="Entities\Share_CommunityInfo.cs" />
+    <Compile Include="Entities\Share_County.cs" />
+    <Compile Include="Entities\Share_DataDictionary.cs" />
+    <Compile Include="Entities\Share_Province.cs" />
+    <Compile Include="Entities\Share_Street.cs" />
+    <Compile Include="Entities\Test.cs" />
+    <Compile Include="Enum\EHRAbstractTypeEnum.cs" />
+    <Compile Include="Enum\EntityTypeEnum.cs" />
+    <Compile Include="Enum\UserNameEnum.cs" />
+    <Compile Include="Mapping\Chronic_disease_BloodGlucoseMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_BloodGlucose_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_BloodPressureMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_BloodPressure_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_DiagnosticAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_DiagnosticMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorProjectNamesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorQuJianMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorResultMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_HumorUnitMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungProjectNamesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungQuJianMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungSexQuJianMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungTitleMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_LungUnitMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_MedicationAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_MedicationMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_MedicineMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_OperationAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_OperationMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_BloodMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_Blood_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_BMCAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_BMCMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_CSFAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_CSFMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_FaecesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_GeneDetectionMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_GeneDetection_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_SCEAddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_SCEMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_SputumMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_UrineMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Comm_Testing_Urine_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_ConstitutionMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_DailyLifeMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Data_DiseaseNameMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Data_NamesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Data_ResultsMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Data_SectionsMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Data_UnitsMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Diabetes_familyMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Diabetes_family_relationMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_HospitalizationMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Hospitalization_ConsultationRecordMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Hospitalization_CourseRecordMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Hospitalization_DischargeAbstractMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Hospitalization_DischargeAbstract_AdviceMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Hospitalization_ExpensesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_OutpatientMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Outpatient_AccessoryExaminationMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Outpatient_JudgeMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Outpatient_PrescriptionMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_PhysicalExerciseMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_PhysicalExercise_AddMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_PicturesMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_SmokeAndDrinkMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_CTMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_HeartMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_MRIMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_StomachMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_USMap.cs" />
+    <Compile Include="Mapping\Chronic_disease_Supplementary_Examination_XMap.cs" />
+    <Compile Include="Mapping\Comm_EHR_AbstractMap.cs" />
+    <Compile Include="Mapping\Comm_Platform_WorkerMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFileMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Change_AddressMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Followup_Blood_TransfusionMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Followup_DiseaseMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Followup_Family_DiseaseMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Followup_SurgeryMap.cs" />
+    <Compile Include="Mapping\Comm_ResidentFile_Followup_TraumaMap.cs" />
+    <Compile Include="Mapping\Comm_TumourMap.cs" />
+    <Compile Include="Mapping\ICD_10_oldMap.cs" />
+    <Compile Include="Mapping\ICD_9_oldMap.cs" />
+    <Compile Include="Mapping\MT_RoleInfoMap.cs" />
+    <Compile Include="Mapping\MT_WorkerRoleInfoMap.cs" />
+    <Compile Include="Mapping\Share_CityMap.cs" />
+    <Compile Include="Mapping\Share_CommunityInfoMap.cs" />
+    <Compile Include="Mapping\Share_CountyMap.cs" />
+    <Compile Include="Mapping\Share_DataDictionaryMap.cs" />
+    <Compile Include="Mapping\Share_ProvinceMap.cs" />
+    <Compile Include="Mapping\Share_StreetMap.cs" />
+    <Compile Include="Mapping\TestMap.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchParam\BaseParam.cs" />
+    <Compile Include="SearchParam\BasicInformationParam.cs" />
+    <Compile Include="SearchParam\CommonParam.cs" />
+    <Compile Include="SearchParam\FamilyInformationParam.cs" />
+    <Compile Include="SearchParam\MedicalHistory_HospitalizationParam.cs" />
+    <Compile Include="SearchParam\MedicalHistory_OutpatientParam.cs" />
+    <Compile Include="ViewModel\BasicAndConstitutionViewModel.cs" />
+    <Compile Include="ViewModel\BasicInformationViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassNameTxt\ClassName.txt" />
+    <Content Include="ClassNameTxt\Common.txt" />
+    <Content Include="DataBaseContext\MalignantTumorEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MalignantTumorEntities1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

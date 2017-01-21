@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "DesignPattern";
+}
+
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script>
+    $(function () {
+        $("#Singleton").click(function () {
+            $.ajax({
+                cache: false,
+                async: false,
+                url: "/Home/DesignPattern",
+                type: "post",
+                data: { id: "1" },
+                dataType: "text",
+                success: function (data) { 
+                    $("#tr1").append("<td>"+data+"</td>");
+                }
+            });
+        })
+    })
+</script>
+
+<form id="form1">
+    <div style="width:100%">
+        <table border="1" style="width:100%">
+            <tr id="tr1">
+                <td><input type="button" id="Singleton" value="单例模式"/></td> 
+            </tr>
+        </table>
+    </div>
+</form>
+

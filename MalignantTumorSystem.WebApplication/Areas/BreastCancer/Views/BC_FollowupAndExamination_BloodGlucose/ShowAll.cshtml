@@ -1,0 +1,221 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全部监测</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/ECharts/echarts-all.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_BloodGlucose/ShowAll.js"></script> 
+    <script>
+        var id = "@ViewBag.id";
+    </script>
+
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style11 {
+            text-align: left;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        #values {
+            width: 85px;
+        }
+
+        .auto-style133 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 9%;
+            border: 1px white solid;
+        }
+
+        .auto-style134 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 7%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style135 {
+            text-align: left;
+            height: 25px;
+            width: 24%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style137 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 6%;
+            border: 1px white solid;
+        }
+
+        .auto-style138 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 30px;
+            border: 1px white solid;
+        }
+
+        .auto-style139 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 8%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style140 {
+            text-align: left;
+            height: 25px;
+            width: 95px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+    </style>
+
+</head>
+<body>
+    <div style="width: 100%">
+        <table  border="1" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable">
+            <tr>
+                <td class="auto-style1">姓<a style="padding-left: 2em"></a>名</td>
+                <td id="Td1" class="auto-style27"></td>
+                <td class="auto-style1">性<a style="padding-left: 2em"></a>别</td>
+                <td id="Td2" class="auto-style28"></td>
+                <td class="auto-style1">身份证号码</td>
+                <td id="Td3" class="auto-style28"></td>
+                <td class="auto-style1">出生日期</td>
+                <td id="Td4" class="auto-style33"></td>
+                <td class="auto-style1">年<a style="padding-left: 2em"></a>龄</td>
+                <td id="Td5" class="auto-style19"></td>
+            </tr>
+            <tr>
+                <td class="auto-style1">常住地址</td>
+                <td id="Td6" colspan="5" class="detailContent"></td>
+                <td class="auto-style1">手机号码</td>
+                <td id="Td8" class="auto-style33"></td>
+                <td class="auto-style1"></td>
+                <td id="Td7" class="auto-style19"></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table border="1" style="border-collapse: collapse; width: 100%;" cellpadding="0" cellspacing="1" class="detailTable">
+            <tr>
+                <td colspan="10" align="center" style="width:100%;border:1px solid white" id="tdDiv">
+                    <div id="container0" style="width:1000px;height:500px"></div>
+                    <br />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

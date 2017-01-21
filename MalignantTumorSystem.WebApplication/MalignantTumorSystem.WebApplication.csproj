@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E781B71-400C-4D26-A9EE-DAB921CED88A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MalignantTumorSystem.WebApplication</RootNamespace>
+    <AssemblyName>MalignantTumorSystem.WebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="COMMON">
+      <HintPath>..\packages\WebForm\COMMON.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAccess">
+      <HintPath>..\packages\WebForm\DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Framework">
+      <HintPath>..\packages\WebForm\Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\WebForm\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Lib\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebug">
+      <HintPath>..\packages\Lib\RouteDebug.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\BreastCancer\BreastCancerAreaRegistration.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BaseTopController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_BloodGlucoseController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_BloodPressureController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_ConstitutionController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_PEController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_SFJLController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_ClinicalExaminationController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MammographyController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_SelfCheckController.cs" />
+    <Compile Include="Common\ComunityCode\Address.cs" />
+    <Compile Include="Common\ExpressionHelper.cs" />
+    <Compile Include="Common\MyAttributes\MyExceptionAttribute.cs" />
+    <Compile Include="Common\MyAttributes\MyLoginAttribute.cs" />
+    <Compile Include="Common\ValidateCode.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BaseTopController.cs" />
+    <Compile Include="Controllers\BasicInformationController.cs" />
+    <Compile Include="Controllers\DataController.cs" />
+    <Compile Include="Controllers\FamilyInformationController.cs" />
+    <Compile Include="Controllers\FrameController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Lifestyle_EatingHabitsController.cs" />
+    <Compile Include="Controllers\Lifestyle_PhysicalExerciseController.cs" />
+    <Compile Include="Controllers\Lifestyle_SmokeAndDrinkController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_CTCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_HeartCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_LungCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_MRICheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_StomachCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_USCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_AccessoryExamination_XCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_ConsultationRecordController.cs" />
+    <Compile Include="Controllers\MedicalHistory_CourseRecordController.cs" />
+    <Compile Include="Controllers\MedicalHistory_DiagnosticInformationController.cs" />
+    <Compile Include="Controllers\MedicalHistory_DischargeAbstractController.cs" />
+    <Compile Include="Controllers\MedicalHistory_HospitalizationController.cs" />
+    <Compile Include="Controllers\MedicalHistory_HospitalizationExpensesController.cs" />
+    <Compile Include="Controllers\MedicalHistory_MedicationInformationController.cs" />
+    <Compile Include="Controllers\MedicalHistory_OperationRecordController.cs" />
+    <Compile Include="Controllers\MedicalHistory_OutpatientController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_BloodController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_BMCController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_CSFController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_FaecesController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_GeneDetectionController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_HumorCheckController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_SCEController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_SputumController.cs" />
+    <Compile Include="Controllers\MedicalHistory_TestReport_UrineController.cs" />
+    <Compile Include="Controllers\PCCSCController.cs" />
+    <Compile Include="Controllers\StaticsController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HtmlPagerHelper.cs" />
+    <Compile Include="Helpers\PageQuery.cs" />
+    <Compile Include="Helpers\PagerInfo.cs" />
+    <Compile Include="Helpers\PageSize.cs" />
+    <Compile Include="Ninject\BackUp\NinjectRegister.cs" />
+    <Compile Include="Ninject\NinjectDependencyResolverForMvc.cs" />
+    <Compile Include="Ninject\NinjectDependencyResolverForWebApi.cs" />
+    <Compile Include="Ninject\NinjectRegister.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NinjectRegister.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\Error.html" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CancerImages\10.png" />
+    <Content Include="Content\CancerImages\11.png" />
+    <Content Include="Content\CancerImages\12.png" />
+    <Content Include="Content\CancerImages\13.png" />
+    <Content Include="Content\CancerImages\14.png" />
+    <Content Include="Content\CancerImages\15.png" />
+    <Content Include="Content\CancerImages\16.png" />
+    <Content Include="Content\CancerImages\17.png" />
+    <Content Include="Content\CancerImages\18.png" />
+    <Content Include="Content\CancerImages\19.png" />
+    <Content Include="Content\CancerImages\20.png" />
+    <Content Include="Content\CancerImages\21.png" />
+    <Content Include="Content\CancerImages\22.png" />
+    <Content Include="Content\CancerImages\23.png" />
+    <Content Include="Content\CancerImages\24.png" />
+    <Content Include="Content\CancerImages\25.png" />
+    <Content Include="Content\CancerImages\26.png" />
+    <Content Include="Content\CancerImages\27.png" />
+    <Content Include="Content\CancerImages\28.png" />
+    <Content Include="Content\CancerImages\29.png" />
+    <Content Include="Content\CancerImages\30.png" />
+    <Content Include="Content\CancerImages\31.png" />
+    <Content Include="Content\CancerImages\32.png" />
+    <Content Include="Content\CancerImages\34.png" />
+    <Content Include="Content\CancerImages\35.png" />
+    <Content Include="Content\CancerImages\36.png" />
+    <Content Include="Content\CancerImages\37.png" />
+    <Content Include="Content\CancerImages\38.png" />
+    <Content Include="Content\CancerImages\39.png" />
+    <Content Include="Content\CancerImages\40.png" />
+    <Content Include="Content\CancerImages\41.png" />
+    <Content Include="Content\CancerImages\42.png" />
+    <Content Include="Content\CancerImages\8.png" />
+    <Content Include="Content\CancerImages\9.png" />
+    <Content Include="Content\Home\Index.css" />
+    <Content Include="Content\Main\Index.css" />
+    <Content Include="Content\MyCss\global.css" />
+    <Content Include="Content\MyCss\jquery-ui.css" />
+    <Content Include="Content\MyCss\StyleSheet.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Helpers\images\first.gif" />
+    <Content Include="Helpers\images\last.gif" />
+    <Content Include="Helpers\images\next.gif" />
+    <Content Include="Helpers\images\prev.gif" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\admin_bg_1.jpg" />
+    <Content Include="images\BeginUpload.gif" />
+    <Content Include="images\BeginUpload1.gif" />
+    <Content Include="images\CancelUpload.gif" />
+    <Content Include="images\CancelUpload1.gif" />
+    <Content Include="images\chongzhi.jpg" />
+    <Content Include="images\down3.gif" />
+    <Content Include="images\first.gif" />
+    <Content Include="images\gif-0784 拷贝.jpg" />
+    <Content Include="images\gif-0784 拷贝4.gif" />
+    <Content Include="images\gif-0895 拷贝.jpg" />
+    <Content Include="images\gif066.gif" />
+    <Content Include="images\head.jpg" />
+    <Content Include="images\head1.jpg" />
+    <Content Include="images\last.gif" />
+    <Content Include="images\next.gif" />
+    <Content Include="images\prev.gif" />
+    <Content Include="images\save.jpg" />
+    <Content Include="index\cjjbsy\az.html" />
+    <Content Include="index\cjjbsy\azb.html" />
+    <Content Include="index\cjjbsy\bnz.html" />
+    <Content Include="index\cjjbsy\bnzmain.html" />
+    <Content Include="index\cjjbsy\fpz.html" />
+    <Content Include="index\cjjbsy\fpzmain.html" />
+    <Content Include="index\cjjbsy\gb.html" />
+    <Content Include="index\cjjbsy\gxb.html" />
+    <Content Include="index\cjjbsy\gxy.html" />
+    <Content Include="index\cjjbsy\gy.html" />
+    <Content Include="index\cjjbsy\gymain.html" />
+    <Content Include="index\cjjbsy\sb.html" />
+    <Content Include="index\cjjbsy\sbzhz.html" />
+    <Content Include="index\cjjbsy\sbzhzmain.html" />
+    <Content Include="index\cjjbsy\tf.html" />
+    <Content Include="index\cjjbsy\tfmain.html" />
+    <Content Include="index\cjjbsy\tnb.html" />
+    <Content Include="index\cjjbsy\ttmain.html" />
+    <Content Include="index\cjjbsy\ttmain1.html" />
+    <Content Include="index\cjjbsy\Untitled-1.html" />
+    <Content Include="index\cjjbsy\UntitledFrame-2.html" />
+    <Content Include="index\cjjbsy\UntitledFrame-3.html" />
+    <Content Include="index\cjjbsy\wy.html" />
+    <Content Include="index\cjjbsy\wymain.html" />
+    <Content Include="index\cjjbsy\xjy.html" />
+    <Content Include="index\cjjbsy\xjymain.html" />
+    <Content Include="index\cjjbsy\xlsj.html" />
+    <Content Include="index\cjjbsy\xlsjmain.html" />
+    <Content Include="index\cjjbsy\xnxgb.html" />
+    <Content Include="index\cjjbsy\yfxga.html" />
+    <Content Include="index\cjjbsy\yfxgamain.html" />
+    <Content Include="Ninject\NinjectRegister.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NinjectRegister.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\DateDeal.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\Init.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\ShowAll.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\ShowAllDataBase.js" />
+    <Content Include="Scripts\BasicInformation\Query.js" />
+    <Content Include="Scripts\BasicInformation\Records_FirstPage.js" />
+    <Content Include="Scripts\BasicInformation\Update.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\BreastCancer\Views\web.config" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\BloodGlucose.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\Show.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\ShowAll.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\ShowAllDataBase.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodGlucose\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\BloodPressure.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\Show.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\ShowAll.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\ShowAllDataBase.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_BloodPressure\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Constitution.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Show.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_Constitution\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\PE.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\SFJL.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\SelfCheck.cshtml" />
+    <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Common\matchName.show.js" />
+    <Content Include="Scripts\Common\Photo.js" />
+    <Content Include="Scripts\ECharts\chart\bar.js" />
+    <Content Include="Scripts\ECharts\chart\chord.js" />
+    <Content Include="Scripts\ECharts\chart\eventRiver.js" />
+    <Content Include="Scripts\ECharts\chart\force.js" />
+    <Content Include="Scripts\ECharts\chart\funnel.js" />
+    <Content Include="Scripts\ECharts\chart\gauge.js" />
+    <Content Include="Scripts\ECharts\chart\k.js" />
+    <Content Include="Scripts\ECharts\chart\line.js" />
+    <Content Include="Scripts\ECharts\chart\map.js" />
+    <Content Include="Scripts\ECharts\chart\pie.js" />
+    <Content Include="Scripts\ECharts\chart\radar.js" />
+    <Content Include="Scripts\ECharts\chart\scatter.js" />
+    <Content Include="Scripts\ECharts\chart\tree.js" />
+    <Content Include="Scripts\ECharts\chart\treemap.js" />
+    <Content Include="Scripts\ECharts\chart\venn.js" />
+    <Content Include="Scripts\ECharts\chart\wordCloud.js" />
+    <Content Include="Scripts\ECharts\echarts-all.js" />
+    <Content Include="Scripts\ECharts\echarts.js" />
+    <Content Include="Scripts\FamilyInformation\Query.js" />
+    <Content Include="Scripts\FamilyInformation\Update.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.12.3.min.map" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.12.3.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.3.js" />
+    <Content Include="Scripts\jquery-1.12.3.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Lifestyle_EatingHabits\Query.js" />
+    <Content Include="Scripts\Lifestyle_EatingHabits\Update.js" />
+    <Content Include="Scripts\Lifestyle_PhysicalExercise\Query.js" />
+    <Content Include="Scripts\Lifestyle_PhysicalExercise\Update.js" />
+    <Content Include="Scripts\Lifestyle_SmokeAndDrink\Control.js" />
+    <Content Include="Scripts\Lifestyle_SmokeAndDrink\Query.js" />
+    <Content Include="Scripts\Lifestyle_SmokeAndDrink\Update.js" />
+    <Content Include="Scripts\Main\Index.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_CTCheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_CTCheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_CTCheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_HeartCheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_HeartCheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_HeartCheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_LungCheck\Query.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_MRICheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_MRICheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_MRICheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_StomachCheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_StomachCheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_StomachCheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_USCheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_USCheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_USCheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_XCheck\Show.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_XCheck\Submit.js" />
+    <Content Include="Scripts\MedicalHistory_AccessoryExamination_XCheck\View.js" />
+    <Content Include="Scripts\MedicalHistory_ConsultationRecord\Control.js" />
+    <Content Include="Scripts\MedicalHistory_ConsultationRecord\Record.js" />
+    <Content Include="Scripts\MedicalHistory_ConsultationRecord\Update.js" />
+    <Content Include="Scripts\MedicalHistory_CourseRecord\Control.js" />
+    <Content Include="Scripts\MedicalHistory_CourseRecord\Update.js" />
+    <Content Include="Scripts\MedicalHistory_DiagnosticInformation\Control.js" />
+    <Content Include="Scripts\MedicalHistory_DischargeAbstract\Control.js" />
+    <Content Include="Scripts\MedicalHistory_DischargeAbstract\Update.js" />
+    <Content Include="Scripts\MedicalHistory_HospitalizationExpenses\Control.js" />
+    <Content Include="Scripts\MedicalHistory_HospitalizationExpenses\Update.js" />
+    <Content Include="Scripts\MedicalHistory_Hospitalization\Control.js" />
+    <Content Include="Scripts\MedicalHistory_Hospitalization\Record.js" />
+    <Content Include="Scripts\MedicalHistory_Hospitalization\Update.js" />
+    <Content Include="Scripts\MedicalHistory_MedicationInformation\Control.js" />
+    <Content Include="Scripts\MedicalHistory_OperationRecord\Operate.js" />
+    <Content Include="Scripts\MedicalHistory_Outpatient\Control.js" />
+    <Content Include="Scripts\MedicalHistory_Outpatient\Record.js" />
+    <Content Include="Scripts\MedicalHistory_Outpatient\Update.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_Blood\Control.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_BMC\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_CSF\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_Faeces\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_GeneDetection\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_HumorCheck\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_SCE\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_Sputum\Query.js" />
+    <Content Include="Scripts\MedicalHistory_TestReport_Urine\Query.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\MyJs\autosize.js" />
+    <Content Include="Scripts\MyJs\datapattern.js" />
+    <Content Include="Scripts\MyJs\global.js" />
+    <Content Include="Scripts\MyJs\jquery-form.js" />
+    <Content Include="Scripts\MyJs\jquery.jqprint-0.3.js" />
+    <Content Include="Scripts\MyJs\jqueryAutocomplete\indicator.gif" />
+    <Content Include="Scripts\MyJs\jqueryAutocomplete\jquery.autocomplete.css" />
+    <Content Include="Scripts\MyJs\jqueryAutocomplete\jquery.autocomplete.js" />
+    <Content Include="Scripts\MyJs\jqueryAutocomplete\jquery.autocomplete.min.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\calendar.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\lang\en.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\MyJs\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\lang\en.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\lang\zh-cn.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\lang\zh-tw.js" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\readme.txt" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\datePicker.gif" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\default\datepicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\default\img.gif" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\WdatePicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\MyJs\My97DatePicker\开发包\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\PCCSC\pccsc.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\TopBody\Body.js" />
+    <Content Include="Scripts\TopBody\Top.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="UploadFiles\CT\201612\21\胸腺X图.png" />
+    <Content Include="UploadFiles\Heart\201612\21\胸腺X图.png" />
+    <Content Include="UploadFiles\Lung\201612\22\胸腺X图.png" />
+    <Content Include="UploadFiles\MRI\201612\21\胸腺X图.png" />
+    <Content Include="UploadFiles\Stomach\201612\21\胸腺X图.png" />
+    <Content Include="UploadFiles\US\201612\21\胸腺X图.png" />
+    <Content Include="UploadFiles\X\201612\20\胸腺X图.png" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BasicInformation\Body.cshtml" />
+    <Content Include="Views\BasicInformation\Left.cshtml" />
+    <Content Include="Views\BasicInformation\List.cshtml" />
+    <Content Include="Views\BasicInformation\Personal.cshtml" />
+    <Content Include="Views\BasicInformation\PersonalFrame.cshtml" />
+    <Content Include="Views\BasicInformation\Records.cshtml" />
+    <Content Include="Views\BasicInformation\Top.cshtml" />
+    <Content Include="Views\Data\Template.cshtml" />
+    <Content Include="Views\FamilyInformation\Body.cshtml" />
+    <Content Include="Views\FamilyInformation\FamilyManage.cshtml" />
+    <Content Include="Views\FamilyInformation\Frame.cshtml" />
+    <Content Include="Views\FamilyInformation\Left.cshtml" />
+    <Content Include="Views\FamilyInformation\List.cshtml" />
+    <Content Include="Views\FamilyInformation\Top.cshtml" />
+    <Content Include="Views\Frame\Alert.cshtml" />
+    <Content Include="Views\Frame\Index.cshtml" />
+    <Content Include="Views\Frame\LeftBreastCancer.cshtml" />
+    <Content Include="Views\Frame\LeftFrame.cshtml" />
+    <Content Include="Views\Frame\ListAlert.cshtml" />
+    <Content Include="Views\Frame\ListExpire.cshtml" />
+    <Content Include="Views\Frame\MainFrame.cshtml" />
+    <Content Include="Views\Frame\ModifyPassword.cshtml" />
+    <Content Include="Views\Frame\Overdue.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\Body.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\EatingHabits.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\Frame.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\Left.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\List.cshtml" />
+    <Content Include="Views\Lifestyle_EatingHabits\Top.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\Body.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\Frame.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\Left.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\List.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\PhysicalExercise.cshtml" />
+    <Content Include="Views\Lifestyle_PhysicalExercise\Top.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\Body.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\Frame.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\Left.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\List.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\SmokeAndDrink.cshtml" />
+    <Content Include="Views\Lifestyle_SmokeAndDrink\Top.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\CTCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_CTCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\HeartCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_HeartCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\LungCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_LungCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\MRICheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_MRICheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\StomachCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_StomachCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_USCheck\USCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_AccessoryExamination_XCheck\XCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\ConsultationRecord.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\List.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_ConsultationRecord\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\CourseRecord.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\List.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_CourseRecord\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\Diagnostic.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\List.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_DiagnosticInformation\view.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\DischargeAbstract.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\List.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_DischargeAbstract\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\EmergencyRecords.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\Hospitalization.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\List.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_Hospitalization\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\HospitalizationExpenses.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\List.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_HospitalizationExpenses\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\List.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\MedicationInformation.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_MedicationInformation\view.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\Detail.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\List.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\OperationRecord.cshtml" />
+    <Content Include="Views\MedicalHistory_OperationRecord\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\EmergencyRecords.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\List.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\ListAll.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\Outpatient.cshtml" />
+    <Content Include="Views\MedicalHistory_Outpatient\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Blood.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Blood\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\BMC.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_BMC\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\CSF.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_CSF\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Faeces.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Faeces\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\GeneDetection.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_GeneDetection\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\HumorCheck.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_HumorCheck\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\SCE.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_SCE\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Sputum.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Sputum\view.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Body.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Frame.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Left.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\List.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Photos.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Top.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\Urine.cshtml" />
+    <Content Include="Views\MedicalHistory_TestReport_Urine\view.cshtml" />
+    <Content Include="Views\Statics\Frame.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\BreastCancer\Models\" />
+    <Folder Include="Areas\BreastCancer\Views\Shared\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\" />
+    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\" />
+    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\" />
+    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\" />
+    <Folder Include="Scripts\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MalignantTumorSystem.ADO\MalignantTumorSystem.ADO.csproj">
+      <Project>{3cd866f8-59de-4097-8c35-ded26192ee5e}</Project>
+      <Name>MalignantTumorSystem.ADO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.BLL\MalignantTumorSystem.BLL.csproj">
+      <Project>{3bbb5e0b-70d3-4490-953e-5f6cdc4c7084}</Project>
+      <Name>MalignantTumorSystem.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.Common\MalignantTumorSystem.Common.csproj">
+      <Project>{d0749ec3-39fd-4e75-adf0-d4a9a2b49fa2}</Project>
+      <Name>MalignantTumorSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.DAL\MalignantTumorSystem.DAL.csproj">
+      <Project>{7a3a2255-f1ec-4327-b42a-a33466fbe3d4}</Project>
+      <Name>MalignantTumorSystem.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj">
+      <Project>{4bf77f5f-4a09-46a6-82b0-56124189b29d}</Project>
+      <Name>MalignantTumorSystem.DI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.IBLL\MalignantTumorSystem.IBLL.csproj">
+      <Project>{f5585894-3d8e-45ef-a4fa-89750793b2a4}</Project>
+      <Name>MalignantTumorSystem.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.IDAL\MalignantTumorSystem.IDAL.csproj">
+      <Project>{fad96e81-597c-4ee2-985c-38e3a72e83da}</Project>
+      <Name>MalignantTumorSystem.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.Model\MalignantTumorSystem.Model.csproj">
+      <Project>{1b546131-c4bb-4069-815a-48906c34fd1b}</Project>
+      <Name>MalignantTumorSystem.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>26167</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15106/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,41 @@
+﻿<#+
+// <copyright file="ServicesTemplate.tt" company="Microsoft">
+//  Copyright © Microsoft. All Rights Reserved.
+// </copyright>
+
+public class ServicesTemplate : CSharpTemplate
+{
+        public string _className;
+        public ServicesTemplate(string className){
+            _className=className;  
+        }
+	public override string TransformText()
+	{
+		 
+#>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks; 
+using System.Reflection;  
+using MalignantTumorSystem.DAL; 
+using MalignantTumorSystem.IBLL;
+using MalignantTumorSystem.Model;
+using MalignantTumorSystem.Model.Entities; 
+
+namespace MalignantTumorSystem.BLL
+{
+	 public partial class <#=_className#>Service:BaseService<<#=_className#>>,I<#=_className#>Service
+    {	
+		//public override void SetCurrentDal()
+        //{
+            //CurrentDal =DAL.DALFactory.AbstractFactory.Get<#=_className#>Dal();
+        //}
+	}  
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

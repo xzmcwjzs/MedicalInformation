@@ -1,0 +1,361 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>心电图检查</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MyJs/jquery-form.js"></script>
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_HeartCheck/Submit.js"></script>
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_HeartCheck/Show.js"></script>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 60%;
+            text-align: left;
+        }
+
+        .auto-style8 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 45px;
+            width: 80%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style53 {
+            border-right: 1px solid white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: medium;
+        }
+
+        .auto-style54 {
+            background-color: #e2ebfb;
+            border: 1px white solid;
+        }
+
+        .auto-style55 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 36%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style73 {
+            background-color: #f1f3f5;
+            width: 5%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style83 {
+            background-color: #f1f3f5;
+            width: 2%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style91 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style93 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 9%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style94 {
+            background-color: #f1f3f5;
+            width: 2%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style96 {
+            background-color: #f1f3f5;
+            width: 5%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style97 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 8%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style98 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" action="/MedicalHistory_AccessoryExamination_HeartCheck/AddAndUpdate?id=@ViewBag.id&worker=@ViewBag.worker&community_code=@ViewBag.community_code" method="post" enctype="multipart/form-data">
+        <div align="center">
+            <table  style="border-collapse: collapse; border: 1px white solid;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="12" class="detailHead" id="head">新增心电图检查报告单</td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">
+                        姓名<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style91">
+                        <input type="text" id="name" name="name" style="padding-top: 2px; width: 90px; height: 16px;" />
+                    </td>
+                    <td class="auto-style83"></td>
+
+                    <td class="auto-style93">
+                        性别<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style91">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style73"></td>
+                    <td class="auto-style98">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style91">
+                        <input type="text" id="id_card_number" name="id_card_number" style="padding-top: 2px; width: 130px; height: 16px;" />
+                    </td>
+                    <td class="auto-style96"></td>
+                    <td class="auto-style93">年龄</td>
+                    <td class="auto-style97">
+                        <input type="text" id="age" name="age" style="padding-top: 2px; height: 16px; width: 100px" readonly="true" />
+                    </td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">家庭常住地址</td>
+                    <td class="auto-style4" colspan="7">
+                        <select style="width: 80px; height: 20px;" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 88px; height: 20px;" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px;height: 20px;" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 19%; height: 14px;padding-top:5px" />
+                        <input type="text" id="resident_id" name="resident_id" style="display:none" />
+                    </td>
+                    <td class="auto-style96"></td>
+                    <td class="auto-style93">手机号码</td>
+                    <td class="auto-style97">
+                        <input type="text" id="phone" name="phone" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">
+                        记录导联
+                    </td>
+                    <td class="auto-style55" colspan="4">
+                        <input type="text" id="lead" name="lead" style="padding-top: 2px; width: 98%; height: 16px;" />
+                    </td>
+                    <td class="auto-style96"></td>
+
+                    <td class="auto-style98">检测体位</td>
+                    <td class="auto-style55" colspan="4">
+                        <input type="text" id="position" name="position" style="padding-top: 2px; width: 99%; height: 16px;" />
+                    </td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">送检医生</td>
+                    <td class="auto-style91">
+                        <input type="text" id="inspect_doctor" name="inspect_doctor" style="padding-top: 2px; width: 90px; height: 16px;" />
+                    </td>
+                    <td class="auto-style83"></td>
+
+                    <td class="auto-style93">检查医生</td>
+                    <td class="auto-style91">
+                        <input type="text" id="check_doctor" name="check_doctor" style="padding-top: 2px; width: 130px; height: 16px;" />
+                    </td>
+                    <td class="auto-style73"></td>
+                    <td class="auto-style98">报告医生</td>
+                    <td class="auto-style91">
+                        <input type="text" id="report_doctor" name="report_doctor" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                    <td class="auto-style96"></td>
+                    <td class="auto-style93"></td>
+                    <td class="auto-style97"></td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">心节律</td>
+                    <td class="auto-style91">
+                        <input type="text" id="cardiac" name="cardiac" style="padding-top: 2px; width: 90px; height: 16px;" />
+                    </td>
+                    <td class="auto-style83"></td>
+
+                    <td class="auto-style93">心房律</td>
+                    <td class="auto-style91">
+                        <input type="text" id="atrial" name="atrial" style="padding-top: 2px; width: 75px; height: 16px;" />
+                    </td>
+                    <td class="auto-style73">次/分</td>
+                    <td class="auto-style98">心室律</td>
+                    <td class="auto-style91">
+                        <input type="text" id="ventricular" name="ventricular" style="padding-top: 2px; width: 75px; height: 16px;" />
+                    </td>
+                    <td class="auto-style96">次/分</td>
+                    <td class="auto-style93">心电轴</td>
+                    <td class="auto-style97">
+                        <input type="text" id="axis" name="axis" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">P-R间期</td>
+                    <td class="auto-style91">
+                        <input type="text" id="pr_interval" name="pr_interval" style="padding-top: 2px; width: 90px; height: 16px;" />
+                    </td>
+                    <td class="auto-style83">秒</td>
+
+                    <td class="auto-style93">QRS时限</td>
+                    <td class="auto-style91">
+                        <input type="text" id="qrs_time_limit" name="qrs_time_limit" style="padding-top: 2px; width: 75px; height: 16px;" />
+                    </td>
+                    <td class="auto-style73">秒</td>
+                    <td class="auto-style98">Q-T间期</td>
+                    <td class="auto-style91">
+                        <input type="text" id="qt_interval" name="qt_interval" style="padding-top: 2px; width: 75px; height: 16px;" />
+                    </td>
+                    <td class="auto-style96">秒</td>
+                    <td class="auto-style93">正常极限为</td>
+                    <td class="auto-style97">
+                        <input type="text" id="limit" name="limit" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                    <td class="auto-style94">秒</td>
+                </tr>
+
+                <tr>
+
+                    <td class="auto-style53">P</td>
+                    <td colspan="11" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="p" name="p"></textarea>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">QRS</td>
+                    <td colspan="11" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="qrs" name="qrs"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">ST</td>
+                    <td colspan="11" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="st" name="st"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">T</td>
+                    <td colspan="11" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="t" name="t"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">检查图像</td>
+                    <td colspan="11" class="auto-style8">
+                        图像01<input type="file" name="jctx1" id="jctx1" style="width: 120px;" />
+                        <a style="padding-left: 4em">图像02</a><input type="file" name="jctx2" id="jctx2" style="width: 120px;" />
+                        <a style="padding-left: 4em">图像03</a><input type="file" name="jctx3" id="jctx3" style="width: 120px;" />
+                        <a style="padding-left: 4em">图像04</a><input type="file" name="jctx4" id="jctx4" style="width: 120px;" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="auto-style53">结论及建议</td>
+                    <td colspan="11" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="suggest" name="suggest"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="auto-style54"></td>
+                    <td class="auto-style98"><span class="detailTitle" style="height: 25px; width: 78px;">送检日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style91">
+                        <span class="detailContent" style="height: 25px">
+                            <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 75px; height: 16px;" id="sjtime" name="sjtime" />
+                        </span>
+                    </td>
+                    <td class="auto-style96"></td>
+                    <td class="auto-style93"><span class="detailTitle" style="height: 25px; width: 74px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style97">
+                        <span class="detailContent" style="height: 25px">
+                            <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 75px; height: 16px;" id="bgtime" name="bgtime" />
+                        </span>
+                    </td>
+                    <td class="auto-style94"></td>
+                </tr>
+                <tr>
+                    <td colspan="12" class="auto-style54">
+                        <div style="text-align: center; padding-top: 5px; padding-bottom: 5px">
+                            <input type="submit" value="提交" class="button" id="save"/>
+                            <input type="button" value="重置" class="button" onclick="form1.reset();" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

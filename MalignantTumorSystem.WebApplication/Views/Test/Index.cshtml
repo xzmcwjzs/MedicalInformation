@@ -1,0 +1,121 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title> 
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script>
+        $(function () {
+            $("#addEF").click(function () {
+                $.ajax({
+                    cache: true,
+                    asycn: false,
+                    type: "post",
+                    url: "/Test/AddEF",
+                    dataType: "text", 
+                    success: function (data) {
+                        alert("成功");
+                        $("#view1").html(data);
+                    },
+                    error: function () {
+                        alert("系统繁忙，请联系管理员");
+                    }
+                });
+            });
+            $("#addRange").click(function () {
+                $.ajax({
+                    cache: true,
+                    asycn: false,
+                    type: "post",
+                    url: "/Test/AddRange",
+                    dataType: "text",
+                    success: function (data) {
+                        alert("成功");
+                        $("#view2").html(data);
+                    },
+                    error: function () {
+                        alert("系统繁忙，请联系管理员");
+                    }
+                });
+            });
+            $("#addBulk").click(function () {
+                $.ajax({
+                    cache: true,
+                    asycn: false,
+                    type: "post",
+                    url: "/Test/AddBulk",
+                    dataType: "text",
+                    success: function (data) {
+                        alert("成功");
+                        $("#view3").html(data);
+                    },
+                    error: function () {
+                        alert("系统繁忙，请联系管理员");
+                    }
+                });
+            }); 
+            $("#updateBulk").click(function () {
+                $.ajax({
+                    cache: true,
+                    asycn: false,
+                    type: "post",
+                    url: "/Test/UpdateBulk",
+                    dataType: "text",
+                    success: function (data) {
+                        alert("成功");
+                        $("#view4").html(data);
+                    },
+                    error: function () {
+                        alert("系统繁忙，请联系管理员");
+                    }
+                });
+            }); 
+            $("#deleteBulk").click(function () {
+                $.ajax({
+                    cache: true,
+                    asycn: false,
+                    type: "post",
+                    url: "/Test/DeleteBulk",
+                    dataType: "text",
+                    success: function (data) {
+                        alert("成功");
+                        $("#view5").html(data);
+                    },
+                    error: function () {
+                        alert("系统繁忙，请联系管理员");
+                    }
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+  <form id="form1">
+      <table>
+          <tr>
+              <td>
+                  <input type="button" id="addEF" name="addEF" value="测试数据的批量新增EF" />
+                  <input type="button" id="addRange" name="addRange" value="测试数据的批量新增AddRange" />
+                  <input type="button" id="addBulk" name="addBulk" value="测试数据的批量新增Bulk" />
+                  <input type="button" id="updateBulk" name="updateBulk" value="测试数据的批量更新Bulk" />
+                  <input type="button" id="deleteBulk" name="deleteBulk" value="测试数据的批量删除Bulk" />
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div id="view1" style="font-size:larger"> </div><br/> 
+                  <div id="view2" style="font-size:larger"> </div><br/>
+                  <div id="view3" style="font-size:larger"> </div><br/>
+                  <div id="view4" style="font-size:larger"> </div><br/>
+                  <div id="view5" style="font-size:larger"> </div><br/>
+              </td>
+          </tr>
+      </table>
+  </form>
+</body>
+</html>

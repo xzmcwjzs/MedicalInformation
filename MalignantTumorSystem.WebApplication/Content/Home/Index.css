@@ -1,0 +1,146 @@
+﻿body {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.border {
+    width: 1000px;
+    height: auto;
+    margin: 5px auto;
+    padding: 0px;
+}
+
+.top {
+    height: 110px;
+    width: 1000px;
+}
+
+.center {
+    width: 1000px;
+    height: auto;
+}
+
+.left {
+    margin: 5px 5px 0 0;
+    padding: 0px;
+    height: 520px;
+    width: 150px;
+    float: left;
+}
+
+.center {
+    width: 690px;
+    height: auto;
+    float: left;
+}
+
+.right {
+    margin: 5px 0px 0px 5px;
+    padding: 0px;
+    height: 520px;
+    width: 150px;
+    float: right;
+}
+
+
+
+.c_top {
+    clear: both;
+    width: 690px;
+    height: auto;
+    text-align: center;
+}
+
+    .c_top img {
+        margin: 5px;
+        width: 670px;
+    }
+
+.c_left {
+    /*clear:both;*/
+    width: 350px;
+    height: 120px;
+    float: left;
+}
+
+    .c_left ul {
+        height: 108px;
+        margin: 6px 0px;
+        padding-left:3em;
+    }
+
+        .c_left ul li {
+            list-style-type: none;
+            text-decoration: none;
+            height: 36px;
+            line-height: 36px;
+            padding-left: 3em;
+        }
+
+    .c_left input {
+        width: 100px;
+        height:20px;
+    }
+
+    .c_left img {
+        vertical-align: middle;
+    }
+
+.c_right {
+    width: 340px;
+    height: 120px;
+    float: right;
+}
+
+    .c_right ul li {
+        list-style-type: none;
+        /*padding-top: 7px;*/
+        color: #000080;
+        font-size: 14px;
+        height: 36px;
+        line-height: 36px;
+        width: 150px;
+        float: left;
+    }
+
+
+        .c_right ul li a {
+            text-decoration: none;
+        }
+
+.c_footer {
+    padding-left:2em;
+}
+
+.c_footer img {
+    margin-left: 1em;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.news_image img {
+    width: 690px;
+    height: 50px;
+}
+
+
+.footer {
+    margin: 5px;
+    width: 690px;
+    text-align: center;
+}
+
+p {
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    color: #000080;
+}
+
+    p a {
+        text-decoration: none;
+        cursor: pointer;
+    }

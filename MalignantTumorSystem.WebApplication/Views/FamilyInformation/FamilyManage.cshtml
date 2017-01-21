@@ -1,0 +1,333 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增家庭信息</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/FamilyInformation/Query.js"></script>
+    <script src="~/Scripts/FamilyInformation/Update.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 14px;
+            height: auto;
+        }
+
+        .auto-style117 {
+            background-image: url('../../images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .auto-style1 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 18px;
+            width: 80px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 100px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style37 {
+            background-color: #f1f3f5;
+            height: 30px;
+            padding-left: 2px;
+            text-align: left;
+            width: 620px;
+            border: 1px solid white;
+        }
+
+        .auto-style40 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 110px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style68 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 117px;
+            border: 1px solid white;
+        }
+
+        .auto-style72 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 120px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+
+        .auto-style100 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 18px;
+            width: 200px;
+            border: 1px solid white;
+        }
+
+        .auto-style118 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 120px;
+            border: 1px solid white;
+        }
+
+        .auto-style119 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 153px;
+            border: 1px solid white;
+        }
+
+        .auto-style120 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 200px;
+            border: 1px solid white;
+        }
+
+        .auto-style121 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 60px;
+            border: 1px solid white;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no"; 
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef">
+    <form id="form1">
+        <div style="text-align: center">
+            <table  border="1" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable" id="tab1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117" style="border-left:1px solid white;border-right:1px solid white;border-top:1px solid white">
+                        <a id="titles" style="font-size: 14px;">家庭信息登记</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style120">户主姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style36">
+                        <input type="text" style="padding-top: 2px; width: 100px; height: 18px" id="host_name" name="host_name" />
+                    </td>
+                    <td class="auto-style68">
+                        性别<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style72">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style119">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style40">
+                        <input type="text" id="id_card_number" style="padding-top: 2px; height: 18px; width: 140px;" name="id_card_number" />
+                    </td>
+                    <td class="auto-style119">手机号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style40">
+                        <input type="text" id="phone" style="padding-top: 2px; height: 18px; width: 110px; height: 18px;" name="phone" />
+                    </td>
+                    <td class="auto-style118">年龄</td>
+                    <td class="auto-style1">
+                        <input id="age" name="age" style="width: 80px; height: 18px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style120">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="7" class="auto-style37">
+
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 35.5%; height: 14px; padding-top: 5px" />
+                    </td>
+
+                    <td class="auto-style118">邮政编码<span style="color: #ff0000">*</span><input type="text" id="resident_id" name="resident_id" style="display:none" /></td>
+                    <td class="auto-style1"><input type="text" id="post_code" style="padding-top: 2px; height: 18px; width: 80px; height: 18px;" name="post_code" /></td>
+                </tr>
+                <tr>
+                    <td class="auto-style120">户主配偶姓名</td>
+                    <td class="auto-style36">
+                        <input type="text" id="spouse_name" style="padding-top: 2px; height: 18px; width: 100px; height: 18px;" name="spouse_name" />
+                    </td>
+                    <td class="auto-style68"></td>
+                    <td class="auto-style72"></td>
+                    <td class="auto-style119">身份证号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="spouse_idCard" style="padding-top: 2px; height: 18px; width: 140px" name="spouse_idCard" />
+                    </td>
+                    <td class="auto-style119">手机号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="spouse_phone" style="padding-top: 2px; height: 18px; width: 110px" name="spouse_phone" />
+                    </td>
+                    <td class="auto-style118">年龄</td>
+                    <td class="auto-style1">
+                        <input type="text" id="spouse_birth_date" style="padding-top: 2px;display:none" name="spouse_birth_date" />
+                        <input type="text" id="spouse_age" style="padding-top: 2px; height: 18px; width: 80px" name="spouse_age" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style120">
+                        户主父亲姓名<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style36">
+                        <input type="text" id="hostFather_name" style="padding-top: 2px; height: 18px; width: 100px" name="hostFather_name" />
+                    </td>
+                    <td class="auto-style68"></td>
+                    <td class="auto-style72"></td>
+                    <td class="auto-style119">身份证号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="hostFather_idCard" style="padding-top: 2px; height: 18px; width: 140px" name="hostFather_idCard" />
+                    </td>
+                    <td class="auto-style119">手机号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="hostFather_phone" style="padding-top: 2px; height: 18px; width: 110px" name="hostFather_phone" />
+                    </td>
+                    <td class="auto-style118">年龄</td>
+                    <td class="auto-style1">
+                        <input type="text" id="hostFather_birth_date" style="padding-top: 2px;display:none" name="hostFather_birth_date" />
+                        <input type="text" id="hostFather_age" style="padding-top: 2px; height: 18px; width: 80px;" name="hostFather_age" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style120">户主母亲姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style36">
+                        <input type="text" id="hostMother_name" style="padding-top: 2px; height: 18px; width: 100px" name="hostMother_name" />
+                    </td>
+                    <td class="auto-style68"></td>
+                    <td class="auto-style72"></td>
+                    <td class="auto-style119">身份证号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="hostMother_idCard" style="padding-top: 2px; height: 18px; width: 140px" name="hostMother_idCard" />
+                    </td>
+                    <td class="auto-style119">手机号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="hostMother_phone" style="padding-top: 2px; height: 18px; width: 110px" name="hostMother_phone" />
+                    </td>
+                    <td class="auto-style118">年龄</td>
+                    <td class="auto-style1">
+                        <input type="text" id="hostMother_birth_date" style="padding-top: 2px;display:none" name="hostMother_birth_date" />
+                        <input type="text" id="hostMother_age" style="padding-top: 2px; height: 18px; width: 80px;" name="hostMother_age" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="tr1">
+                    <td class="auto-style100">
+                        户主的
+                        <span style="position: relative;">
+                            <select id="relative_0" style="width: 60px" onchange="added();document.getElementById('relation0').value=this.options[selectedIndex].text;">
+                               
+                                @*<select id="relation0" name="relation0" style="height: 20px; width: 60px;" onchange="added()">*@ 
+                                    <option value="">请选择</option>
+                                    <option value="1">长子</option>
+                                    <option value="2">长女</option>
+                                    <option value="3">次子</option>
+                                    <option value="4">次女</option>
+                                    <option value="5">三子</option>
+                                    <option value="6">三女</option>
+                                </select>
+                                <input id="relation0" name="relation0" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" />
+                        </span>姓名
+                    </td>
+                    <td class="auto-style36">
+                        <input type="text" id="relation_names0" name="relation_names0" style="height: 18px; padding-top: 2px;padding-left:1px; width: 100px;" />
+                    </td>
+                    <td class="auto-style68"></td>
+                    <td class="auto-style72"></td>
+                    <td class="auto-style119">身份证号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="relation_id_card0" style="padding-top: 2px; height: 18px; width: 140px;" name="relation_id_card0" />
+                    </td>
+                    <td class="auto-style119">手机号码</td>
+                    <td class="auto-style40">
+                        <input type="text" id="relation_phone0" style="padding-top: 2px; height: 18px; width: 110px" name="relation_phone0" />
+                    </td>
+                    <td class="auto-style118">年龄</td>
+                    <td class="auto-style1">
+                        <input type="text" id="relation_birth_date0" style="padding-top: 2px;display:none" name="relation_birth_date0" />
+                        <input type="text" id="relation_age0" style="padding-top: 2px; height: 18px; width: 80px;" name="relation_age0" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style120"></td>
+                    <td class="auto-style36"></td>
+                    <td class="auto-style68"></td>
+                    <td class="auto-style72"></td>
+                    <td class="auto-style119"></td>
+                    <td class="auto-style40"></td>
+                    <td class="auto-style119">填写人</td>
+                    <td class="auto-style40">
+                        <input type="text" id="input_person" style="padding-top: 2px; height: 18px; width: 110px" name="input_person" value="@ViewBag.real_name" readonly="readonly" />
+                    </td>
+                    <td class="auto-style118">登记日期</td>
+                    <td class="auto-style1">
+                        <input type="text" value="@DateTime.Now.ToString("yyyy-MM-dd")" style="width: 80px; padding-top:2px; height: 20px;" id="createTime" name="createTime" readonly="readonly"/>
+                    </td>
+                </tr>
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top:3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" onclick="sure()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table> 
+        </div>
+    </form> 
+</body>
+</html>

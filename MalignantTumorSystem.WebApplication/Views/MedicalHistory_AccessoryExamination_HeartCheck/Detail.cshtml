@@ -1,0 +1,234 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>心电图检查</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_HeartCheck/View.js"></script> 
+    <script>
+        var id = "@ViewBag.id";
+        var id_card = "@ViewBag.id_card";
+    </script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 50%;
+            text-align: left;
+        }
+
+        .auto-style8 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 45px;
+            width: 80%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style53 {
+            border-right: 1px solid white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 12%;
+            text-align: right;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: medium;
+        }
+
+        .auto-style54 {
+            background-color: #e2ebfb;
+            border: 1px white solid;
+        }
+
+        .auto-style55 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 36%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style97 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style98 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 13%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style99 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        <div align="center">
+            <table   style="border-collapse: collapse; border: 1px white solid;width:100%" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="8" class="detailHead" id="head">心电图检查报告单</td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">姓名</td>
+                    <td class="auto-style98" id="name"></td>
+
+
+                    <td class="auto-style97">性别</td>
+                    <td class="auto-style98" id="sex"></td>
+
+                    <td class="auto-style97">身份证号码</td>
+                    <td class="auto-style98" id="id_card_number"></td>
+
+                    <td class="auto-style97">年龄</td>
+                    <td class="auto-style99" id="age"></td>
+
+                </tr>
+                <tr>
+                    <td class="auto-style53">家庭常住地址</td>
+                    <td class="auto-style4" colspan="5" id="address"></td>
+
+                    <td class="auto-style97">手机号码</td>
+                    <td class="auto-style99" id="phone"></td>
+
+                </tr>
+                <tr>
+                    <td class="auto-style53">
+                        记录导联
+                    </td>
+                    <td class="auto-style55" colspan="3" id="lead"></td>
+
+
+                    <td class="auto-style97">检测体位</td>
+                    <td class="auto-style55" colspan="3" id="position"></td>
+
+                </tr>
+                <tr>
+                    <td class="auto-style53">送检医生</td>
+                    <td class="auto-style98" id="inspect_doctor"></td>
+
+
+                    <td class="auto-style97">检查医生</td>
+                    <td class="auto-style98" id="check_doctor"></td>
+
+                    <td class="auto-style97">报告医生</td>
+                    <td class="auto-style98" id="report_doctor"></td>
+                    <td class="auto-style97"></td>
+                    <td class="auto-style99"></td>
+
+                </tr>
+                <tr>
+                    <td class="auto-style53">心节律</td>
+                    <td class="auto-style98" id="cardiac"></td>
+
+
+                    <td class="auto-style97">心房律</td>
+                    <td class="auto-style98" id="atrial"></td>
+
+                    <td class="auto-style97">心室律</td>
+                    <td class="auto-style98" id="ventricular"></td>
+
+                    <td class="auto-style97">心电轴</td>
+                    <td class="auto-style99" id="axis"></td>
+
+                </tr>
+                <tr>
+                    <td class="auto-style53">P-R间期</td>
+                    <td class="auto-style98" id="pr_interval"></td>
+
+
+                    <td class="auto-style97">QRS时限</td>
+                    <td class="auto-style98" id="qrs_time_limit"></td>
+
+                    <td class="auto-style97">Q-T间期</td>
+                    <td class="auto-style98" id="qt_interval"></td>
+
+                    <td class="auto-style97">正常极限为</td>
+                    <td class="auto-style99" id="limit"></td>
+
+                </tr>
+
+                <tr>
+
+                    <td class="auto-style53">P</td>
+                    <td colspan="7" class="auto-style8" id="p"></td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">QRS</td>
+                    <td colspan="7" class="auto-style8" id="qrs"></td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">ST</td>
+                    <td colspan="7" class="auto-style8" id="st"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">T</td>
+                    <td colspan="7" class="auto-style8" id="t"></td>
+                </tr>
+                <tr id="imgs">
+                    <td class="auto-style53">检查图像</td>
+                    <td colspan="7" class="auto-style8" id="jctx1">
+                        <a id="a1"><input type="image" id="Image1" name="img1" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 4em" id="a2"><input type="image" id="Image2" name="img2" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 4em" id="a3"><input type="image" id="Image3" name="img3" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 4em" id="a4"><input type="image" id="Image4" name="img4" style="width:91px;height:85px;" /></a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="auto-style53">结论及建议</td>
+                    <td colspan="7" class="auto-style8" id="suggest"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="auto-style54"></td>
+                    <td class="auto-style97"><span class="detailTitle" style="height: 25px; width: 78px;">送检日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style98" id="sjtime"></td>
+
+                    <td class="auto-style97"><span class="detailTitle" style="height: 25px; width: 74px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style99" id="bgtime"></td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" class="auto-style54">
+                        <div style="text-align: center; padding-top: 5px; padding-bottom: 5px">
+                            <input type="button" value="关闭" class="button" onclick="window.close();" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

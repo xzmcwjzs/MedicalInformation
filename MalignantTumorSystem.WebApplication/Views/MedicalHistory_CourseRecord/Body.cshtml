@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>主体页</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/TopBody/Body.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+
+</head>
+<body onload="Load()">
+    <table cellspacing="0" cellpadding="0" width="100%" style="height:100%;">
+        <tr>
+            <td valign="top" class="auto-style1">
+                <iframe id="BoardTitle" style="display: none; visibility: inherit; width: 190px; height: 100%" src="@Url.Action("Left")" frameborder="0" scrolling="yes"></iframe>
+            </td>
+            <td>
+                <table cellspacing="0" cellpadding="0" border="0" style="height:100%; width:22px;">
+                    <tr>
+                        <td style="text-align:center;cursor: pointer;width:16px; height: 100%;background:url(/images/imgs/main1.gif) repeat; vertical-align:top; padding-top:30px;" onclick="SwitchQryBar()">
+                            <span style="display:none;" id="switchPoint" title="关闭/打开左栏">closed</span>
+                            <span id="direction" style="color:red; font-weight:bold; font-size:14px;">打<br />开<br />查<br />询</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 100%">
+                <div id="loadDiv" style="display:block;position:absolute;top:50%;left:40%;"><img src="/images/Loading/8.gif" /></div>
+                <iframe id="frmright" style="visibility: inherit; width: 100%; height: 100%" name="frmright" src="@Url.Action("List")" frameborder="0" scrolling="auto"></iframe>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

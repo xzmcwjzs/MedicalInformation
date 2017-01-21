@@ -1,0 +1,104 @@
+﻿body, html, div {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.main {
+    width: 90%;
+    height: 650px;
+    /*background-color:rgba(4, 12, 101, 0.83);*/
+    /*background-color: #4695f9;*/
+    /*background-color:royalblue;*/
+    background: #0000ff;
+    background: -moz-linear-gradient(top,  #0099ff 0%, #0000ff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0099ff), color-stop(100%,#0000ff));
+    background: -webkit-linear-gradient(top,  #0099ff 0%,#0000ff 100%);
+    background: -o-linear-gradient(top,  #0099ff 0%,#0000ff 100%);
+    background: -ms-linear-gradient(top,  #0099ff 0%,#0000ff 100%);
+    background: linear-gradient(to bottom,  #0099ff 0%,#0000ff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0099ff', endColorstr='#0000ff',GradientType=0 );
+    margin: 0 auto;
+    padding: 0;
+    border-radius:0px 0px 15px 15px;
+    behavior:url(ie-css3.htc);
+}
+
+.top {
+    width: 90%;
+    height: 100px;
+    margin-top: 25px;
+    margin-left: 30px;
+    float: left;
+}
+
+.top_left {
+    width: 10%;
+    height: 100px;
+    float: left;
+}
+
+.top_right {
+    width: 90%; 
+    height: 70px;
+    float: left;
+    padding-top: 30px;
+    font-size: 30pt;
+    text-align: left;
+    font-family: "黑体";
+    color: white;
+}
+
+.center {
+    width: 90%;
+    height: 450px;
+    margin-top: 30px;
+    margin-left: 5%;
+    float: left;
+    text-align: center;
+}
+
+.center_left {
+    width: 45%;
+    height: 400px;
+    float: left;
+}
+
+.center_right {
+    height: 430px;
+    float: left;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.31);
+    /*overflow-y:auto;*/
+    /*overflow-y:hidden;*/
+    border-radius:10px;
+}
+#CancerList
+{
+display:block;
+white-space:nowrap;
+width:100%;
+overflow:auto;
+}
+#CancerList ul
+{
+    margin-left:10%;
+    width:90%;
+    float:left;
+}
+#CancerList li
+{
+width:20%;
+height:45px;
+margin:5px;
+background:none;
+display:inline-block;
+list-style:none;
+float:left;
+}
+#CancerList li input
+{
+width:100%;
+height:100%; 
+font-size:18pt; 
+}

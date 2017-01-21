@@ -1,0 +1,1758 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>健康体检专用表</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MyJs/jquery-form.js"></script> 
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_PE/Control.js"></script>
+
+
+    <style type="text/css">
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .detailTitle {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 25px;
+            width: 8%;
+            /*padding-left:2em;*/
+            border: 1px white solid;
+        }
+
+        .auto-style10 {
+            color: Black;
+            text-align: right;
+            width: 8%;
+            border: 1px solid white;
+            padding: 3px;
+            background-color: #e2ebfb;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 13%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 7%;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 70px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style38 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 670px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style40 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 70px;
+            border: 1px white solid;
+        }
+
+        .auto-style41 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 81px;
+            border: 1px white solid;
+        }
+
+        .auto-style42 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            /*width:750px;*/
+            border: 1px white solid;
+        }
+
+        .auto-style43 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 60px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style47 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 55px;
+            border: 1px white solid;
+        }
+
+
+        .auto-style50 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            width: 86px;
+            border: 1px white solid;
+        }
+
+        .auto-style51 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            text-align: left;
+            width: 120px;
+            border: 1px white solid;
+        }
+
+        .auto-style52 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 72px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style54 {
+            text-align: left;
+            height: 25px;
+            width: 88px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style55 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 40px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style57 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 75px;
+            border: 1px white solid;
+        }
+
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        input[type=checkbox] {
+            vertical-align: middle;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+            border: 1px solid white;
+        }
+
+        .button {
+            width: 50px;
+        }
+
+        .auto-style211 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style221 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 20px;
+            border: 1px solid white;
+        }
+
+        .auto-style231 {
+            background-color: #f1f3f5;
+            height: 30px;
+            text-align: left;
+            width: 86%;
+            border: 1px solid white;
+        }
+
+        .auto-style246 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        input[type=checkbox] {
+            vertical-align: middle;
+        }
+
+        .auto-style247 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 9%;
+            border: 1px white solid;
+        }
+
+        .auto-style248 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 14%;
+            border: 1px white solid;
+        }
+
+        .auto-style249 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px white solid;
+        }
+    </style>
+
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div align="center">
+            <div>
+                <table  border="0" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable">
+                    <tr>
+                        <td align="center" colspan="10" class="auto-style117">健康体检专用表</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style247">姓名<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style28">
+                            <input type="radio" name="sex" value="01" checked="checked" />男
+                            <input type="radio" name="sex" value="02" />女
+                        </td>
+                        <td class="auto-style247">身份证号码<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style28">
+                            <input type="text" style="padding-top: 2px; width: 137px; height: 18px;" id="id_card_number" name="id_card_number" />
+                        </td>
+                        <td class="auto-style29">出生日期</td>
+                        <td class="auto-style33">
+                            <input type="text" style="padding-top: 2px; width: 90px; height: 18px;" id="birth_date" name="birth_date" readonly="readonly" />
+
+                        </td>
+                        <td class="auto-style29">年龄</td>
+                        <td class="auto-style19">
+                            <input id="age" name="age" style="width: 75px; height: 18px;" type="text" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr id="t6">
+                        <td class="auto-style1">国籍</td>
+                        <td class="auto-style27">
+                            <input type="text" id="nationality" name="nationality" value="中国" style="width: 40px; padding-top: 2px" />
+                        </td>
+                        <td class="auto-style1">民族<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style28">
+                            <select id="ddlNation" name="ddlNation" style="width: 90px">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td class="auto-style1">婚姻状况<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style28">
+                            <select id="ddlMarrigeState" name="ddlMarrigeState" style="width: 137px">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td class="auto-style29">文化程度<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style33">
+                            <select id="ddlEducationQualification" name="ddlEducationQualification" style="width: 90px">
+                                <option value="">==请选择==</option>
+                            </select>
+                        </td>
+                        <td class="auto-style29">血型</td>
+                        <td class="auto-style19">
+                            <select id="ddlABOBloodType" name="ddlABOBloodType" style="width: 75px">
+                                <option value="">=请选择=</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr id="t4">
+                        <td class="auto-style247">常住地址<span style="color: #ff0000">*</span></td>
+                        <td colspan="5" class="detailContent" style="height: 25px">
+                            <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <select style="width: 80px" id="ddlCity" name="ddlCity">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <input type="text" id="home_address" name="home_address" style="width: 17%; padding-top: 2px;" />
+                        </td>
+                        <td class="auto-style29">手机号码</td>
+                        <td class="auto-style33">
+                            <input type="text" id="phone" name="phone" style="width: 90px; height: 18px;" />
+                        </td>
+                        <td class="auto-style29"><input type="text" id="resident_id" name="resident_id" style="width: 90px; height: 18px;display:none" /></td>
+                        <td class="auto-style246"></td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style247">体检时间<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" name="time" id="time" style="width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style1">体检机构<span style="color: #ff0000">*</span></td>
+                        <td colspan="3" class="detailContent" style="height: 25px">
+                            <select style="width: 80px" id="ddlProvince1" name="ddlProvince1">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <select style="width: 80px" id="ddlCity1" name="ddlCity1">
+                                <option value="">=请选择=</option>
+                            </select>
+                            <input type="text" id="company" name="company" style="width: 52%; padding-top: 2px; height: 18px;" />
+                        </td>
+                        <td class="auto-style29"></td>
+                        <td class="auto-style33"></td>
+                        <td class="auto-style29"></td>
+                        <td class="auto-style19"></td>
+                    </tr>
+                </table>
+            </div>
+            <div style="border-bottom: 1px solid black; width: 98%; height: 5px;"></div>
+            <div>
+                <table width="100%" border="0" style="border-collapse: collapse;" cellpadding="0" cellspacing="1" class="detailTable">
+                    <tr>
+                        <td class="detailTitle" colspan="10" style="text-align: left; font-weight: bold; height: 25px; background-color: #e2ebfb; padding-left: 2em">·问卷问诊</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style247">健康体检史</td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        首次体检时间<input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" name="first_pe_time" id="first_pe_time" style="width: 100px; height: 18px;" />
+                                        <a style="padding-left: 1em"></a>主要阳性发现<input type="text" id="found" name="found" style="height: 20px; width: 137px" />
+                                        <a style="padding-left: 2em"></a>跟踪管理处置情况<input type="text" id="disposal" name="disposal" style="height: 20px; width: 90px" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style1">工作单位</td>
+                        <td class="detailContent" colspan="9">
+                            <input type="text" style="padding-top: 2px; height: 18px; width: 175px" id="txtWorkUnit" name="txtWorkUnit" />
+                            <a style="padding-left: 3em"></a>工作工种
+                            <select id="ddlcraft" name="ddlcraft" style="width: 140px;">
+                                <option value="">==请选择==</option>
+                            </select>
+                            <a style="padding-left: 2em"></a>每周工作时间
+                            <input type="radio" name="work_time" value="1" />35-40小时
+                            <input type="radio" name="work_time" value="2" />＞40-45小时
+                            <input type="radio" name="work_time" value="3" />＞45-50小时
+                            <input type="radio" name="work_time" value="4" />＞50-55小时
+                            <input type="radio" name="work_time" value="5" />＞55小时
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            药物过敏史<span style="color: #ff0000">*</span>
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="2" />青霉素过敏<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="4" />链霉素过敏<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="6" />普鲁卡因过敏<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="1" />细胞色素C过敏<a style="padding-left: 0.9em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="5" />碘过敏<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="3" />磺胺过敏<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="8" />花粉过敏
+                                        <input type="checkbox" name="chGuoMin" style="width: 20px" value="7" />其他过敏
+                                        <input type="text" style="padding-top: 4px; width: 80px" id="GuoMin_Other" name="GuoMin_Other" />
+                                        <input type="radio" name="rdGuoMin" style="width: 20px;" value="无" />无过敏史
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            疾病史<span style="color: #ff0000">*</span>
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="02" />高血压<a style="padding-left: 3em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="03" />糖尿病<a style="padding-left: 3em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="06" />恶性肿瘤
+                                        <select id="zl" name="zl" style="width: 90px">
+                                            <option value="">==请选择==</option>
+                                        </select>
+                                        <a style="padding-left: 4.7em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="09" />结核病<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="04" />冠心病<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="07" />脑卒中<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisease" style="width: 20px" value="10" />其他疾病
+                                        <span class="ui-widget">
+                                            <input type="text" style="padding-top: 4px; width: 80px" id="Disease_Other" name="Disease_Other" />
+                                        </span>
+                                        <input type="radio" name="rddisease" style="width: 20px;" value="无" />无疾病史
+                                    </td>
+                                </tr>
+                                <tr style="display: none" id="tr1">
+                                    <td>
+                                        <select id="hy_classfy" name="hy_classfy" style="width: 80px">
+                                            <option value="">==请选择==</option>
+                                            <option value="01">Ⅰ级</option>
+                                            <option value="02">Ⅱ级</option>
+                                            <option value="03">Ⅲ级</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select id="dia_classfy" name="dia_classfy" style="width: 80px">
+                                            <option value="">==请选择==</option>
+                                            <option value="01">Ⅰ型</option>
+                                            <option value="02">Ⅱ型</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">手术史</td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr id="option_add1">
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <a>手术名称</a>
+                                        <input type="text" style="padding-top: 4px; width: 150px" id="option_name0" name="option_name0" onkeyup="added1()" />
+                                        <a style="padding-left: 2em">手术时间</a>
+                                        <input type="text" id="option_time0" name="option_time0" style="padding-top: 4px; width: 80px" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" />
+                                        <a style="padding-left: 2em">手术医院</a>
+                                        <input type="text" style="padding-top: 4px; width: 180px" id="option_hospital0" name="option_hospital0" />
+                                        <a style="padding-left: 2em">手术结果</a>
+
+                                        <span style="position: relative;">
+                                            <select id="option_change0" style="width: 88px" onchange="document.getElementById('option_result0').value=this.options[selectedIndex].text ">
+                                                <option value="">==请选择==</option>
+                                                <option value="1">治愈</option>
+                                                <option value="2">好转</option>
+                                                <option value="3">无效</option>
+                                                <option value="4">其他</option>
+                                            </select>
+                                            <input id="option_result0" name="option_result0" style="position: absolute; width: 68px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" />
+                                        </span>
+                                        <input type="radio" name="option" style="width: 20px;" value="无" />无手术史
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            外伤史
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr id="trauma_add1">
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <a>外伤名称</a>
+                                        <input type="text" style="padding-top: 4px; width: 150px" id="trauma_name0" name="trauma_name0" onkeyup="added2();" />
+                                        <a style="padding-left: 2em">外伤时间</a>
+                                        <input type="text" id="trauma_time0" name="trauma_time0" style="padding-top: 4px; width: 80px" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" />
+                                        <a style="padding-left: 2em">处理医院</a>
+                                        <input type="text" style="padding-top: 4px; width: 180px" id="deal_hospital0" name="deal_hospital0" />
+                                        <a style="padding-left: 2em">处理结果</a>
+                                        <span style="position: relative;">
+                                            <select id="trauma_change0" style="width: 88px" onchange="document.getElementById('deal_result0').value=this.options[selectedIndex].text ">
+                                                <option value="">==请选择==</option>
+                                                <option value="1">治愈</option>
+                                                <option value="2">好转</option>
+                                                <option value="3">无效</option>
+                                                <option value="4">其他</option>
+                                            </select>
+                                            <input id="deal_result0" name="deal_result0" style="position: absolute; width: 68px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" />
+                                        </span>
+                                        <input type="radio" name="trauma" style="width: 20px;" value="无" />无外伤史
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            输血史
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr id="blood_transfusion_add1">
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <a>输血原因</a>
+                                        <input type="text" style="padding-top: 4px; width: 150px" id="blood_transfusion_name0" name="blood_transfusion_name0" onkeyup="added3();" />
+                                        <a style="padding-left: 2em">输血时间</a>
+                                        <input type="text" id="blood_transfusion_time0" name="blood_transfusion_time0" style="padding-top: 4px; width: 80px" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" />
+                                        <a style="padding-left: 3em">输血量</a>
+                                        <input type="text" style="padding-top: 4px; width: 180px" id="blood_transfusion_amount0" name="blood_transfusion_amount0" />
+                                        <a style="padding-left: 2em">输血结果</a>
+                                        <span style="position: relative;">
+                                            <select id="blood_transfusion_change0" style="width: 88px" onchange="document.getElementById('blood_transfusion_result0').value=this.options[selectedIndex].text ">
+                                                <option value="">==请选择==</option>
+                                                <option value="1">治愈</option>
+                                                <option value="2">好转</option>
+                                                <option value="3">无效</option>
+                                                <option value="4">其他</option>
+                                            </select>
+                                            <input id="blood_transfusion_result0" name="blood_transfusion_result0" style="position: absolute; width: 68px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" />
+                                        </span>
+
+                                        <input type="radio" name="blood_transfusion" style="width: 20px;" value="无" />无输血史
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            家族遗传史<span style="color: #ff0000">*</span>
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr id="family_disease_add1">
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <span style="position: relative;">
+                                            <select id="chfamilydisease_change0" name="chfamilydisease_change0" style="width: 80px" onchange="added4();document.getElementById('relationship0').value=this.options[selectedIndex].text ">
+
+                                                <option value="">==请选择==</option>
+                                                <option value="01">祖父</option>
+                                                <option value="02">祖母</option>
+                                                <option value="03">父亲</option>
+                                                <option value="04">母亲</option>
+                                                <option value="05">兄弟</option>
+                                                <option value="06">姐妹</option>
+                                                <option value="07">儿子</option>
+                                                <option value="08">女儿</option>
+                                            </select>
+                                            <input id="relationship0" name="relationship0" onkeyup="added4()" style="position: absolute; width: 60px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" />
+                                        </span>
+                                        <a style="margin-left: 1em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="高血压" />高血压<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="糖尿病" />糖尿病<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="结核病" />结核病<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="冠心病" />冠心病<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="恶性肿瘤" />恶性肿瘤<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="脑卒中" />脑卒中<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chfamilydisease0" style="width: 20px" value="其他疾病" />其他疾病
+                                        <input type="text" style="padding-top: 4px; width: 100px" id="family_other_disease0" name="family_other_disease0" />
+                                        <a style="float: right; text-align: right">
+                                            <input type="radio" name="rdfamily_disease" style="width: 20px;" value="无" />无家族遗传史
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" style="text-align: right; padding-left: 5px;">
+                            残疾情况<span style="color: #ff0000">*</span>
+                        </td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="detailContent" style="height: 25px; width: 100%;">
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="06" />视力残疾<a style="padding-left: 2em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="02" />听力残疾<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="03" />言语残疾<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="04" />上肢残疾<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="09" />下肢残疾<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="05" />智力残疾<a style="padding-left: 1em"></a>
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="07" />精神残疾
+                                        <input type="checkbox" name="chdisability" style="width: 20px" value="08" />其他残疾
+                                        <input type="text" style="padding-top: 4px; width: 100px" id="disability_other" />
+                                        <a style="float: right; text-align: right; padding-right: 1em">
+                                            <input type="radio" name="rddisability" style="width: 20px;" value="无" />无残疾情况
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" valign="top" style="padding-top: 10px">吸烟史<span style="color: #ff0000">*</span></td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%; border-right: 1px solid white" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="auto-style52">
+                                        <input type="checkbox" name="smoking" style="width: 20px" value="吸烟" />吸烟
+                                    </td>
+                                    <td class="auto-style41">开始吸烟年代</td>
+                                    <td class="auto-style43">
+                                        <span style="position: relative;">
+                                            <select id="smoke_time" name="smoke_time" style="width: 60px" onchange="document.getElementById('times1').value=this.options[selectedIndex].text ">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input id="times1" name="times1" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style1">日吸烟量</td>
+                                    <td class="auto-style38" colspan="3">
+                                        <input type="radio" name="day_smoke" value="1" /><10支
+                                            <a style="padding-left: 2em"></a>
+                                            <input type="radio" name="day_smoke" value="2" />10~19支<a style="padding-left: 2em"></a>
+                                            <input type="radio" name="day_smoke" value="3" />20~29支<a style="padding-left: 2em"></a>
+                                            <input type="radio" name="day_smoke" value="4" />30~39支<a style="padding-left: 2em"></a>
+                                            <input type="radio" name="day_smoke" value="5" />≥40支
+                                    </td>
+                                    <td class="auto-style40">烟龄</td>
+                                    <td class="auto-style19">
+                                        <input type="text" style="width: 60px" id="smoke_age" name="smoke_age" readonly="readonly" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style52">
+                                        <input type="checkbox" name="smoked" style="width: 20px" value="已戒烟" />已戒烟
+                                    </td>
+                                    <td class="auto-style41">开始戒烟年代</td>
+                                    <td class="auto-style43">
+                                        <span style="position: relative;">
+                                            <select id="smoked_time" name="smoked_time" style="width: 60px" onchange="document.getElementById('times2').value=this.options[selectedIndex].text ">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input id="times2" name="times2" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style1">何年复吸</td>
+                                    <td class="auto-style28">
+                                        <span style="position: relative;">
+                                            <select id="smoke_again" name="smoke_again" style="width: 100px" onchange="document.getElementById('times3').value=this.options[selectedIndex].text ">
+                                                <option value="">==请选择==</option>
+                                            </select>
+                                            <input id="times3" name="times3" style="position: absolute; width: 80px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="==请选择==" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style29">戒烟时间</td>
+                                    <td class="auto-style33">
+                                        <input type="text" style="width: 55px" id="smoked_long" name="smoked_long" readonly="readonly" />
+
+                                        <a style="padding-left: 3em">
+                                            <input type="checkbox" name="smoked_idea" value="1" />有戒烟意向
+                                        </a>
+                                    </td>
+                                    <td class="auto-style40">
+                                        <input type="checkbox" name="smoke_twice" value="1" />吸二手烟
+
+                                    </td>
+
+                                    <td class="auto-style19" style="text-align: right; padding-right: 2.2em">
+                                        <input type="radio" name="smoke" value="1" />从不吸烟
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style10" valign="top" style="padding-top: 10px">饮酒史<span style="color: #ff0000">*</span></td>
+                        <td class="detailTitle" style="text-align: left;" colspan="9">
+                            <table style="width: 100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td class="auto-style36">
+                                        <input type="checkbox" name="drinking" style="width: 20px" value="饮酒" />饮酒
+                                    </td>
+                                    <td class="auto-style41">开始饮酒年代</td>
+                                    <td class="auto-style43">
+                                        <span style="position: relative;">
+                                            <select id="drink_time" name="drink_time" style="width: 60px" onchange="document.getElementById('times4').value=this.options[selectedIndex].text ">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input id="times4" name="times4" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style47">酒龄</td>
+                                    <td class="auto-style55">
+                                        <input type="text" id="drink_age" style="width: 40px" name="drink_age" readonly="readonly" />
+                                    </td>
+                                    <td class="auto-style57">戒酒年代</td>
+                                    <td class="auto-style36">
+                                        <span style="position: relative;">
+                                            <select id="drunk_time" name="drunk_time" style="width: 60px" onchange="document.getElementById('times5').value=this.options[selectedIndex].text ">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input id="times5" name="times5" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style40">何年复饮</td>
+                                    <td class="auto-style36">
+                                        <span style="position: relative;">
+                                            <select id="drink_again" name="drink_again" style="width: 60px" onchange="document.getElementById('times6').value=this.options[selectedIndex].text ">
+                                                <option value="">请选择</option>
+                                            </select>
+                                            <input id="times6" name="times6" style="position: absolute; width: 40px; height: 15px; left: 1px; top: 0px; border-bottom: 0px; border-right: 0px; border-left: 0px; border-top: 0px;" value="请选择" />
+                                        </span>
+                                    </td>
+                                    <td class="auto-style40">戒酒时间</td>
+                                    <td class="auto-style36">
+                                        <input type="text" id="drunk_long" style="width: 60px" name="drunk_long" readonly="readonly" />
+                                    </td>
+                                    <td class="auto-style54">
+                                        <input type="radio" name="drink" value="1" />从不饮酒
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"><a style="padding-left: 1.7em"></a>饮酒频率</td>
+                                    <td class="auto-style41">
+                                        白酒
+                                    </td>
+                                    <td class="auto-style42" colspan="11">
+                                        <a style="color: #4e4a4a">（以50度计）</a>
+                                        <a style="padding-left: 0.5em"></a>
+                                        <input type="radio" name="frequency1" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        啤酒
+                                    </td>
+                                    <td class="auto-style42" colspan="11">
+                                        <a style="color: #4e4a4a">（以12度计）</a><a style="padding-left: 0.5em"></a>
+                                        <input type="radio" name="frequency2" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency2" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency2" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency2" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency2" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        红酒
+                                    </td>
+                                    <td class="auto-style42" colspan="11">
+                                        <a style="color: #4e4a4a">（以15度计）</a><a style="padding-left: 0.5em"></a>
+                                        <input type="radio" name="frequency3" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency3" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency3" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency3" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency3" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        黄酒
+                                    </td>
+                                    <td class="auto-style42" colspan="11">
+                                        <a style="color: #4e4a4a">（以15度计）</a><a style="padding-left: 0.5em"></a>
+                                        <input type="radio" name="frequency4" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency4" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency4" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency4" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency4" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        其他<input type="text" style="width: 52px" id="other" name="other" />
+                                    </td>
+                                    <td class="auto-style42" colspan="11">
+                                        酒精度<input type="text" id="other_du" name="other_du" style="width: 40px" />
+                                        <input type="radio" name="frequency5" value="1" />每天1次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency5" value="2" />每天2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency5" value="3" />每周1-2次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency5" value="4" />每周3-4次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency5" value="5" />每周5-6次<a style="padding-left: 3em"></a>
+                                        <input type="radio" name="frequency1" value="6" />偶尔饮酒
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"><a style="padding-left: 2.7em"></a>饮酒量</td>
+                                    <td class="auto-style41">
+                                        白酒
+                                    </td>
+                                    <td colspan="11" class="auto-style42">
+                                        <table>
+                                            <tr>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="2" />3-4两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="3" />5-6两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="4" />7-8两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="5" />1斤左右/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count1" value="6" />＞1斤/次
+                                                </td>
+                                                <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count1_dl" name="count1_dl" />当量</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        啤酒
+                                    </td>
+                                    <td colspan="11" class="auto-style42">
+                                        <table>
+                                            <tr>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="1" />＜半斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="2" />1斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="3" />1.5斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="4" />2斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="5" />3斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count2" value="6" /><a style="font-size: 20px;">≥</a>4斤/次
+                                                </td>
+                                                <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count2_dl" name="count2_dl" />当量</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        红酒
+                                    </td>
+                                    <td colspan="11" class="auto-style42">
+                                        <table>
+                                            <tr>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="2" />3-4两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="3" />5-6两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="4" />7-8两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="5" />1斤左右/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count3" value="6" />＞1斤/次
+                                                </td>
+                                                <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count3_dl" name="count3_dl" />当量</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        黄酒
+                                    </td>
+                                    <td colspan="11" class="auto-style42">
+                                        <table>
+                                            <tr>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="1" />＜半斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="2" />1斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="3" />1.5斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="4" />2斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="5" />3斤/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count4" value="6" /><a style="font-size: 20px;">≥</a>4斤/次
+                                                </td>
+                                                <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count4_dl" name="count4_dl" />当量</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="auto-style36"></td>
+                                    <td class="auto-style41">
+                                        其他<input type="text" id="other_wine" style="width: 52px" name="other_wine" />
+                                    </td>
+                                    <td colspan="11" class="auto-style42">
+                                        <table>
+                                            <tr>
+                                                <td class="auto-style50">酒精度<input type="text" id="wine_degree" style="width: 40px" name="wine_degree" /></td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count5" value="1" /><a style="font-size: 20px;">≤</a>2两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count5" value="2" />3-5两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count5" value="3" />6-8两/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count5" value="4" />1斤左右/次
+                                                </td>
+                                                <td class="auto-style50">
+                                                    <input type="radio" name="count5" value="5" />＞1斤/次
+                                                </td>
+                                                <td class="auto-style51">相当于<input type="text" style="width: 52px; text-align: right" id="count5_dl" name="count5_dl" />当量</td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style1" rowspan="3" valign="top" style="padding-top: 5px">起居规律</td>
+                        <td class="auto-style27">起床时间</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="radio" name="morning" value="1" />5点之前<a style="padding-left: 5.5em"></a>
+                            <input type="radio" name="morning" value="2" />5-6点<a style="padding-left: 6em"></a>
+                            <input type="radio" name="morning" value="3" />6-7点<a style="padding-left: 6em"></a>
+                            <input type="radio" name="morning" value="4" />7-8点<a style="padding-left: 6em"></a>
+                            <input type="radio" name="morning" value="5" />8-9点<a style="padding-left: 7em"></a>
+                            <input type="radio" name="morning" value="6" />9点之后
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">午休时长</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="radio" name="noon" value="1" />小于20分钟<a style="padding-left: 4em"></a>
+                            <input type="radio" name="noon" value="2" />20-40分钟<a style="padding-left: 4em"></a>
+                            <input type="radio" name="noon" value="3" />40-60分钟<a style="padding-left: 4em"></a>
+                            <input type="radio" name="noon" value="4" />1-1.5小时<a style="padding-left: 4.2em"></a>
+                            <input type="radio" name="noon" value="5" />大于1.5小时<a style="padding-left: 4.1em"></a>
+                            <input type="radio" name="noon" value="6" />不休息
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">睡觉时间<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="radio" name="night" value="1" />21:30之前<a style="padding-left: 4.7em"></a>
+                            <input type="radio" name="night" value="2" />21:30-22点<a style="padding-left: 3.8em"></a>
+                            <input type="radio" name="night" value="3" />22点-22:30<a style="padding-left: 3.7em"></a>
+                            <input type="radio" name="night" value="4" />22:30-23点<a style="padding-left: 3.8em"></a>
+                            <input type="radio" name="night" value="5" />23点-24点<a style="padding-left: 5em"></a>
+                            <input type="radio" name="night" value="6" />24点以后
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style1" rowspan="20" valign="top" style="padding-top: 5px">饮食习惯</td>
+                        <td class="auto-style27">三餐定时<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style42" colspan="8">
+                            <table style="width: 100%">
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="law" value="1" checked="checked" />是
+                                        <input type="radio" name="law" value="2" />否
+                                    </td>
+                                    <td style="background-color: #e2ebfb; width: 35px">主食<span style="color: #ff0000">*</span></td>
+                                    <td>
+                                        <input type="radio" name="food" value="1" />大米<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="food" value="2" />面食<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="food" value="3" />豆谷<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="food" value="4" />蔬菜<a style="padding-left: 2em"></a>
+                                        <input type="radio" name="food" value="5" />水果
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style27">每日喜食</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="taste" value="1" />酸<a style="padding-left: 4em"></a>
+                            <input type="checkbox" name="taste" value="2" />甜<a style="padding-left: 4em"></a>
+                            <input type="checkbox" name="taste" value="3" />苦<a style="padding-left: 4em"></a>
+                            <input type="checkbox" name="taste" value="4" />辛辣<a style="padding-left: 4em"></a>
+                            <input type="checkbox" name="taste" value="5" />咸<a style="padding-left: 4em"></a>
+                            其他<input type="text" id="taste_other" name="taste_other" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">常用油盐</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="oil_salt" value="1" />橄榄油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="2" />葵花油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="3" />菜籽油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="4" />芝麻油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="5" />动物油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="6" />低钠盐<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="7" />无碘盐<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="8" />加碘盐<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="9" />醋<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="oil_salt" value="10" />酱<a style="padding-left: 1em"></a>
+                            其他<input type="text" id="oil_salt_other" name="oil_salt_other" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">油盐摄入量</td>
+                        <td class="auto-style42" colspan="9">
+                            <table style="width: 100%">
+                                <tr>
+                                    <td style="background-color: #e2ebfb; width: 65px">日摄盐量：</td>
+                                    <td>
+                                        <input type="radio" name="salt_eat" value="1" />＜6g
+                                        <input type="radio" name="salt_eat" value="2" />6-10g
+                                        <input type="radio" name="salt_eat" value="3" />＞10g
+                                    </td>
+                                    <td style="background-color: #e2ebfb; width: 65px">日摄油量：</td>
+                                    <td>
+                                        <input type="radio" name="oil_eat" value="1" />＜25g
+                                        <input type="radio" name="oil_eat" value="2" />25-50g
+                                        <input type="radio" name="oil_eat" value="3" />＞50g
+                                    </td>
+                                    <td style="background-color: #e2ebfb; width: 65px">日摄糖量：</td>
+                                    <td>
+                                        <input type="radio" name="sugar_eat" value="1" />＜25g
+                                        <input type="radio" name="sugar_eat" value="2" />25-50g
+                                        <input type="radio" name="sugar_eat" value="3" />＞50g
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style27">每日饮水</td>
+                        <td class="auto-style42" colspan="9">
+                            <table style="width: 100%">
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="water" value="1" />晨起饮水
+                                    </td>
+                                    <td style="background-color: #e2ebfb; width: 65px">日饮水量：</td>
+                                    <td>
+                                        <input type="radio" name="amount" value="1" />＜2.0L
+                                        <input type="radio" name="amount" value="2" />2.0-2.5L
+                                        <input type="radio" name="amount" value="3" />2.5-3.0L
+                                        <input type="radio" name="amount" value="4" />＞3.0L
+                                    </td>
+                                    <td style="background-color: #e2ebfb; width: 90px">饮水时间间隔：</td>
+                                    <td>
+                                        <input type="radio" name="time" value="1" />＜1小时
+                                        <input type="radio" name="time" value="2" />1-2小时
+                                        <input type="radio" name="time" value="3" />＞2小时
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常用饮料</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="drink" value="1" />白开水<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="drink" value="2" />矿泉水<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="drink" value="3" />纯净水<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="drink" value="4" />绿茶<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="drink" value="5" />红茶<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="drink" value="6" />咖啡<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="drink" value="7" />牛奶<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="drink" value="8" />酸奶<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="drink" value="9" />豆奶<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="drink" value="10" />可乐<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="drink" value="11" />雪碧<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="drink" value="12" />王老吉<a style="padding-left: 1em"></a>
+                            其他<input type="text" id="Text1" name="other" style="width: 50px" />
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常食水果</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="melon_fruit" value="1" />西瓜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="2" />梨<a style="padding-left: 3em"></a>
+                            <input type="checkbox" name="melon_fruit" value="3" />大枣<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="4" />桃<a style="padding-left: 3em"></a>
+                            <input type="checkbox" name="melon_fruit" value="5" />橘<a style="padding-left: 3em"></a>
+                            <input type="checkbox" name="melon_fruit" value="6" />金橘<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="7" />葡萄<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="8" />苹果<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="9" />香蕉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="10" />荔枝<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="melon_fruit" value="11" />枇杷<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="12" />核桃<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="13" />桂圆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="melon_fruit" value="14" />芒果<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="3" valign="top" style="padding-top: 6px">常食蔬菜</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="vegetables" value="1" />白菜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="2" />圆白菜<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="3" />扁豆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="4" />白萝卜<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="5" />胡萝卜<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="6" />芹菜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="7" />韭菜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="8" />木耳<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="9" />冬瓜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="10" />洋葱
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="vegetables" value="11" />生菜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="12" />卷心菜<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="13" />菜花<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="14" />黄瓜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="15" />苦瓜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="16" />番茄<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="17" />西葫芦<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="18" />魔芋<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="19" />莴笋<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="20" />芦笋
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="vegetables" value="21" />银耳<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="22" />黑木耳<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="23" />草菇<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="24" />金针菇<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="25" />猴头菇<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="vegetables" value="26" />香椿<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="vegetables" value="27" />豆芽<a style="padding-left: 2em"></a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">五谷杂粮</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="grain" value="1" />玉米<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="2" />小米<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="3" />黑米<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="4" />黄豆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="5" />绿豆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="6" />黑豆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="7" />红豆<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="8" />豇豆<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="grain" value="9" />花生<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="10" />芝麻<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="11" />大麦<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="12" />薏苡仁<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="grain" value="13" />燕麦<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="grain" value="14" />荞麦<a style="padding-left: 2em"></a>
+                            其他<input type="text" name="other_grain" id="other_grain" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">水产品</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="aquatic" value="1" />带鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="2" />鳗鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="3" />黄鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="4" />昌扁鱼<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="aquatic" value="5" />三文鱼<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="aquatic" value="6" />金枪鱼<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="aquatic" value="7" />牡蛎<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="8" />海参<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="9" />蛤蜊<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="10" />海带<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="aquatic" value="11" />紫菜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="12" />海虾<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="13" />河虾<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="14" />鲫鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="15" />鲢鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="16" />鲤鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="17" />青鱼<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="18" />黄鳝<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="aquatic" value="19" />甲鱼<a style="padding-left: 2em"></a>
+                            其他<input type="text" name="other_aquatic" id="other_aquatic" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27" rowspan="2" valign="top" style="padding-top: 6px">常食畜禽蛋</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="meat" value="1" />猪肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="2" />猪肝<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="3" />牛肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="4" />羊肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="5" />鸡蛋<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="6" />雀肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="7" />鹿肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="8" />兔肉<a style="padding-left: 2em"></a>
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="meat" value="9" />鹌鹑<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="10" />鸡肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="11" />鸭肉<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="meat" value="12" />驴肉<a style="padding-left: 2em"></a>
+                            其他<input type="text" name="other_meat" id="other_meat" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">常用保健品</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="health_products" value="1" />人参<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="health_products" value="2" />西洋参<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="health_products" value="3" />枸杞<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="health_products" value="4" />黄芪<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="health_products" value="5" />鱼油<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="health_products" value="6" />阿胶<a style="padding-left: 1em"></a>
+                            <input type="checkbox" name="health_products" value="7" />燕窝<a style="padding-left: 2em"></a>
+
+                            其他<input type="text" name="other_health_products" id="other_health_products" style="width: 50px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style27">其他饮食嗜好</td>
+                        <td class="auto-style42" colspan="8">
+                            <input type="checkbox" name="other_diet" value="1" />生姜<a style="padding-left: 2em"></a>
+                            <input type="checkbox" name="other_diet" value="2" />大蒜<a style="padding-left: 2em"></a>
+                            其他<input type="text" name="other_diet_other" id="other_diet_other" style="width: 50px" />
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="auto-style1" rowspan="18" valign="top" id="physical" style="padding-top: 10px">体育锻炼</td>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="run" id="run" />跑步
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week1" />1-2次
+                            <input type="radio" name="week1" />3-4次
+                            <input type="radio" name="week1" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time1" />15-30分钟
+                            <input type="radio" name="every_time1" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="cut_it" id="cut_it" />快走
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week2" />1-2次
+                            <input type="radio" name="week2" />3-4次
+                            <input type="radio" name="week2" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time2" />15-30分钟
+                            <input type="radio" name="every_time2" />＞30分钟
+                            <a style="padding-left: 2em">速度</a>
+                            <input type="radio" name="speed2" />＜100米/分钟
+                            <input type="radio" name="speed2" />100-130米/分钟
+                            <input type="radio" name="speed2" />＞130米/分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="by_bike" id="by_bike" />骑自行车
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week3" />1-2次
+                            <input type="radio" name="week3" />3-4次
+                            <input type="radio" name="week3" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time3" />15-30分钟
+                            <input type="radio" name="every_time3" />＞30分钟
+                            <a style="padding-left: 2em">速度</a>
+                            <input type="radio" name="speed3" />60-70蹬/分钟
+                            <input type="radio" name="speed3" />75-100蹬/分钟
+                            <input type="radio" name="speed3" />＞100蹬/分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="swim" id="swim" />游泳
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week4" />1-2次
+                            <input type="radio" name="week4" />3-4次
+                            <input type="radio" name="week4" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time4" />15-30分钟
+                            <input type="radio" name="every_time4" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="circuit" id="circuit" />健身操
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week5" />1-2次
+                            <input type="radio" name="week5" />3-4次
+                            <input type="radio" name="week5" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time5" />15-30分钟
+                            <input type="radio" name="every_time5" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="ping_pong" id="ping_pong" />乒乓球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week6" />1-2次
+                            <input type="radio" name="week6" />3-4次
+                            <input type="radio" name="week6" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time6" />15-30分钟
+                            <input type="radio" name="every_time6" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="badminton" id="badminton" />羽毛球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week7" />1-2次
+                            <input type="radio" name="week7" />3-4次
+                            <input type="radio" name="week7" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time7" />15-30分钟
+                            <input type="radio" name="every_time7" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="football" id="football" />足球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week8" />1-2次
+                            <input type="radio" name="week8" />3-4次
+                            <input type="radio" name="week8" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time8" />15-30分钟
+                            <input type="radio" name="every_time8" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="basketball" id="basketball" />篮球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week9" />1-2次
+                            <input type="radio" name="week9" />3-4次
+                            <input type="radio" name="week9" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time9" />15-30分钟
+                            <input type="radio" name="every_time9" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="tennis" id="tennis" />网球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week10" />1-2次
+                            <input type="radio" name="week10" />3-4次
+                            <input type="radio" name="week10" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time10" />15-30分钟
+                            <input type="radio" name="every_time10" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="baseball" id="baseball" />棒球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week11" />1-2次
+                            <input type="radio" name="week11" />3-4次
+                            <input type="radio" name="week11" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time11" />15-30分钟
+                            <input type="radio" name="every_time11" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="golf" id="golf" />高尔夫球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week12" />1-2次
+                            <input type="radio" name="week12" />3-4次
+                            <input type="radio" name="week12" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time12" />15-30分钟
+                            <input type="radio" name="every_time12" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="bowling" id="bowling" />保龄球
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week13" />1-2次
+                            <input type="radio" name="week13" />3-4次
+                            <input type="radio" name="week13" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time13" />15-30分钟
+                            <input type="radio" name="every_time13" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="shadowboxing" id="shadowboxing" />太极拳
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week14" />1-2次
+                            <input type="radio" name="week14" />3-4次
+                            <input type="radio" name="week14" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time14" />15-30分钟
+                            <input type="radio" name="every_time14" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="taekwondo" id="taekwondo" />跆拳道
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week15" />1-2次
+                            <input type="radio" name="week15" />3-4次
+                            <input type="radio" name="week15" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time15" />15-30分钟
+                            <input type="radio" name="every_time15" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="mountaineering" id="mountaineering" />登山
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week16" />1-2次
+                            <input type="radio" name="week16" />3-4次
+                            <input type="radio" name="week16" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time16" />15-30分钟
+                            <input type="radio" name="every_time16" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style2">
+                            <input type="checkbox" value="1" name="skip" id="skip" />跳绳
+                        </td>
+                        <td colspan="8" class="auto-style42">
+                            <a>每周</a>
+                            <input type="radio" name="week17" />1-2次
+                            <input type="radio" name="week17" />3-4次
+                            <input type="radio" name="week17" />5-6次
+                            <a style="padding-left: 3em">每次</a>
+                            <input type="radio" name="every_time17" />15-30分钟
+                            <input type="radio" name="every_time17" />＞30分钟
+                        </td>
+                    </tr>
+                    <tr id="tr2">
+                        <td class="auto-style2">其他<input type="text" id="physical_other0" name="physical_other0" style="width: 50px" onkeyup="added()" /></td>
+                        <td colspan="8" class="auto-style42">
+                            <a>频次</a>
+                            <input type="text" id="frequency0" name="frequency0" style="width: 150px" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="width: 98%;" align="right">
+                <table>
+                    <tr id="Tr4">
+                        <td colspan="10" style="height: 25px; padding-top: 3px;">
+                            <div style="margin-top: 8px;">
+                                <input type="button" style="cursor: pointer; background-image: url(../../images/image/4.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div style="border-bottom: 1px solid black; width: 98%; height: 5px;"></div>
+            <div>
+                <table width="100%" border="0" style="border-collapse: collapse;" cellpadding="0" cellspacing="1" class="detailTable">
+                    <tr>
+                        <td class="detailTitle" colspan="10" style="text-align: left; font-weight: bold; height: 25px; background-color: #e2ebfb; padding-left: 2em">·一般检查（免费）</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style249">体温（℃）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="t" type="text" name="t" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style249">脉搏（次/分）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="p" type="text" name="p" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style248">呼吸频率（次/分）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="r" type="text" name="r" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style29">血压(BP)</td>
+                        <td class="detailContent" colspan="3">
+                            <input type="text" id="ssy" style="height: 18px; width: 30px;" name="ssy" />/
+                            <input type="text" id="szy" style="height: 18px; width: 30px;" name="szy" />mmHg
+                            <a>（</a><input type="text" id="ssy1" style="height: 18px; width: 30px;" name="ssy1" />/
+                            <input type="text" id="szy1" style="height: 18px; width: 30px;" name="szy1" />kPa<a>）</a>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="auto-style249">身高（cm）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="height" type="text" name="height" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style249">体重（Kg）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="weight" type="text" name="weight" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style248">体质指数（BMI）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="bmi" type="text" name="bmi" style="padding-top: 2px; width: 100px; height: 18px;" readonly="readonly" />
+                        </td>
+                        <td class="auto-style29"></td>
+                        <td class="detailContent" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style249">腰围（cm）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="w" type="text" name="w" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style249">臀围（cm）<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="h" type="text" name="h" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style248">腰臀围比值<span style="color: #ff0000">*</span></td>
+                        <td class="auto-style27">
+                            <input id="w_h" type="text" name="w_h" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        </td>
+                        <td class="auto-style29"></td>
+                        <td class="detailContent" colspan="3"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <table>
+                    <tr id="last">
+                        <td colspan="10" style="height: 25px; padding-top: 3px;">
+                            <div style="text-align: center; margin-top: 8px;">
+                                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt2" />
+                                <a style="padding-left: 2em"></a>
+                                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

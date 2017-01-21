@@ -1,0 +1,1914 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>肺功能检查</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MyJs/jquery-form.js"></script> 
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_LungCheck/Query.js"></script>
+    
+    <script type="text/javascript">
+        var type1 = 'in_type_tongqi';
+        var type2 = 'in_type_huanqi';
+        var type3 = 'in_type_xiaoqidao';
+        var type4 = 'in_type_xueqi';
+
+         var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        $(function () {
+            $("#save").click(function () {
+                if ($("#name").val() == "") {
+                    alert("姓名不能为空！");
+                    return false;
+                }
+                if ($("#id_card_number").val() == "") {
+                    alert("身份证号码不能为空！");
+                    return false;
+                }
+                if ($("#ddlCommunity").val() == "") {
+                    alert("常住地址必须填写到社区、村或者居委会！");
+                    return false;
+                }
+                if ($("#phone").val() == "") {
+                    alert("手机号码不能为空！");
+                    return false;
+                }
+                if ($("#sjtime").val() == "") {
+                    alert("送检日期不能为空！");
+                    return false;
+                }
+                if ($("#bgtime").val() == "") {
+                    alert("报告日期不能为空！");
+                    return false;
+                }
+            })
+
+            $("#s").change(function () {
+                if ($("#s").val() == "通气功能检查") {
+                    $("#titles").html("新增通气功能检查报告单");
+                    document.getElementById("d1").style.display = "";
+                    document.getElementById("d2").style.display = "none";
+                    document.getElementById("d3").style.display = "none";
+                    document.getElementById("d4").style.display = "none";
+                    document.getElementById("d12").style.display = "";
+                    document.getElementById("d13").style.display = "none";
+                    $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type1,
+                function (data1) {
+                    dat1 = eval(data1);
+                    $("#ts1").empty();
+                    $("#ts1").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts2").empty();
+                    $("#ts2").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts3").empty();
+                    $("#ts3").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts4").empty();
+                    $("#ts4").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts5").empty();
+                    $("#ts5").append("<option value=" + "" + ">==请选择==</option>");
+                    if (dat1 != null) {
+                        for (var i = 0; i < dat1.length; i++) {
+                            $("#ts1").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts2").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts3").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts4").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts5").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                        }
+                    }
+                })
+                } else if ($("#s").val() == "换气功能检查") {
+                    $("#titles").html("新增换气功能检查报告单");
+                    document.getElementById("d2").style.display = "";
+                    document.getElementById("d1").style.display = "none";
+                    document.getElementById("d3").style.display = "none";
+                    document.getElementById("d4").style.display = "none";
+                    document.getElementById("d12").style.display = "";
+                    document.getElementById("d13").style.display = "none";
+                    $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type2,
+                    function (data2) {
+                        dat2 = eval(data2);
+                        $("#hs1").empty();
+                        $("#hs1").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#hs2").empty();
+                        $("#hs2").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#hs3").empty();
+                        $("#hs3").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#hs4").empty();
+                        $("#hs4").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#hs5").empty();
+                        $("#hs5").append("<option value=" + "" + ">==请选择==</option>");
+                        if (dat2 != null) {
+                            for (var i = 0; i < dat2.length; i++) {
+                                $("#hs1").append("<option value=" + dat2[i].name + ">" + dat2[i].name + "</option>");
+                                $("#hs2").append("<option value=" + dat2[i].name + ">" + dat2[i].name + "</option>");
+                                $("#hs3").append("<option value=" + dat2[i].name + ">" + dat2[i].name + "</option>");
+                                $("#hs4").append("<option value=" + dat2[i].name + ">" + dat2[i].name + "</option>");
+                                $("#hs5").append("<option value=" + dat2[i].name + ">" + dat2[i].name + "</option>");
+                            }
+                        }
+                    })
+                } else if ($("#s").val() == "小气道功能检查") {
+                    $("#titles").html("新增小气道功能检查报告单");
+                    document.getElementById("d3").style.display = "";
+                    document.getElementById("d1").style.display = "none";
+                    document.getElementById("d2").style.display = "none";
+                    document.getElementById("d4").style.display = "none";
+                    document.getElementById("d13").style.display = "";
+                    document.getElementById("d12").style.display = "none";
+                    $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type3,
+                   function (data3) {
+                       dat3 = eval(data3);
+                       $("#xq1").empty();
+                       $("#xq1").append("<option value=" + "" + ">==请选择==</option>");
+                       $("#xq2").empty();
+                       $("#xq2").append("<option value=" + "" + ">==请选择==</option>");
+                       $("#xq3").empty();
+                       $("#xq3").append("<option value=" + "" + ">==请选择==</option>");
+                       $("#xq4").empty();
+
+                       if (dat3 != null) {
+                           for (var i = 0; i < dat3.length; i++) {
+                               $("#xq1").append("<option value=" + dat3[i].name + ">" + dat3[i].name + "</option>");
+                               $("#xq2").append("<option value=" + dat3[i].name + ">" + dat3[i].name + "</option>");
+                               $("#xq3").append("<option value=" + dat3[i].name + ">" + dat3[i].name + "</option>");
+                           }
+                       }
+                   });
+                    $("#xq1").change(function () {
+                        if ($("#xq1").val() == "频率依赖性肺顺应性") {
+                            document.getElementById("d5").style.display = "none";
+                            document.getElementById("d6").style.display = "";
+                        } else {
+                            document.getElementById("d6").style.display = "none";
+                            document.getElementById("d5").style.display = "";
+                        }
+
+                    });
+                    $("#xq2").change(function () {
+                        if ($("#xq2").val() == "频率依赖性肺顺应性") {
+                            document.getElementById("d7").style.display = "none";
+                            document.getElementById("d8").style.display = "";
+                        } else {
+                            document.getElementById("d8").style.display = "none";
+                            document.getElementById("d7").style.display = "";
+                        }
+
+                    })
+                    $("#xq3").change(function () {
+                        if ($("#xq3").val() == "频率依赖性肺顺应性") {
+                            document.getElementById("d9").style.display = "none";
+                            document.getElementById("d10").style.display = "";
+                        } else {
+                            document.getElementById("d10").style.display = "none";
+                            document.getElementById("d9").style.display = "";
+                        }
+
+                    })
+                } else {
+                    $("#titles").html("新增血气分析和酸碱测定检查报告单");
+                    document.getElementById("d4").style.display = "";
+                    document.getElementById("d1").style.display = "none";
+                    document.getElementById("d2").style.display = "none";
+                    document.getElementById("d3").style.display = "none";
+                    document.getElementById("d12").style.display = "";
+                    document.getElementById("d13").style.display = "none";
+                    $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type4,
+                    function (data4) {
+                        dat4 = eval(data4);
+                        $("#xs1").empty();
+                        $("#xs1").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#xs2").empty();
+                        $("#xs2").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#xs3").empty();
+                        $("#xs3").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#xs4").empty();
+                        $("#xs4").append("<option value=" + "" + ">==请选择==</option>");
+                        $("#xs5").empty();
+                        $("#xs5").append("<option value=" + "" + ">==请选择==</option>");
+                        if (dat4 != null) {
+                            for (var i = 0; i < dat4.length; i++) {
+                                $("#xs1").append("<option value=" + dat4[i].name + ">" + dat4[i].name + "</option>");
+                                $("#xs2").append("<option value=" + dat4[i].name + ">" + dat4[i].name + "</option>");
+                                $("#xs3").append("<option value=" + dat4[i].name + ">" + dat4[i].name + "</option>");
+                                $("#xs4").append("<option value=" + dat4[i].name + ">" + dat4[i].name + "</option>");
+                                $("#xs5").append("<option value=" + dat4[i].name + ">" + dat4[i].name + "</option>");
+                            }
+                        }
+                    })
+                }
+            });
+
+            $("#form1").ajaxForm({
+                success: function (msgs) {
+                    var start = msgs.indexOf(">");
+                    if (start != -1) {
+                        var end = msgs.indexOf("<", start + 1);
+                        if (end != -1) {
+                            msgs = msgs.substring(start + 1, end);
+                        }
+                    }
+                    var msg = msgs.split(',');
+                    alert(msg[0]);
+                    window.close();
+                }
+            });
+            $.post("/MedicalHistory_AccessoryExamination_LungCheck/Show?id=" + id,
+          function (data) {
+              dts = eval(data);
+              if (dts != "") {
+                  $("#name").val(dts[0].names);
+                  $("input[name=" + "sex" + "][value=" + dts[0].sex + "]").attr("checked", "checked");
+                  $("#id_card_number").val(dts[0].id_card_number);
+                  var s = dts[0].id_card_number;
+                  if (dts[0].birth_date != "" && dts[0].birth_date != null) {
+                      var date = new Date(parseInt(dts[0].birth_date.replace("/Date(", "").replace(")/", ""), 10));
+                      var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                      var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                      var dates = new Date();
+                      var year = dates.getFullYear() - date.getFullYear();
+                      if (year > 0) {
+                          $("#age").val(year + "岁");
+                      } else if (year == 0) {
+                          var month = dates.getMonth() - a1;
+                          if (month > 0) {
+                              $("#age").val(month + "月");
+                          } else if (month == 0) {
+                              var day = dates.getDay() - a2;
+                              if (day > 0) {
+                                  $("#age").val(day + "天");
+                              }
+                          }
+                      }
+                  }
+
+                  //家庭常住住址-------------------------------------------------------------------------------------------------------------------------
+                  if (dts[0].community_code != "") {
+                      var code1 = dts[0].community_code;
+                      $("#ddlProvince").val(code1.substring(0, 2));
+                      //-----市-----
+                      $.post("/Data/City?code=" + code1.substring(0, 2),
+                       function (data) {
+                           dat1 = eval(data);
+                           $("#ddlCity").empty();
+                           $("#ddlCity").append("<option value=" + "" + ">==请选择==</option>");
+                           if (dat1 != "") {
+                               for (var i = 0; i < dat1.length; i++) {
+                                   $("#ddlCity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                               }
+                               $("#ddlCity").val(code1.substring(0, 4));
+                           }
+                       })
+
+                      //-----区/县-----
+                      $.post("/Data/County?code=" + code1.substring(0, 4),
+                       function (data) {
+                           dat1 = eval(data);
+                           $("#ddlCounty").empty();
+                           $("#ddlCounty").append("<option value=" + "" + ">==请选择==</option>");
+                           if (dat1 != "") {
+                               for (var i = 0; i < dat1.length; i++) {
+                                   $("#ddlCounty").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                               }
+                               $("#ddlCounty").val(code1.substring(0, 6));
+                           }
+                       })
+                      //-------镇/村-------
+                      $.post("/Data/Street?code=" + code1.substring(0, 6),
+                       function (data) {
+                           dat1 = eval(data);
+                           $("#ddlStreet").empty();
+                           $("#ddlStreet").append("<option value=" + "" + ">==请选择==</option>");
+                           if (dat1 != "") {
+                               for (var i = 0; i < dat1.length; i++) {
+                                   $("#ddlStreet").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                               }
+                               $("#ddlStreet").val(code1.substring(0, 9));
+                           }
+                       })
+                      $.post("/Data/Community?code=" + code1.substring(0, 9),
+                       function (data) {
+                           dat1 = eval(data);
+                           $("#ddlCommunity").empty();
+                           $("#ddlCommunity").append("<option value=" + "" + ">==请选择==</option>");
+                           if (dat1 != "") {
+                               for (var i = 0; i < dat1.length; i++) {
+                                   $("#ddlCommunity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                               }
+                               $("#ddlCommunity").val(code1);
+                           }
+                       })
+                      $("#perment_community_address").val(dts[0].address);
+                  }
+                  $("#phone").val(dts[0].phone);
+                  $("#resident_id").val(dts[0].resident_id);
+                  $("#s").val(dts[0].check_project);
+                  $("#sjdoctor").val(dts[0].inspect_doctor);
+                  $("#jcdoctor").val(dts[0].check_doctor);
+                  $("#bgdoctor").val(dts[0].report_doctor);
+
+                  if (dts[0].inspect_time != "" && dts[0].inspect_time != null) {
+                      var date = new Date(parseInt(dts[0].inspect_time.replace("/Date(", "").replace(")/", ""), 10));
+                      var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                      var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                      $("#sjtime").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                  }
+
+                  if (dts[0].report_time != "" && dts[0].report_time != null) {
+                      var date = new Date(parseInt(dts[0].report_time.replace("/Date(", "").replace(")/", ""), 10));
+                      var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                      var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                      $("#bgtime").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                  }
+
+                  if (dts[0].check_project == "通气功能检查") {
+                      $("#titles").html("新增通气功能检查报告单");
+                      document.getElementById("d1").style.display = "";
+                      document.getElementById("d2").style.display = "none";
+                      document.getElementById("d3").style.display = "none";
+                      document.getElementById("d4").style.display = "none";
+                      $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type1,
+                function (data1) {
+                    dat1 = eval(data1);
+                    $("#ts1").empty();
+                    $("#ts1").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts2").empty();
+                    $("#ts2").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts3").empty();
+                    $("#ts3").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts4").empty();
+                    $("#ts4").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#ts5").empty();
+                    $("#ts5").append("<option value=" + "" + ">==请选择==</option>");
+                    if (dat1 != null) {
+                        for (var i = 0; i < dat1.length; i++) {
+                            $("#ts1").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts2").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts3").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts4").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#ts5").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                        }
+                    }
+                    $("#ts1").val(dts[0].name1);
+                    $("#ts2").val(dts[0].name2);
+                    $("#ts3").val(dts[0].name3);
+                    $("#ts4").val(dts[0].name4);
+                    $("#ts5").val(dts[0].name5);
+                })
+
+                      $("#tresult1").val(dts[0].result1);
+                      $("#tunit1").val(dts[0].unit1);
+                      $("#tqujian1").val(dts[0].qujian1);
+                      $("#ttishi1").val(dts[0].tishi1);
+                      $("#tbeizhu1").val(dts[0].beizhu1);
+
+                      $("#tresult2").val(dts[0].result2);
+                      $("#tunit2").val(dts[0].unit2);
+                      $("#tqujian2").val(dts[0].qujian2);
+                      $("#ttishi2").val(dts[0].tishi2);
+                      $("#tbeizhu2").val(dts[0].beizhu2);
+
+                      $("#tresult3").val(dts[0].result3);
+                      $("#tunit3").val(dts[0].unit3);
+                      $("#tqujian3").val(dts[0].qujian3);
+                      $("#ttishi3").val(dts[0].tishi3);
+                      $("#tbeizhu3").val(dts[0].beizhu3);
+
+                      $("#tresult4").val(dts[0].result4);
+                      $("#tunit4").val(dts[0].unit4);
+                      $("#tqujian4").val(dts[0].qujian4);
+                      $("#ttishi4").val(dts[0].tishi4);
+                      $("#tbeizhu4").val(dts[0].beizhu4);
+
+                      $("#tresult5").val(dts[0].result5);
+                      $("#tunit5").val(dts[0].unit5);
+                      $("#tqujian5").val(dts[0].qujian5);
+                      $("#ttishi5").val(dts[0].tishi5);
+                      $("#tbeizhu5").val(dts[0].beizhu5);
+
+
+
+                      $.post("/MedicalHistory_AccessoryExamination_LungCheck/ShowAdd?id=" +id,
+                        function (datas) {
+                            dats = eval(datas);
+                            if (dats != "") {
+                                for (i = 1; i <= dats.length; i++) {
+                                    $("#tab1").append('<tr style="height: 30px;">' +
+                                    '<td class="auto-style184">' + (5 + i) + '</td>' +
+                                    '<td class="auto-style185">' +
+                                    '<select id="ts_' + i + '" name="ts_' + i + '" style="width: 157px;">' +
+                                    '<option value="">==请选择==</option>' +
+                                  '<option value="潮气容积">潮气容积</option>' +
+                                  '<option value="补呼气容积">补呼气容积</option>' +
+                                  '<option value="补吸气容积">补吸气容积</option>' +
+                                  '<option value="深吸气量">深吸气量</option>' +
+                                  '<option value="肺活量">肺活量</option>' +
+                                  '<option value="功能残气量">功能残气量</option>' +
+                                  '<option value="残气量">残气量</option>' +
+                                  '<option value="肺总量">肺总量</option>' +
+                                  '<option value="每分钟静息通气量">每分钟静息通气量</option>' +
+                                  '<option value="最大自主通气量">最大自主通气量</option>' +
+                                  '<option value="用力肺活量">用力肺活量</option>' +
+                                  '<option value="最大呼气中断流量">最大呼气中断流量</option>' +
+                                  '<option value="肺泡通气量">肺泡通气量</option>' +
+                                    '</select>' +
+                                    '</td>' +
+                                    '<td class="auto-style186">' +
+                                    '<input type="text" id="tresult_' + i + '" name="tresult_' + i + '" style="width: 100px; height: 20px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style195">' +
+                                    '<input type="text" id="tunit_' + i + '" name="tunit_' + i + '" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style188">' +
+                                    '<input type="text" id="tqujian_' + i + '" name="tqujian_' + i + '" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />' +
+                                    '</td>' +
+
+                                    '<td class="auto-style191">' +
+                                    '<input type="text" id="ttishi_' + i + '" name="ttishi_' + i + '" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style190">' +
+                                    '<input type="text" id="tbeizhu_' + i + '" name="tbeizhu_' + i + '" style="width: 205px; height: 20px" />' +
+                                    '</td>' +
+                                    '</tr>');
+
+                                    $('#ts_' + i + '').val(dats[i - 1].name);
+                                    $('#tresult_' + i + '').val(dats[i - 1].result);
+                                    $('#tunit_' + i + '').val(dats[i - 1].unit);
+                                    $('#tqujian_' + i + '').val(dats[i - 1].qujian);
+                                    $('#ttishi_' + i + '').val(dats[i - 1].tishi);
+                                    $('#tbeizhu_' + i + '').val(dats[i - 1].beizhu);
+                                    //--------------------------------------------------------------选择修改事件------------------------------------------------
+
+                                    $('#ts_' + i + '').change(function () {
+                                        var s1 = $("#sex").val();
+                                        if (s1 == "男") {
+                                            s1 = "01";
+                                        } else {
+                                            s1 = "02";
+                                        }
+                                        $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler1?sex=" + s1,
+                                                     { Name: $('#ts_' + (i - 1) + '').val() },
+                                                     function (data) {
+                                                         $('#tqujian_' + (i - 1) + '').val(data);
+
+                                                     });
+                                        $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler3",
+                                                      { Name: $('#ts_' + (i - 1) + '').val() },
+                                                      function (data) {
+                                                          $('#tunit_' + (i - 1) + '').val(data);
+                                                      }); 
+                                    });
+                                }
+                            }
+                        })
+                  } else if (dts[0].check_project == "换气功能检查") {
+                      $("#titles").html("新增换气功能检查报告单");
+                      document.getElementById("d2").style.display = "";
+                      document.getElementById("d1").style.display = "none";
+                      document.getElementById("d3").style.display = "none";
+                      document.getElementById("d4").style.display = "none";
+                      $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler?type=" + type2,
+                function (data1) {
+                    dat1 = eval(data1);
+                    $("#hs1").empty();
+                    $("#hs1").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#hs2").empty();
+                    $("#hs2").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#hs3").empty();
+                    $("#hs3").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#hs4").empty();
+                    $("#hs4").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#hs5").empty();
+                    $("#hs5").append("<option value=" + "" + ">==请选择==</option>");
+                    if (dat1 != null) {
+                        for (var i = 0; i < dat1.length; i++) {
+                            $("#hs1").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#hs2").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#hs3").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#hs4").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#hs5").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                        }
+                    }
+                    $("#hs1").val(dts[0].name1);
+                    $("#hs2").val(dts[0].name2);
+                    $("#hs3").val(dts[0].name3);
+                    $("#hs4").val(dts[0].name4);
+                    $("#hs5").val(dts[0].name5);
+                })
+
+                      $("#hresult1").val(dts[0].result1);
+                      $("#hunit1").val(dts[0].unit1);
+                      $("#hqujian1").val(dts[0].qujian1);
+                      $("#htishi1").val(dts[0].tishi1);
+                      $("#hbeizhu1").val(dts[0].beizhu1);
+
+                      $("#hresult2").val(dts[0].result2);
+                      $("#hunit2").val(dts[0].unit2);
+                      $("#hqujian2").val(dts[0].qujian2);
+                      $("#htishi2").val(dts[0].tishi2);
+                      $("#hbeizhu2").val(dts[0].beizhu2);
+
+                      $("#hresult3").val(dts[0].result3);
+                      $("#hunit3").val(dts[0].unit3);
+                      $("#hqujian3").val(dts[0].qujian3);
+                      $("#htishi3").val(dts[0].tishi3);
+                      $("#hbeizhu3").val(dts[0].beizhu3);
+
+                      $("#hresult4").val(dts[0].result4);
+                      $("#hunit4").val(dts[0].unit4);
+                      $("#hqujian4").val(dts[0].qujian4);
+                      $("#htishi4").val(dts[0].tishi4);
+                      $("#hbeizhu4").val(dts[0].beizhu4);
+
+                      $("#hresult5").val(dts[0].result5);
+                      $("#hunit5").val(dts[0].unit5);
+                      $("#hqujian5").val(dts[0].qujian5);
+                      $("#htishi5").val(dts[0].tishi5);
+                      $("#hbeizhu5").val(dts[0].beizhu5);
+
+                  } else if (dts[0].check_project == "小气道功能检查") {
+                      $("#titles").html("新增小气道功能检查报告单");
+                      document.getElementById("d3").style.display = "";
+                      document.getElementById("d1").style.display = "none";
+                      document.getElementById("d2").style.display = "none";
+                      document.getElementById("d4").style.display = "none";
+                      $.post("Handler?type=" + type3,
+               function (data1) {
+                   dat1 = eval(data1);
+                   $("#xq1").empty();
+                   $("#xq1").append("<option value=" + "" + ">==请选择==</option>");
+                   $("#xq2").empty();
+                   $("#xq2").append("<option value=" + "" + ">==请选择==</option>");
+                   $("#xq3").empty();
+                   $("#xq3").append("<option value=" + "" + ">==请选择==</option>");
+                   if (dat1 != null) {
+                       for (var i = 0; i < dat1.length; i++) {
+                           $("#xq1").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                           $("#xq2").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                           $("#xq3").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                       }
+                   }
+                   $("#xq1").val(dts[0].name1);
+                   $("#xq2").val(dts[0].name2);
+                   $("#xq3").val(dts[0].name3);
+               })
+                      if (dts[0].name1 == "频率依赖性肺顺应性") {
+                          document.getElementById("d5").style.display = "none";
+                          document.getElementById("d6").style.display = "";
+                          $("#xqresult1").val(dts[0].result1);
+                          $("#xqresult11").val(dts[0].result11);
+                          $("#xqunit1").val(dts[0].unit1);
+                          $("#xqqujian1").val(dts[0].qujian1);
+                          $("#xqtishi1").val(dts[0].tishi1);
+                          $("#xqbeizhu1").val(dts[0].beizhu1);
+                      } else {
+                          document.getElementById("d6").style.display = "none";
+                          document.getElementById("d5").style.display = "";
+                      }
+                      if (dts[0].name2 == "频率依赖性肺顺应性") {
+                          document.getElementById("d7").style.display = "none";
+                          document.getElementById("d8").style.display = "";
+                          $("#xqresult2").val(dts[0].result2);
+                          $("#xqresult22").val(dts[0].result22);
+                          $("#xqunit2").val(dts[0].unit2);
+                          $("#xqqujian2").val(dts[0].qujian2);
+                          $("#xqtishi2").val(dts[0].tishi2);
+                          $("#xqbeizhu2").val(dts[0].beizhu2);
+
+                      } else {
+                          document.getElementById("d8").style.display = "none";
+                          document.getElementById("d7").style.display = "";
+                      }
+                      if (dts[0].name3 == "频率依赖性肺顺应性") {
+                          document.getElementById("d9").style.display = "none";
+                          document.getElementById("d10").style.display = "";
+                          $("#xqresult3").val(dts[0].result3);
+                          $("#xqresult33").val(dts[0].result33);
+                          $("#xqunit3").val(dts[0].unit3);
+                          $("#xqqujian3").val(dts[0].qujian3);
+                          $("#xqtishi3").val(dts[0].tishi3);
+                          $("#xqbeizhu3").val(dts[0].beizhu3);
+                      } else {
+                          document.getElementById("d10").style.display = "none";
+                          document.getElementById("d9").style.display = "";
+                      }
+
+                      $("#xq1").change(function () {
+                          if ($("#xq1").val() == "频率依赖性肺顺应性") {
+                              document.getElementById("d5").style.display = "none";
+                              document.getElementById("d6").style.display = "";
+                          } else {
+                              document.getElementById("d6").style.display = "none";
+                              document.getElementById("d5").style.display = "";
+                          }
+
+                      });
+                      $("#xq2").change(function () {
+                          if ($("#xq2").val() == "频率依赖性肺顺应性") {
+                              document.getElementById("d7").style.display = "none";
+                              document.getElementById("d8").style.display = "";
+                          } else {
+                              document.getElementById("d8").style.display = "none";
+                              document.getElementById("d7").style.display = "";
+                          }
+
+                      })
+                      $("#xq3").change(function () {
+                          if ($("#xq3").val() == "频率依赖性肺顺应性") {
+                              document.getElementById("d9").style.display = "none";
+                              document.getElementById("d10").style.display = "";
+                          } else {
+                              document.getElementById("d10").style.display = "none";
+                              document.getElementById("d9").style.display = "";
+                          }
+
+                      })
+                  } else if (dts[0].check_project == "血气分析和酸碱测定") {
+                      $("#titles").html("新增血气分析和酸碱测定报告单");
+                      document.getElementById("d4").style.display = "";
+                      document.getElementById("d1").style.display = "none";
+                      document.getElementById("d2").style.display = "none";
+                      document.getElementById("d3").style.display = "none";
+                      $.post("Handler?type=" + type4,
+                function (data1) {
+                    dat1 = eval(data1);
+                    $("#xs1").empty();
+                    $("#xs1").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#xs2").empty();
+                    $("#xs2").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#xs3").empty();
+                    $("#xs3").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#xs4").empty();
+                    $("#xs4").append("<option value=" + "" + ">==请选择==</option>");
+                    $("#xs5").empty();
+                    $("#xs5").append("<option value=" + "" + ">==请选择==</option>");
+                    if (dat1 != null) {
+                        for (var i = 0; i < dat1.length; i++) {
+                            $("#xs1").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#xs2").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#xs3").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#xs4").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                            $("#xs5").append("<option value=" + dat1[i].name + ">" + dat1[i].name + "</option>");
+                        }
+                    }
+                    $("#xs1").val(dts[0].name1);
+                    $("#xs2").val(dts[0].name2);
+                    $("#xs3").val(dts[0].name3);
+                    $("#xs4").val(dts[0].name4);
+                    $("#xs5").val(dts[0].name5);
+                })
+
+                      $("#xresult1").val(dts[0].result1);
+                      $("#xunit1").val(dts[0].unit1);
+                      $("#xqujian1").val(dts[0].qujian1);
+                      $("#xtishi1").val(dts[0].tishi1);
+                      $("#xbeizhu1").val(dts[0].beizhu1);
+
+                      $("#xresult2").val(dts[0].result2);
+                      $("#xunit2").val(dts[0].unit2);
+                      $("#xqujian2").val(dts[0].qujian2);
+                      $("#xtishi2").val(dts[0].tishi2);
+                      $("#xbeizhu2").val(dts[0].beizhu2);
+
+                      $("#xresult3").val(dts[0].result3);
+                      $("#xunit3").val(dts[0].unit3);
+                      $("#xqujian3").val(dts[0].qujian3);
+                      $("#xtishi3").val(dts[0].tishi3);
+                      $("#xbeizhu3").val(dts[0].beizhu3);
+
+                      $("#xresult4").val(dts[0].result4);
+                      $("#xunit4").val(dts[0].unit4);
+                      $("#xqujian4").val(dts[0].qujian4);
+                      $("#xtishi4").val(dts[0].tishi4);
+                      $("#xbeizhu4").val(dts[0].beizhu4);
+
+                      $("#xresult5").val(dts[0].result5);
+                      $("#xunit5").val(dts[0].unit5);
+                      $("#xqujian5").val(dts[0].qujian5);
+                      $("#xtishi5").val(dts[0].tishi5);
+                      $("#xbeizhu5").val(dts[0].beizhu5);
+
+
+
+                      $.post("/MedicalHistory_AccessoryExamination_LungCheck/ShowAdd?id=" + id,
+                        function (datas) {
+                            dats = eval(datas);
+                            if (dat != "") {
+                                for (i = 1; i <= dats.length; i++) {
+                                    $("#tab2").append('<tr style="height: 30px;">' +
+                                    '<td class="auto-style184">' + (5 + i) + '</td>' +
+                                    '<td class="auto-style185">' +
+                                    '<select id="xs_' + i + '" name="xs_' + i + '" style="width: 157px;">' +
+                                    '<option value="">==请选择==</option>' +
+                                '<option value="动脉血氧分压(PaO2)">动脉血氧分压(PaO2)</option>' +
+                                '<option value="肺泡-动脉血氧分压差">肺泡-动脉血氧分压差</option>' +
+                                '<option value="动脉血氧饱和度(SaO2)">动脉血氧饱和度(SaO2)</option>' +
+                                '<option value="混合静脉血氧分压(PvO2)">混合静脉血氧分压(PvO2)</option>' +
+                                '<option value="动脉血氧含量(CaO2)(mmol/L)">动脉血氧含量(CaO2)(mmol/L)</option>' +
+                                '<option value="动脉血氧含量(CaO2)(ml/dl)">动脉血氧含量(CaO2)(ml/dl)</option>' +
+                                '<option value="动脉血二氧化碳分压(PaCO2)">动脉血二氧化碳分压(PaCO2)</option>' +
+                                '<option value="pH值">pH值</option>' +
+                                '<option value="标准碳酸氢盐(SB)">标准碳酸氢盐(SB)</option>' +
+                                '<option value="实际碳酸氢盐(AB)">实际碳酸氢盐(AB)</option>' +
+                                '<option value="缓冲碱(BB)">缓冲碱(BB)</option>' +
+                                '<option value="剩余碱">剩余碱</option>' +
+                                '<option value="血浆CO2含量">血浆CO2含量</option>' +
+                                '<option value="阴离子间隙">阴离子间隙</option>' +
+                                    '</select>' +
+                                    '</td>' +
+                                    '<td class="auto-style186">' +
+                                    '<input type="text" id="xresult_' + i + '" name="xresult_' + i + '" style="width: 100px; height: 20px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style195">' +
+                                    '<input type="text" id="xunit_' + i + '" name="xunit_' + i + '" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style188">' +
+                                    '<input type="text" id="xqujian_' + i + '" name="xqujian_' + i + '" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />' +
+                                    '</td>' +
+
+                                    '<td class="auto-style191">' +
+                                    '<input type="text" id="xtishi_' + i + '" name="xtishi_' + i + '" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />' +
+                                    '</td>' +
+                                    '<td class="auto-style190">' +
+                                    '<input type="text" id="xbeizhu_' + i + '" name="xbeizhu_' + i + '" style="width: 205px; height: 20px" />' +
+                                    '</td>' +
+                                    '</tr>');
+
+                                    $('#xs_' + i + '').val(dats[i - 1].name);
+                                    $('#xresult_' + i + '').val(dats[i - 1].result);
+                                    $('#xunit_' + i + '').val(dats[i - 1].unit);
+                                    $('#xqujian_' + i + '').val(dats[i - 1].qujian);
+                                    $('#xtishi_' + i + '').val(dats[i - 1].tishi);
+                                    $('#xbeizhu_' + i + '').val(dats[i - 1].beizhu);
+                                    //--------------------------------------------------------------选择修改事件------------------------------------------------
+
+                                    $('#xs_' + i + '').change(function () {
+                                        var s1 = $("#sex").val();
+                                        if (s1 == "男") {
+                                            s1 = "01";
+                                        } else {
+                                            s1 = "02";
+                                        }
+                                        $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler1?sex=" + s1,
+                                                     { Name: $('#xs_' + (i - 1) + '').val() },
+                                                     function (data) {
+                                                         $('#xqujian_' + (i - 1) + '').val(data);
+
+                                                     });
+                                        $.post("/MedicalHistory_AccessoryExamination_LungCheck/Handler3",
+                                                      { Name: $('#xs_' + (i - 1) + '').val() },
+                                                      function (data) {
+                                                          $('#xunit_' + (i - 1) + '').val(data);
+                                                      });
+
+                                    });
+                                }
+                            }
+                        })
+                  }
+              }
+
+          })
+
+        })
+        function sure() {
+            document.getElementById("d12").style.display = "";
+            document.getElementById("d13").style.display = "none";
+            $.post("/MedicalHistory_AccessoryExamination_LungCheck/AddAndUpdate?id=" + id+ "&worker=" + worker + "&community_code=" + community_code,
+                $("#form1").serialize(),
+                function (msgs) {
+                    var msg = msgs.split(',');
+                    alert(msg[0]);
+                    window.close();
+                })
+        }
+       
+    </script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 600px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style45 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 14px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style46 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 88px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style110 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 17px;
+            width: 274px;
+            text-align: center;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .auto-style138 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 167px;
+            text-align: center;
+        }
+
+        .auto-style150 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 208px;
+        }
+
+        .button {
+            width: 50px;
+        }
+
+        .auto-style170 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 122px;
+        }
+
+        .auto-style174 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 83px;
+        }
+
+        .auto-style178 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style179 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style180 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 183px;
+            text-align: right;
+        }
+
+        .auto-style182 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 295px;
+            text-align: center;
+        }
+
+        .auto-style184 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 83px;
+        }
+
+        .auto-style185 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 167px;
+            text-align: right;
+        }
+
+        .auto-style186 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 30px;
+            width: 103px;
+        }
+
+        .auto-style188 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 274px;
+        }
+
+        .auto-style190 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 208px;
+        }
+
+        .auto-style191 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 295px;
+            text-align: center;
+        }
+
+        .auto-style192 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 208px;
+            text-align: left;
+        }
+
+        .auto-style193 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 147px;
+            text-align: left;
+        }
+
+        .auto-style194 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 147px;
+            text-align: center;
+        }
+
+        .auto-style195 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 147px;
+            text-align: center;
+        }
+
+        .auto-style197 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 70px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style199 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 102px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style200 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 99px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style202 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 181px;
+            text-align: left;
+        }
+
+        .auto-style204 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 167px;
+            text-align: center;
+        }
+
+        .auto-style205 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 103px;
+        }
+
+        .auto-style207 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 30px;
+            width: 274px;
+            text-align: center;
+        }
+
+        .auto-style208 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 30px;
+            width: 135px;
+        }
+
+        #jctx1 {
+            width: 422px;
+        }
+
+        #jctx2 {
+            width: 422px;
+        }
+
+        #jctx3 {
+            width: 422px;
+        }
+
+        .auto-style209 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 17px;
+            width: 309px;
+            text-align: center;
+        }
+
+        .auto-style211 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 17px;
+            width: 189px;
+            text-align: center;
+        }
+
+        .auto-style214 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 108px;
+        }
+
+        .auto-style215 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 141px;
+            text-align: center;
+        }
+
+        .auto-style216 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 122px;
+        }
+
+        .auto-style217 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 177px;
+        }
+
+        .auto-style218 {
+            width: 54%;
+        }
+
+        .auto-style219 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 86px;
+            text-align: center;
+        }
+
+        .auto-style220 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 17px;
+            width: 78px;
+            text-align: center;
+        }
+
+        .auto-style221 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 17px;
+            width: 115px;
+        }
+    </style>
+</head>
+<body style="font-size: 12px;">
+    <form id="form1" action="/MedicalHistory_AccessoryExamination_LungCheck/AddAndUpdate?id=@ViewBag.id&worker=@ViewBag.worker&community_code=@ViewBag.community_code" method="post" enctype="multipart/form-data">
+        <div align="center">
+
+            <table  border="1" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">新增检查报告单</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style199">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style200">
+                        <span class="ui-widget">
+                            <input type="text" style="padding-top: 2px; width: 128px; height: 20px; font-size: 12px;" id="name" name="name" />
+
+                        </span>
+                    </td>
+                    <td class="auto-style27">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style178">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style197">
+                        身份证号码<span style="color: #ff0000">*</span>
+
+                    </td>
+                    <td class="auto-style179">
+                        <input type="text" id="id_card_number" name="id_card_number" style="padding-top: 2px; height: 20px; width: 130px" />
+                    </td>
+                    <td class="auto-style46">年龄</td>
+                    <td class="auto-style45">
+                        <input type="text" id="age" name="age" style="padding-top: 2px; height: 16px; width: 120px" readonly="true" />
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style199">家庭常住地址</td>
+                    <td class="auto-style4" colspan="5">
+                        <select style="width: 80px; height: 20px;" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 90px; height: 20px;" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px;height: 20px;" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 28%; height: 14px;padding-top:5px" />
+                        <input type="text" id="resident_id" name="resident_id" style="display:none" />
+                    </td>
+
+                    <td class="auto-style46">手机号码</td>
+                    <td class="auto-style45">
+                        <input type="text" id="phone" name="phone" style="padding-top: 2px; height: 25px; width: 120px; height: 20px;" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style199">检查项目</td>
+                    <td class="auto-style200">
+                        <select id="s" name="s" style="height: 20px; font-size: 12px;">
+                            <option value="">==请选择==</option>
+                            <option value="通气功能检查">通气功能检查</option>
+                            <option value="换气功能检查">换气功能检查</option>
+                            <option value="小气道功能检查">小气道功能检查</option>
+                            <option value="血气分析和酸碱测定">血气分析和酸碱测定</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style27">送检医生</td>
+                    <td class="auto-style178">
+                        <input type="text" id="sjdoctor" name="sjdoctor" style="width: 100px; height: 20px; padding-top: 2px;" />
+                    </td>
+
+
+                    <td class="auto-style197">检查医生</td>
+                    <td class="auto-style179">
+                        <input type="text" id="jcdoctor" name="jcdoctor" style="width: 130px; height: 20px; padding-top: 2px;" />
+                    </td>
+
+                    <td class="auto-style46">报告医生</td>
+                    <td class="auto-style45">
+                        <input type="text" id="bgdoctor" name="bgdoctor" style="width: 120px; height: 20px; padding-top: 2px;" />
+                    </td>
+                </tr>
+            </table>
+
+            <div id="d1">
+                <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tab1">
+                    <tr>
+                        <td class="auto-style184">№</td>
+                        <td class="auto-style204" style="margin: 0px auto">项目名称</td>
+
+                        <td class="auto-style205">检验结果</td>
+                        <td class="auto-style195">单位</td>
+
+                        <td class="auto-style207">&nbsp;&nbsp;参考值区间</td>
+                        <td class="auto-style191">提示</td>
+                        <td class="auto-style190">备注</td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">1</td>
+                        <td class="auto-style185">
+                            <select id="ts1" name="ts1" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="tresult1" name="tresult1" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="tunit1" name="tunit1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="tqujian1" name="tqujian1" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="ttishi1" name="ttishi1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="tbeizhu1" name="tbeizhu1" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">2</td>
+                        <td class="auto-style185">
+                            <select id="ts2" name="ts2" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="tresult2" name="tresult2" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="tunit2" name="tunit2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="tqujian2" name="tqujian2" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="ttishi2" name="ttishi2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="tbeizhu2" name="tbeizhu2" style="width: 205px; height: 20px" />
+                        </td>
+
+
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">3</td>
+                        <td class="auto-style185">
+                            <select id="ts3" name="ts3" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="tresult3" name="tresult3" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="tunit3" name="tunit3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="tqujian3" name="tqujian3" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="ttishi3" name="ttishi3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="tbeizhu3" name="tbeizhu3" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">4</td>
+                        <td class="auto-style185">
+                            <select id="ts4" name="ts4" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="tresult4" name="tresult4" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="tunit4" name="tunit4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="tqujian4" name="tqujian4" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="ttishi4" name="ttishi4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="tbeizhu4" name="tbeizhu4" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                    <tr style="height: 30px;">
+                        <td class="auto-style184">5</td>
+                        <td class="auto-style185">
+                            <select id="ts5" name="ts5" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="tresult5" name="tresult5" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="tunit5" name="tunit5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="tqujian5" name="tqujian5" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="ttishi5" name="ttishi5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="tbeizhu5" name="tbeizhu5" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                </table>
+                <table style="width: 100%; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr>
+                        <td style="text-align: left; background-color: #f1f3f5">
+                            <br />
+                            <input type="button" value="增加一行" onclick="added1()" style="width: 100px; height: 30px;" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="d2" style="display: none">
+                <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr>
+                        <td class="auto-style184">№</td>
+                        <td class="auto-style204" style="margin: 0px auto">项目名称</td>
+
+                        <td class="auto-style205">检验结果</td>
+                        <td class="auto-style195">单位</td>
+
+                        <td class="auto-style207">&nbsp;&nbsp;参考值区间</td>
+                        <td class="auto-style191">提示</td>
+                        <td class="auto-style190">备注</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">1</td>
+                        <td class="auto-style185">
+                            <select id="hs1" name="hs1" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="hresult1" name="hresult1" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="hunit1" name="hunit1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="hqujian1" name="hqujian1" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="htishi1" name="htishi1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="hbeizhu1" name="hbeizhu1" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">2</td>
+                        <td class="auto-style185">
+                            <select id="hs2" name="hs2" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="hresult2" name="hresult2" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="hunit2" name="hunit2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="hqujian2" name="hqujian2" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="htishi2" name="htishi2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="hbeizhu2" name="hbeizhu2" style="width: 205px; height: 20px" />
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">3</td>
+                        <td class="auto-style185">
+                            <select id="hs3" name="hs3" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="hresult3" name="hresult3" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="hunit3" name="hunit3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="hqujian3" name="hqujian3" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="htishi3" name="htishi3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="hbeizhu3" name="hbeizhu3" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">4</td>
+                        <td class="auto-style185">
+                            <select id="hs4" name="hs4" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="hresult4" name="hresult4" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="hunit4" name="hunit4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="hqujian4" name="hqujian4" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="htishi4" name="htishi4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="hbeizhu4" name="hbeizhu4" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">5</td>
+                        <td class="auto-style185">
+                            <select id="hs5" name="hs5" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="hresult5" name="hresult5" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="hunit5" name="hunit5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="hqujian5" name="hqujian5" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="htishi5" name="htishi5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="hbeizhu5" name="hbeizhu5" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div id="d3" style="display: none">
+                <table style="width: 1000px; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr style="height: 30px;">
+                        <td class="auto-style174">№</td>
+                        <td class="auto-style138" style="margin: 0px auto">项目名称</td>
+                        <td class="auto-style216">检验结果</td>
+                        <td class="auto-style220">单位</td>
+                        <td class="auto-style211">&nbsp;&nbsp;参考值区间</td>
+                        <td class="auto-style219">提示</td>
+                        <td class="auto-style217">备注</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">1</td>
+                        <td class="auto-style185">
+                            <select id="xq1" name="xq1" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td colspan="5">
+                            <div id="d5">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="auto-style208">
+                                            <input type="file" name="jctx1" id="jctx1" />
+                                        </td>
+                                        <td colspan="4" style="background-color: #f1f3f5;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="d6" style="display: none">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="auto-style221">
+                                            Cstat<input type="text" id="xqresult1" name="xqresult1" style="width: 115px; height: 20px;" />
+
+                                            Cdyn<input type="text" id="xqresult11" name="xqresult11" style="width: 115px; height: 20px;" />
+
+                                        </td>
+                                        <td class="auto-style220">
+                                            <input type="text" id="xqunit1" name="xqunit1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 69px;" />
+                                        </td>
+                                        <td class="auto-style211">
+                                            <input type="text" id="xqqujian1" name="xqqujian1" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px; width: 178px;" />
+                                        </td>
+
+                                        <td class="auto-style219">
+                                            <input type="text" id="xqtishi1" name="xqtishi1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 52px;" />
+                                        </td>
+                                        <td class="auto-style217">
+                                            <input type="text" id="xqbeizhu1" name="xqbeizhu1" style="width: 161px; height: 20px" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">2</td>
+                        <td class="auto-style185">
+                            <select id="xq2" name="xq2" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td colspan="5">
+                            <div id="d7" style="margin: 0px;">
+                                <table style="width: 100%;">
+                                    <tr>
+                                        <td class="auto-style186">
+                                            <input type="file" name="jctx2" id="jctx2" />
+                                        </td>
+                                        <td colspan="4" style="background-color: #f1f3f5;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="d8" style="display: none">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="auto-style221">
+                                            Cstat<input type="text" id="xqresult2" name="xqresult2" style="width: 115px; height: 20px;" />
+
+                                            Cdyn<input type="text" id="xqresult22" name="xqresult22" style="width: 115px; height: 20px;" />
+
+                                        </td>
+                                        <td class="auto-style220">
+                                            <input type="text" id="xqunit2" name="xqunit2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 69px;" />
+                                        </td>
+                                        <td class="auto-style211">
+                                            <input type="text" id="xqqujian2" name="xqqujian2" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px; width: 178px;" />
+                                        </td>
+
+                                        <td class="auto-style219">
+                                            <input type="text" id="xqtishi2" name="xqtishi2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 52px;" />
+                                        </td>
+                                        <td class="auto-style217">
+                                            <input type="text" id="xqbeizhu2" name="xqbeizhu2" style="width: 161px; height: 20px" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">3</td>
+                        <td class="auto-style185">
+                            <select id="xq3" name="xq3" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td colspan="5">
+                            <div id="d9">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="auto-style186">
+                                            <input type="file" name="jctx3" id="jctx3" />
+                                        </td>
+                                        <td colspan="4" style="background-color: #f1f3f5;"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div id="d10" style="display: none">
+                                <table style="width: 100%">
+                                    <tr>
+                                        <td class="auto-style221">
+                                            Cstat<input type="text" id="xqresult3" name="xqresult3" style="width: 115px; height: 20px;" />
+
+                                            Cdyn<input type="text" id="xqresult33" name="xqresult33" style="width: 115px; height: 20px;" />
+
+                                        </td>
+                                        <td class="auto-style220">
+                                            <input type="text" id="xqunit3" name="xqunit3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 69px;" />
+                                        </td>
+                                        <td class="auto-style211">
+                                            <input type="text" id="xqqujian3" name="xqqujian3" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px; width: 178px;" />
+                                        </td>
+
+                                        <td class="auto-style219">
+                                            <input type="text" id="xqtishi3" name="xqtishi3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px; width: 52px;" />
+                                        </td>
+                                        <td class="auto-style217">
+                                            <input type="text" id="xqbeizhu3" name="xqbeizhu3" style="width: 161px; height: 20px" />
+                                        </td> 
+                                    </tr>
+                                </table>
+                            </div>
+                        </td> 
+                    </tr> 
+                </table>
+            </div>
+             
+            <div id="d4" style="display: none">
+
+                <table id="tab2" style="width: 1000px; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr style="height: 30px;">
+                        <td class="auto-style174">№</td>
+                        <td class="auto-style138" style="margin: 0px auto">项目名称</td>
+
+                        <td class="auto-style170">检验结果</td>
+                        <td class="auto-style194">单位</td>
+
+                        <td class="auto-style110">&nbsp;&nbsp;参考值区间</td>
+                        <td class="auto-style182">提示</td>
+                        <td class="auto-style150">备注</td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style184">1</td>
+                        <td class="auto-style185">
+                            <select id="xs1" name="xs1" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="xresult1" name="xresult1" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="xunit1" name="xunit1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="xqujian1" name="xqujian1" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="xtishi1" name="xtishi1" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="xbeizhu1" name="xbeizhu1" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">2</td>
+                        <td class="auto-style185">
+                            <select id="xs2" name="xs2" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="xresult2" name="xresult2" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="xunit2" name="xunit2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="xqujian2" name="xqujian2" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="xtishi2" name="xtishi2" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="xbeizhu2" name="xbeizhu2" style="width: 205px; height: 20px" />
+                        </td>
+
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">3</td>
+                        <td class="auto-style185">
+                            <select id="xs3" name="xs3" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="xresult3" name="xresult3" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="xunit3" name="xunit3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="xqujian3" name="xqujian3" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="xtishi3" name="xtishi3" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="xbeizhu3" name="xbeizhu3" style="width: 205px; height: 20px" />
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">4</td>
+                        <td class="auto-style185">
+                            <select id="xs4" name="xs4" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="xresult4" name="xresult4" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="xunit4" name="xunit4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="xqujian4" name="xqujian4" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="xtishi4" name="xtishi4" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="xbeizhu4" name="xbeizhu4" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="auto-style184">5</td>
+                        <td class="auto-style185">
+                            <select id="xs5" name="xs5" style="width: 157px;">
+                                <option value="">===请选择===</option>
+                            </select>
+                        </td>
+                        <td class="auto-style186">
+                            <input type="text" id="xresult5" name="xresult5" style="width: 100px; height: 20px;" />
+                        </td>
+                        <td class="auto-style195">
+                            <input type="text" id="xunit5" name="xunit5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style188">
+                            <input type="text" id="xqujian5" name="xqujian5" style="border-style: none; border-color: inherit; background-color: #e2ebfb; border-width: 0px;" />
+                        </td>
+
+                        <td class="auto-style191">
+                            <input type="text" id="xtishi5" name="xtishi5" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: 0px;" />
+                        </td>
+                        <td class="auto-style190">
+                            <input type="text" id="xbeizhu5" name="xbeizhu5" style="width: 205px; height: 20px" />
+                        </td>
+                    </tr>
+                </table>
+                <table style="width: 100%; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr>
+                        <td colspan="7" style="text-align: left; background-color: #f1f3f5;">
+                            <br />
+                            <input type="button" value="增加一行" onclick="added2()" style="width: 100px; height: 30px;" />
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div>
+                <table style="width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                    <tr>
+                        <td colspan="3" style="background-color: #f1f3f5" class="auto-style218"></td>
+                        <td class="auto-style193"><span class="detailTitle" style="height: 25px; width: 78px;">送检日期<span style="color: #ff0000">*</span></span></td>
+                        <td class="auto-style202">
+                            <span class="detailContent" style="height: 25px">
+                                <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 100px; height: 20px;" id="sjtime" name="sjtime" />
+                            </span>
+
+                        </td>
+                        <td class="auto-style180"><span class="detailTitle" style="height: 25px; width: 99px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                        <td class="auto-style192">
+                            <span class="detailContent" style="height: 25px">
+                                <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 89px; height: 20px;" id="bgtime" name="bgtime" />
+                            </span>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <div align="center" style="background-color: #f1f3f5; border-top: 1px solid white; height: 30px;" id="d12">
+                                <input type="button" value="提交" id="save" onclick="sure()" style="width: 80px; height: 30px; font-size: 20px; margin-top: 2px;" />
+                                <input type="button" value="重置" onclick="form1.reset();" style="width: 80px; height: 30px; font-size: 20px; margin-top: 2px;" />
+                            </div>
+                            <div align="center" style="background-color: #f1f3f5; border-top: 1px solid white; height: 30px;display:none" id="d13">
+                                <input type="submit" value="提交" id="save" style="width: 80px; height: 30px; font-size: 20px; margin-top: 2px;" />
+                                <input type="button" value="重置" onclick="form1.reset();" style="width: 80px; height: 30px; font-size: 20px; margin-top: 2px;" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div> 
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,527 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用药情况</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MedicalHistory_MedicationInformation/Control.js"></script> 
+    <style type="text/css">
+        .auto-style1 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 18px;
+            width: 7%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 700px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 80px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style37 {
+            background-color: #f1f3f5;
+            height: 25px;
+            padding: 2px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style45 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 110px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .button {
+            width: 50px;
+        }
+
+        .auto-style40 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 14%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style72 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 9%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style122 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px solid white;
+        }
+
+        .auto-style123 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px solid white;
+        }
+
+        .auto-style129 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style130 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+        }
+
+        .auto-style178 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 100px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style179 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 131px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style184 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 40px;
+        }
+
+        .auto-style185 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 80px;
+            text-align: right;
+        }
+
+        .auto-style186 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 30px;
+            width: 200px;
+        }
+
+        .auto-style188 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 80px;
+        }
+
+        .auto-style191 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 240px;
+            text-align: center;
+        }
+
+
+
+        .auto-style195 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 180px;
+            text-align: center;
+        }
+
+        .auto-style199 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 102px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style200 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 99px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style204 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+        }
+
+        .auto-style205 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: center;
+            height: 30px;
+            width: 200px;
+        }
+
+        .auto-style207 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            margin: 0 auto;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+        }
+
+        .auto-style208 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 101px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style209 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 110px;
+            text-align: left;
+            border: 1px solid white;
+        }
+    </style> 
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="font-size: 12px;">
+    <form id="form1">
+        <div align="center">
+            <table border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">新增用药情况</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style122">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style129">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style122">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style72">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style130">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style40">
+                        <input type="text" style="padding-top: 2px;height: 14px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style123">出生日期</td>
+                    <td class="auto-style72">
+                        <input type="text" style="padding-top: 2px; height: 14px;width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style123">年龄</td>
+                    <td class="auto-style1">
+                        <input id="age" name="age" style="width: 75px;height: 14px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style122">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="auto-style37" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 19.5%; height: 14px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style123">手机号码</td>
+                    <td class="auto-style72">
+                        <input type="text" id="phone" style=" width: 90px; height: 14px;" name="phone" />
+                    </td>
+                    <td class="auto-style123">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style1"></td>
+                </tr>
+            </table>
+
+
+            <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tab">
+                <tr>
+                    <td class="auto-style184">№</td>
+                    <td class="auto-style204">用药起始日期</td>
+                    <td class="auto-style205">药物名称</td>
+                    <td class="auto-style195">药物用量</td>
+                    <td class="auto-style207">药物用法</td>
+                    <td class="auto-style191">药物生产厂家及批号</td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td class="auto-style184">1</td>
+                    <td class="auto-style185">
+                        <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 80px; height: 20px;" id="time1" name="time1" />
+                    </td>
+                    <td class="auto-style186">
+                        <span class="ui-widget">
+                            <input type="text" id="name1" name="name1" style="width: 200px; height: 20px;" />
+                        </span>
+                    </td>
+                    <td class="auto-style195">
+                        <input type="text" id="dosage1" name="dosage1" style="height: 20px; width: 180px;" />
+                    </td>
+                    <td class="auto-style188">
+                        @*<input type="text" style="height: 20px; width: 80px;" />*@
+                        <select style="height: 20px; width: 80px;" id="usage1" name="usage1">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style191">
+                        <input type="text" id="manu_batch1" name="manu_batch1" style="height: 20px;width:240px" />
+                    </td>
+
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td class="auto-style184">2</td>
+                    <td class="auto-style185">
+                        <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 80px; height: 20px;" id="time2" name="time2" />
+                    </td>
+                    <td class="auto-style186">
+                        <span class="ui-widget">
+                            <input type="text" id="name2" name="name2" style="width: 200px; height: 20px;" />
+                        </span>
+                    </td>
+                    <td class="auto-style195">
+                        <input type="text" id="dosage2" name="dosage2" style="height: 20px; width: 180px;" />
+                    </td>
+                    <td class="auto-style188">
+                        <select style="height: 20px; width: 80px;" id="usage2" name="usage2">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style191">
+                        <input type="text" id="manu_batch2" name="manu_batch2" style="height: 20px;width:240px" />
+                    </td>
+
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td class="auto-style184">3</td>
+                    <td class="auto-style185">
+                        <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 80px; height: 20px;" id="time3" name="time3" />
+                    </td>
+                    <td class="auto-style186">
+                        <span class="ui-widget">
+                            <input type="text" id="name3" name="name3" style="width: 200px; height: 20px;" />
+                        </span>
+                    </td>
+                    <td class="auto-style195">
+                        <input type="text" id="dosage3" name="dosage3" style="height: 20px; width: 180px;" />
+                    </td>
+                    <td class="auto-style188">
+                        <select style="height: 20px; width: 80px;" id="usage3" name="usage3">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style191">
+                        <input type="text" id="manu_batch3" name="manu_batch3" style="height: 20px;width:240px" />
+                    </td>
+
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td class="auto-style184">4</td>
+                    <td class="auto-style185">
+                        <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 80px; height: 20px;" id="time4" name="time4" />
+                    </td>
+                    <td class="auto-style186">
+                        <span class="ui-widget">
+                            <input type="text" id="name4" name="name4" style="width: 200px; height: 20px;" />
+                        </span>
+                    </td>
+                    <td class="auto-style195">
+                        <input type="text" id="dosage4" name="dosage4" style="height: 20px; width: 180px;" />
+                    </td>
+                    <td class="auto-style188">
+                        <select style="height: 20px; width: 80px;" id="usage4" name="usage4">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style191">
+                        <input type="text" id="manu_batch4" name="manu_batch4" style="height: 20px;width:240px" />
+                    </td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td class="auto-style184">5</td>
+                    <td class="auto-style185">
+                        <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 80px; height: 20px;" id="time5" name="time5" />
+                    </td>
+                    <td class="auto-style186">
+                        <span class="ui-widget">
+                            <input type="text" id="name5" name="name5" style="width: 200px; height: 20px;" />
+                        </span>
+                    </td>
+                    <td class="auto-style195">
+                        <input type="text" id="dosage5" name="dosage5" style="height: 20px; width: 180px;" />
+                    </td>
+                    <td class="auto-style188">
+                        <select style="height: 20px; width: 80px;" id="usage5" name="usage5">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style191">
+                        <input type="text" id="manu_batch5" name="manu_batch5" style="height: 20px;width:240px" />
+                    </td>
+                </tr>
+            </table>
+            <table style="width: 100%; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td style="text-align: left; background-color: #f1f3f5">
+                        <br />
+                        <input type="button" value="增加一行" id="addeds" onclick="added()" style="width: 100px; height: 30px;" />
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width: 100%; border-top: 1px solid black; border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>

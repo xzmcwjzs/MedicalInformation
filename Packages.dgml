@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Common\MalignantTumorSystem.Model" Label="MalignantTumorSystem.Model" Category="项目" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="MalignantTumorSystem.WebAPI" Label="MalignantTumorSystem.WebAPI" Category="项目" />
+    <Node Id="EntityFramework 5.0.0" Label="EntityFramework 5.0.0" Category="包" />
+    <Node Id="EntityFramework.zh-Hans 5.0.0" Label="EntityFramework.zh-Hans 5.0.0" Category="包" />
+    <Node Id="jQuery 1.8.2" Label="jQuery 1.8.2" Category="包" />
+    <Node Id="jQuery.UI.Combined 1.8.24" Label="jQuery.UI.Combined 1.8.24" Category="包" />
+    <Node Id="jQuery.Validation 1.10.0" Label="jQuery.Validation 1.10.0" Category="包" />
+    <Node Id="knockoutjs 2.2.0" Label="knockoutjs 2.2.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.30506.0" Label="Microsoft.AspNet.Mvc 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.Core 1.2" Label="Microsoft.AspNet.Providers.Core 1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Label="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 1.1" Label="Microsoft.AspNet.Providers.LocalDB 1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.30506.0" Label="Microsoft.AspNet.Razor 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Label="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.0.0" Label="Microsoft.AspNet.Web.Optimization 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Label="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 4.0.30506.0" Label="Microsoft.AspNet.WebApi 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Label="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.OData 4.0.30506" Label="Microsoft.AspNet.WebApi.OData 4.0.30506" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.OData.zh-Hans 4.0.30506" Label="Microsoft.AspNet.WebApi.OData.zh-Hans 4.0.30506" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Tracing 4.0.30506" Label="Microsoft.AspNet.WebApi.Tracing 4.0.30506" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Tracing.zh-Hans 4.0.30506" Label="Microsoft.AspNet.WebApi.Tracing.zh-Hans 4.0.30506" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.30506.0" Label="Microsoft.AspNet.WebPages 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Label="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.Data.Edm 5.2.0" Label="Microsoft.Data.Edm 5.2.0" Category="包" />
+    <Node Id="Microsoft.Data.OData 5.2.0" Label="Microsoft.Data.OData 5.2.0" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Label="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Label="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="包" />
+    <Node Id="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Label="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="包" />
+    <Node Id="Newtonsoft.Json 4.5.11" Label="Newtonsoft.Json 4.5.11" Category="包" />
+    <Node Id="System.Spatial 5.2.0" Label="System.Spatial 5.2.0" Category="包" />
+    <Node Id="WebGrease 1.3.0" Label="WebGrease 1.3.0" Category="包" />
+    <Node Id="Service\MalignantTumorSystem.BLL" Label="MalignantTumorSystem.BLL" Category="项目" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="EntityFramework6.Extended 6.0.2" Label="EntityFramework6.Extended 6.0.2" Category="包" />
+    <Node Id="Service\MalignantTumorSystem.IBLL" Label="MalignantTumorSystem.IBLL" Category="项目" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="EntityFramework6.Extended 6.0.2" Label="EntityFramework6.Extended 6.0.2" Category="包" />
+    <Node Id="Repository\MalignantTumorSystem.DAL" Label="MalignantTumorSystem.DAL" Category="项目" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="EntityFramework6.Extended 6.0.2" Label="EntityFramework6.Extended 6.0.2" Category="包" />
+    <Node Id="Repository\MalignantTumorSystem.IDAL" Label="MalignantTumorSystem.IDAL" Category="项目" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="EntityFramework6.Extended 6.0.2" Label="EntityFramework6.Extended 6.0.2" Category="包" />
+    <Node Id="MalignantTumorSystem.WebApplication" Label="MalignantTumorSystem.WebApplication" Category="项目" />
+    <Node Id="bootstrap 3.3.7" Label="bootstrap 3.3.7" Category="包" />
+    <Node Id="ECharts 2.2.3" Label="ECharts 2.2.3" Category="包" />
+    <Node Id="EntityFramework 6.0.2" Label="EntityFramework 6.0.2" Category="包" />
+    <Node Id="EntityFramework.zh-Hans 6.0.2" Label="EntityFramework.zh-Hans 6.0.2" Category="包" />
+    <Node Id="EntityFrameworkProfiler 3.0.3103.0" Label="EntityFrameworkProfiler 3.0.3103.0" Category="包" />
+    <Node Id="jQuery 1.9.1" Label="jQuery 1.9.1" Category="包" />
+    <Node Id="jQuery.UI.Combined 1.8.24" Label="jQuery.UI.Combined 1.8.24" Category="包" />
+    <Node Id="jQuery.Validation 1.10.0" Label="jQuery.Validation 1.10.0" Category="包" />
+    <Node Id="jQuery1 1.12.3" Label="jQuery1 1.12.3" Category="包" />
+    <Node Id="knockoutjs 2.2.0" Label="knockoutjs 2.2.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc 4.0.30506.0" Label="Microsoft.AspNet.Mvc 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Label="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.Core 1.2" Label="Microsoft.AspNet.Providers.Core 1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Label="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Category="包" />
+    <Node Id="Microsoft.AspNet.Providers.LocalDB 1.1" Label="Microsoft.AspNet.Providers.LocalDB 1.1" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor 2.0.30506.0" Label="Microsoft.AspNet.Razor 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Label="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization 1.0.0" Label="Microsoft.AspNet.Web.Optimization 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Label="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi 4.0.30506.0" Label="Microsoft.AspNet.WebApi 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Label="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Label="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages 2.0.30506.0" Label="Microsoft.AspNet.WebPages 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Label="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Label="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Label="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Category="包" />
+    <Node Id="Microsoft.Net.Http 2.0.20710.0" Label="Microsoft.Net.Http 2.0.20710.0" Category="包" />
+    <Node Id="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Label="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Category="包" />
+    <Node Id="Microsoft.Web.Infrastructure 1.0.0.0" Label="Microsoft.Web.Infrastructure 1.0.0.0" Category="包" />
+    <Node Id="Modernizr 2.6.2" Label="Modernizr 2.6.2" Category="包" />
+    <Node Id="Moment.js 2.17.1" Label="Moment.js 2.17.1" Category="包" />
+    <Node Id="Newtonsoft.Json 4.5.11" Label="Newtonsoft.Json 4.5.11" Category="包" />
+    <Node Id="WebActivatorEx 2.0.6" Label="WebActivatorEx 2.0.6" Category="包" />
+    <Node Id="WebGrease 1.3.0" Label="WebGrease 1.3.0" Category="包" />
+  </Nodes>
+  <Links>
+    <Link Source="Common\MalignantTumorSystem.Model" Target="EntityFramework 6.0.2" Category="安装的程序包" />
+    <Link Source="EntityFramework.zh-Hans 5.0.0" Target="EntityFramework 5.0.0" Category="程序包依赖项" />
+    <Link Source="jQuery.UI.Combined 1.8.24" Target="jQuery 1.8.2" Category="程序包依赖项" />
+    <Link Source="jQuery.Validation 1.10.0" Target="jQuery 1.8.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.30506.0" Target="Microsoft.AspNet.WebPages 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Target="Microsoft.AspNet.Mvc 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.Mvc 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.Core 1.2" Target="EntityFramework 5.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Target="Microsoft.AspNet.Providers.Core 1.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 1.1" Target="Microsoft.AspNet.Providers.Core 1.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="WebGrease 1.3.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Target="Microsoft.AspNet.Web.Optimization 1.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 4.0.30506.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Target="Newtonsoft.Json 4.5.11" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Target="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Target="Microsoft.AspNet.Mvc 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 4.0.30506" Target="Microsoft.Net.Http 2.0.20710.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 4.0.30506" Target="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 4.0.30506" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData 4.0.30506" Target="Microsoft.Data.OData 5.2.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.OData.zh-Hans 4.0.30506" Target="Microsoft.AspNet.WebApi.OData 4.0.30506" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Tracing 4.0.30506" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Tracing.zh-Hans 4.0.30506" Target="Microsoft.AspNet.WebApi.Tracing 4.0.30506" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.30506.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Target="Microsoft.AspNet.WebPages 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.2.0" Target="System.Spatial 5.2.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.Data.OData 5.2.0" Target="Microsoft.Data.Edm 5.2.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Target="jQuery 1.8.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Target="jQuery.Validation 1.10.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="程序包依赖项" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="EntityFramework.zh-Hans 5.0.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="jQuery.UI.Combined 1.8.24" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="knockoutjs 2.2.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Providers.LocalDB 1.1" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.HelpPage 4.0.30506" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.OData.zh-Hans 4.0.30506" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.Tracing.zh-Hans 4.0.30506" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebAPI" Target="Modernizr 2.6.2" Category="安装的程序包" />
+    <Link Source="EntityFramework6.Extended 6.0.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="Service\MalignantTumorSystem.BLL" Target="EntityFramework6.Extended 6.0.2" Category="安装的程序包" />
+    <Link Source="EntityFramework6.Extended 6.0.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="Service\MalignantTumorSystem.IBLL" Target="EntityFramework6.Extended 6.0.2" Category="安装的程序包" />
+    <Link Source="EntityFramework6.Extended 6.0.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="Repository\MalignantTumorSystem.DAL" Target="EntityFramework6.Extended 6.0.2" Category="安装的程序包" />
+    <Link Source="EntityFramework6.Extended 6.0.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="Repository\MalignantTumorSystem.IDAL" Target="EntityFramework6.Extended 6.0.2" Category="安装的程序包" />
+    <Link Source="bootstrap 3.3.7" Target="jQuery 1.9.1" Category="程序包依赖项" />
+    <Link Source="EntityFramework.zh-Hans 6.0.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="EntityFrameworkProfiler 3.0.3103.0" Target="WebActivatorEx 2.0.6" Category="程序包依赖项" />
+    <Link Source="jQuery.UI.Combined 1.8.24" Target="jQuery 1.9.1" Category="程序包依赖项" />
+    <Link Source="jQuery.Validation 1.10.0" Target="jQuery 1.9.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.30506.0" Target="Microsoft.AspNet.WebPages 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc 4.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Target="Microsoft.AspNet.Mvc 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.Mvc 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.Core 1.2" Target="EntityFramework 6.0.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Target="Microsoft.AspNet.Providers.Core 1.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Providers.LocalDB 1.1" Target="Microsoft.AspNet.Providers.Core 1.2" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization 1.0.0" Target="WebGrease 1.3.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Target="Microsoft.AspNet.Web.Optimization 1.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi 4.0.30506.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Target="Newtonsoft.Json 4.5.11" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Client 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Target="Microsoft.AspNet.WebApi.Core 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Target="Microsoft.AspNet.WebApi.WebHost 4.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.30506.0" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages 2.0.30506.0" Target="Microsoft.AspNet.Razor 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Target="Microsoft.AspNet.WebPages 2.0.30506.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Target="jQuery 1.9.1" Category="程序包依赖项" />
+    <Link Source="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Target="jQuery.Validation 1.10.0" Category="程序包依赖项" />
+    <Link Source="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Target="Microsoft.Net.Http 2.0.20710.0" Category="程序包依赖项" />
+    <Link Source="WebActivatorEx 2.0.6" Target="Microsoft.Web.Infrastructure 1.0.0.0" Category="程序包依赖项" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="bootstrap 3.3.7" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="ECharts 2.2.3" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="EntityFramework.zh-Hans 6.0.2" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="EntityFrameworkProfiler 3.0.3103.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="jQuery.UI.Combined 1.8.24" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="jQuery1 1.12.3" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="knockoutjs 2.2.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Mvc.FixedDisplayModes 1.0.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Mvc.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Providers.Core.zh-Hans 1.2" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Providers.LocalDB 1.1" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Razor.zh-Hans 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.Web.Optimization.zh-Hans 1.0.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.WebApi 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.WebApi.Client.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.WebApi.Core.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.WebApi.WebHost.zh-Hans 4.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.AspNet.WebPages.zh-Hans 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.jQuery.Unobtrusive.Ajax 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.jQuery.Unobtrusive.Validation 2.0.30506.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Microsoft.Net.Http.zh-Hans 2.0.20710.0" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Modernizr 2.6.2" Category="安装的程序包" />
+    <Link Source="MalignantTumorSystem.WebApplication" Target="Moment.js 2.17.1" Category="安装的程序包" />
+  </Links>
+  <Categories>
+    <Category Id="项目" />
+    <Category Id="包" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="项目" ValueLabel="True">
+      <Condition Expression="HasCategory('项目')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="程序包依赖项" ValueLabel="True">
+      <Condition Expression="HasCategory('程序包依赖项')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

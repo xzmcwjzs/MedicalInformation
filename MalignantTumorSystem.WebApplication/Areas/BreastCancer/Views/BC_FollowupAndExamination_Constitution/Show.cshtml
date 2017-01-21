@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全部中医体质测量结果</title> 
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_Constitution/Show.js"></script>
+    <script>
+        var resident_id = "@ViewBag.resident_id";
+        var resident_name = "@ViewBag.resident_name";
+        var sex = "@ViewBag.sex";
+    </script>
+</head>
+<body>
+    <div id="Div" style="margin:20px;font:700 24px 黑体" align="center">@ViewBag.resident_name<span>全部中医体质测量结果</span></div>
+    <div id="Div1"></div>
+</body>
+</html>

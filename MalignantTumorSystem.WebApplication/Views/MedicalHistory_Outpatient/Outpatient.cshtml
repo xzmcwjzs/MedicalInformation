@@ -1,0 +1,688 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增门诊病史</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MedicalHistory_Outpatient/Control.js"></script>
+    <script src="~/Scripts/MedicalHistory_Outpatient/Update.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('../../images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style11 {
+            text-align: left;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style37 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .auto-style123 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 94px;
+            border: 1px solid white;
+        }
+
+        .auto-style128 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 70px;
+            border: 1px solid white;
+        }
+
+        #values {
+            width: 85px;
+        }
+
+        .auto-style131 {
+            width: 15%;
+        }
+
+        .auto-style133 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 9%;
+            border: 1px white solid;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div style="text-align: center">
+            <table border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable" id="tab1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">新增门诊病史</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style27">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style1">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style133">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 65px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t6">
+                    <td class="auto-style1">国籍</td>
+                    <td class="auto-style27">
+                        <input type="text" id="nationality" name="nationality" value="中国" style="width: 40px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style1">民族<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <select id="ddlNation" name="ddlNation" style="width: 90px">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <td class="auto-style1">婚姻状况<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <select id="ddlMarrigeState" name="ddlMarrigeState" style="width: 137px">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <td class="auto-style29">文化程度<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style33">
+                        <select id="ddlEducationQualification" name="ddlEducationQualification" style="width: 90px">
+                            <option value="">==请选择==</option>
+                        </select>
+                    </td>
+                    <td class="auto-style133">血型</td>
+                    <td class="auto-style19">
+                        <select id="ddlABOBloodType" name="ddlABOBloodType" style="width: 75px">
+                            <option value="">=请选择=</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style1">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 20.5%; height: 16px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style29">邮政编码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="zipCode" name="zipCode" style="width: 90px;" />
+                    </td>
+                    <td class="auto-style133">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr>
+                <tr id="t3">
+                    <td class="auto-style1">手机号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style27">
+                        <input type="text" id="txtIndividualPhone" name="txtIndividualPhone" style="padding-top: 2px; width: 100px" />
+                    </td>
+                    <td class="auto-style1">电子邮箱</td>
+                    <td class="auto-style28">
+                        <input type="text" id="txtEmail" name="txtEmail" style="padding-top: 2px; width: 137px" />
+                        <input id="hint_email" style="border-top-style: none; border-right-style: none; border-left-style: none; background-color: transparent; border-bottom-style: none; display: none; color: red; width: 200px" type="text" />
+                    </td>
+                    <td class="auto-style1">联系人姓名</td>
+                    <td class="auto-style11">
+                        <input type="text" id="txtcontact_name" name="txtcontact_name" style="padding-top: 2px; width: 137px" />
+                    </td>
+                    <td class="auto-style29">联系人手机</td>
+                    <td class="auto-style33">
+                        <input type="text" id="txtcontact_phone" name="txtcontact_phone" style="padding-top: 2px; width: 90px" />
+                    </td>
+                    <td class="auto-style133">与本人关系</td>
+                    <td class="auto-style19">
+                        <select id="ddlcontact_my_relationship" name="ddlcontact_my_relationship" style="width: 75px">
+                            <option value="">=请选择=</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">门诊日期</td>
+                    <td class="auto-style27">
+                        <input type="text" value="@DateTime.Now.ToString("yyyy-MM-dd")" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 100px; height: 18px;" id="data" name="data"/>
+                    </td>
+                    <td class="auto-style1">门诊号</td>
+                    <td class="auto-style28">
+                        <input type="text" id="outpatientId" style="height: 18px; width: 137px" name="outpatientId" />
+                    </td>
+                    <td class="auto-style1">诊治医院<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" id="hospital" style="height: 18px; width: 137px" name="hospital" />
+                    </td>
+                    <td class="auto-style29">诊治科室</td>
+                    <td class="auto-style33">
+                        <select style="width: 90px" id="department" name="department">
+                            <option value="">=请选择=</option>
+                            <option value="1">内科</option>
+                            <option value="2">外科</option>
+                            <option value="3">妇产科</option>
+                            <option value="4">儿科</option>
+                            <option value="5">眼科</option>
+                            <option value="6">耳鼻喉科</option>
+                            <option value="7">口腔科</option>
+                            <option value="8">中医科</option>
+                            <option value="9">中医推拿科</option>
+                            <option value="10">其他</option>
+                        </select>
+                    </td>
+                    <td class="auto-style133"></td>
+                    <td class="auto-style19"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">
+                        主诉<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style36" colspan="8">
+                        <textarea id="zs" style="width: 96%" rows="2" name="zs"></textarea>
+                    </td>
+                    <td class="auto-style19">
+                        <input type="button" value="参考模板" style="width: 70px; height: 30px" onclick="templete()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">
+                        现病史<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style36" colspan="8">
+                        <textarea id="xbs" style="width: 96%" rows="2" name="xbs"></textarea>
+                    </td>
+                    <td class="auto-style19">
+                        <input type="button" value="参考模板" style="width: 70px; height: 30px" onclick="templete1()" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" rowspan="2" valign="top" style="padding-top: 10px">体格检查</td>
+                    <td style="border: 1px solid white; text-align: left; background-color: #f1f3f5" class="auto-style27">
+                        体温(T)<span style="color: #ff0000">*</span>
+                        <input type="text" id="t" name="t" style="height: 18px; width: 25px;" />℃
+                    </td>
+                    <td class="auto-style128">脉搏(P)<span style="color: #ff0000">*</span></td>
+                    <td style="border: 1px solid white; text-align: left; background-color: #f1f3f5" class="auto-style131">
+                        <input type="text" id="p" style="height: 18px; width: 40px;" name="p" />次/分钟
+                    </td>
+                    <td class="auto-style133">呼吸(R)<span style="color: #ff0000">*</span></td>
+                    <td style="border: 1px solid white; text-align: left; background-color: #f1f3f5">
+                        <input type="text" id="r" style="height: 18px; width: 40px" name="r" />次/分钟
+                    </td>
+                    <td class="auto-style29">血压(BP)<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style36" colspan="3">
+                        <input type="text" id="ssy" style="height: 18px; width: 30px;" name="ssy" />/
+                        <input type="text" id="szy" style="height: 18px; width: 30px;" name="szy" />mmHg
+                        <a>（</a><input type="text" id="ssy1" style="height: 18px; width: 30px;" name="ssy1" />/
+                        <input type="text" id="szy1" style="height: 18px; width: 30px;" name="szy1" />kPa<a>）</a>
+                    </td>
+                </tr>
+                @*
+                <tr>
+                    <td style="border: 1px solid white; text-align: left; background-color: #f1f3f5" class="auto-style27">
+                        面容<span style="color: #ff0000">*</span>
+                        <select id="face" name="face" style="width: 60px">
+                            <option value="">请选择</option>
+                            <option value="1">正常</option>
+                            <option value="2">苍白</option>
+                            <option value="3">憔悴</option>
+                            <option value="4">潮红</option>
+                        </select>
+                    </td>
+                    <td class="auto-style128">心率(HR)<span style="color: #ff0000">*</span></td>
+                    <td style="border: 1px solid white; text-align: left; background-color: #f1f3f5" class="auto-style131">
+                        <input type="text" id="Text18" style="height: 18px; width: 40px;" name="p" />次/分钟
+                    </td>
+                    <td class="auto-style123"></td>
+                    <td class="auto-style33"></td>
+                    <td class="auto-style29"></td>
+                    <td class="auto-style19" colspan="3" id="grade" style="color: red">
+                        <input type="text" id="values" name="values" style="display: none" />
+                    </td>
+                </tr>*@
+                <tr>
+                    <td colspan="9" class="auto-style36">
+                        <a style="padding-left: 0.8em"></a>
+                        <textarea id="other" name="other" style="width: 96%" rows="2"></textarea>
+                    </td>
+                </tr>
+                <tr id="Tr1">
+                    <td class="auto-style1" rowspan="3" valign="top" id="fzjc" style="padding-top: 10px">辅助检查</td>
+                    <td class="auto-style36" colspan="9">
+                        1.<textarea id="fzjc1" name="fzjc1" style="height: 18px; width: 96%;" placeholder="检查项目"></textarea>
+                    </td>
+                </tr>
+                <tr id="Tr2">
+                    <td class="auto-style36" colspan="9">
+                        2.<textarea id="fzjc2" name="fzjc2" style="height: 18px; width: 96%;" placeholder="检查项目"></textarea>
+                    </td>
+                </tr>
+                <tr id="Tr3">
+                    <td class="auto-style36" colspan="9">
+                        3.<textarea id="fzjc3" name="fzjc3" style="height: 18px; width: 96%;" placeholder="检查项目" onkeyup="add1()"></textarea>
+                    </td>
+                </tr>
+                <tr id="Judge1">
+                    <td class="auto-style1" valign="top" rowspan="3" id="judge" style="padding-top: 10px">初步诊断</td>
+                    <td class="auto-style36" colspan="9">
+                        1.<textarea id="judge1" name="judge1" style="height: 18px; width: 96%;" placeholder="检查项目"></textarea><input type="text" id="icd1" name="icd1" style="display:none" />
+                    </td>
+                </tr>
+                <tr id="Judge2">
+                    <td class="auto-style36" colspan="9">
+                        2.<textarea id="judge2" name="judge2" style="height: 18px; width: 96%;" placeholder="检查项目"></textarea><input type="text" id="icd2" name="icd2" style="display:none" />
+                    </td>
+                </tr>
+                <tr id="Judge3">
+                    <td class="auto-style36" colspan="9">
+                        3.<textarea id="judge3" name="judge3" style="height: 18px; width: 96%;" placeholder="检查项目" onkeyup="add2()"></textarea><input type="text" id="icd3" name="icd3" style="display:none" />
+                    </td>
+                </tr>
+                @*
+                <tr style="border:1px solid white">
+                    <td class="detailTitle" colspan="10" style="text-align:left;font-weight:bold; height: 25px;background-color: #e2ebfb;">·处方 (℞)</td>
+                </tr>
+                <tr id="Per1">
+                    <td class="auto-style1" valign="top" rowspan="3" style="padding-top: 10px">处<a style="padding-left:2em"></a>方</td>
+                    <td class="auto-style36" colspan="9">
+                        <input type="text" name="medical_name" id="Text1" style="width:245px" />
+                        <input type="text" name="specifications" id="Text2" style="width:195px" />
+                        <select id="Select1" name="usage">
+                            <option value="">=请选择=</option>
+                            <option value="1">口服</option>
+                            <option value="2">外用</option>
+                            <option value="3">静脉注射</option>
+                            <option value="4">肌肉注射</option>
+                            <option value="5">皮下注射</option>
+                            <option value="6">皮内注射</option>
+                        </select>
+                    </td>
+                </tr>*@
+                <tr id="Per1">
+                    <td class="auto-style1" valign="top" style="padding-top: 10px">处<a style="padding-left: 2em"></a>方</td>
+                    <td colspan="9" class="auto-style37">
+                        <table style="width: 100%;">
+                            <tr style="height: 25px;">
+                                <td style="width: 25%; background-color: #f1f3f5; border-right: 1px solid white;">药品名称</td>
+                                <td style="width: 20%; background-color: #e2ebfb; border-right: 1px solid white;">规格</td>
+                                <td style="width: 7%; background-color: #f1f3f5; border-right: 1px solid white;">用法</td>
+                                <td style="width: 10%; background-color: #e2ebfb; border-right: 1px solid white;">单次用量</td>
+                                <td style="width: 6%; background-color: #f1f3f5; border-right: 1px solid white;">频度</td>
+                                <td style="width: 5%; background-color: #e2ebfb; border-right: 1px solid white;">天数</td>
+                                <td style="width: 15%; background-color: #f1f3f5; border-right: 1px solid white;">总量</td>
+                                <td style="width: 10%; background-color: #e2ebfb;">单价</td>
+                                <td style="width: 2%; background-color: #f1f3f5; display: none">生产厂家</td>
+                            </tr>
+                            <tr style="height: 35px;" id="Pre1">
+                                <td style="text-align: left; background-color: #f1f3f5; border: 1px solid white; border-left: 0px;">
+                                    1.<input type="text" name="medical_name1" id="medical_name1" style="width: 90%" />
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white;">
+                                    <input type="text" name="specifications1" id="specifications1" style="width: 98%" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white;">
+                                    <select id="usage1" name="usage1">
+                                        <option value="">=请选择=</option>
+                                        <option value="1">口服</option>
+                                        <option value="2">外用</option>
+                                        <option value="3">静脉注射</option>
+                                        <option value="4">肌肉注射</option>
+                                        <option value="5">皮下注射</option>
+                                        <option value="6">皮内注射</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white;">
+                                    <input type="text" id="dosage1" name="dosage1" style="width: 40px" />
+                                    <input type="text" id="mix_unit1" name="mix_unit1" style="border: none; background-color: #e2ebfb; width: 30px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white;">
+                                    <select id="frequency1" name="frequency1" style="width: 60px">
+                                        <option value="">请选择</option>
+                                        <option value="Qd">Qd</option>
+                                        <option value="Bid">Bid</option>
+                                        <option value="Tid">Tid</option>
+                                        <option value="Qid">Qid</option>
+                                        <option value="Q2h">Q2h</option>
+                                        <option value="Q8h">Q8h</option>
+                                        <option value="Qn">Qn</option>
+                                        <option value="Qod">Qod</option>
+                                        <option value="Qw">Qw</option>
+                                        <option value="Biw">Biw</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white;">
+                                    <input type="text" id="day1" name="day1" style="width: 45px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white;">
+                                    <input type="text" id="total1" name="total1" style="width: 40px" />
+                                    <select id="unit1" name="unit1">
+                                        <option value=""></option>
+                                        <option value="片">片</option>
+                                        <option value="粒">粒</option>
+                                        <option value="盒">盒</option>
+                                        <option value="瓶">瓶</option>
+                                        <option value="支">支</option>
+                                        <option value="枚">枚</option>
+                                        <option value="袋">袋</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; border-right: 0px;">
+                                    <input type="text" id="price1" name="price1" style="border: none; background-color: #e2ebfb; width: 70px;text-align:center" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; display: none">
+                                    <input type="text" id="manufacturer1" name="manufacturer1" style="border: none; background-color: #f1f3f5; width: 10px" />
+                                </td>
+                            </tr>
+                            <tr style="height: 35px;" id="Pre2">
+                                <td style="text-align: left; background-color: #f1f3f5; border: 1px solid white; width: 25%; border-left: 0px;">
+                                    2.<input type="text" name="medical_name2" id="medical_name2" style="width: 90%" />
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 20%">
+                                    <input type="text" name="specifications2" id="specifications2" style="width: 98%" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 7%">
+                                    <select id="usage2" name="usage2">
+                                        <option value="">=请选择=</option>
+                                        <option value="1">口服</option>
+                                        <option value="2">外用</option>
+                                        <option value="3">静脉注射</option>
+                                        <option value="4">肌肉注射</option>
+                                        <option value="5">皮下注射</option>
+                                        <option value="6">皮内注射</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 10%">
+                                    <input type="text" id="dosage2" name="dosage2" style="width: 40px" />
+                                    <input type="text" id="mix_unit2" name="mix_unit2" style="border: none; background-color: #e2ebfb; width: 30px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 6%">
+                                    <select id="frequency2" name="frequency2" style="width: 60px">
+                                        <option value="">请选择</option>
+                                        <option value="Qd">Qd</option>
+                                        <option value="Bid">Bid</option>
+                                        <option value="Tid">Tid</option>
+                                        <option value="Qid">Qid</option>
+                                        <option value="Q2h">Q2h</option>
+                                        <option value="Q8h">Q8h</option>
+                                        <option value="Qn">Qn</option>
+                                        <option value="Qod">Qod</option>
+                                        <option value="Qw">Qw</option>
+                                        <option value="Biw">Biw</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 5%">
+                                    <input type="text" id="day2" name="day2" style="width: 45px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 15%">
+                                    <input type="text" id="total2" name="total2" style="width: 40px" />
+                                    <select id="unit2" name="unit2">
+                                        <option value=""></option>
+                                        <option value="片">片</option>
+                                        <option value="粒">粒</option>
+                                        <option value="盒">盒</option>
+                                        <option value="瓶">瓶</option>
+                                        <option value="支">支</option>
+                                        <option value="枚">枚</option>
+                                        <option value="袋">袋</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 10%; border-right: 0px;">
+                                    <input type="text" id="price2" name="price2" style="border: none; background-color: #e2ebfb; width: 70px;text-align:center" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; display: none; width: 2%">
+                                    <input type="text" id="manufacturer2" name="manufacturer2" style="border: none; background-color: #f1f3f5; width: 10px" />
+                                </td>
+                            </tr>
+                            <tr style="height: 35px;" id="Pre3">
+                                <td style="text-align: left; background-color: #f1f3f5; border: 1px solid white; width: 25%; border-left: 0px; border-bottom: 0px">
+                                    3.<input type="text" name="medical_name3" id="medical_name3" style="width: 90%" onkeyup="add3()" />
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 20%; border-bottom: 0px">
+                                    <input type="text" name="specifications3" id="specifications3" style="width: 98%" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 7%; border-bottom: 0px">
+                                    <select id="usage3" name="usage3">
+                                        <option value="">=请选择=</option>
+                                        <option value="1">口服</option>
+                                        <option value="2">外用</option>
+                                        <option value="3">静脉注射</option>
+                                        <option value="4">肌肉注射</option>
+                                        <option value="5">皮下注射</option>
+                                        <option value="6">皮内注射</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 10%; border-bottom: 0px">
+                                    <input type="text" id="dosage3" name="dosage3" style="width: 40px" />
+                                    <input type="text" id="mix_unit3" name="mix_unit3" style="border: none; background-color: #e2ebfb; width: 30px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 6%; border-bottom: 0px">
+                                    <select id="frequency3" name="frequency3" style="width: 60px">
+                                        <option value="">请选择</option>
+                                        <option value="Qd">Qd</option>
+                                        <option value="Bid">Bid</option>
+                                        <option value="Tid">Tid</option>
+                                        <option value="Qid">Qid</option>
+                                        <option value="Q2h">Q2h</option>
+                                        <option value="Q8h">Q8h</option>
+                                        <option value="Qn">Qn</option>
+                                        <option value="Qod">Qod</option>
+                                        <option value="Qw">Qw</option>
+                                        <option value="Biw">Biw</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 5%; border-bottom: 0px">
+                                    <input type="text" id="day3" name="day3" style="width: 45px" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; width: 15%; border-bottom: 0px">
+                                    <input type="text" id="total3" name="total3" style="width: 40px" />
+                                    <select id="unit3" name="unit3">
+                                        <option value=""></option>
+                                        <option value="片">片</option>
+                                        <option value="粒">粒</option>
+                                        <option value="盒">盒</option>
+                                        <option value="瓶">瓶</option>
+                                        <option value="支">支</option>
+                                        <option value="枚">枚</option>
+                                        <option value="袋">袋</option>
+                                    </select>
+                                </td>
+                                <td style="background-color: #e2ebfb; border: 1px solid white; width: 10%; border-right: 0px; border-bottom: 0px">
+                                    <input type="text" id="price3" name="price3" style="border: none; background-color: #e2ebfb; width: 70px;text-align:center" />
+                                </td>
+                                <td style="background-color: #f1f3f5; border: 1px solid white; display: none; width: 2%">
+                                    <input type="text" id="manufacturer3" name="manufacturer3" style="border: none; background-color: #f1f3f5; width: 10px" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">其他医嘱</td>
+                    <td class="auto-style36" colspan="9">
+                        <textarea id="advice" name="advice" style="height: 18px; width: 96%;" placeholder="其他医嘱"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style27"></td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style28"></td>
+                    <td class="auto-style1"></td>
+                    <td class="auto-style28"></td>
+                    <td class="auto-style29">门诊医生<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style33">
+                        <input type="text" name="doctor" id="doctor" style="width: 90px" value="@ViewBag.real_name" readonly="readonly" />
+                    </td>
+                    <td class="auto-style133">完成日期<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style19">
+                        <input id="date" name="date" style="width: 75px;" type="text" value="@DateTime.Now.ToString("yyyy-MM-dd")" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/4.jpg); border: none; height: 22px; width: 91px;" onclick="save()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="bt2" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" onclick="sure()" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

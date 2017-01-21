@@ -1,0 +1,288 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>内镜检查</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MyJs/jquery-form.js"></script>
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_StomachCheck/Submit.js"></script>
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_StomachCheck/Show.js"></script>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 60%;
+            text-align: left;
+        }
+
+        .auto-style8 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 45px;
+            width: 80%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style24 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style43 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px white solid;
+            width: 75px;
+        }
+
+        .auto-style45 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 14%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style50 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 12%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style51 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 17%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style52 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 9%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style53 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 16%;
+            text-align: right;
+            border: 1px white solid;
+            border-left: none;
+        }
+
+        .auto-style54 {
+            background-color: #e2ebfb;
+            border: 1px white solid;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" action="/MedicalHistory_AccessoryExamination_StomachCheck/AddAndUpdate?id=@ViewBag.id&worker=@ViewBag.worker&community_code=@ViewBag.community_code" method="post" enctype="multipart/form-data">
+        <div align="center">
+            <table style="border-collapse: collapse; border: 1px white solid;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="8" class="detailHead" id="head">新增检查报告单</td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">
+                        姓名<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style52">
+                        <input type="text" id="name" name="name" style="padding-top: 2px; width: 90px; height: 16px;" />
+                    </td>
+                    <td class="auto-style27">
+                        性别<span style="color: #ff0000">*</span>
+                    </td>
+                    <td class="auto-style43">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style50">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style24">
+                        <input type="text" id="id_card_number" name="id_card_number" style="padding-top: 2px; width: 130px; height: 16px;" />
+                    </td>
+                    <td class="auto-style51">年龄</td>
+                    <td class="auto-style45">
+                        <input type="text" id="age" name="age" style="padding-top: 2px; height: 16px; width: 100px" readonly="true" />
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">家庭常住地址</td>
+                    <td class="auto-style4" colspan="5">
+                        <select style="width: 80px; height: 20px;" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px; height: 20px;" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 88px; height: 20px;" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px;height: 20px;" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 13%; height: 14px;padding-top:5px" />
+                        <input type="text" id="resident_id" name="resident_id" style="display:none" />
+                    </td>
+                    <td class="auto-style51">手机号码</td>
+                    <td class="auto-style45">
+                        <input type="text" id="phone" name="phone" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">检查项目</td>
+                    <td class="auto-style52">
+                        <select style="width: 90px; height: 20px" id="types" name="types">
+                            <option value="">==请选择==</option>
+                            <option value="胃镜">胃镜</option>
+                            <option value="肠镜">肠镜</option>
+                            <option value="纤维支气管镜">纤维支气管镜</option>
+                            <option value="腹腔镜">腹腔镜</option>
+                            <option value="胰管镜">胰管镜</option>
+                            <option value="膀胱镜">膀胱镜</option>
+                        </select>
+                    </td>
+
+                    <td class="auto-style27">送检医生</td>
+                    <td class="auto-style43">
+                        <input type="text" id="inspect_doctor" name="inspect_doctor" style="padding-top: 2px; width: 75px; height: 16px;" />
+                    </td>
+
+
+                    <td class="auto-style50">检查医生</td>
+                    <td class="auto-style24">
+                        <input type="text" id="check_doctor" name="check_doctor" style="padding-top: 2px; width: 130px; height: 16px;" />
+                    </td>
+
+                    <td class="auto-style51">报告医生</td>
+                    <td class="auto-style45">
+                        <input type="text" id="report_doctor" name="report_doctor" style="padding-top: 2px; width: 100px; height: 16px;" />
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td class="auto-style53">检查部位与体位</td>
+                    <td colspan="7" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="position" name="position"></textarea>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">检查所见</td>
+                    <td colspan="7" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="view" name="view"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">检查图像</td>
+                    <td colspan="7" class="auto-style8">
+                        图像01<input type="file" name="jctx1" id="jctx1" style="width: 120px;" />
+                        <a style="padding-left: 2em">图像02</a><input type="file" name="jctx2" id="jctx2" style="width: 120px;" />
+                        <a style="padding-left: 2em">图像03</a><input type="file" name="jctx3" id="jctx3" style="width: 120px;" />
+                        <a style="padding-left: 2em">图像04</a><input type="file" name="jctx4" id="jctx4" style="width: 120px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">检查诊断</td>
+                    <td colspan="7" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="judge" name="judge"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">病理诊断</td>
+                    <td colspan="7" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="pathology" name="pathology"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">医生建议</td>
+                    <td colspan="7" class="auto-style8">
+                        <textarea style="width: 98%; height: 45px" id="suggest" name="suggest"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="auto-style54"></td>
+                    <td class="auto-style50"><span class="detailTitle" style="height: 25px; width: 78px;">送检日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style24">
+                        <span class="detailContent" style="height: 25px">
+                            <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 89px; height: 16px;" id="sjtime" name="sjtime" />
+                        </span>
+
+                    </td>
+                    <td class="auto-style51"><span class="detailTitle" style="height: 25px; width: 74px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style45">
+                        <span class="detailContent" style="height: 25px">
+                            <input type="text" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="width: 89px; height: 16px;" id="bgtime" name="bgtime" />
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="auto-style54">
+                        <div style="text-align: center; padding-top: 5px; padding-bottom: 5px">
+                            <input type="submit" value="提交" class="button" id="save" />
+                            <input type="button" value="重置" class="button" onclick="form1.reset();" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BBB5E0B-70D3-4490-953E-5F6CDC4C7084}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MalignantTumorSystem.BLL</RootNamespace>
+    <AssemblyName>MalignantTumorSystem.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework6.Extended.NET45">
+      <HintPath>..\packages\EntityFramework6.Extended.6.0.2\lib\net45\EntityFramework6.Extended.NET45.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="BasicInformationService.cs" />
+    <Compile Include="Chronic_disease_BloodGlucoseService.cs" />
+    <Compile Include="Chronic_disease_BloodGlucose_AddService.cs" />
+    <Compile Include="Chronic_disease_BloodPressureService.cs" />
+    <Compile Include="Chronic_disease_BloodPressure_AddService.cs" />
+    <Compile Include="Chronic_disease_Comm_DiagnosticAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_DiagnosticService.cs" />
+    <Compile Include="Chronic_disease_Comm_HumorAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_HumorService.cs" />
+    <Compile Include="Chronic_disease_Comm_LungAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_LungService.cs" />
+    <Compile Include="Chronic_disease_Comm_MedicationAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_MedicationService.cs" />
+    <Compile Include="Chronic_disease_Comm_OperationAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_OperationService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_BloodService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_Blood_AddService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_BMCAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_BMCService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_CSFAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_CSFService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_FaecesService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_GeneDetectionService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_GeneDetection_AddService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_SCEAddService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_SCEService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_SputumService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_UrineService.cs" />
+    <Compile Include="Chronic_disease_Comm_Testing_Urine_AddService.cs" />
+    <Compile Include="Chronic_disease_ConstitutionService.cs" />
+    <Compile Include="Chronic_disease_DailyLifeService.cs" />
+    <Compile Include="Chronic_disease_Diabetes_familyService.cs" />
+    <Compile Include="Chronic_disease_Diabetes_family_relationService.cs" />
+    <Compile Include="Chronic_disease_HospitalizationService.cs" />
+    <Compile Include="Chronic_disease_Hospitalization_ConsultationRecordService.cs" />
+    <Compile Include="Chronic_disease_Hospitalization_CourseRecordService.cs" />
+    <Compile Include="Chronic_disease_Hospitalization_DischargeAbstractService.cs" />
+    <Compile Include="Chronic_disease_Hospitalization_DischargeAbstract_AdviceService.cs" />
+    <Compile Include="Chronic_disease_Hospitalization_ExpensesService.cs" />
+    <Compile Include="Chronic_disease_OutpatientService.cs" />
+    <Compile Include="Chronic_disease_Outpatient_AccessoryExaminationService.cs" />
+    <Compile Include="Chronic_disease_Outpatient_JudgeService.cs" />
+    <Compile Include="Chronic_disease_Outpatient_PrescriptionService.cs" />
+    <Compile Include="Chronic_disease_PhysicalExerciseService.cs" />
+    <Compile Include="Chronic_disease_PhysicalExercise_AddService.cs" />
+    <Compile Include="Chronic_disease_SmokeAndDrinkService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_HeartService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_StomachService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_CTService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_MRIService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_USService.cs" />
+    <Compile Include="Chronic_disease_Supplementary_Examination_XService.cs" />
+    <Compile Include="Comm_EHR_AbstractService.cs" />
+    <Compile Include="Comm_ResidentFileService.cs" />
+    <Compile Include="Comm_ResidentFile_Followup_Blood_TransfusionService.cs" />
+    <Compile Include="Comm_ResidentFile_Followup_Family_DiseaseService.cs" />
+    <Compile Include="Comm_ResidentFile_Followup_SurgeryService.cs" />
+    <Compile Include="Comm_ResidentFile_Followup_TraumaService.cs" />
+    <Compile Include="Comm_TumourService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchTest.cs" />
+    <Compile Include="BLLT4\Services.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Services.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Share_CountyService.cs" />
+    <Compile Include="T4\ServicesMulti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesMulti.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MalignantTumorSystem.Common\MalignantTumorSystem.Common.csproj">
+      <Project>{d0749ec3-39fd-4e75-adf0-d4a9a2b49fa2}</Project>
+      <Name>MalignantTumorSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.DAL\MalignantTumorSystem.DAL.csproj">
+      <Project>{7a3a2255-f1ec-4327-b42a-a33466fbe3d4}</Project>
+      <Name>MalignantTumorSystem.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj">
+      <Project>{4bf77f5f-4a09-46a6-82b0-56124189b29d}</Project>
+      <Name>MalignantTumorSystem.DI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.IBLL\MalignantTumorSystem.IBLL.csproj">
+      <Project>{f5585894-3d8e-45ef-a4fa-89750793b2a4}</Project>
+      <Name>MalignantTumorSystem.IBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.IDAL\MalignantTumorSystem.IDAL.csproj">
+      <Project>{fad96e81-597c-4ee2-985c-38e3a72e83da}</Project>
+      <Name>MalignantTumorSystem.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.Model\MalignantTumorSystem.Model.csproj">
+      <Project>{1b546131-c4bb-4069-815a-48906c34fd1b}</Project>
+      <Name>MalignantTumorSystem.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BLLT4\Services.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Services.cs</LastGenOutput>
+    </Content>
+    <Content Include="T4\ServicesMulti.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ServicesMulti.cs</LastGenOutput>
+      <LastOutputs>.\ServicesMulti.cs</LastOutputs>
+    </Content>
+    <Content Include="T4\ServicesTemplate.tt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

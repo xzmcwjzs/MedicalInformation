@@ -1,0 +1,479 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>粪便检测</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 120px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style2 {
+            width: 60px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style5 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style6 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style7 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style8 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style9 {
+            background-color: #f1f3f5;
+            width: 300px;
+        }
+
+        .head {
+            background-image: url(/images/admin_bg_1.jpg);
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 24px;
+        }
+
+        #body {
+            font-size: 12px;
+        }
+
+        .auto-style10 {
+            width: 130px;
+            background-color: #f1f3f5;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var id = "@ViewBag.id";
+        $(function () {
+            $.post("/MedicalHistory_TestReport_Faeces/Show?id=" +id,
+            function (data) {
+                dts = eval(data);
+                if (dts != "") {
+                    $("#name").html(dts[0].names);
+                    if (dts[0].sex == "01") {
+                        $("#sex").html("男");
+                    }
+                    else if (dts[0].sex == "02") {
+                        $("#sex").html("女");
+                    }
+
+                    if (dts[0].birth_date != "" && dts[0].birth_date != null) {
+                        var date = new Date(parseInt(dts[0].birth_date.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].birth_date.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        var dates = new Date();
+                        var year = dates.getFullYear() -date.getFullYear();
+                        if (year > 0) {
+                            $("#age").html(year + "岁");
+                        } else if (year == 0) {
+                            var month = dates.getMonth() - a1;
+                            if (month > 0) {
+                                $("#age").html(month + "月");
+                            } else if (month == 0) {
+                                var day = dates.getDay() - a2;
+                                if (day > 0) {
+                                    $("#age").html(day + "天");
+                                }
+                            }
+                        }
+                    }
+
+                    $("#id_card_number").html(dts[0].id_card_number);
+
+                    $.post("/Data/ProvinceName?code=" + dts[0].community_code.substring(0, 2),
+                  function (data1) {
+                      $.post("/Data/CityName?code=" + dts[0].community_code.substring(0, 4),
+                  function (data2) {
+                      $.post("/Data/CountyName?code=" + dts[0].community_code.substring(0, 6),
+                  function (data3) {
+                      $.post("/Data/StreetName?code=" + dts[0].community_code.substring(0, 9),
+                 function (data4) {
+                     $.post("/Data/CommunityName?code=" + dts[0].community_code.substring(0, 12),
+                 function (data5) {
+                     $("#address").html(data1 + data2 + data3 + data4 + data5 + dts[0].address);
+                 })
+                 })
+                  })
+                  })
+                  })
+
+                    $("#phone").html(dts[0].phone);
+                    $("#sampleId").html(dts[0].samplenumber);
+
+                    $("#inspect_doctor").html(dts[0].inspect_doctor);
+                    $("#check_doctor").html(dts[0].check_doctor);
+                    $("#resport_doctor").html(dts[0].report_doctor);
+
+                    if (dts[0].name1 != "") {
+                        $("#td1").html("1");
+                        $("#td2").html(dts[0].name1);
+                        $("#td3").html(dts[0].result1);
+                        $("#td4").html(dts[0].unit1);
+                        $("#td5").html(dts[0].qujian1);
+                        $("#td6").html(dts[0].tishi1);
+                        $("#td7").html(dts[0].beizhu1);
+                    } else {
+                        document.getElementById("t1").style.display = "none";
+                    }
+
+                    if (dts[0].name2 != "") {
+                        $("#td8").html("2");
+                        $("#td9").html(dts[0].name2);
+                        $("#td10").html(dts[0].result2);
+                        $("#td11").html(dts[0].unit2);
+                        $("#td12").html(dts[0].qujian2);
+                        $("#td13").html(dts[0].tishi2);
+                        $("#td14").html(dts[0].beizhu2);
+                    } else {
+                        document.getElementById("t2").style.display = "none";
+                    }
+
+                    if (dts[0].name3 != "") {
+                        $("#td15").html("3");
+                        $("#td16").html(dts[0].name3);
+                        $("#td17").html(dts[0].result3);
+                        $("#td18").html(dts[0].unit3);
+                        $("#td19").html(dts[0].qujian3);
+                        $("#td20").html(dts[0].tishi3);
+                        $("#td21").html(dts[0].beizhu3);
+                    } else {
+                        document.getElementById("t3").style.display = "none";
+                    }
+
+                    if (dts[0].name4 != "") {
+                        $("#td22").html("4");
+                        $("#td23").html(dts[0].name4);
+                        $("#td24").html(dts[0].result4);
+                        $("#td25").html(dts[0].unit4);
+                        $("#td26").html(dts[0].qujian4);
+                        $("#td27").html(dts[0].tishi4);
+                        $("#td28").html(dts[0].beizhu4);
+                    } else {
+                        document.getElementById("t4").style.display = "none";
+                    }
+
+                    if (dts[0].name5 != "") {
+                        $("#td29").html("5");
+                        $("#td30").html(dts[0].name5);
+                        $("#td31").html(dts[0].result5);
+                        $("#td32").html(dts[0].unit5);
+                        $("#td33").html(dts[0].qujian5);
+                        $("#td34").html(dts[0].tishi5);
+                        $("#td35").html(dts[0].beizhu5);
+                    } else {
+                        document.getElementById("t5").style.display = "none";
+                    }
+
+                    if (dts[0].name6 != "") {
+                        $("#td36").html("6");
+                        $("#td37").html(dts[0].name6);
+                        $("#td38").html(dts[0].result6);
+                        $("#td39").html(dts[0].unit6);
+                        $("#td40").html(dts[0].qujian6);
+                        $("#td41").html(dts[0].tishi6);
+                        $("#td42").html(dts[0].beizhu6);
+                    } else {
+                        document.getElementById("t6").style.display = "none";
+                    }
+
+                    if (dts[0].name7 != "") {
+                        $("#td43").html("7");
+                        $("#td44").html(dts[0].name7);
+                        $("#td45").html(dts[0].result7);
+                        $("#td46").html(dts[0].unit7);
+                        $("#td47").html(dts[0].qujian7);
+                        $("#td48").html(dts[0].tishi7);
+                        $("#td49").html(dts[0].beizhu7);
+                    } else {
+                        document.getElementById("t7").style.display = "none";
+                    }
+
+                    if (dts[0].name8 != "") {
+                        $("#td50").html("8");
+                        $("#td51").html(dts[0].name8);
+                        $("#td52").html(dts[0].result8);
+                        $("#td53").html(dts[0].unit8);
+                        $("#td54").html(dts[0].qujian8);
+                        $("#td55").html(dts[0].tishi8);
+                        $("#td56").html(dts[0].beizhu8);
+                    } else {
+                        document.getElementById("t8").style.display = "none";
+                    }
+
+                    if (dts[0].name9 != "") {
+                        $("#td57").html("9");
+                        $("#td58").html(dts[0].name9);
+                        $("#td59").html(dts[0].result9);
+                        $("#td60").html(dts[0].unit9);
+                        $("#td61").html(dts[0].qujian9);
+                        $("#td62").html(dts[0].tishi9);
+                        $("#td63").html(dts[0].beizhu9);
+                    } else {
+                        document.getElementById("t9").style.display = "none";
+                    }
+                    if (dts[0].report_time != "" && dts[0].report_time != null) {
+                        var date = new Date(parseInt(dts[0].report_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].report_time.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        $("#Text36").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                    }
+                    if (dts[0].inspect_time != "" && dts[0].inspect_time != null) {
+                        var date = new Date(parseInt(dts[0].inspect_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].inspect_time.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        $("#Text37").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                    }
+
+                    if (dts[0].create_time != "" && dts[0].create_time != null) {
+                        var date = new Date(parseInt(dts[0].create_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].create_time.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        $("#Text38").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                    }
+
+
+                }
+            })
+        })
+
+    </script>
+
+</head>
+<body id="body">
+    <form id="form1">
+        <div style="width: 100%">
+            <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td align="center" colspan="8" class="head"><a id="titles" style="font-size: 14px;">粪便检测</a></td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">姓名</td>
+                    <td class="auto-style1" id="name"></td>
+
+                    <td style="text-align: right" class="auto-style6">性别</td>
+                    <td class="auto-style2" id="sex"></td>
+                    <td style="text-align: right" class="auto-style7">身份证号码</td>
+                    <td class="auto-style3" id="id_card_number"></td>
+                    <td style="text-align: right" class="auto-style8">年龄</td>
+                    <td class="auto-style1" id="age"></td>
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">家庭常住地址</td>
+                    <td colspan="5" class="auto-style9" id="address"></td>
+                    <td style="text-align: right" class="auto-style8">手机号码</td>
+                    <td class="auto-style1" id="phone"></td>
+
+                </tr>
+
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">样本编号</td>
+                    <td class="auto-style1" id="sampleId"></td>
+                    <td style="text-align: right" class="auto-style6">送检医生</td>
+                    <td class="auto-style2" id="inspect_doctor"></td>
+
+
+                    <td style="text-align: right" class="auto-style7">检查医生</td>
+                    <td class="auto-style3" id="check_doctor"></td>
+
+                    <td style="text-align: right" class="auto-style8">报告医生</td>
+                    <td class="auto-style1" id="resport_doctor"></td>
+                </tr>
+            </table>
+
+
+
+            <table style="text-align: center; width:100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tb1">
+                <tr style="height: 30px;">
+                    <td style="text-align: center; width: 5%">№</td>
+                    <td style="text-align: center; width: 20%">项目名称</td>
+                    <td style="text-align: center; width: 15%">检验结果</td>
+                    <td style="text-align: center; width: 5%">单位</td>
+                    <td style="text-align: center; width: 25%">参考值区间</td>
+                    <td style="text-align: center; width: 5%">提示</td>
+                    <td style="text-align: center; width: 25%">备注</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="text-align: center">
+                        <hr />
+                    </td>
+                </tr>
+
+                <tr style="text-align: center; height: 25px" id="t1">
+                    <td id="td1"></td>
+                    <td id="td2"></td>
+                    <td id="td3"></td>
+                    <td id="td4"></td>
+                    <td id="td5"></td>
+                    <td id="td6"></td>
+                    <td id="td7"></td>
+                </tr>
+                <tr style="height: 25px" id="t2">
+                    <td id="td8"></td>
+                    <td id="td9"></td>
+                    <td id="td10"></td>
+                    <td id="td11"></td>
+                    <td id="td12"></td>
+                    <td id="td13"></td>
+                    <td id="td14"></td>
+                </tr>
+                <tr style="height: 25px" id="t3">
+                    <td id="td15"></td>
+                    <td id="td16"></td>
+                    <td id="td17"></td>
+                    <td id="td18"></td>
+                    <td id="td19"></td>
+                    <td id="td20"></td>
+                    <td id="td21"></td>
+                </tr>
+                <tr style="height: 25px" id="t4">
+                    <td id="td22"></td>
+                    <td id="td23"></td>
+                    <td id="td24"></td>
+                    <td id="td25"></td>
+                    <td id="td26"></td>
+                    <td id="td27"></td>
+                    <td id="td28"></td>
+                </tr>
+                <tr style="height: 25px" id="t5">
+                    <td id="td29"></td>
+                    <td id="td30"></td>
+                    <td id="td31"></td>
+                    <td id="td32"></td>
+                    <td id="td33"></td>
+                    <td id="td34"></td>
+                    <td id="td35"></td>
+                </tr>
+                <tr style="height: 25px" id="t6">
+                    <td id="td36"></td>
+                    <td id="td37"></td>
+                    <td id="td38"></td>
+                    <td id="td39"></td>
+                    <td id="td40"></td>
+                    <td id="td41"></td>
+                    <td id="td42"></td>
+                </tr>
+                <tr style="height: 25px" id="t7">
+                    <td id="td43"></td>
+                    <td id="td44"></td>
+                    <td id="td45"></td>
+                    <td id="td46"></td>
+                    <td id="td47"></td>
+                    <td id="td48"></td>
+                    <td id="td49"></td>
+                </tr>
+                <tr style="height: 25px" id="t8">
+                    <td id="td50"></td>
+                    <td id="td51"></td>
+                    <td id="td52"></td>
+                    <td id="td53"></td>
+                    <td id="td54"></td>
+                    <td id="td55"></td>
+                    <td id="td56"></td>
+                </tr>
+                <tr style="height: 25px" id="t9">
+                    <td id="td57"></td>
+                    <td id="td58"></td>
+                    <td id="td59"></td>
+                    <td id="td60"></td>
+                    <td id="td61"></td>
+                    <td id="td62"></td>
+                    <td id="td63"></td>
+                </tr>
+            </table>
+
+            <table style="width:100%;border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td style="text-align: center" colspan="4">
+                        <hr />
+                    </td>
+                </tr>
+                <tr style="height: 25px">
+                    <td style="width:300px;"></td>
+                    <td>报告日期<span style="color: #ff0000">*</span><input type="text" id="Text36" style="border: none;border-color: inherit; border-width: medium; width: 144px;" /></td>
+                    <td>检测日期<span style="color: #ff0000">*</span><input type="text" id="Text37" style="border: none; border-color: inherit; border-width: medium; width: 144px;" /></td>
+                    <td>建档日期<span style="color: #ff0000">*</span><input type="text" id="Text38" style="border: none; border-color: inherit; border-width: medium; width: 144px;" /></td>
+                </tr>
+            </table>
+            <table style="width:100%;">
+                <tr style="height: 25px;">
+                    <td style="text-align:center" colspan="3">
+                        <input id="Button1" type="button" value="关闭" style="width:80px;" onclick="window.close();" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

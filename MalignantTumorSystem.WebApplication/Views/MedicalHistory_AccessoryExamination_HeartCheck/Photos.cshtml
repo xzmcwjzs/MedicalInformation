@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全部检查报告照片</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+    <script src="~/Scripts/MyJs/bootstrap-2.3.3/js/bootstrap.min.js"></script>
+    <link href="~/Scripts/MyJs/bootstrap-2.3.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Common/Photo.js"></script>
+    <script>
+        var id_card = "@ViewBag.id_card";
+        var resident_name = "@ViewBag.resident_name";
+        var type = "@ViewBag.type";
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <div>
+            <div id="Div1"></div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,316 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>中医体质量表</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/MyJs/jquery-form.js"></script> 
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_Constitution/Control.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .auto-style1 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 18px;
+            width: 7%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style19 {
+            background-color: #f1f3f5;
+            height: 25px;
+            text-align: right;
+            border: 1px solid white;
+        }
+
+        .auto-style35 {
+            padding: 2px;
+            height: 25px;
+            border: 1px solid white;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style37 {
+            background-color: #f1f3f5;
+            height: 25px;
+            padding: 2px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style38 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style39 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .auto-style40 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 14%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style41 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .auto-style42 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: center;
+            border: 1px solid white;
+        }
+
+        .auto-style72 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 9%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+
+        .auto-style122 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px solid white;
+        }
+
+        .auto-style123 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px solid white;
+        }
+
+        .auto-style124 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px solid white;
+        }
+
+        .auto-style128 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 10%;
+            border: 1px solid white;
+        }
+
+        .auto-style129 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px solid white;
+        }
+
+        .auto-style130 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            text-align: right;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+        }
+    </style>
+
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div style="text-align: center">
+            <table  border="1" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable" id="tab1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">中医体质量表</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style122">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style129">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style122">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style72">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style130">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style40">
+                        <input type="text" style="padding-top: 2px; height: 14px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style123">出生日期</td>
+                    <td class="auto-style72">
+                        <input type="text" style="padding-top: 2px; height: 14px; width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style123">年龄</td>
+                    <td class="auto-style1">
+                        <input id="age" name="age" style="width: 75px; height: 14px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style122">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="auto-style37" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 19%; height: 14px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style123">手机号码</td>
+                    <td class="auto-style72">
+                        <input type="text" id="phone" style="width: 90px; height: 14px;" name="phone" />
+                    </td>
+                    <td class="auto-style123">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style1"></td>
+                </tr>
+                <tr style="border: 1px solid white">
+                    <td class="detailTitle" colspan="10" style="text-align: left; font-weight: bold; height: 25px; background-color: #e2ebfb;">·中医体质量表<span style="color: #ff0000; padding-left: 2em">（重点说明* A 没有（根本不）；B 很少（有一点）；C 有时（有些）；D 经常（相当）；E 总是（非常）） </span></td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style36" colspan="10">1.阳虚质</td>
+                </tr>
+                <tr id="yangxz"></tr>
+
+                 
+                <tr>
+                    <td class="auto-style36" colspan="10">2.阴虚质</td>
+                </tr>
+                <tr id="yinxz"></tr>
+
+                <tr>
+                    <td class="auto-style36" colspan="10">3.气虚质</td>
+                </tr>
+                <tr id="qixz"></tr>
+
+                <tr>
+                    <td class="auto-style36" colspan="10">4.痰湿质</td>
+                </tr>
+                <tr id="tansz"></tr>
+
+                <tr>
+                    <td class="auto-style36" colspan="10">5.湿热质</td>
+                </tr>
+                <tr id="shirz"></tr>
+
+                <tr>
+                    <td class="auto-style36" colspan="10">6.血瘀质</td>
+                </tr>
+                <tr id="xueyz"></tr>
+
+
+                <tr>
+                    <td class="auto-style36" colspan="10">7.特禀质</td>
+                </tr>
+                <tr id="tebz"></tr>
+
+
+                <tr>
+                    <td class="auto-style36" colspan="10">8.气郁质</td>
+                </tr>
+                <tr id="qiyz"></tr>
+
+
+                <tr>
+                    <td class="auto-style36" colspan="10">9.平和质</td>
+                </tr>
+                <tr id="pinghz"></tr>
+
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

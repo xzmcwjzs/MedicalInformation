@@ -1,0 +1,164 @@
+﻿var date = new Date(parseInt(data.birth_date.replace("/Date(", "").replace(")/", ""), 10));
+var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+
+EF优化：
+1、
+db.Students.Where(t=>t.Name=="张三").ToList()
+db.Students.Where(t=>t.Name==DbFunctions.AsNonUnicode("张三")).ToList()
+2、
+db.Students.Where(t=>t.Name=="张三").count()>0
+db.Students.Where(t=>t.Name=="张三").FirstOrDefault()!=null
+db.Students.Any(t=>t.Name=="张三")
+
+
+EF   批量操作性能测试结果（W级别 数据）： 
+1W数据 使用EF的批量插入总耗时为：00:01:46.0358447
+  
+1W数据 使用AddRange的批量插入总耗时为：00:00:04.1923988
+5W数据 使用AddRange的批量插入总耗时为：00:00:40.6243056   
+5W数据 使用AddRange的批量插入总耗时为：00:00:17.9922646
+100W数据 使用SqlBulk的批量插入总耗时为:十几秒
+
+
+5W数据 使用BulkUpdate的批量更新一个字段总耗时为：00:00:00.6615500
+5W数据 使用BulkUpdate的批量更新两个字段总耗时为：00:00:01.4658591
+
+5W数据 使用BulkDelete的批量删除总耗时为：00:00:01.4492851
+
+
+完善ADO、Redis、EF仓储、SignalR示例
+SSO 单点登录
+登录较慢     ---OK
+基础框架搭好后  写一个SQLHelper  用原生的ado做 
+学习angular  或者vue  ---GiveUp
+仓储   ---OK  
+Log4Net    --- OK
+源码管理 SVN VSS TFS   Git  ---OK
+
+
+
+ASP.NET请求处理机制  管道事件 ：
+---------------------------------------------------------------------------------------------------------------------
+一、当一个请求到来时
+（1）客户端发送请求给服务器端
+（2）一个HTTP请求对应一个HTTP请求报文
+（3）HTTP.SYS组件捕获报文 对报文做处理 交给IIS处理
+（4）如果该请求有缓存内容则直接响应
+二、判断是否是动态资源
+（1）IIS判断是否请求的内容是否是静态资源？（如果是则直接到文件系统中拿到请求的html/css/js/jpg/gif/png等资源直接响应请求）
+（2）若是动态资源则先查找  是由哪个扩展来处理？
+		IIS本身不会处理动态资源请求  
+		“处理程序映射”=>由哪个扩展程序查找
+		aspnet_isapi.dll    ISAPI（服务器应用编程接口  Internet Server Application Programming Interface）
+三、一个神奇的入口
+（1）Worker Process（工作者进程）
+		如果IIS判断它自己无法处理asp.net的请求，会由W3WP.exe所维护的工作进程来加载aspnet_isapi.dll
+（2）.NET运行时的加载
+		aspnet_isapi.dll加载.NET运行时（CLR）
+		IIS工作进程中 的应用程序池  可以承载多个应用程序域AppDomain 
+（3）应用程序域的加载
+		由应用程序域工厂 AppDomainFactory来创建
+		IIS工作进程=>.NET运行时=>应用程序池=>应用程序域=>调用ISAPIRuntime对象
+		ISPIRuntime.ProcessRequest()方法是ASP.NET 的   第一个入口 =>请求管道
+---------------------------------------------------------------------------------------------------------------------
+利用Reflector查看：
+1、ISAPIRuntime=>ProcessRequest()方法=>CreateWorkerRequest()  判断当前IIS服务器的版本（IIS6 or IIS7?），然后创建适合不同IIS的具体WorkerRequest对象
+2、HttpRuntime=>ProcessRequestNoDemand()静态方法创建并初始化HttpWorkerRequest对象=>ProcessRequestNow()=>ProcessRequestInternal()=>一个重要对象HttpContext  IHttpHandle(ashx、aspx都实现了该接口)=>GetApplicationInstance() 由HttpApplicationFactory工厂创建=>GetNormalApplicationInstance()  获取HttpApplication=>没有则新建  HttpApplication实例  CreateNonPublicInstance()
+3、HttpRuntime=>...=>GetNormalApplicationInstance()=>InitInternal() =>InitModules()读取Web.config配置文件中关于HttpModule的信息  集合=>InitModulesCommon()=>Init()
+     InitInternal()=>BuildSteps() 19个请求处理管道事件的注册工作
+	 HttpRuntime=>ProcessRequestInternal()=>BeginProcessRequest()=>ResumeSteps() 依次执行每个请求处理管道事件
+
+
+一、第一个入口：ISAPIRuntime.ProcessRequest()   PR方法
+（1）调用ISAPIRuntime对象的ProcessRequest方法进去ASP.NET处理流程
+（2）根据ecb句柄创建HTTPWorkerRequest对象封装原始请求报文 （HTTPWorkerRequest位抽象类型）
+ 
+二、第二个入口：HttpRuntime.ProcessRequest()
+（1）其次执行HttpRuntime的ProcessRequestNoDemand方法封装HttpContext对象(Response、Request、Session等)
+（2）通过HttpApplicationFactory得到一个具体的HttpApplication实例
+
+三、第三个入口：HttpApplication.Init()
+		在前两个入口中，HttpApplication实例被创建，现在HttpApplication需要进行初始化请求处理管道，来分别处理ASP.Net WebForm或ASP.Net MVC等类型的页面的响应操作
+（1）初始化HttpModules
+（2）注册19个请求处理管道事件
+（3）开始一次处理 请求管道中 的各个事件
+		（HttpApplication实例已创建好，HttpModules已初始化，请求处理管道中的19个事件也已经注册好，现在需要的只是一一调用HttpModule中各个事件对应的执行方法即可）
+---------------------------------------------------------------------------------------------------------------------
+一、所谓“请求处理管道”
+（1）19个事件 （开始处理请求=>...=>完成结束处理请求）
+（2）HttpModule与HttpHandle
+		HttpModule 基于处理器的事件
+		HttpHandle基于处理器的扩展
+（3）19个事件中我们可以做什么？
+
+Section	  Event 	Description
+
+HttpModule	BeginRequest			此事件标志着一个新的请求，它保证在每个请求中都会被触发。
+HttpModule	AuthenticateRequest			此事件标志ASP.NET运行时准备验证用户。任何身份验证代码都可以在此注入。
+HttpModule	AuthorizeRequest			此事件标志ASP.NET运行时准备授权用户。任何授权代码都可以在此注入。
+
+HttpModule	ResolveRequest			在ASP.NET中我们通常使用OutputCache指令做缓存。在这个事件中，ASP.NET运行时确定是否能																够从缓存中加载页面，而不是从头开始生成。任何缓存的具体活动可以被注入这里。
+
+HttpModule	AcquireRequestState			此事件标志着ASP.NET运行时准备获得Session会话变量。可以对Session变量做任何你想要做																		的处理。
+
+HttpModule	PreRequestHandlerExecute			恰好在ASP.NET 开始执行事件处理程序前发生。可以预处理你想做的事。
+HttpHandler	ProcessRequest			HttpHandler逻辑被执行。在这个部分我们将为每个页面扩展写需要的逻辑。
+
+Page	Init			此事件发生在ASP.NET页面且可以用来： 1、动态地创建控件，如果你一定要在运行时创建控件； 2、任何初始化设置 3、						  母版页及其设置  在这部分中我们没有获得viewstate、postedvalues及已经初始化的控件。
+
+Page	Load		在这部分ASP.NET控件完全被加载且在这里你可以写UI操作逻辑或任何其他逻辑。NOTE：这个事件也是我们最常见且最							 常用的一个事件。
+
+Page	Validate		如果在页面上你有验证器，你同样想在这里做一下检查。
+Page	Render		是时候将输出发送到浏览器。如果你想对最终的HTML做些修改，你可以在这里输入你的HTML逻辑。
+Page	Unload		页面对象从内存中卸载。
+HttpModule	PostRequestHandlerExecute		可以注入任何你想要的逻辑，在处理程序执行之后。
+HttpModule	ReleaseRequestState		如果你想要保存对某些状态变量的更改，例如：Session变量的值。
+HttpModule	UpdateRequestCache		在结束之前，你是否想要更新你的缓存。
+HttpModule	EndRequest		这是将输出发送到客户端浏览器之前的最后一个阶段。
+（4）自定义处理逻辑
+
+二、WebForm经历的管道事件概览
+（1）在第八个事件中创建Page类对象并转换为IHtppHandler接口     PostMapRequestHandler
+（2）在第九到第十事件间根据SessionId获取Session     AcquireRequestState，PostAcquireRequestState
+（3）在第十一事件与第十二事件之间执行页面生命周期
+三、ASP.NET MVC经历的管道事件概览
+UrlRoutingModule实现了IHttpModule接口的类
+IIS请求处理管道接到请求后，就会加载 UrlRoutingModule类型的Init()方法
+（1）在第七个事件中创建实现了IHttpHandler接口的MvcHandler
+		UrlRoutingModule取出RouteData信息，与路由表 进行匹配  交给IRouteHandler  即MVCRouteHandler
+（2）在第十一事件与第十二事件之间调用MvcHandler的ProcessRequest()方法
+---------------------------------------------------------------------------------------------------------------------
+在WebForm模式下一个Page页面的生命周期，它经历了初始化Init、加载Load以及呈现Render三个重要阶段，其中构造了页面控件树，并对页面控件树进行了大量的递归操作，最后将与模板结合生成的HTML返回给了浏览器。
+---------------------------------------------------------------------------------------------------------------------
+ASP.NET MVC请求处理流程
+一、开放的ASP,NET MVC代码
+二、从MvcHandler.ProcessRequest()开始
+		在请求处理管道中的第7个事件生成了MvcHandler，在第11和第12个事件之间调用了MvcHandler的ProcessRequest方法开始了ASP.NET MVC的处理响应之旅。
+（1）Controller的激活
+借助HttpContextWrapper封装HttpContext（基于包装器（又称装饰者）模式）
+=>控制器工厂根据URL创建控制器
+=>调用控制器的Execute方法进去Action
+（2）Action的触发
+从ControllerBase的Execute方法开始
+=>根据URL获取Action名称 并准备触发Action
+=>获取Controller与Action的描述信息和过滤信息
+=>获取参数信息并开始真正执行Action：Filter=>Action=>Filter
+=>ActionResult
+（3）View的呈现
+
+----------------------------------------------------------------------------------------------------------------
+一、腾讯课堂Handler、HttpModules
+ASP.NET里 针对不同的文件请求 会有 不同的Handler 进行处理
+在<httpHandlers>结点中将不同的文件类型映射给不同的Handler去处理
+HttpHandler是针对一类型的文件，映射给指定的处理程序对请求进行处理
+
+HttpModule则是针对所有的请求文件，映射给指定的处理程序对请求进行处理
+ 
+
+
+
+
+
+

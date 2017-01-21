@@ -1,0 +1,483 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>体育锻炼</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.min.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    <script src="~/Scripts/Lifestyle_PhysicalExercise/Query.js"></script>
+    <script src="~/Scripts/Lifestyle_PhysicalExercise/Update.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: left;
+            height: 25px;
+            width: 15%;
+            padding-left: 2em;
+            border: 1px white solid;
+        }
+
+        .auto-style2 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style26 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 7%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style36 {
+            background-color: #f1f3f5;
+            height: 25px;
+            text-align: left;
+            padding: 2px;
+            width: 80%;
+            border: 1px solid white;
+        }
+
+        input[type=radio] {
+            vertical-align: middle;
+        }
+
+        input[type=checkbox] {
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+    </script>
+</head>
+<body style="background-color: #efebef;">
+    <form id="form1">
+        <div style="text-align: center">
+            <table  border="1" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="detailTable" id="tab1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">体育锻炼</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style2">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style26">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style2">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style2">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 90px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style29">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 75px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style2">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 21.2%; height: 14px; padding-top: 2px" />
+                    </td>
+                    <td class="auto-style29">邮政编码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="zipCode" name="zipCode" style="width: 90px;" />
+                    </td>
+                    <td class="auto-style29">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr>
+                <tr style="border: 1px solid white">
+                    <td class="detailTitle" colspan="10" style="text-align: left; font-weight: bold; height: 25px; background-color: #e2ebfb;">·锻炼方式</td>
+                </tr>
+                <tr>
+                    <td colspan="10" style="border: 1px solid white; margin-left: -1px; margin-top: -1px">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="run" id="run" />跑步
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week1" value="1" />1-2次
+                                    <input type="radio" name="week1" value="2" />3-4次
+                                    <input type="radio" name="week1" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time1" value="1" />15-30分钟
+                                    <input type="radio" name="every_time1" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="cut_it" id="cut_it" />快走
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week2" value="1" />1-2次
+                                    <input type="radio" name="week2" value="2" />3-4次
+                                    <input type="radio" name="week2" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time2" value="1" />15-30分钟
+                                    <input type="radio" name="every_time2" value="2" />＞30分钟
+                                    <a style="padding-left: 5em">速度</a>
+                                    <input type="radio" name="speed2" value="1" />＜100米/分钟
+                                    <input type="radio" name="speed2" value="2" />100-130米/分钟
+                                    <input type="radio" name="speed2" value="3" />＞130米/分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="by_bike" id="by_bike" />骑自行车
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week3" value="1" />1-2次
+                                    <input type="radio" name="week3" value="2" />3-4次
+                                    <input type="radio" name="week3" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time3" value="1" />15-30分钟
+                                    <input type="radio" name="every_time3" value="2" />＞30分钟
+                                    <a style="padding-left: 5em">速度</a>
+                                    <input type="radio" name="speed3" value="1" />60-70蹬/分钟
+                                    <input type="radio" name="speed3" value="2" />75-100蹬/分钟
+                                    <input type="radio" name="speed3" value="3" />＞100蹬/分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="swim" id="swim" />游泳
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week4" value="1" />1-2次
+                                    <input type="radio" name="week4" value="2" />3-4次
+                                    <input type="radio" name="week4" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time4" value="1" />15-30分钟
+                                    <input type="radio" name="every_time4" value="2" />＞30分钟
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="circuit" id="circuit" />健身操
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week5" value="1" />1-2次
+                                    <input type="radio" name="week5" value="2" />3-4次
+                                    <input type="radio" name="week5" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time5" value="1" />15-30分钟
+                                    <input type="radio" name="every_time5" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="ping_pong" id="ping_pong" />乒乓球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week6" value="1" />1-2次
+                                    <input type="radio" name="week6" value="2" />3-4次
+                                    <input type="radio" name="week6" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time6" value="1" />15-30分钟
+                                    <input type="radio" name="every_time6" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="badminton" id="badminton" />羽毛球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week7" value="1" />1-2次
+                                    <input type="radio" name="week7" value="2" />3-4次
+                                    <input type="radio" name="week7" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time7" value="1" />15-30分钟
+                                    <input type="radio" name="every_time7" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="football" id="football" />足球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week8" value="1" />1-2次
+                                    <input type="radio" name="week8" value="2" />3-4次
+                                    <input type="radio" name="week8" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time8" value="1" />15-30分钟
+                                    <input type="radio" name="every_time8" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="basketball" id="basketball" />篮球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week9" value="1" />1-2次
+                                    <input type="radio" name="week9" value="2" />3-4次
+                                    <input type="radio" name="week9" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time9" value="1" />15-30分钟
+                                    <input type="radio" name="every_time9" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="tennis" id="tennis" />网球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week10" value="1" />1-2次
+                                    <input type="radio" name="week10" value="2" />3-4次
+                                    <input type="radio" name="week10" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time10" value="1" />15-30分钟
+                                    <input type="radio" name="every_time10" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="baseball" id="baseball" />棒球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week11" value="1" />1-2次
+                                    <input type="radio" name="week11" value="2" />3-4次
+                                    <input type="radio" name="week11" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time11" value="1" />15-30分钟
+                                    <input type="radio" name="every_time11" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="golf" id="golf" />高尔夫球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week12" value="1" />1-2次
+                                    <input type="radio" name="week12" value="2" />3-4次
+                                    <input type="radio" name="week12" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time12" value="1" />15-30分钟
+                                    <input type="radio" name="every_time12" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="bowling" id="bowling" />保龄球
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week13" value="1" />1-2次
+                                    <input type="radio" name="week13" value="2" />3-4次
+                                    <input type="radio" name="week13" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time13" value="1" />15-30分钟
+                                    <input type="radio" name="every_time13" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="shadowboxing" id="shadowboxing" />太极拳
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week14" value="1" />1-2次
+                                    <input type="radio" name="week14" value="2" />3-4次
+                                    <input type="radio" name="week14" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time14" value="1" />15-30分钟
+                                    <input type="radio" name="every_time14" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="taekwondo" id="taekwondo" />跆拳道
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week15" value="1" />1-2次
+                                    <input type="radio" name="week15" value="2" />3-4次
+                                    <input type="radio" name="week15" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time15" value="1" />15-30分钟
+                                    <input type="radio" name="every_time15" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="mountaineering" id="mountaineering" />登山
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week16" value="1" />1-2次
+                                    <input type="radio" name="week16" value="2" />3-4次
+                                    <input type="radio" name="week16" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time16" value="1" />15-30分钟
+                                    <input type="radio" name="every_time16" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="auto-style1">
+                                    <input type="checkbox" value="1" name="skip" id="skip" />跳绳
+                                </td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>每周</a>
+                                    <input type="radio" name="week17" value="1" />1-2次
+                                    <input type="radio" name="week17" value="2" />3-4次
+                                    <input type="radio" name="week17" value="3" />5-6次
+                                    <a style="padding-left: 5em">每次</a>
+                                    <input type="radio" name="every_time17" value="1" />15-30分钟
+                                    <input type="radio" name="every_time17" value="2" />＞30分钟
+                                </td>
+                            </tr>
+                            <tr id="tr1">
+                                <td class="auto-style1">其他<input type="text" id="other0" name="other0" style="width: 50px" onkeyup="added()" /></td>
+                                <td class="auto-style36" colspan="9">
+                                    <a>频次</a>
+                                    <input type="text" id="frequency0" name="frequency0" style="width: 150px" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr id="last">
+                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+                        <div style="text-align: center; margin-top: 8px;">
+                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" onclick="sure()" id="bt1" />
+                            <a style="padding-left: 2em"></a>
+                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

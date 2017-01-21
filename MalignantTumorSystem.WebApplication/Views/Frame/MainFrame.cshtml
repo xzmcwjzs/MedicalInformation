@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>主页</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1">
+        <div>
+            <table width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="1" class="detailTable" id="yujing">
+                <tr>
+                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访预警提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Alert',600,600)">点击查看</a></td>
+                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访过期提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Overdue', 600, 600)">点击查看</a></td>
+                </tr> 
+            </table>
+            <br />
+            <table width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="1" class="detailTable" id="guoqi">
+                <tr>
+                    <td height="24" style=" font-size:18px;">《恶性肿瘤智能化健康管理系统》使用手册-<a href="/index/download/《恶性肿瘤智能化健康管理系统》使用手册.pdf" target=_blank>点击查看</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+            </table>
+            <br />
+            <table id="Table1" width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}智能化健康管理系统建档统计汇总表-<a href="/index/download/tjhzb.xls" target="_blank">点击下载</a></td>
+                    <td height="24" style=" font-size:18px;">常见问题回答FAQ-<a href="/index/download/FAQ.doc" target=_blank>点击下载</a></td>
+                </tr>
+            </table>
+            <br />
+
+            <iframe frameborder="0" width="100%" height="600" src="http://222.192.61.8:8082/liuyanben"></iframe>
+        </div>
+    </form>
+</body>
+</html>

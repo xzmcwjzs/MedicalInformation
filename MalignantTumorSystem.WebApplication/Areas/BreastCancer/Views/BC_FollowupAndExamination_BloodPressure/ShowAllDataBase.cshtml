@@ -1,0 +1,162 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全部监测数据</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/ECharts/echarts-all.js"></script> 
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_BloodPressure/ShowAllDataBase.js"></script>
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+            width: 65%;
+        }
+
+        .auto-style2 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 20%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style3 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 30%;
+            text-align: left;
+            border: 1px white solid;
+        }
+        .auto-style4 {
+            text-align: left;
+            height: 25px;
+            width: 20%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style5 {
+            text-align: left;
+            height: 25px;
+            width: 15%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style6 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 15%;
+            text-align: left;
+            border: 1px white solid;
+        }
+         .auto-style7 {
+            text-align: left;
+            height: 25px;
+            width: 35%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style8 {
+            line-height: 2em;
+            width: 35%;
+            padding-left: 3em;
+        }
+
+        .auto-style9 {
+            line-height: 2em;
+            width: 43%;
+            padding-left: 1em;
+        }
+
+        .auto-style10 {
+            line-height: 2em;
+            width: 22%;
+            font-size: 12px;
+        }
+
+        .auto-style11 {
+            border-bottom: 1px solid black;
+            height: 5px;
+            width: 100%;
+            clear: both;
+        }
+
+        .auto-style12 {
+            width: 49%; float: left;text-align: left; height: 760px;
+        }
+        .auto-style13 {
+            width: 49%; float: right; text-align: left; height: 760px;
+        }
+        
+    </style>
+    <script>
+        var id = "@ViewBag.id";
+    </script>
+</head>
+<body>
+    <div style="padding:2cm 1cm 2cm 2cm">
+        <div style="width: 100%">
+            <table   border="1" style="border-collapse: collapse;width:100%" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td id="Td1" class="auto-style2"></td>
+                    <td id="Td2" class="auto-style6"></td>
+                    <td id="Td3" class="auto-style3"></td>
+                    <td id="Td4" class="auto-style4"></td>
+                    <td id="Td5" class="auto-style5"></td>
+                </tr>
+                <tr>
+                    <td id="Td6" colspan="3" class="detailContent"></td>
+                    <td id="Td8" class="auto-style7" colspan="2"></td>
+                </tr>
+            </table>
+        </div>
+        <div style="width: 100%;" id="d0">
+            <div class="auto-style11"></div>
+            <div class="auto-style12" id="left0">
+                <table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+                    <tr id="t0">
+                        <td class="auto-style8">日期</td>
+                        <td class="auto-style9">血压<a style="padding-left: 1em"></a>mmHg（kPa）</td>
+                        <td class="auto-style10">心率(次/分)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="auto-style13" id="right0">
+                <table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+                    <tr id="tr0">
+                        <td class="auto-style8">日期</td>
+                        <td class="auto-style9">血压 mmHg（kPa）</td>
+                        <td class="auto-style10">心率(次/分)</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="auto-style11" id="bottom0"></div>
+        </div>
+    </div>
+    <div style="margin-top: 30px; text-align: center">
+        <span class="print">
+            <input type="button" name="button_print" value="打印" onclick="window.print()" style="width: 80px; height: 35px;" />
+        </span>
+    </div>
+</body>
+</html>

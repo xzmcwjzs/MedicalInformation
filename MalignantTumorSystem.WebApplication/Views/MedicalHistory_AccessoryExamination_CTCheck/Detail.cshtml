@@ -1,0 +1,195 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CT检查</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MedicalHistory_AccessoryExamination_CTCheck/View.js"></script> 
+    <script>
+        var id = "@ViewBag.id";
+        var id_card = "@ViewBag.id_card";
+    </script>
+    <style type="text/css">
+        .auto-style4 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 50%;
+            text-align: left;
+        }
+
+        .auto-style8 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 45px;
+            width: 80%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style24 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style27 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 10%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style43 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            text-align: left;
+            border: 1px white solid;
+            width: 75px;
+        }
+
+        .auto-style50 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 12%;
+            text-align: right;
+            border: 1px white solid;
+        }
+
+        .auto-style52 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 9%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style53 {
+            background-color: #e2ebfb;
+            padding: 2px;
+            height: 25px;
+            width: 16%;
+            text-align: right;
+            border: 1px white solid;
+            border-left: none;
+        }
+
+        .auto-style54 {
+            background-color: #e2ebfb;
+            border: 1px white solid;
+        }
+
+        .auto-style55 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 25px;
+            width: 13%;
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        <div align="center">
+            <table  style="border-collapse: collapse; border: 1px white solid;width:100%;" cellpadding="0" cellspacing="1" class="detailTable">
+                <tr>
+                    <td align="center" colspan="8" class="detailHead" id="head">CT检查</td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">姓名</td>
+                    <td class="auto-style52" id="name"></td>
+                    <td class="auto-style27">性别</td>
+                    <td class="auto-style43" id="sex"></td>
+                    <td class="auto-style50">身份证号码</td>
+                    <td class="auto-style55" id="id_card_number"></td>
+                    <td class="auto-style27">年龄</td>
+                    <td class="auto-style24" id="age"></td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">家庭常住地址</td>
+                    <td class="auto-style4" colspan="5" id="address"></td>
+                    <td class="auto-style27">手机号码</td>
+                    <td class="auto-style24" id="phone"></td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">检查项目</td>
+                    <td class="auto-style52" id="types"></td>
+
+                    <td class="auto-style27">送检医生</td>
+                    <td class="auto-style43" id="inspect_doctor"></td>
+
+
+                    <td class="auto-style50">检查医生</td>
+                    <td class="auto-style55" id="check_doctor"></td>
+
+                    <td class="auto-style27">报告医生</td>
+                    <td class="auto-style24" id="report_doctor"></td>
+                </tr>
+
+                <tr>
+
+                    <td class="auto-style53">检查部位和体位</td>
+                    <td colspan="7" class="auto-style8" id="position"></td>
+                </tr>
+                <tr>
+
+                    <td class="auto-style53">检查所见</td>
+                    <td colspan="7" class="auto-style8" id="view"></td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">检查图像</td>
+                    <td colspan="7" class="auto-style8" id="jctx1">
+                        <a id="a1"><input type="image" id="Image1" name="img1" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 5em" id="a2"><input type="image" id="Image2" name="img2" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 5em" id="a3"><input type="image" id="Image3" name="img3" style="width:91px;height:85px;" /></a>
+                        <a style="padding-left: 5em" id="a4"><input type="image" id="Image4" name="img4" style="width:91px;height:85px;" /></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style53">检查诊断</td>
+                    <td colspan="7" class="auto-style8" id="judge"></td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style53">医生建议</td>
+                    <td colspan="7" class="auto-style8" id="suggest"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="auto-style54"></td>
+                    <td class="auto-style50"><span class="detailTitle" style="height: 25px; width: 78px;">送检日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style55" id="sjtime"></td>
+                    <td class="auto-style27"><span class="detailTitle" style="height: 25px; width: 74px;">报告日期<span style="color: #ff0000">*</span></span></td>
+                    <td class="auto-style24" id="bgtime"></td>
+
+                </tr>
+                <tr>
+                    <td colspan="8" class="auto-style54">
+                        <div style="text-align: center; padding-top: 5px; padding-bottom: 5px">
+                            <input type="button" value="关闭" class="button" onclick="window.close();" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

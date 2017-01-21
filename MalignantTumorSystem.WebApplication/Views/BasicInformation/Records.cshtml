@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>全纪录</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/jquery.jqprint-0.3.js"></script>
+    <script src="~/Scripts/BasicInformation/Records_FirstPage.js"></script>
+    <link href="~/css/resident.css" rel="stylesheet" />
+    <style type="text/css">
+        #d0 {
+            width: 794px;
+            height: 1123px;
+            margin: 15px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #d {
+            width: 574px;
+            height: 827px;
+            margin-top: 62.5px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #Div1 {
+            width: 574px;
+            height: 100px;
+            margin-top: 62.5px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #d1 {
+            width: 794px;
+            margin: 5px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        #Div2 {
+            width: 574px;
+            margin-top: 62.5px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-color: #D8DCE0;
+        }
+    </style>
+    <script>
+        var resident_id = "@ViewBag.resident_id";
+        var id = "@ViewBag.id";
+      
+    </script>
+</head>
+<body>
+    <form id="form1">
+        <center>
+            <div>
+                <div id="d0">
+                    <div id="d"></div>
+                     
+                </div>
+
+                <div id="d1">
+                    <div id="Div2"></div>
+                </div>
+                <input type="button" style="cursor: pointer;background:#383F47 url(/images/5.jpg) repeat-x bottom center; border: none; height: 22px; width: 91px;margin-top:1px;" onclick="print()" />
+            </div>
+        </center>
+    </form> 
+</body>
+</html>

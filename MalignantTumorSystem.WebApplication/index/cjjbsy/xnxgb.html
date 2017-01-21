@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>居民健康档案</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE20 a:hover {font-size:16px;color:#ffffff;text-decoration: none;}{	font-size: 15px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.click a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}
+.STYLE22 {
+	font-size: 12px;
+	vertical-align: 1%;
+	line-height: normal;
+}
+a:link {
+	text-decoration: none;
+	color: #0000FF;
+}
+a:visited {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:active {
+	color: #0000FF;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a#FPcolor {
+ color:#ffffff;
+}
+a#FFcolor {
+ color:#ffffff;
+}
+a {
+ color:#000080;
+}
+.STYLE45 {font-size: 10pt; line-height: 20px; color: #000080; }
+.STYLE46 {font-size: 10pt}
+.STYLE51 {font-size: 15px; color: #FFFFFF; }
+.STYLE56 {font-size: 15px; color: #FFFFFF; }
+.STYLE58 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE59 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE60 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+BODY {
+	COLOR: #009933; FONT-SIZE: 10pt
+}
+UL {
+	FONT-SIZE: 10pt
+}
+.STYLE69 {color: #009933}
+.STYLE70 {
+	font-size: 18pt;
+	font-weight: bold;
+	color: #3333ff;
+}
+.STYLE71 {color: #000080}
+.STYLE75 {font-size: 15px}
+.STYLE76 {font-size: 14px; }
+.STYLE77 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE78 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE79 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE80 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE138 {font-size: 10pt}
+.STYLE138 {font-size: 10pt}
+.STYLE139 {font-size: 15px; color: #FFFFFF; }
+.STYLE139 {font-size: 15px; color: #FFFFFF; }
+.STYLE143 {color: #009933;
+	line-height: 20px;
+}
+.STYLE144 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE93 {color: #009933; line-height: 20px; font-size: 10pt; }
+-->
+</style>
+</head>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 rightmargin="0" bottommargin="0" style="overflow-x:hidden ">
+    <form id="form1" runat="server">
+    <center>
+<table width="1000" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td height="114" colspan="2"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="90" height="114"><img src="../images/biaotou.gif" width="90" height="113"></td>
+      <td height="114"><table width="812" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="819" height="76"><img src="../images/tt.jpg" alt="发" width="812" height="75" /></td>
+        </tr>
+        <tr>
+          <td height="35" align="center" bgcolor="#008080"><table width="734" height="35" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#008080">
+              <tr>
+                <td width="55" align="right"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">首页</a></span></td>
+                <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="66" align="center"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">健康档案</a></span></td>
+                <td width="16" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="64" align="center"><span class="click STYLE76"><a href="../yyzn.html" target="_blank" class="STYLE76"style="color: #FFFFFF">用药指南</a></span></td>
+                <td width="15" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="63" align="center"><span class="click STYLE76"><a href="../zyzy.html" target="_blank" class="STYLE76" style="color: #FFFFFF">中医中药</a></span></td>
+                <td width="15" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="61" align="center"><span class="click STYLE76"><a href="../yxbk.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医学百科</a></span></td>
+                <td width="17" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="68" align="center"><span class="click STYLE76"><a href="../yyfg.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药法规</a></span></td>
+                <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="79" align="center"><span class="click STYLE76"><a href="../yxtsg.html" target="_blank" class="STYLE76" style="color: #FFFFFF">医学图书馆</a></span></td>
+                <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="65" align="center"><span class="click STYLE76"><a href="../yysd.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药书店</a></span></td>
+                <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+                <td width="98" align="center"><span class="click STYLE76"><a href="../jbmcsy.html" target="_blank"style="color: #ffffff">疾病名称索引</a></span></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table></td>
+      <td width="90" height="114"><div align="center"><a href="../zgyyw.html"target="_blank"><img src="../images/h.jpg" alt="f" width="85" height="107" border="0" align="bottom" /></a></div></td>
+    </tr>
+  </table></td>
+</tr>
+<tr>
+    <td width="153" height="738"><table width="0" height="707" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="144" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56 "><a href="../cjjbsy.html" target="_blank" style="color: #FFFFFF" >常见疾病索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="183"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="gxy.html" target="_blank"style="color: #000080">高血压</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="tnb.html" target="_blank"style="color: #000080">糖尿病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"> <a href="gb.html" target="_blank"style="color: #000080">肝病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"> <a href="sb.html" target="_blank"style="color: #000080">肾病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="xnxgb.html" target="_blank"style="color: #000080">心脑血管病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="bnz.html" target="_blank"style="color: #000080">白内障</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="az.html" target="_blank"style="color: #000080">癌症</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="azb.html" target="_blank"style="color: #000080">艾滋病</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjjbsy.html" target="_blank">更多内容</a><img src="../images/gif163.gif" alt="r" width="16" height="16" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../cjzzsy.html"target="_blank"style="color: #FFFFFF">常见症状索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="210"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/fr.html" target="_blank"style="color: #000080">发热</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/tt.html" target="_blank"style="color: #000080">头痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/xt.html" target="_blank"style="color: #000080">胸痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/ft.html" target="_blank"style="color: #000080">腹痛</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../index/zzsy/kx.html" target="_blank"style="color: #000080"></a>
+                  <div align="left"><a href="../cjzzsy/exyot.html" target="_blank"style="color: #000080">恶心与呕吐</a></div>
+              </div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/ksykt.html" target="_blank"style="color: #000080">咳嗽与咯痰</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/hxkn.html" target="_blank"style="color: #000080">呼吸困难</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy/fx.html" target="_blank"style="color: #000080">腹泻</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../index/zzsy/xy.html" target="_blank"style="color: #000080"></a><a href="../cjzzsy/bm.html" target="_blank"style="color: #000080">便秘</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../cjzzsy.html" target="_blank">更多内容</a><img src="../images/gif163.gif" alt="d" width="16" height="16" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../yyzk.html" target="_blank"style="color: #FFFFFF">医院专科</a></span></td>
+      </tr>
+      <tr>
+        <td height="167"><ul>
+            <li class="STYLE93">
+              <div align="left"><a href="../yyzk/nk.html" target="_blank"style="color: #000080">内科</a></div>
+            </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/wk.html" target="_blank"style="color: #000080">外科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/fck.html" target="_blank"style="color: #000080">妇产科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/ek.html" target="_blank"style="color: #000080">儿科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/pfk.html"target="_blank"style="color: #000080">皮肤科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/zlk.html" target="_blank"style="color: #000080">肿瘤科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/crk.html" target="_blank"style="color: #000080">传染科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/yk.html"target="_blank"style="color: #000080">眼科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk/ebyhk.html"target="_blank"style="color: #000080">耳鼻咽喉科</a></div>
+          </li>
+          <li class="STYLE93">
+              <div align="left"><a href="../yyzk.html" target="_blank">更多内容</a><img src="../images/gif163.gif" alt="d" width="16" height="16" /></div>
+          </li>
+        </ul></td>
+      </tr>
+    </table></td>
+    <td width="847"><table width="820" height="68" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="33" align="left" valign="bottom" class="STYLE70">您好！此版块正在建设中，敬请期待！</td>
+      </tr>
+      <tr>
+        <td height="17"><img src="../../images/gif066.gif" alt="f" width="819" height="2" align="bottom" /></td>
+      </tr>
+      
+      <tr>
+        <td height="18" align="left">&nbsp;</td>
+      </tr>
+    </table>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+    </tr>
+</table>
+</center>
+    </form>
+</body>
+</html>

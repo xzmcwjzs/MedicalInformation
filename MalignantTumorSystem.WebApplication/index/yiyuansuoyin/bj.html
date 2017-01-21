@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>健康3G网</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<style type="text/css">
+<!--
+.STYLE20 a:hover {font-size:16px;color:#ffffff;text-decoration: none;}{	font-size: 15px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}.click a:hover {font-size:15px;color:#ffffff;text-decoration: none;}{	font-size: 14px;
+	font-family: "宋体";
+	color: #FFFFFF;
+}
+.STYLE22 {
+	font-size: 12px;
+	vertical-align: 1%;
+	line-height: normal;
+}
+a:link {
+	text-decoration: none;
+	color: #000080;
+}
+a:visited {
+	color: #000080;
+	text-decoration: none;
+}
+a:active {
+	color: #990000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a#FPcolor {
+ color:#ffffff;
+}
+a#FFcolor {
+ color:#ffffff;
+}
+a {
+ color:#000080;
+}
+.STYLE44 {color: #ffffff}
+.STYLE45 {font-size: 10pt; line-height: 20px; color: #000080; }
+.STYLE46 {font-size: 10pt}
+.STYLE51 {font-size: 15px; color: #FFFFFF; }
+.STYLE56 {font-size: 15px; color: #FFFFFF; }
+.STYLE58 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE59 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE60 {color: #0000FF; font-size: 10pt; overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.STYLE68 {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+BODY {
+	COLOR: #009933; FONT-SIZE: 10pt
+}
+UL {
+	FONT-SIZE: 10pt
+}
+.STYLE69 {color: #009933}
+.STYLE116 {font-size: 18px; font-weight: bold; color: #000080; }
+.STYLE115 {font-size: 18pt;color: #3333FF;}
+.STYLE136 {font-size: 1pt; font-weight: bold; color: #0066CC; }
+.STYLE137 {font-size: 18pt; font-weight: bold; color: #3333ff; }
+.STYLE71 {color: #000080}
+.STYLE138 {font-size: 10pt; line-height: 20px; color: #009933}
+.STYLE76 {font-size: 14px; }
+-->
+</style>
+</head>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 rightmargin="0" bottommargin="0" style="overflow-x:hidden ">
+    <form id="form1" runat="server">
+    <center>
+      <table width="1000" height="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td height="114" colspan="2"><table width="1000" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="90" height="114"><img src="../../images/biaotou.gif" width="90" height="113"></td>
+      <td height="114"><table width="812" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="812" height="76"><a href="../../Login.aspx"target="_blank"><img src="../../images/aeraer.gif" width="230" height="70" border="0" /></a><a href="../../Login.aspx"target="_blank"><img src="../../images/record.gif" width="142" height="73" border="0"></a> <img src="../../images/med-record.gif" width="139" height="73"><a href="http://www.intermed.net.cn/"target="_blank"><img src="../../images/guangao.gif" width="290" height="70" border="0"></a></td>
+        </tr>
+        <tr>
+          <td height="35" bgcolor="#008080"><table width="734" height="35" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#008080">
+            <tr>
+              <td width="55" align="right"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">首页</a></span></td>
+              <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="66" align="center"><span class="click STYLE76"><a href="/default.aspx"target="_blank" class="STYLE76"style="color: #FFFFFF">健康档案</a></span></td>
+              <td width="16" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="64" align="center"><span class="click STYLE76"><a href="../yyzn.html" target="_blank" class="STYLE76"style="color: #FFFFFF">用药指南</a></span></td>
+              <td width="15" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="63" align="center"><span class="click STYLE76"><a href="../zyzy.html" target="_blank" class="STYLE76" style="color: #FFFFFF">中医中药</a></span></td>
+              <td width="15" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="61" align="center"><span class="click STYLE76"><a href="../yxbk.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医学百科</a></span></td>
+              <td width="17" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="68" align="center"><span class="click STYLE76"><a href="../yyfg.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药法规</a></span></td>
+              <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="79" align="center"><span class="click STYLE76"><a href="../yxtsg.html" target="_blank" class="STYLE76" style="color: #FFFFFF">医学图书馆</a></span></td>
+              <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="65" align="center"><span class="click STYLE76"><a href="../yysd.html" target="_blank" class="STYLE76"style="color: #FFFFFF">医药书店</a></span></td>
+              <td width="13" align="center"><img src="../images/poop.gif" alt="的" width="13" height="20" /></td>
+              <td width="98" align="center"><span class="click STYLE76"><a href="../jbmcsy.html" target="_blank"style="color: #ffffff">疾病名称索引</a></span></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table></td>
+      <td width="98" height="114"><div align="center"><a href="../zgyyw.html"target="_blank"><img src="../../images/h.gif" width="90" height="113" border="0"></a></div></td>
+    </tr>
+  </table></td>
+</tr>
+<tr>
+    <td width="159" height="736"><table width="0" height="693" border="1" cellpadding="0" cellspacing="0" bordercolor="#84bf92">
+      <tr>
+        <td width="144" height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56 "><a href="../cjjbsy.html" target="_blank" style="color: #FFFFFF" >常见疾病索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="183"><ul>
+            <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/gxy.html" target="_blank"style="color: #000080">高血压</a></div>
+            </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/tnb.html" target="_blank"style="color: #000080">糖尿病</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"> <a href="../cjjbsy/gb.html" target="_blank"style="color: #000080">肝病</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"> <a href="../cjjbsy/sb.html" target="_blank"style="color: #000080">肾病</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/xnxgb.html" target="_blank"style="color: #000080">心脑血管病</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/bnz.html" target="_blank"style="color: #000080">白内障</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/az.html" target="_blank"style="color: #000080">癌症</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy/azb.html" target="_blank"style="color: #000080">艾滋病</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjjbsy.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../images/gif163.gif" alt="d"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../cjzzsy.html"target="_blank"style="color: #FFFFFF">常见症状索引</a></span></td>
+      </tr>
+      <tr>
+        <td height="210"><ul>
+            <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/fr.html" target="_blank"style="color: #000080">发热</a></div>
+            </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/tt.html" target="_blank"style="color: #000080">头痛</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/xt.html" target="_blank"style="color: #000080">胸痛</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/ft.html" target="_blank"style="color: #000080">腹痛</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/exyoy.html" target="_blank"style="color: #000080">恶心与呕吐</a></div>
+            </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/ksykt.html" target="_blank"style="color: #000080">咳嗽与咯痰</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/hxkn.html" target="_blank"style="color: #000080">呼吸困难</a></div>
+          </li>
+          <li class="STYLE138">
+            <div align="left"><a href="../cjzzsy/fx.html" target="_blank"style="color: #000080">腹泻</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy/bm.html" target="_blank"style="color: #000080">便秘</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../cjzzsy.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../images/gif163.gif" alt="d" width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td height="26" align="center" bgcolor="#0066CC"><span class="STYLE20 STYLE56"><a href="../yyzk.html" target="_blank"style="color: #FFFFFF">医院专科</a></span></td>
+      </tr>
+      <tr>
+        <td height="167"><ul>
+            <li class="STYLE138">
+              <div align="left"><a href="../yyzk/nk.html" target="_blank"style="color: #000080">内科</a></div>
+            </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk/wk.html" target="_blank"style="color: #000080">外科</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk/fck.html" target="_blank"style="color: #000080">妇产科</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk/ek.html" target="_blank"style="color: #000080">儿科</a></div>
+          </li>
+          <li class="STYLE138">
+            <div align="left"><a href="../yyzk/pfk.html"target="_blank"style="color: #000080">皮肤科</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk/zlk.html" target="_blank"style="color: #000080">肿瘤科</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk/crk.html" target="_blank"style="color: #000080">传染科</a></div>
+          </li>
+          <li class="STYLE138">
+            <div align="left"><a href="../yyzk/yk.html"target="_blank"style="color: #000080">眼科</a></div>
+          </li>
+          <li class="STYLE138">
+            <div align="left"><a href="../yyzk/ebyhk.html"target="_blank"style="color: #000080">耳鼻咽喉科</a></div>
+          </li>
+          <li class="STYLE138">
+              <div align="left"><a href="../yyzk.html" target="_blank"style="color: #0000ff">更多内容</a><img src="../images/gif163.gif" alt="d"  width="16" height="16" align="top" /></div>
+          </li>
+        </ul></td>
+      </tr>
+    </table></td>
+    <td width="841" height="736"><table width="808" height="715" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td height="33" colspan="2" align="left" valign="bottom" class="STYLE137">北京</td>
+      </tr>
+      <tr>
+              <td height="17" colspan="2"><img src="../images/gif066.gif" alt="f" width="819" height="2" align="bottom" /></td>
+      </tr>
+      <tr>
+        <td width="301" height="28" align="left"><span class="STYLE71"><a href="http://www.bjcyh.com.cn/" target="_blank">北京朝阳医院</a></span></td>
+        <td width="329" align="left"><a href="http://www.bysy.edu.cn/" target="_blank">北京大学第三医院</a></td>
+      </tr>
+      <tr>
+        <td height="28" align="left"><a href="http://www.bddyyy.com.cn/" target="_blank">北京大学第一医院</a></td>
+        <td align="left"><a href="http://www.phbjmu.edu.cn/mass/" target="_blank">北京大学人民医院</a> </td>
+      </tr>
+      <tr>
+        <td height="27" align="left"><a href="http://www.bjdth.com/" target="_blank">北京地坛医院</a></td>
+        <td align="left"><a href="http://www.bjogh.com.cn/Index.asp" target="_blank">北京妇产医院北京市妇幼保健院</a></td>
+      </tr>
+      <tr>
+        <td height="28" align="left"><a href="http://www.jst-hosp.com.cn/Default.aspx?tabid=736" target="_blank">北京积水潭医院</a></td>
+        <td align="left"><a href="http://www.bjgrh.com.cn/">北京世纪坛医院</a> </td>
+      </tr>
+      <tr>
+        <td height="26" align="left"><a href="http://www.bjhmoh.cn/" target="_blank">北京医院</a></td>
+        <td align="left"><a href="http://www.bjcancer.org/" target="_blank">北京肿瘤医院</a></td>
+      </tr>
+      <tr>
+        <td height="28" align="left"><a href="http://www.zryhyy.com.cn/" target="_blank">北京中日友好医院</a></td>
+        <td align="left"><a href="http://www.dongfangyy.com.cn/" target="_blank">北京中医药大学东方医院</a></td>
+      </tr>
+      <tr>
+        <td height="27" align="left"><a href="http://www.dzmhospital.com/" target="_blank">北京中医药大学东直门医院</a></td>
+        <td align="left"><a href="http://www.bjzhongyi.com/" target="_blank">北京中医院</a></td>
+      </tr>
+      <tr>
+        <td height="27" align="left"><a href="http://www.shouer.com.cn/web/index.aspx" target="_blank">首都儿科研究所附属儿童医院</a> </td>
+        <td height="27" align="left"><a href="http://www.bjad.com.cn/">首都医科大学附属北京安定医院</a></td>
+      </tr>
+      <tr>
+        <td height="27" align="left"><a href="http://www.anzhen.org/" target="_blank">首都医科大学附属北京安贞医院</a></td>
+        <td height="27" align="left"><a href="http://www.bch.com.cn/" target="_blank">首都医科大学附属北京儿童医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.dentist.org.cn/">首都医科大学附属北京口腔医院</a></td>
+        <td align="left"><a href="http://www.bjtth.org/Home/" target="_blank">首都医科大学附属北京天坛医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.trhos.com/" target="_blank">首都医科大学附属北京同仁医院</a> </td>
+        <td align="left"><a href="http://www.bjyah.com/" target="_blank">首都医科大学附属北京佑安医院</a> </td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.xwhosp.com.cn/" target="_blank">首都医科大学宣武医院</a> </td>
+        <td align="left"><span class="STYLE71"><a href="http://www.pumch.ac.cn/" target="_blank">中国医学科学院北京市协和医院</a></span></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.fuwaihospital.org/" target="_blank">中国医学科学院阜外心血管病医院</a></td>
+        <td align="left"><a href="http://www.zhengxing.com.cn/newEbiz1/EbizPortalFG/portal/html/index.html" target="_blank">中国医学科学院整形外科医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.cicams.ac.cn/web/index.aspx" target="_blank">中国医学科学院肿瘤医院</a></td>
+        <td align="left"><a href="http://www.gamhospital.ac.cn/" target="_blank">中国中医研究院北京广安门医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.xyhospital.com/index.php?id=277" target="_blank">中国中医研究院西苑医院</a></td>
+        <td align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.301hospital.com.cn/iframe/dili.jsp" target="_blank">中国人民解放军总医院(三Ｏ一医院）</a> </td>
+        <td align="left"><a href="http://www.pla304.com.cn/" target="_blank">中国人民解放军三Ｏ四医院</a> </td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.306.cn/web/home/" target="_blank">中国人民解放军三Ｏ六医院</a> </td>
+        <td align="left"><a href="http://www.hospital307.com/index.asp" target="_blank">中国人民解放军三Ｏ七医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.309yy.com/" target="_blank">中国人民解放军三Ｏ九医院</a></td>
+        <td align="left"><a href="http://www.epzyy.com/" target="_blank">中国人民解放军第二炮兵总医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" align="left"><a href="http://www.ljzy.com.cn/" target="_blank">北京军区总医院</a> </td>
+        <td align="left"><a href="http://www.kj-hospital.com/" target="_blank">空军总医院</a></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="2" align="left"><a href="http://www.wj-hospital.com/" target="_blank">武警总医院</a></td>
+      </tr>
+      <tr>
+        <td height="15" colspan="2" align="left">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="29" colspan="2" align="left"><hr style="width:819px;color:#bbb;" size="1" /></td>
+      </tr>
+    </table></td>
+</tr>
+</table>
+</center>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<#+
+// <copyright file="HelloWorldTemplate.tt" company="Microsoft">
+//  Copyright © Microsoft. All Rights Reserved.
+// </copyright>
+
+public class HelloWorldTemplate : CSharpTemplate
+{
+        public string _className;
+        public HelloWorldTemplate(string className){
+            _className=className;  
+        }
+ 
+	public override string TransformText()
+	{
+#>
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MalignantTumorSystem.DAL.T4 
+{
+	public class <#= _className #>
+	{
+		 private string _word;
+          public <#=_className#>(string word){
+                _word=word;
+            } 
+	}
+}
+<#+
+        return this.GenerationEnvironment.ToString();
+	}
+}
+#>

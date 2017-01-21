@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>头部</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <script src="~/Scripts/TopBody/Top.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <style type="text/css">
+        .tbmover {
+            border: #336699 1px solid;
+            padding-right: 2px;
+            padding-left: 2px;
+            background-color: #eef2f8;
+            cursor: pointer;
+        }
+
+        .tbmout {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+    </style>
+
+</head>
+<body>
+    <table width="99%" border="0" cellpadding="0" cellspacing="0" class="toorbar2" style="margin:auto">
+        <tr>
+            <td style="width:1%;">|</td>
+
+            <td style="width:13%;" class='tbmout' onmouseover="this.className = 'tbmover'" onmouseout="    this.className = 'tbmout'" onclick="    OpenTopWindow('/MedicalHistory_DischargeAbstract/DischargeAbstract', 1020, 550);"><img src="/images/imgs/icon_add.gif" alt="" height="16" align="absmiddle" />新增出院小结</td>
+            <td style="width:1%;">|</td>
+            <td style="width:9%;" class='tbmout' id='switchqrytd' title='打开查询页面' onmouseover="this.className='tbmover'" onmouseout="this.className='tbmout'" onclick="SwitchQryBar();"><img src="/images/imgs/arrow_left.gif" alt="" height="11" align="middle" id="qryImg" /><span id='qryTitle'> 打开查询</span></td>
+            <td style="width:1%;">|</td>
+            <td height="20" style="width:82%;">&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>

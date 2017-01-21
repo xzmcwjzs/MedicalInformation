@@ -1,0 +1,492 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>view</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            width: 120px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style2 {
+            width: 60px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style5 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style6 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style7 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style8 {
+            background-color: #e2ebfb;
+            width: 80px;
+        }
+
+        .auto-style9 {
+            background-color: #f1f3f5;
+            width: 300px;
+        }
+
+        .head {
+            background-image: url(/images/admin_bg_1.jpg);
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 24px;
+        }
+
+        #body {
+            font-size: 12px;
+        }
+
+        .auto-style10 {
+            width: 130px;
+            background-color: #f1f3f5;
+        }
+    </style>
+    <script type="text/javascript">
+        var id = "@ViewBag.id";
+        $(function () {
+            $.post("/MedicalHistory_TestReport_HumorCheck/Show?id=" +id,
+            function (data) {
+                dts = eval(data);
+                if (dts != "") {
+                    $("#name").val(dts[0].names);
+                    if (dts[0].sex == "01") {
+                        $("#sex").val("男");
+                    }
+                    else if (dts[0].sex == "02") {
+                        $("#sex").val("女");
+                    }
+
+                    if (dts[0].birth_date != "") {
+                        var date = new Date(parseInt(dts[0].birth_date.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                        //var a = dts[0].birth_date.split('/');
+                        //if (a[1].length < 2) {
+                        //    var a1 = "0" + a[1];
+                        //} else {
+                        //    var a1 = a[1];
+                        //}
+                        //if (a[2].split(' ')[0].length < 2) {
+                        //    var a2 = "0" + a[2].split(' ')[0];
+                        //} else {
+                        //    var a2 = a[2].split(' ')[0];
+                        //}
+                        var dates = new Date();
+                        var year = dates.getFullYear() - date.getFullYear();
+                        if (year > 0) {
+                            $("#age").val(year + "岁");
+                        } else if (year == 0) {
+                            var month = dates.getMonth() - a1;
+                            if (month > 0) {
+                                $("#age").val(month + "月");
+                            } else if (month == 0) {
+                                var day = dates.getDay() - a2;
+                                if (day > 0) {
+                                    $("#age").val(day + "天");
+                                }
+                            }
+                        }
+                    }
+
+                    $("#idCard").val(dts[0].id_card_number);
+
+                    $.post("/Data/ProvinceName?code=" + dts[0].community_code.substring(0, 2),
+                    function (data1) {
+                        $.post("/Data/CityName?code=" + dts[0].community_code.substring(0, 4),
+                    function (data2) {
+                        $.post("/Data/CountyName?code=" + dts[0].community_code.substring(0, 6),
+                    function (data3) {
+                        $.post("/Data/StreetName?code=" + dts[0].community_code.substring(0, 9),
+                   function (data4) {
+                       $.post("/Data/CommunityName?code=" + dts[0].community_code.substring(0, 12),
+                   function (data5) {
+                       $("#address").val(data1 + data2 + data3 + data4 + data5 + dts[0].address);
+                   })
+                   })
+                    })
+                    })
+                    })
+
+                    $("#phone").val(dts[0].phone);
+                    $("#sampleId").val(dts[0].sample_id);
+                    $("#check_project").val(dts[0].check_project);
+                    $("#inspect_doctor").val(dts[0].inspect_doctor);
+                    $("#check_doctor").val(dts[0].check_doctor);
+                    $("#resport_doctor").val(dts[0].report_doctor);
+                    if (dts[0].check_project == "阴道分泌物检测") {
+                        $("#titles").html("阴道分泌物检测");
+                    } else if (dts[0].check_project == "精液检测") {
+                        $("#titles").html("精液检测");
+                    } else {
+                        $("#titles").html("前列腺液检测");
+                    }
+                    if (dts[0].name1 != "") {
+                        $("#Text1").val("1");
+                        $("#Text2").val(dts[0].name1);
+                        $("#Text3").val(dts[0].result1);
+                        $("#Text4").val(dts[0].unit1);
+                        $("#Text5").val(dts[0].qujian1);
+                        $("#Text6").val(dts[0].tishi1);
+                        $("#Text7").val(dts[0].beizhu1);
+                    } else {
+                        document.getElementById("t1").style.display = "none";
+                    }
+
+                    if (dts[0].name2 != "") {
+                        $("#Text8").val("2");
+                        $("#Text9").val(dts[0].name2);
+                        $("#Text10").val(dts[0].result2);
+                        $("#Text11").val(dts[0].unit2);
+                        $("#Text12").val(dts[0].qujian2);
+                        $("#Text13").val(dts[0].tishi2);
+                        $("#Text14").val(dts[0].beizhu2);
+                    } else {
+                        document.getElementById("t2").style.display = "none";
+                    }
+
+                    if (dts[0].name3 != "") {
+                        $("#Text15").val("3");
+                        $("#Text16").val(dts[0].name3);
+                        $("#Text17").val(dts[0].result3);
+                        $("#Text18").val(dts[0].unit3);
+                        $("#Text19").val(dts[0].qujian3);
+                        $("#Text20").val(dts[0].tishi3);
+                        $("#Text21").val(dts[0].beizhu3);
+                    } else {
+                        document.getElementById("name").style.display = "none";
+                    }
+
+                    if (dts[0].name4 != "") {
+                        $("#Text22").val("4");
+                        $("#Text23").val(dts[0].name4);
+                        $("#Text24").val(dts[0].result4);
+                        $("#Text25").val(dts[0].unit4);
+                        $("#Text26").val(dts[0].qujian4);
+                        $("#Text27").val(dts[0].tishi4);
+                        $("#Text28").val(dts[0].beizhu4);
+                    } else {
+                        document.getElementById("t4").style.display = "none";
+                    }
+
+                    if (dts[0].name5 != "") {
+                        $("#Text29").val("5");
+                        $("#Text30").val(dts[0].name5);
+                        $("#Text31").val(dts[0].result5);
+                        $("#Text32").val(dts[0].unit5);
+                        $("#Text33").val(dts[0].qujian5);
+                        $("#Text34").val(dts[0].tishi5);
+                        $("#Text35").val(dts[0].beizhu5);
+                    } else {
+                        document.getElementById("t5").style.display = "none";
+                    }
+
+                    if (dts[0].inspect_time != "") {
+                        var date = new Date(parseInt(dts[0].inspect_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                        $("#Text36").val(date.getFullYear() + '-' + a1+ '-' + a2);
+                        //var a = dts[0].inspect_time.split('/');
+                        //$("#Text36").val(a[0] + '-' + a[1] + '-' + a[2].split(' ')[0]);
+                    }
+
+                    if (dts[0].report_time != "") {
+                        var date = new Date(parseInt(dts[0].report_time.replace("/Date(", "").replace(")/", ""), 10));
+                        var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                        var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+                        $("#Text37").val(date.getFullYear() + '-' + a1 + '-' + a2);
+
+                        //var b = dts[0].report_time.split('/');
+                        //$("#Text37").val(b[0] + '-' + b[1] + '-' + b[2].split(' ')[0]);
+                    }
+                    $.post("/MedicalHistory_TestReport_HumorCheck/ShowAdd?id=" + id,
+                            function (datas) {
+                                dats = eval(datas);
+                                if (dats != "") {
+                                    for (i = 1; i <= dats.length; i++) {
+                                        $("#tb1").append('<tr style="height: 25px" id="t_' + i + '">' +
+                    '<td>' +
+                        '<input type="text" id="Text1_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 40px;" /></td>' +
+                    '<td>' +
+                        '<input type="text" id="Text2_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" /></td>' +
+                    '<td>' +
+                        '<input type="text" id="Text3_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" /></td>' +
+                    '<td>' +
+                         '<input type="text" id="Text4_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" /></td>' +
+                    '<td>' +
+                         '<input type="text" id="Text5_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" /></td>' +
+                    '<td>' +
+                        '<input type="text" id="Text6_' + i + '" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" /></td>' +
+                    '<td>' +
+                        '<input type="text" id="Text7_' + i + '" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px;" /></td>' +
+                '</tr>'); 
+                                        $('#Text1_' + i + '').val(5 + i);
+                                        $('#Text2_' + i + '').val(dats[i - 1].name);
+                                        $('#Text3_' + i + '').val(dats[i - 1].result);
+                                        $('#Text4_' + i + '').val(dats[i - 1].unit);
+                                        $('#Text5_' + i + '').val(dats[i - 1].qujian);
+                                        $('#Text6_' + i + '').val(dats[i - 1].tishi);
+                                        $('#Text7_' + i + '').val(dats[i - 1].beizhu);
+                                    }
+                                }
+                            }) 
+                }
+            })
+        })
+
+    </script>
+
+</head>
+<body id="body">
+    <form id="form1">
+        <div style="width: 100%">
+            <table style="width: 100%; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td align="center" colspan="8" class="head"><a id="titles" style="font-size: 14px;"></a></td>
+                </tr>
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">姓名</td>
+                    <td class="auto-style1">
+                        <input type="text" id="name" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 80px;" />
+                    </td>
+
+                    <td style="text-align: right" class="auto-style6">性别</td>
+                    <td class="auto-style2">
+                        <input type="text" id="sex" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; height: 14px; width: 60px;" />
+                    </td>
+                    <td style="text-align: right" class="auto-style7">身份证号码</td>
+                    <td class="auto-style3">
+                        <input type="text" id="idCard" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 160px;" />
+                    </td>
+                    <td style="text-align: right" class="auto-style8">年龄</td>
+                    <td class="auto-style10">
+                        <input type="text" id="age" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 100px;" />
+                    </td>
+                </tr>
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">家庭常住地址</td>
+                    <td colspan="3" class="auto-style9">
+                        <input type="text" id="address" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 300px;" />
+
+                    </td>
+                    <td style="text-align: right" class="auto-style7">手机号码</td>
+                    <td class="auto-style3">
+                        <input type="text" id="phone" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 100px;" />
+
+                    </td>
+                    <td style="text-align: right" class="auto-style8">样本编号</td>
+                    <td class="auto-style10">
+                        <input type="text" id="sampleId" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 110px;" />
+
+                    </td>
+                </tr>
+
+
+                <tr style="height: 30px;">
+                    <td style="text-align: right" class="auto-style5">检查项目</td>
+                    <td class="auto-style1">
+                        <input type="text" id="check_project" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 120px;" />
+
+                    </td>
+                    <td style="text-align: right" class="auto-style6">送检医生</td>
+                    <td class="auto-style2">
+                        <input type="text" id="inspect_doctor" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 60px;" />
+
+                    </td>
+
+
+                    <td style="text-align: right" class="auto-style7">检查医生</td>
+                    <td class="auto-style3">
+                        <input type="text" id="check_doctor" style="border: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 100px;" />
+
+                    </td>
+
+                    <td style="text-align: right" class="auto-style8">报告医生</td>
+                    <td class="auto-style10">
+                        <input type="text" id="resport_doctor" style="border-style: none; border-color: inherit; background-color: #f1f3f5; border-width: medium; width: 110px;" />
+
+                    </td>
+                </tr>
+            </table>
+
+
+
+            <table style="text-align: center; border-top: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;" id="tb1">
+                <tr style="height: 30px;">
+                    <td style="text-align: center; width: 5%">№</td>
+                    <td style="text-align: center; width: 20%">项目名称</td>
+                    <td style="text-align: center; width: 10%">检验结果</td>
+                    <td style="text-align: center; width: 15%">单位</td>
+                    <td style="text-align: center; width: 20%">参考值区间</td>
+                    <td style="text-align: center; width: 5%">提示</td>
+                    <td style="text-align: center; width: 25%">备注</td>
+                </tr>
+                <tr>
+                    <td colspan="7" style="text-align: center">
+                        <hr />
+                    </td>
+                </tr>
+
+                <tr style="text-align: center; height: 25px" id="t1">
+                    <td>
+                        <input type="text" id="Text1" style="border: none;text-align:center;border-color: inherit; border-width: medium; width: 40px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text2" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text3" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text4" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text5" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text6" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text7" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px;" />
+                    </td>
+                </tr>
+                <tr style="height: 25px" id="t2">
+                    <td>
+                        <input type="text" id="Text8" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 40px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text9" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text10" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text11" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text12" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text13" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text14" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px" />
+                    </td>
+                </tr>
+                <tr style="height: 25px" id="name">
+                    <td>
+                        <input type="text" id="Text15" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 40px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text16" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text17" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text18" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text19" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text20" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text21" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px;" />
+                    </td>
+                </tr>
+                <tr style="height: 25px" id="t4">
+                    <td>
+                        <input type="text" id="Text22" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 40px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text23" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text24" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text25" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text26" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text27" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text28" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px;" />
+                    </td>
+                </tr>
+                <tr style="height: 25px" id="t5">
+                    <td>
+                        <input type="text" id="Text29" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 40px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text30" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text31" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 80px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text32" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 120px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text33" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 160px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text34" style="border: none; text-align:center;border-color: inherit; border-width: medium; width: 60px;" />
+                    </td>
+                    <td>
+                        <input type="text" id="Text35" style="border: none; text-align:center; border-color: inherit; border-width: medium; width: 200px;" />
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width:100%;border-bottom: 1px solid black; border-left: 1px solid black; border-right: 1px solid black;">
+                <tr>
+                    <td style="text-align: center" colspan="3">
+                        <hr />
+                    </td>
+                </tr>
+                <tr style="height: 25px">
+                    <td style="width:450px;"></td>
+                    <td>送检日期<span style="color: #ff0000">*</span><input type="text" id="Text36" style="border: none;border-color: inherit; border-width: medium; width: 144px;" /></td>
+                    <td>报告日期<span style="color: #ff0000">*</span><input type="text" id="Text37" style="border: none; border-color: inherit; border-width: medium; width: 144px;" /></td>
+                </tr>
+            </table>
+            <table style="width:100%;">
+                <tr style="height: 25px;">
+                    <td style="text-align:center" colspan="3">
+                        <input id="Button1" type="button" value="关闭" style="width:80px;" onclick="window.close();" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
