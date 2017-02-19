@@ -1,9 +1,13 @@
-﻿using System;
+﻿using MVC.Demo.SignalR.DesignPatterns.简单工厂模式;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
+using MongoDB.Driver;
+using MongoDB.Bson;
 
 namespace MVC.Demo.SignalR.Controllers
 {
@@ -54,20 +58,46 @@ namespace MVC.Demo.SignalR.Controllers
             return View();
         }
 
+        #region 23中设计模式调用action
         public ActionResult DesignPattern()
         {
             ViewBag.Message = "Your DesignPattern page.";
-            DesignPatterns.MultiThread_Singleton singleton = DesignPatterns.MultiThread_Singleton.Instance;
-            var str=singleton.test();
+            DesignPatterns.单例模式.MultiThread_Singleton singleton = DesignPatterns.单例模式.MultiThread_Singleton.Instance;
+            var str = singleton.test();
             ViewBag.test = str;
             return View();
         }
-        [HttpPost]
-        public ActionResult DesignPattern(string id)
-        { 
-            DesignPatterns.MultiThread_Singleton singleton = DesignPatterns.MultiThread_Singleton.Instance;
-            string str = singleton.test(); 
+        public ActionResult Singleton(string id)
+        {
+            DesignPatterns.单例模式.MultiThread_Singleton singleton = DesignPatterns.单例模式.MultiThread_Singleton.Instance;
+            string str = singleton.test();
             return Content(str);
+        } 
+
+        public ActionResult SimpleFactory(string id)
+        {
+            Operation oper;
+            oper = OperationFactory.CreateOperate("+");
+            oper.NumberA = 5;
+            oper.NumberB = 6;
+            double result= oper.GetResult();
+            return Content(result.ToString());
         }
+        #endregion
+
+        #region NoSql
+        public ActionResult NoSql()
+        {
+            return View();
+        } 
+        public ActionResult Insert()
+        {
+            //string connStr = ConfigurationManager.AppSettings["MongoServerSettings"];
+             
+            return Content("ok");
+        }
+        #endregion
+
+
     }
 }

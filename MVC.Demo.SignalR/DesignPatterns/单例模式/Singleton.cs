@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MVC.Demo.SignalR.DesignPatterns
+namespace MVC.Demo.SignalR.DesignPatterns.单例模式
 {
     public class Singleton
     {

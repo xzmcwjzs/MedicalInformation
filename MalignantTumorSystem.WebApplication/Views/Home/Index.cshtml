@@ -20,14 +20,17 @@
             });
 
             $("#Login").click(function () {
-                var form1 = $("#form1").serializeArray();
+                //var form1 = $("#form1").serializeArray();
+                var username=$("#txtUserName").val();
+                var password=$("#txtPassword").val();
+                var validatecode = $("#txtValidateCode").val();
                 $.ajax({
                     cache: true,
                     asycn: false,
                     type: "post",
                     url: "/Home/DengLu",
                     dataType: "text",
-                    data: form1,
+                    data: { txtUserName: username, txtPassword: password, txtValidateCode: validatecode },
                     success: function (data) {
                         if (data == "ok") { 
                             location.href = "/Main/Index";
@@ -37,9 +40,6 @@
                             $("#txtValidateCode").val("");
                             $("#img").attr('src', '/Home/ShowValidateCode?i=' + Math.random());
                         }
-                    },
-                    error: function () {
-                        alert("系统繁忙，请联系管理员");
                     }
                 });
             });

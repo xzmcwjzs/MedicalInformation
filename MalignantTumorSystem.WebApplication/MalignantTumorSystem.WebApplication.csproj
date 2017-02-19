@@ -208,6 +208,7 @@
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_ClinicalExaminationController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MammographyController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_SelfCheckController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\TestController.cs" />
     <Compile Include="Common\ComunityCode\Address.cs" />
     <Compile Include="Common\ExpressionHelper.cs" />
     <Compile Include="Common\MyAttributes\MyExceptionAttribute.cs" />
@@ -380,6 +381,19 @@
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\Show.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\ShowAll.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodGlucose\ShowAllDataBase.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\DateDeal.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\Init.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\ShowAll.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\ShowAllDataBase.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Update.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Control.js" />
     <Content Include="Scripts\BasicInformation\Query.js" />
     <Content Include="Scripts\BasicInformation\Records_FirstPage.js" />
     <Content Include="Scripts\BasicInformation\Update.js" />
@@ -431,6 +445,7 @@
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Left.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\List.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\SelfCheck.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\Test\Frame.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />
@@ -833,10 +848,6 @@
     <Folder Include="Areas\BreastCancer\Models\" />
     <Folder Include="Areas\BreastCancer\Views\Shared\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_BloodPressure\" />
-    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\" />
-    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\" />
-    <Folder Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\" />
     <Folder Include="Scripts\Test\" />
   </ItemGroup>
   <ItemGroup>

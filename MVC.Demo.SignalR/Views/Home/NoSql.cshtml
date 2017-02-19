@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "NoSql";
+}
+
+<h2>NoSql</h2>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script>
+    $(function () {
+        $("#insert").click(function () {
+            $.ajax({
+                cache: false,
+                async: false,
+                url: "/Home/Insert",
+                type: "post",
+                data: { id: "1" },
+                dataType: "text",
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        })
+         
+    })
+</script>
+
+<form id="form1">
+    <div style="width:100%">
+        <table border="1" style="width:100%;padding:5px;">
+            <tr id="tr1">
+                <td><input type="button" id="insert" name="insert" value="新增" /></td>
+            </tr>
+             
+        </table>
+    </div>
+</form>
