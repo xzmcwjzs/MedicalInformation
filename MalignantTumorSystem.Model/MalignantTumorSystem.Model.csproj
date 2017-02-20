@@ -137,6 +137,7 @@
     <Compile Include="Entities\Comm_Tumour.cs" />
     <Compile Include="Entities\ICD_10_old.cs" />
     <Compile Include="Entities\ICD_9_old.cs" />
+    <Compile Include="Entities\MT_BC_SelfCheck.cs" />
     <Compile Include="Entities\MT_RoleInfo.cs" />
     <Compile Include="Entities\MT_WorkerRoleInfo.cs" />
     <Compile Include="Entities\Share_City.cs" />
@@ -228,6 +229,7 @@
     <Compile Include="Mapping\Comm_TumourMap.cs" />
     <Compile Include="Mapping\ICD_10_oldMap.cs" />
     <Compile Include="Mapping\ICD_9_oldMap.cs" />
+    <Compile Include="Mapping\MT_BC_SelfCheckMap.cs" />
     <Compile Include="Mapping\MT_RoleInfoMap.cs" />
     <Compile Include="Mapping\MT_WorkerRoleInfoMap.cs" />
     <Compile Include="Mapping\Share_CityMap.cs" />

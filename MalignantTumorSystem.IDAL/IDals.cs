@@ -360,4 +360,8 @@ namespace MalignantTumorSystem.IDAL
 	public partial interface IChronic_disease_ConstitutionDal : IBaseDal<Chronic_disease_Constitution>
     { 
     }   
+	
+	public partial interface IMT_BC_SelfCheckDal : IBaseDal<MT_BC_SelfCheck>
+    { 
+    }   
 }

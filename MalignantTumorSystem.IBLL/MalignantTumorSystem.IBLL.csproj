@@ -115,13 +115,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="IMT_BC_SelfCheckService.cs" />
     <Compile Include="IShare_CountyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="T4\IServicesMulti.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IServicesMulti.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -141,12 +137,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IServices.cs</LastGenOutput>
     </Content>
-    <Content Include="T4\IServicesMulti.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IServicesMulti.cs</LastGenOutput>
-      <LastOutputs>.\IServicesMulti.cs</LastOutputs>
-    </Content>
-    <Content Include="T4\IServicesTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

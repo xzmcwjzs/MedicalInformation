@@ -66,7 +66,9 @@ namespace MalignantTumorSystem.Model.Enum
        [Description("Chronic_disease_BloodGlucose")]
        BloodGlucose,
        [Description("Chronic_disease_Constitution")]
-       Constitution
+       Constitution,
+       [Description("MT_BC_SelfCheck")]
+       SelfCheck
 
     }
 }

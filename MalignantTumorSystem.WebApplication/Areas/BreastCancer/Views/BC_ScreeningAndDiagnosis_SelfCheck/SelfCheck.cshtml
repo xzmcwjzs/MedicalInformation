@@ -18,7 +18,8 @@
     <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
     <script src="~/Scripts/Common/matchName.show.js"></script>
     <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_SelfCheck/Control.js"></script>
-
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_SelfCheck/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_SelfCheck/Update.js"></script>
     <script>
         var id = "@ViewBag.id";
         var no = "@ViewBag.no";
@@ -26,6 +27,8 @@
         var worker = "@ViewBag.worker";
         var real_name = "@ViewBag.real_name";
         var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments"; 
     </script>
 
     <style type="text/css">
@@ -273,8 +276,8 @@
                         <label><input type="radio" name="tumor" value="无" />无</label>
                         <a style="padding-left:2em"></a>
                         <span id="istumor">
-                            <label><input type="checkbox" name="tumorbreast" id="tumorrightbreast" />右乳</label>
-                            <label><input type="checkbox" name="tumorbreast" id="tumorleftbreast" />左乳</label>
+                            <label><input type="checkbox" name="tumorbreast" id="tumorrightbreast" value="右乳"/>右乳</label>
+                            <label><input type="checkbox" name="tumorbreast" id="tumorleftbreast" value="左乳"/>左乳</label>
                         </span>
                     </td>
                     <td class="auto-style1">有无增厚部分</td>
@@ -283,8 +286,8 @@
                         <label><input type="radio" name="thickening" value="无" />无</label>
                         <a style="padding-left:2em"></a>
                         <span id="isthickening">
-                            <label><input type="checkbox" name="thickeningbreast" id="thickeningrightbreast" />右乳</label>
-                            <label><input type="checkbox" name="thickeningbreast" id="thickeningleftbreast" />左乳</label>
+                            <label><input type="checkbox" name="thickeningbreast" id="thickeningrightbreast" value="右乳"/>右乳</label>
+                            <label><input type="checkbox" name="thickeningbreast" id="thickeningleftbreast" value="左乳"/>左乳</label>
                         </span>
 
                     </td>

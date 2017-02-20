@@ -394,6 +394,8 @@
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Update.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Update.js" />
     <Content Include="Scripts\BasicInformation\Query.js" />
     <Content Include="Scripts\BasicInformation\Records_FirstPage.js" />
     <Content Include="Scripts\BasicInformation\Update.js" />

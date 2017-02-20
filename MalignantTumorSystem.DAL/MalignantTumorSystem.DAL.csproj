@@ -68,19 +68,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.EF\EFRepository.cs" />
-    <Compile Include="T4\DalsMulti.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DalsMulti.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4\HelloWorldMulti.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HelloWorldMulti.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4\outPath\HelloWorld1.cs" />
-    <Compile Include="T4\outPath\HelloWorld2.cs" />
-    <Compile Include="T4\outPath\HelloWorld3.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -104,23 +91,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Dals.cs</LastGenOutput>
     </Content>
-    <Content Include="T4\DalsMulti.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DalsMulti.cs</LastGenOutput>
-      <LastOutputs>.\DalsMulti.cs</LastOutputs>
-    </Content>
-    <Content Include="T4\DalsTemplate.tt" />
-    <Content Include="T4\HelloWorldMulti.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HelloWorldMulti.cs</LastGenOutput>
-      <LastOutputs>
-.\HelloWorldMulti.cs
-.\outPath\HelloWorld1.cs
-.\outPath\HelloWorld2.cs
-.\outPath\HelloWorld3.cs
-</LastOutputs>
-    </Content>
-    <Content Include="T4\HelloWorldTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dals\" />

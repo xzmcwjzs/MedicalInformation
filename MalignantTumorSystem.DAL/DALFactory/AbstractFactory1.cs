@@ -540,6 +540,12 @@ Chronic_disease_BloodGlucose_AddDal;
 
 Chronic_disease_ConstitutionDal;
 		    }
+	  	    public static MT_BC_SelfCheckDal GetMT_BC_SelfCheckDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_SelfCheckDal") as 
+
+MT_BC_SelfCheckDal;
+		    }
 	   
    }
 }

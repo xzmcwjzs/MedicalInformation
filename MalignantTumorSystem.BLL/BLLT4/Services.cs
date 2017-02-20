@@ -802,4 +802,13 @@ namespace MalignantTumorSystem.BLL
             //CurrentDal =NinjectDI.GetChronic_disease_ConstitutionDal;
         } 
 	}  
+	
+	public partial class MT_BC_SelfCheckService:BaseService<MT_BC_SelfCheck>,IMT_BC_SelfCheckService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_SelfCheckDal();
+            //CurrentDal =NinjectDI.GetMT_BC_SelfCheckDal;
+        } 
+	}  
 }

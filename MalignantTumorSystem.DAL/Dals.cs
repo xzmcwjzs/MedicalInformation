@@ -364,4 +364,8 @@ namespace MalignantTumorSystem.DAL{
 	public partial class Chronic_disease_ConstitutionDal:BaseDal<Chronic_disease_Constitution>,IChronic_disease_ConstitutionDal
     {
 	}
+		
+	public partial class MT_BC_SelfCheckDal:BaseDal<MT_BC_SelfCheck>,IMT_BC_SelfCheckDal
+    {
+	}
 }

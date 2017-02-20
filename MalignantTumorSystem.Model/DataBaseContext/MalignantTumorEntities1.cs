@@ -20,10 +20,7 @@ namespace MalignantTumorSystem.Model.DataBaseContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            //注册实体的约定配置规则
-		
-	 
-            modelBuilder.Configurations.Add(new Comm_Platform_WorkerMap());
+			modelBuilder.Configurations.Add(new Comm_Platform_WorkerMap());
 		
 	 
             modelBuilder.Configurations.Add(new MT_RoleInfoMap());
@@ -285,6 +282,274 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 		
 	 
             modelBuilder.Configurations.Add(new Chronic_disease_ConstitutionMap());
+            //注册实体的约定配置规则
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_Platform_WorkerMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_RoleInfoMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_WorkerRoleInfoMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_ProvinceMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_CityMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_CountyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_StreetMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_CommunityInfoMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_TumourMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFileMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Followup_DiseaseMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Followup_SurgeryMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Followup_TraumaMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Followup_Blood_TransfusionMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Followup_Family_DiseaseMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_SmokeAndDrinkMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_EHR_AbstractMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Comm_ResidentFile_Change_AddressMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Share_DataDictionaryMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Diabetes_familyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Diabetes_family_relationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_DailyLifeMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_PhysicalExerciseMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_PhysicalExercise_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new ICD_10_oldMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_MedicineMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Data_DiseaseNameMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_DiagnosticMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_OutpatientMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_MedicationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Outpatient_JudgeMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Outpatient_PrescriptionMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Outpatient_AccessoryExaminationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_MedicationAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_HospitalizationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Hospitalization_ConsultationRecordMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Hospitalization_CourseRecordMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Hospitalization_ExpensesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Hospitalization_DischargeAbstractMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Hospitalization_DischargeAbstract_AdviceMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_DiagnosticAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Data_NamesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Data_UnitsMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Data_SectionsMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_BloodMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_Blood_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_PicturesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Data_ResultsMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_UrineMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_Urine_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_FaecesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_SputumMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_CSFMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_CSFAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_SCEMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_SCEAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorProjectNamesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorUnitMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorResultMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_HumorQuJianMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_BMCMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_BMCAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_GeneDetection_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_Testing_GeneDetectionMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new ICD_9_oldMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_OperationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_OperationAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_CTMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_XMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_USMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_StomachMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_MRIMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Supplementary_Examination_HeartMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungProjectNamesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungQuJianMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungSexQuJianMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungTitleMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungUnitMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_Comm_LungAddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new TestMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_BloodPressureMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_BloodPressure_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_BloodGlucoseMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_BloodGlucose_AddMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new Chronic_disease_ConstitutionMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_SelfCheckMap());
      }
 		
 	     public DbSet<Comm_Platform_Worker> Comm_Platform_Worker { get; set; }
@@ -462,5 +727,7 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 	     public DbSet<Chronic_disease_BloodGlucose_Add> Chronic_disease_BloodGlucose_Add { get; set; }
 		
 	     public DbSet<Chronic_disease_Constitution> Chronic_disease_Constitution { get; set; }
+		
+	     public DbSet<MT_BC_SelfCheck> MT_BC_SelfCheck { get; set; }
    }
 }

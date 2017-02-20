@@ -719,6 +719,14 @@ namespace MalignantTumorSystem.DI{
                // } 
                 [Inject]
                 public static IChronic_disease_ConstitutionDal GetChronic_disease_ConstitutionDal{get;set;}
+	  
+                //public static IMT_BC_SelfCheckDal GetMT_BC_SelfCheckDal;
+                //public NinjectDI(IMT_BC_SelfCheckDal dal)
+               // {
+                //    GetMT_BC_SelfCheckDal=dal;
+               // } 
+                [Inject]
+                public static IMT_BC_SelfCheckDal GetMT_BC_SelfCheckDal{get;set;}
 	   
    }
 }

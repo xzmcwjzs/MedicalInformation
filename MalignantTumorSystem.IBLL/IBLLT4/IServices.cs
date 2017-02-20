@@ -448,4 +448,9 @@ namespace MalignantTumorSystem.IBLL
     {
        
     }
+	
+	 public partial interface IMT_BC_SelfCheckService:IBaseService<MT_BC_SelfCheck>
+    {
+       
+    }
 }

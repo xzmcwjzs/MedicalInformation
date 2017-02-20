@@ -299,6 +299,9 @@ namespace MalignantTumorSystem.WebApplication.Ninject
 		
             Kernel.Bind<IChronic_disease_ConstitutionDal>().To<Chronic_disease_ConstitutionDal>();
 	        Kernel.Bind<IChronic_disease_ConstitutionService>().To<Chronic_disease_ConstitutionService>();
+		
+            Kernel.Bind<IMT_BC_SelfCheckDal>().To<MT_BC_SelfCheckDal>();
+	        Kernel.Bind<IMT_BC_SelfCheckService>().To<MT_BC_SelfCheckService>();
         }
     }
 }
