@@ -1,0 +1,12 @@
+﻿@using StackExchange.Profiling;
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+    </head>
+    <body>
+        @MiniProfiler.RenderIncludes();
+        @RenderBody()
+    </body>
+</html>

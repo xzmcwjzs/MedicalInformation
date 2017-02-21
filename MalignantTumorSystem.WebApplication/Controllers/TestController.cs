@@ -22,7 +22,10 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         {
             return View();
         }
-
+        public ActionResult Index2()
+        {
+            return View();
+        }
         public ActionResult AddEF()
         { 
             List<Test> listModel = new List<Test>();

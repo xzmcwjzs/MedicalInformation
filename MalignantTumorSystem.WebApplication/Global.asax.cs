@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StackExchange.Profiling;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -25,6 +26,9 @@ namespace MalignantTumorSystem.WebApplication
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //性能检测
+            StackExchange.Profiling.EntityFramework6.MiniProfilerEF6.Initialize();
 
             #region 利用RouteDebug进行调试
             //RouteDebug.RouteDebugger.RewriteRoutesForTesting(RouteTable.Routes);
@@ -55,5 +59,15 @@ namespace MalignantTumorSystem.WebApplication
         //{
         //    MalignantTumorSystem.Common.OneLoginHelper.GlobalSessionEnd();
         //}
+
+        protected void Application_BeginRequest(Object source, EventArgs e)
+        { 
+            MiniProfiler.Start(); 
+        }
+        protected void Application_EndRequest()
+        { 
+            MiniProfiler.Stop(); 
+        }
+
     }
 }

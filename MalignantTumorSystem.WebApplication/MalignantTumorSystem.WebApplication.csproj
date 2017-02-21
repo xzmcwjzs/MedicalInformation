@@ -61,6 +61,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MiniProfiler, Version=3.2.0.157, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.3.2.0.157\lib\net40\MiniProfiler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler.EntityFramework6, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.EF6.3.0.11\lib\net40\MiniProfiler.EntityFramework6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MiniProfiler.Mvc, Version=3.0.11.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.MVC4.3.0.11\lib\net40\MiniProfiler.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>..\packages\WebForm\MySql.Data.dll</HintPath>
     </Reference>
@@ -208,7 +220,6 @@
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_ClinicalExaminationController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MammographyController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_SelfCheckController.cs" />
-    <Compile Include="Areas\BreastCancer\Controllers\TestController.cs" />
     <Compile Include="Common\ComunityCode\Address.cs" />
     <Compile Include="Common\ExpressionHelper.cs" />
     <Compile Include="Common\MyAttributes\MyExceptionAttribute.cs" />
@@ -447,7 +458,12 @@
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\Left.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\List.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_SelfCheck\SelfCheck.cshtml" />
-    <Content Include="Areas\BreastCancer\Views\Test\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\Shared\_Layout.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />
@@ -844,11 +860,12 @@
     <Content Include="Views\MedicalHistory_TestReport_Urine\view.cshtml" />
     <Content Include="Views\Statics\Frame.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Shared\MyLayout.cshtml" />
+    <Content Include="Views\Test\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\BreastCancer\Models\" />
-    <Folder Include="Areas\BreastCancer\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\Test\" />
   </ItemGroup>
