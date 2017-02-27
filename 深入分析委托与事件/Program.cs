@@ -72,6 +72,11 @@ namespace 深入分析委托与事件
             //managerHandler(manager);
             #endregion
 
+            #region 事件
+
+            #endregion
+
+
 
             Console.ReadKey();
         }
@@ -242,6 +247,15 @@ namespace 深入分析委托与事件
         //}
         #endregion
 
+        #region 事件
 
+        #endregion
+
+        #region 系统自带的泛型委托有
+        //Predicate<T>、Action<T>、Func<>支持0~16个参数
+        #endregion
+        #region 匿名方法=>Lambda
+
+        #endregion
     }
 }
