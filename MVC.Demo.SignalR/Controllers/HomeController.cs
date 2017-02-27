@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using MVC.Demo.SignalR.Models;
 
 namespace MVC.Demo.SignalR.Controllers
 {
@@ -92,10 +93,23 @@ namespace MVC.Demo.SignalR.Controllers
         } 
         public ActionResult Insert()
         {
-            //string connStr = ConfigurationManager.AppSettings["MongoServerSettings"];
-             
-            return Content("ok");
+            // string connStr = ConfigurationManager.AppSettings["MongoServerSettings"]; 
+            string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
+            var client = new MongoClient(connStr);
+            var database = client.GetDatabase(new MongoUrl(connStr).DatabaseName);
+            users model = new users()
+            {
+                id = "12",
+                name = "hedefu",
+                password = "123456",
+                age = 29,
+                createtime = DateTime.Now
+            };
+            IMongoCollection<users> collection = database.GetCollection<users>("users");
+            collection.InsertOne(model);
+            return Content("MongoDB数据插入成功");
         }
+        
         #endregion
 
 
