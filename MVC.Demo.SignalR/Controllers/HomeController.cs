@@ -91,7 +91,7 @@ namespace MVC.Demo.SignalR.Controllers
         {
             return View();
         } 
-        public ActionResult Insert()
+        public ActionResult MongoDBInsert()
         {
             // string connStr = ConfigurationManager.AppSettings["MongoServerSettings"]; 
             string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
@@ -110,6 +110,64 @@ namespace MVC.Demo.SignalR.Controllers
             return Content("MongoDB数据插入成功");
         }
         
+        public ActionResult MongoDBDelete()
+        {
+            string id = Request["id"];
+            string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
+            var client = new MongoClient(connStr);
+            var database = client.GetDatabase(new MongoUrl(connStr).DatabaseName);
+
+            IMongoCollection<users> collection = database.GetCollection<users>("users");
+            DeleteResult result = collection.DeleteOne<users>(t => t.id == "12");
+            if (result.DeletedCount > 0)
+            {
+                return Content("MongoDB数据删除成功");
+            }
+            else
+            {
+                return Content("MongoDB数据删除失败");
+            }
+
+        }
+
+        public ActionResult MongoDBAllUpdate()
+        {
+            string id = Request["id"];
+            string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
+            var client = new MongoClient(connStr);
+            var database = client.GetDatabase(new MongoUrl(connStr).DatabaseName);
+            IMongoCollection<users> collection = database.GetCollection<users>("users");
+            users model = new users()
+            {
+                id = "11",
+                name = "update",
+                password = "123456update",
+                age = 32,
+                createtime = DateTime.Now
+            };
+             
+            var result = collection.UpdateOne<users>(t => t.id == id, model.ToString());
+            if (result.ModifiedCount > 0)
+            {
+                return Content("MongoDB数据更新成功");
+            }
+            else
+            {
+                return Content("MongoDB数据更新失败");
+            }
+        }
+
+        public ActionResult MongoDBSelect()
+        {
+            string id = Request["id"];
+            string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
+            var client = new MongoClient(connStr);
+            var database = client.GetDatabase(new MongoUrl(connStr).DatabaseName);
+            IMongoCollection<users> collection = database.GetCollection<users>("users");
+
+            var result = collection.Find<users>(t => t.id == id).ToList();
+            return Json(result);
+        }
         #endregion
 
 
