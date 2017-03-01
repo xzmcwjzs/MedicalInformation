@@ -130,23 +130,18 @@ namespace MVC.Demo.SignalR.Controllers
 
         }
 
-        public ActionResult MongoDBAllUpdate()
+        public ActionResult MongoDBUpdate()
         {
-            string id = Request["id"];
+            string id = Request["id"];//id为11的
             string connStr = ConfigurationManager.ConnectionStrings["MongoServerSettings"].ConnectionString;
             var client = new MongoClient(connStr);
             var database = client.GetDatabase(new MongoUrl(connStr).DatabaseName);
             IMongoCollection<users> collection = database.GetCollection<users>("users");
-            users model = new users()
-            {
-                id = "11",
-                name = "update",
-                password = "123456update",
-                age = 32,
-                createtime = DateTime.Now
-            };
              
-            var result = collection.UpdateOne<users>(t => t.id == id, model.ToString());
+
+            UpdateDefinition<users> definition = "{$set:{'name':'update2','password':'1456666','age':32,'createtime':'"+DateTime.Now+"'}}";
+
+            var result = collection.UpdateOne<users>(t => t.id == id,definition);
             if (result.ModifiedCount > 0)
             {
                 return Content("MongoDB数据更新成功");

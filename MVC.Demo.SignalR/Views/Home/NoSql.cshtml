@@ -36,11 +36,11 @@
             });
         })
 
-        $("#allupdate").click(function () {
+        $("#update").click(function () {
             $.ajax({
                 cache: false,
                 async: false,
-                url: "/Home/MongoDBAllUpdate",
+                url: "/Home/MongoDBUpdate",
                 type: "post",
                 data: { id: "11" },
                 dataType: "text",
@@ -75,12 +75,9 @@
                 <td><input type="button" id="delete" name="delete" value="删除" /></td>
             </tr>
             <tr>
-                <td><input type="button" id="allupdate" name="allupdate" value="整体更新" /></td>
-                <td><input type="button" id="partialupdate" name="partialupdate" value="部分更新" /></td>
-            </tr>
-             <tr>
-                 <td><input type="button" id="select" name="select" value="查询" /></td>
-             </tr>
+                <td><input type="button" id="update" name="update" value="更新" /></td>
+                <td><input type="button" id="select" name="select" value="查询" /></td>
+            </tr> 
         </table>
     </div>
 </form>
