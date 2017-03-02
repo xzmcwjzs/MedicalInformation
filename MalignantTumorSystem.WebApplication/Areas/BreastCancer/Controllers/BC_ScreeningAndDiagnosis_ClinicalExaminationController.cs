@@ -35,6 +35,12 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
         {
             return View();
         }
-        
+
+        //新增页
+        public ActionResult ClinicalExamination()
+        {
+            return View();
+        }
+
     }
 }

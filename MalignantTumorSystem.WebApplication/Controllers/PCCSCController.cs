@@ -27,7 +27,7 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         public IShare_CommunityInfoService communityInfoService { get; set; }
         public ActionResult Province()
         {
-            var provinceList = provinceService.LoadEntityAsNoTracking(t=>true);
+            var provinceList = provinceService.LoadEntityAsNoTracking(t=>true).ToList();
             return Json(provinceList,JsonRequestBehavior.AllowGet);
         }
         //根据省的代码  加载市

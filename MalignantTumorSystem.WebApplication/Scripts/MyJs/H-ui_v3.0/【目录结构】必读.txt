@@ -1,0 +1,30 @@
+Copyright：h-ui.net	Last Modify：guojunhui	2017.01.01
+===================================================================
+static/	资源
+├── h-ui/				H-ui特有资源
+│    ├── css/						样式
+│    │    ├── H-ui.reset.css				CSS Reset
+│    │    ├── H-ui.css					H-ui.css
+│    │    ├── H-ui.min.css					H-ui.css(min版)
+│    │    ├── H-ui.ie.css					IE 下兼容css
+│    ├── images/						图片资源 
+│    ├── js/
+│    │    ├── H-ui.js					H-ui核心脚本
+│    │    ├── H-ui.min.js					H-ui核心脚本(min版)
+
+Lib/	第三方插件
+├── jquery					jQuery类库（v1.9.1）
+├── Hui-iconfont				阿里图标字体库（H-ui定制）
+├── jquery.SuperSlide			幻灯片组件
+├── Validform				表单验证插件
+├── jquery.validation			表单验证插件
+├── My97DatePicker				日期插件
+├── datatables				表格插件
+├── nprogress				进度条插件
+├── layer					layer弹出层插件
+├── laypage					laypage 翻页插件
+├── html5shiv.js				html5插件，让低版本IE支持html5元素
+├── DD_belatedPNG_0.0.8a-min.js		解决IE6png透明
+├── swfobject.js				Flash插件
+├── expressInstall.swf  			检查flash插件
+├── respond.min.js				让IE兼容media

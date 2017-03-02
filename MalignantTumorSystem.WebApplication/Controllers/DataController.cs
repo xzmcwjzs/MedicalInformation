@@ -78,6 +78,133 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             
         }
 
+        //挡name文本框失去焦点时 查找
+        public ActionResult NameMatch2()
+        {
+            string Key = Request["key"];
+
+            if (Key != null && Key != "")
+            {
+                var entityList = residentFileService.LoadEntityAsNoTracking(t => t.resident_name == Key).OrderByDescending(t => t.birth_date).ToList();
+                var result = entityList.Select(
+                         t => new {
+                             t.id,
+                             t.family_id,
+                             t.resident_id,
+                             t.password,
+                             t.resident_committee_code,
+                             t.resident_detail_address,
+                             t.resident_name,
+                             t.father_name,
+                             t.mother_name,
+                             t.father_id,
+                             t.mother_id,
+                             t.resident_host_relation,
+                             t.individual_phone,
+                             t.work_unit,
+                             t.id_card_number,
+                             t.birth_date,
+                             t.sex,
+                             t.age,
+                             t.nation,
+                             t.height,
+                             t.weight,
+                             t.weight_exponent,
+                             t.marital_status,
+                             t.education_qualification,
+                             t.occupation_situation,
+                             t.irritability_history,
+                             t.blood_group,
+                             t.cost_method_payment,
+                             t.residence_character,
+                             t.agency_baoka_number,
+                             t.moving_out_y_n,
+                             t.moving_out_date,
+                             t.death_y_n,
+                             t.death_date,
+                             t.resident_host_id,
+                             t.resident_host_name,
+                             t.family_phone,
+                             t.email,
+                             t.nationality_code,
+                             t.nationality_name,
+                             t.post_code,
+                             t.start_work_date,
+                             t.resident_address_type,
+                             t.rh_blood_group,
+                             t.abo_blood_group,
+                             t.disability_status,
+                             t.id_card_active_date,
+                             t.id_card_unactive_date,
+                             t.id_card_organization,
+                             t.create_time,
+                             t.community_code,
+                             t.worker_user_name,
+                             t.chronic_manage_no,
+                             t.permanent_home_address,
+                             t.residence_address,
+                             t.workplace_address,
+                             t.birth_address,
+                             t.other_address,
+                             t.other_address_type,
+                             t.community_subordinate_address_id,
+                             t.personal_fixed_line_telephone,
+                             t.contact_name,
+                             t.contact_phone,
+                             t.contact_my_relationship,
+                             t.drug_allergy_type,
+                             t.drug_allergy_other,
+                             t.disability_type,
+                             t.disability_other,
+                             t.disability_certificate_number,
+                             t.file_number,
+                             t.file_cover_number,
+                             t.permanent_address_type,
+                             t.smoking,
+                             t.drinking,
+                             t.disease,
+                             t.surgery,
+                             t.trauma,
+                             t.blood_transfusion,
+                             t.family_disease,
+                             t.genetic_disease,
+                             t.hypertension_flag,
+                             t.diabetes_flag,
+                             t.chd_flag,
+                             t.tumour_flag,
+                             t.schiz_flag,
+                             t.adult_exam_count,
+                             t.father_id_card_numb,
+                             t.mother_id_card_numb,
+                             t.permanent_home_commitcode,
+                             t.residence_commitcode,
+                             t.doctor,
+                             t.father_phone,
+                             t.mother_phone,
+                             t.work_type,
+                             t.fill_identity_type,
+                             t.birth_commitcode,
+                             t.worker_time_everyweek,
+                             t.father_email,
+                             t.mother_email,
+                             t.chronic_disease_type,
+                             t.birth_community_code,
+                             t.present_community_code,
+                             t.fill_community_code,
+                             community_code1 = ConvertCommunityCode(t.community_code.ToString()),
+                             // permanent_home_commitcode1=ConvertPermanentHomeCommitCode(t.permanent_home_commitcode.ToString()),
+                             age1 = ConvertAge(t.birth_date.ToString())
+                         }
+                    );
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("", JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
         //常住地址的code转地址名称
         public string ConvertPermanentHomeCommitCode(string code)
         {

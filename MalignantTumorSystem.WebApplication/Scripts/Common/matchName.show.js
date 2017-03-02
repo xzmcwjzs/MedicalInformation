@@ -182,18 +182,7 @@
         $("#id_card_number").val(data.id_card_number);
 
         //由出生日期推算其年龄
-        if (data.birth_date != "") {
-            //var a = data.birth_date.split('/');
-            //if (a[1].length < 2) {
-            //    var a1 = "0" + a[1];
-            //} else {
-            //    var a1 = a[1];
-            //}
-            //if (a[2].split(' ')[0].length < 2) {
-            //    var a2 = "0" + a[2].split(' ')[0];
-            //} else {
-            //    var a2 = a[2].split(' ')[0];
-            //}
+        if (data.birth_date != "") { 
             var date = new Date(parseInt(data.birth_date.replace("/Date(", "").replace(")/", ""), 10));
             var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
             var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
@@ -241,7 +230,217 @@
         $(this).prev().search();
     });
 
+    $("#name").blur(
+        function () {
+        $.ajax({
+            type:"post",
+            dataType:"json",
+            url: "/Data/NameMatch2",
+            data:{"key":$("#name").val()},
+            success: function (data) {
+                var data = data[0];
+                //获取家庭常住地址
+                var CommunityCode = data.community_code;
+                $("#perment_community_address").val(data.permanent_home_address);
+                if (CommunityCode != "") {
+                    if (CommunityCode.length == 2) {
+                        $("#ddlProvince").val(CommunityCode.substring(0, 2));
+                    }
+                    else if (CommunityCode.length == 4) {
+                        $("#ddlProvince").val(CommunityCode.substring(0, 2));
+                        //-----市-----
+                        $.post("/Data/City?code=" + CommunityCode.substring(0, 2),
+                         function (datas) {
+                             dat1 = eval(datas);
+                             $("#ddlCity").empty();
+                             $("#ddlCity").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat1 != "") {
+                                 for (var i = 0; i < dat1.length; i++) {
+                                     $("#ddlCity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                                 }
+                                 $("#ddlCity").val(CommunityCode.substring(0, 4));
+                             }
+                         })
+                    }
+                    else if (CommunityCode.length == 6) {
+                        $("#ddlProvince").val(CommunityCode.substring(0, 2));
+                        //-----市-----
+                        $.post("/Data/City?code=" + CommunityCode.substring(0, 2),
+                         function (data1) {
+                             dat1 = eval(data1);
+                             $("#ddlCity").empty();
+                             $("#ddlCity").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat1 != "") {
+                                 for (var i = 0; i < dat1.length; i++) {
+                                     $("#ddlCity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                                 }
+                                 $("#ddlCity").val(CommunityCode.substring(0, 4));
+                             }
+                         })
+                        //-----区/县-----
+                        $.post("/Data/County?code=" + CommunityCode.substring(0, 4),
+                         function (data2) {
+                             dat2 = eval(data2);
+                             $("#ddlCounty").empty();
+                             $("#ddlCounty").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat2 != "") {
+                                 for (var i1 = 0; i1 < dat2.length; i1++) {
+                                     $("#ddlCounty").append("<option value=" + dat2[i1].code + ">" + dat2[i1].name + "</option>");
+                                 }
+                                 $("#ddlCounty").val(CommunityCode.substring(0, 6));
+                             }
+                         })
+                    }
+                    else if (CommunityCode.length == 9) {
+                        $("#ddlProvince").val(CommunityCode.substring(0, 2));
+                        //-----市-----
+                        $.post("/Data/City?code=" + CommunityCode.substring(0, 2),
+                         function (data1) {
+                             dat1 = eval(data1);
+                             $("#ddlCity").empty();
+                             $("#ddlCity").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat1 != "") {
+                                 for (var i = 0; i < dat1.length; i++) {
+                                     $("#ddlCity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                                 }
+                                 $("#ddlCity").val(CommunityCode.substring(0, 4));
+                             }
+                         })
+                        //-----区/县-----
+                        $.post("/Data/County?code=" + CommunityCode.substring(0, 4),
+                         function (data2) {
+                             dat2 = eval(data2);
+                             $("#ddlCounty").empty();
+                             $("#ddlCounty").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat2 != "") {
+                                 for (var i1 = 0; i1 < dat2.length; i1++) {
+                                     $("#ddlCounty").append("<option value=" + dat2[i1].code + ">" + dat2[i1].name + "</option>");
+                                 }
+                                 $("#ddlCounty").val(CommunityCode.substring(0, 6));
+                             }
+                         })
 
+                        //-----镇-----
+                        $.post("/Data/Street?code=" + CommunityCode.substring(0, 6),
+                         function (data3) {
+                             dat3 = eval(data3);
+                             $("#ddlStreet").empty();
+                             $("#ddlStreet").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat3 != "") {
+                                 for (var i2 = 0; i2 < dat3.length; i2++) {
+                                     $("#ddlStreet").append("<option value=" + dat3[i2].code + ">" + dat3[i2].name + "</option>");
+                                 }
+                                 $("#ddlStreet").val(CommunityCode);
+                             }
+                         })
+                    }
+                    else if (CommunityCode.length == 12) {
+                        $("#ddlProvince").val(CommunityCode.substring(0, 2));
+                        //-----市-----
+                        $.post("/Data/City?code=" + CommunityCode.substring(0, 2),
+                         function (data1) {
+                             dat1 = eval(data1);
+                             $("#ddlCity").empty();
+                             $("#ddlCity").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat1 != "") {
+                                 for (var i = 0; i < dat1.length; i++) {
+                                     $("#ddlCity").append("<option value=" + dat1[i].code + ">" + dat1[i].name + "</option>");
+                                 }
+                                 $("#ddlCity").val(CommunityCode.substring(0, 4));
+
+                             }
+                         })
+                        //-----区/县-----
+                        $.post("/Data/County?code=" + CommunityCode.substring(0, 4),
+                         function (data2) {
+                             dat2 = eval(data2);
+                             $("#ddlCounty").empty();
+                             $("#ddlCounty").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat2 != "") {
+                                 for (var i1 = 0; i1 < dat2.length; i1++) {
+                                     $("#ddlCounty").append("<option value=" + dat2[i1].code + ">" + dat2[i1].name + "</option>");
+                                 }
+                                 $("#ddlCounty").val(CommunityCode.substring(0, 6));
+                             }
+                         })
+                        //-----镇-----
+                        $.post("/Data/Street?code=" + CommunityCode.substring(0, 6),
+                         function (data3) {
+                             dat3 = eval(data3);
+                             $("#ddlStreet").empty();
+                             $("#ddlStreet").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat3 != "") {
+                                 for (var i2 = 0; i2 < dat3.length; i2++) {
+                                     $("#ddlStreet").append("<option value=" + dat3[i2].code + ">" + dat3[i2].name + "</option>");
+                                 }
+                                 $("#ddlStreet").val(CommunityCode.substring(0, 9));
+                             }
+                         })
+
+                        //-----村-----
+                        $.post("/Data/Community?code=" + CommunityCode.substring(0, 9),
+                         function (data4) {
+                             dat4 = eval(data4);
+                             $("#ddlCommunity").empty();
+                             $("#ddlCommunity").append("<option value=" + "" + ">==请选择==</option>");
+                             if (dat4 != "") {
+                                 for (var i3 = 0; i3 < dat4.length; i3++) {
+                                     $("#ddlCommunity").append("<option value=" + dat4[i3].code + ">" + dat4[i3].name + "</option>");
+                                 }
+                                 $("#ddlCommunity").val(CommunityCode);
+                             }
+                         })
+                    }
+                }
+
+                $("#id_card_number").val(data.id_card_number);
+
+                //由出生日期推算其年龄
+                if (data.birth_date != "") {
+                    var date = new Date(parseInt(data.birth_date.replace("/Date(", "").replace(")/", ""), 10));
+                    var a1 = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+                    var a2 = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+                    $("#birth_date").val(date.getFullYear() + '-' + a1 + '-' + a2);
+                    var dates1 = new Date();
+                    var year1 = dates1.getFullYear() - date.getFullYear();
+                    if (year1 > 0) {
+                        $("#age").val(year1 + "岁");
+                    } else if (year1 == 0) {
+                        var month1 = dates1.getMonth() - a1;
+                        if (month1 > 0) {
+                            $("#age").val(month1 + "月");
+                        } else if (month == 0) {
+                            var day1 = dates1.getDay() - a2;
+                            if (day1 > 0) {
+                                $("#age").val(day1 + "天");
+                            }
+                        }
+                    }
+                }
+
+                if (data.individual_phone != '') {
+                    $("#txtIndividualPhone").val(data.individual_phone);
+                    $("#phone").val(data.individual_phone);
+                }
+                $("input[name=" + "sex" + "][value=" + data.sex + "]").attr("checked", "checked");
+                $("#resident_id").val(data.resident_id);
+                $("#txtcontact_name").val(data.contact_name);
+                $("#txtcontact_phone").val(data.contact_phone);
+                $("#txtEmail").val(data.email);
+
+                $("#nationality").val(data.nationality_name);
+                $("#zipCode").val(data.post_code);
+                $("#ddlPermanent_address_type").val(data.permanent_address_type);
+                $("#ddlABOBloodType").val(data.abo_blood_group);
+                $("#ddlcontact_my_relationship").val(data.contact_my_relationship);
+                $("#ddlNation").val(data.nation);
+                $("#ddlEducationQualification").val(data.education_qualification);
+                $("#ddlMarrigeState").val(data.marital_status);
+                $("#ddlOccupationSituation").val(data.occupation_situation);
+            }
+        })
+    })
     //---------------------------------------------------身份证号验证信息 身份证号验证  娄帅------------------------------------------------
     $("#id_card_number").blur(
         function () {
