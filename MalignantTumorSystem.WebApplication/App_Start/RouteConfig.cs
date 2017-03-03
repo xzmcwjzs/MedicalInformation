@@ -18,11 +18,11 @@ namespace MalignantTumorSystem.WebApplication
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-            routes.MapRoute(
-             name: "匹配所有的url",
-             url: "{*Catch所有的请求}",
-             defaults: new { controller = "Home", action = "Index" }
-         );
+         //   routes.MapRoute(
+         //    name: "匹配所有的url",
+         //    url: "{*Catch所有的请求}",
+         //    defaults: new { controller = "Home", action = "Index" }
+         //);
         }
     }
 }
