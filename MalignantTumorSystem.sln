@@ -69,6 +69,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "排序算法", "排序算�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "四种简单的排序算法", "四种简单的排序算法\四种简单的排序算法.csproj", "{BC642B40-EB61-475D-9C75-05DB30B6CF96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "异步编程AsyncDemo", "异步编程AsyncDemo\异步编程AsyncDemo.csproj", "{46C75E09-09AD-48B8-92D2-EF4EE3587EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "异步编程AsyncCallbackDemo", "异步编程AsyncCallbackDemo\异步编程AsyncCallbackDemo.csproj", "{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -167,6 +171,14 @@ Global
 		{BC642B40-EB61-475D-9C75-05DB30B6CF96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC642B40-EB61-475D-9C75-05DB30B6CF96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC642B40-EB61-475D-9C75-05DB30B6CF96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C75E09-09AD-48B8-92D2-EF4EE3587EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C75E09-09AD-48B8-92D2-EF4EE3587EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C75E09-09AD-48B8-92D2-EF4EE3587EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C75E09-09AD-48B8-92D2-EF4EE3587EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,5 +210,7 @@ Global
 		{C3142302-690E-456C-B399-D245D442EF1B} = {62182DD1-6F31-49AB-A018-9AC5E282455C}
 		{64C5A654-4876-45D2-BBB5-94EF21266B9D} = {2703952B-EBD5-4A20-862B-34D5990184EB}
 		{BC642B40-EB61-475D-9C75-05DB30B6CF96} = {64C5A654-4876-45D2-BBB5-94EF21266B9D}
+		{46C75E09-09AD-48B8-92D2-EF4EE3587EA0} = {62182DD1-6F31-49AB-A018-9AC5E282455C}
+		{53DA07F7-4BA9-4BA9-94B7-F5ABCB20ECB3} = {62182DD1-6F31-49AB-A018-9AC5E282455C}
 	EndGlobalSection
 EndGlobal

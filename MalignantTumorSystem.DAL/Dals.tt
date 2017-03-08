@@ -21,20 +21,7 @@ using MalignantTumorSystem.IDAL;
 namespace MalignantTumorSystem.DAL{
 
 <#
-            //string currentPath =Path.GetDirectoryName(this.Host.TemplateFile);
-            //string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\TumorManagementSystem.BLL"));
-            //string modelFile= Path.Combine(solutionPath, @"TumorManagementSystem.Model\bin\Debug\TumorManagementSystem.Model.dll");
-             ////byte[] buffer=File.ReadAllBytes(modelFile);
-            //Assembly assembly = Assembly.LoadFrom(modelFile);  
-            //Type[] ts = assembly.GetTypes();
-            //List<string> ClassName =new  List<string>();
-            //foreach (Type t in ts)
-            //{ 
-                //if (t.Namespace == "TumorManagementSystem.Model") {
-                    //ClassName.Add(t.Name);
-                //}
-            //}
-
+            
             string currentPath =Path.GetDirectoryName(this.Host.TemplateFile);
             string solutionPath = currentPath.Substring(0, currentPath.IndexOf(@"\MalignantTumorSystem.DAL"));
             string txtFilePath= Path.Combine(solutionPath, @"MalignantTumorSystem.Model\ClassNameTxt\ClassName.txt");  
