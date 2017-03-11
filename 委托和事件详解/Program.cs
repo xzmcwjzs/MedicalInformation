@@ -37,7 +37,7 @@ namespace 委托和事件详解
         //}
 
         //声明一个事件   声明一个事件不过类似于声明一个进行了封装的委托类型的变量而已
-        public event GreetingDelegate MakeGreet;
+        public event GreetingDelegate MakeGreet;//声明事件  委托是一种类型  事件是委托类型的实例
         public void GreetPeople(string name)
         {
             MakeGreet(name);
@@ -116,9 +116,15 @@ namespace 委托和事件详解
             //于是，Event 出场了，它封装了委托类型的变量，使得：在类的内部，不管你声明它是public还是protected，它总是private 的。在类的外部，注册“+=”和注销“-=”的访问限定符与你在声明事件时使用的访问符相同
 
             GreetingManager gm = new GreetingManager();
-            gm.MakeGreet = EnglishGreeting; // 编译错误1
+            //gm.MakeGreet = EnglishGreeting; // 编译错误1     
+            //事件 1、不能被初始化，防止外面 直接 赋值为null  导致注册失效  
+                    //2、不能被外部调用（权限的控制）比如按钮的触发事件，外界不能随意调用
+            gm.MakeGreet += EnglishGreeting;
             gm.MakeGreet += ChineseGreeting;
             gm.GreetPeople("Liker");
+
+
+            //事件是观察者模式的具体实现
 
 
             Console.ReadKey();
