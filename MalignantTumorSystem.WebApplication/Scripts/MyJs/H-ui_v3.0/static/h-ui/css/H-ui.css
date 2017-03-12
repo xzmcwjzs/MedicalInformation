@@ -1,9 +1,9 @@
 ﻿@charset "utf-8";
 /* -----------H-ui前端框架-------------
-* H-ui.css v3.0.2
+* H-ui.css v3.0.1
 * http://www.h-ui.net/
 * Created & Modified by guojunhui
-* Date modified 2017.01.10
+* Date modified 2017.01.01
 *
 * Copyright 2013-2017 北京颖杰联创科技有限公司 All rights reserved.
 * Licensed under MIT license.
@@ -295,7 +295,7 @@ fieldset {border-width:0;padding: 0.35em 0.625em 0.75em;margin: 0 2px;border: 1p
 input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto}
 input[type="search"] {-webkit-appearance: textfield; /* 1 */}
 input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance: none}
-/*清除浮动
+/*清楚浮动
 	Name:			style_clearfix
 	Example:		class="clearfix|cl"
 	Explain:		clearfix（简写cl）避免因子元素浮动而导致的父元素高度缺失能问题
@@ -3503,18 +3503,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus{color: #fff;text-deco
 .progress,.progress-bar,.sr-only{height:10px; font-size:0;line-height:0}
 .progress{overflow:hidden; width:400px}
 .progress.radius{}/*自定义圆角*/
-.progress-bar{width:100%;background-color:#efefef;}
-.sr-only{
-	display:inline-block; background-color:#337ab7;
-	-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .15);
-  -webkit-transition: width .6s ease;
-       -o-transition: width .6s ease;
-          transition: width .6s ease;
-}
-.progress-bar-success .sr-only{ background-color:#5cb85c}
-.progress-bar-warning .sr-only{background-color: #f0ad4e}
-.progress-bar-danger .sr-only{background-color: #d9534f}
+.progress-bar{width:100%;background-color:#efefef}
+.sr-only{display:inline-block; background-color:#58b957}
 
 /*4.10 对话框
 	Name:			mod_modal

@@ -9,9 +9,77 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>主页</title>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/layer/2.4/layer.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/laypage/1.2/laypage.js"></script>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/css/H-ui.admin.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/skin/default/skin.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/css/style.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/skin/WdatePicker.css" rel="stylesheet" />
 </head>
 <body>
-    <div> 
+    <div class="page-container">
+        <div class="text-c">
+            日期范围：
+            <input id="logmin" class="input-text Wdate" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}' })" style="width:120px;" type="text">
+            -
+            <input id="logmax" class="input-text Wdate" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d' })" style="width:120px;" type="text">
+            <input id="" class="input-text" name="" placeholder=" 姓名" style="width:250px" type="text">
+            <button id="" class="btn btn-success" name="" type="submit">
+                <i class="Hui-iconfont"></i>
+                查询
+            </button>
+        </div>
+        <div class="cl bg-fff bk-gray mt-10">
+            <span class="l">
+                <a class="btn btn-primary radius" href="javascript:;" onclick="member_add('新增21基因检测', '/BreastCancer/BC_GenesAndProteomics_21/Top', '114', '800','500')">
+                    <i class="Hui-iconfont"></i>
+                    新增21基因检测
+                </a>
+            </span>
+            <span class="r">
+                共有数据：
+                <strong>0</strong>
+                条
+            </span>
+        </div>
+        <div class="mt-5">
+            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                <table id="DataTables_Table_0" class="table table-border table-bordered table-hover table-bg table-sort dataTable no-footer" role="grid" aria-describedby="DataTables_Table_0_info">
+                    <thead>
+                        <tr class="text-c" role="row">
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 70px;"  width="100">姓名</th>
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 40px;"  width="40">性别</th>
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 40px;"  width="90">年龄</th>
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 300px;"  width="150">家庭常住地址</th>
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 100px;"  width="">检查日期</th>
+                            <th class="sorting_disabled"  rowspan="1" colspan="1" style="width: 100px;"  width="130">检查结果</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 100px;" aria-label="操作" width="100">操作</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div id="DataTables_Table_0_info" class="dataTables_info" role="status" aria-live="polite">显示 1 到 1 ，共 1 条</div>
+                <div id="DataTables_Table_0_paginate" class="dataTables_paginate paging_simple_numbers">
+                    <a id="DataTables_Table_0_previous" class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0">上一页</a>
+                    <span>
+                        <a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a>
+                    </span>
+                    <a id="DataTables_Table_0_next" class="paginate_button next disabled" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">下一页</a>
+                </div>
+            </div>
+        </div>
+
     </div>
+    <script>
+        function member_add(title,url,id,w,h) {
+            layer_show(title, url, w, h);
+        }
+    </script>
 </body>
 </html>

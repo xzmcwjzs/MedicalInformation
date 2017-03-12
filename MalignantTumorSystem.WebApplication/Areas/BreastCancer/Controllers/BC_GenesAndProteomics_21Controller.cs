@@ -13,5 +13,10 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
         {
             return View();
         }
+
+        public ActionResult Top()
+        {
+            return View();
+        }
     }
 }
