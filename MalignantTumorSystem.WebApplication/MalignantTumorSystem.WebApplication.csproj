@@ -217,9 +217,14 @@
     <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_ConstitutionController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_PEController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_FollowupAndExamination_SFJLController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_GenesAndProteomics_21Controller.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_ClinicalExaminationController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_CTExaminationController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MammographyController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MRIExaminationController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_PositioningBiopsyController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_SelfCheckController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_UltrasonographyController.cs" />
     <Compile Include="Common\ComunityCode\Address.cs" />
     <Compile Include="Common\ExpressionHelper.cs" />
     <Compile Include="Common\MyAttributes\MyExceptionAttribute.cs" />
@@ -466,6 +471,36 @@
     <Content Include="Areas\BreastCancer\Views\_ViewStart.cshtml" />
     <Content Include="Areas\BreastCancer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\ClinicalExamination.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\Mammography.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\Ultrasonography.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_MRIExamination\MRIExamination.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\PositioningBiopsy.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PositioningBiopsy\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\CTExamination.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Frame.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />
@@ -1163,9 +1198,9 @@
       <Project>{7a3a2255-f1ec-4327-b42a-a33466fbe3d4}</Project>
       <Name>MalignantTumorSystem.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj">
+    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.AbstractFactory.csproj">
       <Project>{4bf77f5f-4a09-46a6-82b0-56124189b29d}</Project>
-      <Name>MalignantTumorSystem.DI</Name>
+      <Name>MalignantTumorSystem.AbstractFactory</Name>
     </ProjectReference>
     <ProjectReference Include="..\MalignantTumorSystem.IBLL\MalignantTumorSystem.IBLL.csproj">
       <Project>{f5585894-3d8e-45ef-a4fa-89750793b2a4}</Project>

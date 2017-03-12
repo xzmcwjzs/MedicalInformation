@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.Common
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.ADO", "MalignantTumorSystem.ADO\MalignantTumorSystem.ADO.csproj", "{3CD866F8-59DE-4097-8C35-DED26192EE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.DI", "MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj", "{4BF77F5F-4A09-46A6-82B0-56124189B29D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.AbstractFactory", "MalignantTumorSystem.DI\MalignantTumorSystem.AbstractFactory.csproj", "{4BF77F5F-4A09-46A6-82B0-56124189B29D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebAPI", "MalignantTumorSystem.WebAPI\MalignantTumorSystem.WebAPI.csproj", "{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}"
 EndProject

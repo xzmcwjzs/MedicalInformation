@@ -133,9 +133,9 @@
       <Project>{7a3a2255-f1ec-4327-b42a-a33466fbe3d4}</Project>
       <Name>MalignantTumorSystem.DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.DI.csproj">
+    <ProjectReference Include="..\MalignantTumorSystem.DI\MalignantTumorSystem.AbstractFactory.csproj">
       <Project>{4bf77f5f-4a09-46a6-82b0-56124189b29d}</Project>
-      <Name>MalignantTumorSystem.DI</Name>
+      <Name>MalignantTumorSystem.AbstractFactory</Name>
     </ProjectReference>
     <ProjectReference Include="..\MalignantTumorSystem.IBLL\MalignantTumorSystem.IBLL.csproj">
       <Project>{f5585894-3d8e-45ef-a4fa-89750793b2a4}</Project>
