@@ -36,7 +36,7 @@ SSO 单点登录
 仓储   ---OK  
 Log4Net    --- OK
 源码管理 SVN VSS TFS   Git  ---OK
-
+完成乳腺癌统计部分
 
 
 ASP.NET请求处理机制  管道事件 ：
