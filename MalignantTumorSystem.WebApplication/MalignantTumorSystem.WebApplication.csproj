@@ -510,6 +510,10 @@
     <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_CTExamination\Top.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Frame.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\Genes.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />
@@ -2001,6 +2005,7 @@
     <Content Include="Scripts\MyJs\H-ui_v3.0\static\h-ui.admin\skin\orange\Thumbs.db" />
     <Content Include="Scripts\MyJs\H-ui_v3.0\static\h-ui.admin\skin\red\Thumbs.db" />
     <Content Include="Scripts\MyJs\H-ui_v3.0\static\h-ui.admin\skin\yellow\Thumbs.db" />
+    <Content Include="Views\Shared\MyLayoutH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
