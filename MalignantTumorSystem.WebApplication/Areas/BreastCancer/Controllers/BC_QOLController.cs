@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
 {
-    public class BC_GenesAndProteomics_21Controller : Controller
+    public class BC_QOLController : Controller
     {
-        // GET: BreastCancer/BC_GenesAndProteomics_21
+        // GET: BreastCancer/BC_QOL
         #region 框架页
 
         public ActionResult Frame()
@@ -34,8 +34,7 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
             return View();
         }
         //新增页
-        public ActionResult Genes()
-        {
+        public ActionResult QOL() {
             return View();
         }
     }

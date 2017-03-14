@@ -37,7 +37,7 @@ namespace MalignantTumorSystem.WebApplication
             //从配置文件读取log4net的配置，然后进行一个初始化工作。
             log4net.Config.XmlConfigurator.Configure();
             #endregion
- 
+
             //code first数据迁移 先删除  后新建
             //System.Data.Entity.Database.SetInitializer(new System.Data.Entity.DropCreateDatabaseIfModelChanges<Model.EntityFrameworkCodeFirstEntities>());
 
@@ -61,12 +61,12 @@ namespace MalignantTumorSystem.WebApplication
         //}
 
         protected void Application_BeginRequest(Object source, EventArgs e)
-        { 
-            MiniProfiler.Start(); 
+        {
+            MiniProfiler.Start();
         }
         protected void Application_EndRequest()
-        { 
-            MiniProfiler.Stop(); 
+        {
+            MiniProfiler.Stop();
         }
 
     }
