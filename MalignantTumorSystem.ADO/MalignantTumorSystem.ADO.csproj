@@ -40,12 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseDal.cs" />
+    <Compile Include="BaseRepository.cs" />
     <Compile Include="SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsOperation\Comm_Platform_WorkerADORepository.cs" />
+    <Compile Include="StatisticsOperation\Comm_ResidentFileADORepository.cs" />
+    <Compile Include="StatisticsOperation\Share_CityADORepository.cs" />
+    <Compile Include="StatisticsOperation\Share_CommunityInfoADORepository.cs" />
+    <Compile Include="StatisticsOperation\Share_CountyADORepository.cs" />
+    <Compile Include="StatisticsOperation\Share_ProvinceADORepository.cs" />
+    <Compile Include="StatisticsOperation\Share_StreetADORepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Operation\" />
+    <ProjectReference Include="..\MalignantTumorSystem.Common\MalignantTumorSystem.Common.csproj">
+      <Project>{d0749ec3-39fd-4e75-adf0-d4a9a2b49fa2}</Project>
+      <Name>MalignantTumorSystem.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MalignantTumorSystem.Model\MalignantTumorSystem.Model.csproj">
+      <Project>{1b546131-c4bb-4069-815a-48906c34fd1b}</Project>
+      <Name>MalignantTumorSystem.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

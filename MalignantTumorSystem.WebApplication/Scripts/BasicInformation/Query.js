@@ -111,6 +111,7 @@
         width: 800,
         max: 2000,
         position: 'absolute',
+        minChars:'0',
         matchContains: true,
         autoFill: false,
         delay: 40,

@@ -1685,6 +1685,7 @@
     <Content Include="Scripts\MyJs\H-ui_v3.0\static\h-ui\js\H-ui.js" />
     <Content Include="Scripts\MyJs\H-ui_v3.0\static\h-ui\js\H-ui.min.js" />
     <Content Include="Scripts\MyJs\jquery-form.js" />
+    <Content Include="Scripts\MyJs\jquery.autocomplete.js" />
     <Content Include="Scripts\MyJs\jquery.jqprint-0.3.js" />
     <Content Include="Scripts\MyJs\jqueryAutocomplete\indicator.gif" />
     <Content Include="Scripts\MyJs\jqueryAutocomplete\jquery.autocomplete.css" />

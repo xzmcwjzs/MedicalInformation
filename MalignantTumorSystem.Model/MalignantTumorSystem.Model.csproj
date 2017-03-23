@@ -52,6 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADOModel\Comm_Platform_Worker.cs" />
+    <Compile Include="ADOModel\Comm_ResidentFile.cs" />
+    <Compile Include="ADOModel\Share_City.cs" />
+    <Compile Include="ADOModel\Share_CommunityInfo.cs" />
+    <Compile Include="ADOModel\Share_County.cs" />
+    <Compile Include="ADOModel\Share_Province.cs" />
+    <Compile Include="ADOModel\Share_Street.cs" />
     <Compile Include="DataBaseContext\MalignantTumorEntities1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

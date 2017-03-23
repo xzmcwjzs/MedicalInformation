@@ -13,9 +13,9 @@ namespace MalignantTumorSystem.DAL.DALFactory
        private static readonly string AssemblyPath = ConfigurationManager.AppSettings["AssemblyPath"];
        private static readonly string NameSpacePath = ConfigurationManager.AppSettings["NameSpacePath"];
 
-       //public static UserInfoDal GetUserInfoDal()
-       //{
-       //    return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".UserInfoDal") as UserInfoDal;
-       //} 
-   }
+        //public static Comm_Platform_WorkerDal GetUserInfoDal()
+        //{
+        //    return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".UserInfoDal") as Comm_Platform_WorkerDal;
+        //}
+    }
 }
