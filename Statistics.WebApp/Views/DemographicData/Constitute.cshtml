@@ -8,10 +8,172 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Constitute</title>
+    <title>人口构成</title>
+    <script src="~/Scripts/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <link href="~/Scripts/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/pccsc.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highcharts/5.0.6/js/highcharts.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highcharts/5.0.6/js/modules/exporting.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highcharts/5.0.6/js/highcharts-zh_CN.js"></script>
+    <script src="~/Scripts/MyJs/DemographicData/Constitute/Operate.js"></script>
+    <!--[if lt IE 9]>
+    <link href="~/Scripts/H-ui_v3.0/static/h-ui/css/H-ui.ie.css" rel="stylesheet" />
+    <![endif]-->
+    <script>
+        var code = "@ViewBag.code";
+    </script>
 </head>
-<body>
-    <div> 
+<body style="text-align:center">
+    <div style="margin:0 auto;width:90%;height:50px;margin-top:20px;">
+        <select style="width: 80px" id="ddlProvince" name="ddlProvince" class="select" size="1">
+            <option value="">请选择</option>
+        </select>
+        <select style="width: 80px" id="ddlCity" name="ddlCity" class="select" size="1">
+            <option value="">请选择</option>
+        </select>
+        <select style="width: 80px" id="ddlCounty" name="ddlCounty" class="select" size="1">
+            <option value="">请选择</option>
+        </select>
+        <select style="width: 85px" id="ddlStreet" name="ddlStreet" class="select" size="1">
+            <option value="">请选择</option>
+        </select>
+        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity" class="select" size="1">
+            <option value="">请选择</option>
+        </select>
+        @*显示图表
+            <select style="width: 100px" id="ShowChart" name="ShowChart" class="select" size="1">
+                <option value="折线图">折线图</option>
+                <option value="柱状图">柱状图</option>
+            </select>*@
+        <input class="btn btn-primary radius" id="caculate" name="caculate" type="button" style="height:24px;font-size:10pt;padding-top:1px;" value="统计">
     </div>
+    <div style="margin:0 auto;width:80%;">
+        <table class="table table-border table-bordered table-hover">
+            <thead class="text-c">
+                <tr><th colspan="7">人口年龄、性别构成</th></tr>
+                <tr>
+                    <th rowspan="2">年龄段</th>
+                    <th colspan="2">男性人口</th>
+                    <th colspan="2">女性人口</th>
+                    <th colspan="2">合计</th>
+                </tr>
+                <tr>
+                    <th>男性</th>
+                    <th>比例(%)</th>
+                    <th>女性</th>
+                    <th>比例(%)</th>
+                    <th>合计</th>
+                    <th>比例(%)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-c">
+                    <td>0~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>10~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>20~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>30~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>40~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>50~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>60~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>70~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>80~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>90~</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+                <tr class="text-c">
+                    <td>合计</td>
+                    <td><label id="lb0m"></label></td>
+                    <td><label id="lb0mb"></label></td>
+                    <td><label id="lb0f"></label></td>
+                    <td><label id="lb0fb"></label></td>
+                    <td><label id="lb0h"></label></td>
+                    <td><label id="lb0hb"></label></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="width: 80%; height: 500px; margin: 0 auto;margin-bottom:50px;">
+        <div id="container1" style="width: 50%; float:left"></div>
+        <div id="container2" style="width: 50%; float:left"></div>
+    </div>
+
 </body>
 </html>

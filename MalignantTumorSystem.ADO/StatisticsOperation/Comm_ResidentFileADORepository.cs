@@ -14,7 +14,7 @@ namespace MalignantTumorSystem.ADO.StatisticsOperation
         //主页表格数据处理
         public void GetInitJCDANum(string regionCode,out int lbJKDA,out int lb0_6,out int lb7_17,out int lb18_44,out int lb45_59,out int lb60_74,out int lb75_89,out int lb90,out int lbGXY,out int lbTNB,out int lbGXB,out int lbJSB,out int lbZL,out int lb65M,out int lb65F)
         {
-            string sqlJKDA= string.Format(@"select count (id) from Comm_ResidentFile where community_code like '{0}%'", regionCode);
+            string sqlJKDA= string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%'", regionCode);
             //0-6
             string sql0_6 = string.Format(@"
 select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,birth_date,GETDATE()) between '0' and '6'", regionCode);
@@ -37,15 +37,15 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             string sql90 = string.Format(@"
 select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and datediff(year,birth_date,GETDATE()) between '90' and '160'", regionCode);
             //高血压
-            string sqlGXY = string.Format(@"select count (id) from Comm_Hypertension where community_code like '{0}%'",regionCode);
+            string sqlGXY = string.Format(@"select count (id_card_number) from Comm_Hypertension where community_code like '{0}%'", regionCode);
             //糖尿病
-            string sqlTNB = string.Format(@"select count (id) from Comm_Diabetes where community_code like '{0}%'", regionCode);
+            string sqlTNB = string.Format(@"select count (id_card_number) from Comm_Diabetes where community_code like '{0}%'", regionCode);
             //冠心病
-            string sqlGXB = string.Format(@"select count (id) from Comm_Coronary_Heart_Disease where community_code like '{0}%'", regionCode);
+            string sqlGXB = string.Format(@"select count (id_card_number) from Comm_Coronary_Heart_Disease where community_code like '{0}%'", regionCode);
             //重性精神病
-            string sqlJSB = string.Format(@"select count (id) from Comm_Oldperson where community_code like '{0}%'", regionCode);
+            string sqlJSB = string.Format(@"select count (id_card_number) from Comm_Oldperson where community_code like '{0}%'", regionCode);
             //肿瘤
-            string sqlZL = string.Format(@"select count (id) from Comm_Tumour where community_code like '{0}%'", regionCode);
+            string sqlZL = string.Format(@"select count (id_card_number) from Comm_Tumour where community_code like '{0}%'", regionCode);
             //65男
             string sql65M = string.Format(@"
 select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and datediff(year,birth_date,GETDATE()) between '65' and '160'", regionCode);
@@ -102,5 +102,48 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             month10 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql10));
             month11 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql11));
         }
+
+        //人口数量资料表格、图表数据处理
+        public void GetDemographicDataNumberNum(string regionCode,out int lb4,out int lb4M,out int lb4F, out int lb3, out int lb3M, out int lb3F, out int lb2, out int lb2M, out int lb2F, out int lb1, out int lb1M, out int lb1F, out int lb0, out int lb0M, out int lb0F)
+        {
+            string sql4 = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,create_time,GETDATE())='4'", regionCode);
+            string sql4M = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and  datediff(year,create_time,GETDATE())='4'", regionCode);
+            string sql4F = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='02' and  datediff(year,create_time,GETDATE())='4'", regionCode);
+
+            string sql3 = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,create_time,GETDATE())='3'", regionCode);
+            string sql3M = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and  datediff(year,create_time,GETDATE())='3'", regionCode);
+            string sql3F = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='02' and  datediff(year,create_time,GETDATE())='3'", regionCode);
+
+            string sql2 = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,create_time,GETDATE())='2'", regionCode);
+            string sql2M = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and  datediff(year,create_time,GETDATE())='2'", regionCode);
+            string sql2F = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='02' and  datediff(year,create_time,GETDATE())='2'", regionCode);
+
+            string sql1 = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,create_time,GETDATE())='1'", regionCode);
+            string sql1M = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and  datediff(year,create_time,GETDATE())='1'", regionCode);
+            string sql1F = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='02' and  datediff(year,create_time,GETDATE())='1'", regionCode);
+
+            string sql0 = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and  datediff(year,create_time,GETDATE())='0'", regionCode);
+            string sql0M = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='01' and  datediff(year,create_time,GETDATE())='0'", regionCode);
+            string sql0F = string.Format(@"select count (id_card_number) from Comm_ResidentFile where community_code like '{0}%' and sex='02' and  datediff(year,create_time,GETDATE())='0'", regionCode);
+
+            lb4 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql4));
+            lb4M = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql4M));
+            lb4F = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql4F));
+            lb3 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql3));
+            lb3M = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql3M));
+            lb3F = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql3F));
+            lb2 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql2));
+            lb2M = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql2M));
+            lb2F = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql2F));
+            lb1 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql1));
+            lb1M = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql1M));
+            lb1F = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql1F));
+            lb0 = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql0));
+            lb0M = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql0M));
+            lb0F = Convert.ToInt32(SqlHelper.ExecuteScalar(CommandType.Text, sql0F));
+
+        }
+
+
     }
 }
