@@ -88,9 +88,9 @@ namespace MalignantTumorSystem.ADO.StatisticsOperation
                 {
                     model.phone = row["phone"].ToString();
                 }
-                if (row["email"] != null)
+                if (row["eamil"] != null)
                 {
-                    model.email = row["email"].ToString();
+                    model.eamil = row["eamil"].ToString();
                 }
                 if (row["weixin"] != null)
                 {

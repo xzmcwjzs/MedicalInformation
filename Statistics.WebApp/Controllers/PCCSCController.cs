@@ -18,8 +18,9 @@ namespace Statistics.WebApp.Controllers
         Share_CommunityInfoADORepository communityInfoADORepository = new Share_CommunityInfoADORepository();
         public ActionResult Province()
         {
-            Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
-            string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            //Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
+            //string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string code = CommonFunc.SafeGetStringFromObj(Request["code"]);
             string provinceCode;
             if (!string.IsNullOrEmpty(code) && code.Length >= 2)
             {
@@ -36,9 +37,10 @@ namespace Statistics.WebApp.Controllers
         }
         public ActionResult City()
         {
-            string parentCode = CommonFunc.SafeGetStringFromObj(Request["code"]);
-            Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
-            string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string parentCode = CommonFunc.SafeGetStringFromObj(Request["parentcode"]);
+            //Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
+            //string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string code = CommonFunc.SafeGetStringFromObj(Request["code"]);
             string cityCode;
             if (!string.IsNullOrEmpty(code) && code.Length >= 4)
             {
@@ -64,9 +66,10 @@ namespace Statistics.WebApp.Controllers
         }
         public ActionResult County()
         {
-            string parentCode = CommonFunc.SafeGetStringFromObj(Request["code"]);
-            Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
-            string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string parentCode = CommonFunc.SafeGetStringFromObj(Request["parentcode"]);
+            //Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
+            //string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string code = CommonFunc.SafeGetStringFromObj(Request["code"]);
             string countyCode;
             if (!string.IsNullOrEmpty(code) && code.Length >= 6)
             {
@@ -91,9 +94,10 @@ namespace Statistics.WebApp.Controllers
         }
         public ActionResult Street()
         {
-            string parentCode = CommonFunc.SafeGetStringFromObj(Request["code"]);
-            Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
-            string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string parentCode = CommonFunc.SafeGetStringFromObj(Request["parentcode"]);
+            //Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
+            //string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string code = CommonFunc.SafeGetStringFromObj(Request["code"]);
             string streetCode;
             if (!string.IsNullOrEmpty(code) && code.Length >= 9)
             {
@@ -120,9 +124,10 @@ namespace Statistics.WebApp.Controllers
 
         public ActionResult Community()
         {
-            string parentCode = CommonFunc.SafeGetStringFromObj(Request["code"]);
-            Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
-            string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string parentCode = CommonFunc.SafeGetStringFromObj(Request["parentcode"]);
+            //Comm_Platform_Worker model = Session["worker"] as Comm_Platform_Worker;
+            //string code = CommonFunc.SafeGetStringFromObj(model.region_code);
+            string code = CommonFunc.SafeGetStringFromObj(Request["code"]);
             string communityCode;
             if (!string.IsNullOrEmpty(code) && code.Length >= 12)
             {

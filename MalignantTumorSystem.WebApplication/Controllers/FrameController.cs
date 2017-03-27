@@ -43,6 +43,8 @@ namespace MalignantTumorSystem.WebApplication.Controllers
                 typename = "恶性肿瘤";
             }
             ViewBag.type = typename;
+            ViewBag.name = CommonFunc.SafeGetStringFromObj(workerModel.user_name);
+            ViewBag.password = CommonFunc.SafeGetStringFromObj(workerModel.password);
             
             return View();
         }

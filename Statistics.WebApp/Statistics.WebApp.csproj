@@ -95,7 +95,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\global.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\global.js" />
     <Content Include="Scripts\H-ui_v3.0\lib\datatables\1.10.0\jquery.dataTables.min.js" />
     <Content Include="Scripts\H-ui_v3.0\lib\DD_belatedPNG_0.0.8a-min.js" />
     <Content Include="Scripts\H-ui_v3.0\lib\echarts\3.4.0\echarts.common.min.js" />
@@ -1154,9 +1156,11 @@
     <Content Include="Scripts\MyJs\Home\WelCome\Operate.js" />
     <Content Include="Scripts\MyJs\pccsc.js" />
     <Content Include="Web.config" />
+    <Content Include="挂号登记.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DemographicDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PCCSCController.cs" />
@@ -1233,6 +1237,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\H-ui_v3.0\lib\jquery.validation\1.14.0\demo\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\PCCSC\" />
   </ItemGroup>
   <ItemGroup>

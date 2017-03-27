@@ -1,6 +1,6 @@
 ﻿/// <reference path="../H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js" />
 $(function () {
-    $.post("/PCCSC/Province", function (data) {
+    $.post("/PCCSC/Province",{code:code} ,function (data) {
         dat = eval(data);
         $("#ddlProvince").empty();
         $("#ddlProvince").append("<option value=" + "" + ">请选择</option>");
@@ -79,7 +79,7 @@ $(function () {
 
     //=========================常住地址==============================
     $("#ddlProvince").change(function () {
-        $.post("/PCCSC/City?code=" + $("#ddlProvince").val(),
+        $.post("/PCCSC/City",{parentcode:$("#ddlProvince").val()},
         function (data) {
             dat = eval(data);
             $("#ddlCity").empty();
@@ -124,7 +124,7 @@ $(function () {
     })
 
     $("#ddlCity").change(function () {
-        $.post("/PCCSC/County?code=" + $("#ddlCity").val(),
+        $.post("/PCCSC/County", { parentcode: $("#ddlCity").val() },
         function (data) {
             dat = eval(data);
             $("#ddlCounty").empty();
@@ -143,7 +143,7 @@ $(function () {
 
 
     $("#ddlCounty").change(function () {
-        $.post("/PCCSC/Street?code=" + $("#ddlCounty").val(),
+        $.post("/PCCSC/Street", { parentcode: $("#ddlCounty").val() },
         function (data) {
             dat = eval(data);
             $("#ddlStreet").empty();
@@ -159,7 +159,7 @@ $(function () {
     })
 
     $("#ddlStreet").change(function () {
-        $.post("/PCCSC/Community?code=" + $("#ddlStreet").val(),
+        $.post("/PCCSC/Community", { parentcode: $("#ddlStreet").val() },
         function (data) {
             dat = eval(data);
             $("#ddlCommunity").empty();

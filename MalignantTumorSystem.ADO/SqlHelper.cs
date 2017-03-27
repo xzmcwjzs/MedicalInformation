@@ -16,27 +16,33 @@ namespace MalignantTumorSystem.ADO
     {
        //读取配置文件里的数据库连接字符串
        public static readonly string connectionString = ConfigurationManager.ConnectionStrings["MalignantTumorEntities"].ConnectionString;
-         
-       #region PrepareCommand 准备一个待执行的SqlCommand
-       /// <summary>
-       /// 准备一个待执行的SqlCommand
-       /// </summary>
-       /// <param name="cmd"></param>
-       /// <param name="conn"></param>
-       /// <param name="trans"></param>
-       /// <param name="commandType"></param>
-       /// <param name="commandText"></param>
-       /// <param name="paras"></param>
-       private static void PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, CommandType commandType, string commandText, params SqlParameter[] paras)
+        #region 超时时间
+        /// <summary>
+        /// 超时时间
+        /// </summary>
+        public static int CommandTimeOut = 600;
+        #endregion
+      
+        #region PrepareCommand 准备一个待执行的SqlCommand
+        /// <summary>
+        /// 准备一个待执行的SqlCommand
+        /// </summary>
+        /// <param name="cmd"></param>
+        /// <param name="conn"></param>
+        /// <param name="trans"></param>
+        /// <param name="commandType"></param>
+        /// <param name="commandText"></param>
+        /// <param name="paras"></param>
+        private static void PrepareCommand(SqlCommand cmd, SqlConnection conn, SqlTransaction trans, CommandType commandType, string commandText, params SqlParameter[] paras)
        {
            try
            {
                if (conn.State != ConnectionState.Open)
                {
-                   conn.Close();
                    conn.Open();
                }
                cmd.Connection = conn;
+                cmd.CommandTimeout = CommandTimeOut;
                if (commandText != null)
                {
                    cmd.CommandText = commandText;
@@ -51,7 +57,7 @@ namespace MalignantTumorSystem.ADO
                {
                    for (int i = 0; i < paras.Length; i++)
                    {
-                       if (paras[i].Value == null || paras[i].Value.ToString() == "")
+                       if ((paras[i].Direction==ParameterDirection.InputOutput || paras[i].Direction==ParameterDirection.Input) && (paras[i].Value == null))
                        {
                            paras[i].Value = DBNull.Value;//插入修改时 如果有参数是空字符串 那么以NULL的形式插入数据库
                        }
@@ -160,9 +166,9 @@ namespace MalignantTumorSystem.ADO
            }
        }
         #endregion
-
-       #region ExecuteReader 返回DataReader对象 只读  最后别忘了reader.Close()
-       public static SqlDataReader ExecuteReader(CommandType commandType, string commandText, params SqlParameter[] paras)
+        
+        #region ExecuteReader 返回DataReader对象 只读  最后别忘了reader.Close()
+        public static SqlDataReader ExecuteReader(CommandType commandType, string commandText, params SqlParameter[] paras)
        {
            SqlCommand cmd = new SqlCommand();
            SqlConnection conn = new SqlConnection(connectionString);
