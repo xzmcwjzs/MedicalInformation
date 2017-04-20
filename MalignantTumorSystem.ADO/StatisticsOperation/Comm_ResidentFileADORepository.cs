@@ -246,5 +246,62 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             month11= Convert.ToInt32(paras[12].Value); 
             
         }
-    }
-}
+
+        //人口数量资料表格、图表数据处理  存储过程版
+        public void GetDemographicDataNumberNumSP(string regionCode, out int lb4, out int lb4M, out int lb4F, out int lb3, out int lb3M, out int lb3F, out int lb2, out int lb2M, out int lb2F, out int lb1, out int lb1M, out int lb1F, out int lb0, out int lb0M, out int lb0F)
+        {
+            lb4 = 0; lb4M = 0; lb4F = 0; lb3 = 0; lb3M = 0; lb3F = 0; lb2 = 0; lb2M = 0; lb2F = 0; lb1 = 0; lb1M = 0; lb1F = 0; lb0 = 0; lb0M = 0; lb0F = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@lb4",lb4),
+                new SqlParameter("@lb4M",lb4M),
+                new SqlParameter("@lb4F",lb4F),
+                new SqlParameter("@lb3",lb3),
+                new SqlParameter("@lb3M",lb3M),
+                new SqlParameter("@lb3F",lb3F),
+                new SqlParameter("@lb2",lb2),
+                new SqlParameter("@lb2M",lb2M),
+                new SqlParameter("@lb2F",lb2F),
+                new SqlParameter("@lb1",lb1),
+                new SqlParameter("@lb1M",lb1M),
+                new SqlParameter("@lb1F",lb1F),
+                 new SqlParameter("@lb0",lb0),
+                new SqlParameter("@lb0M",lb0M),
+                new SqlParameter("@lb0F",lb0F)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+            paras[11].Direction = ParameterDirection.Output;
+            paras[12].Direction = ParameterDirection.Output;
+            paras[13].Direction = ParameterDirection.Output;
+            paras[14].Direction = ParameterDirection.Output;
+            paras[15].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataNumberNumProcedure", paras);
+            lb4= Convert.ToInt32(paras[1].Value);
+            lb4M = Convert.ToInt32(paras[2].Value);
+            lb4F= Convert.ToInt32(paras[3].Value);
+            lb3 = Convert.ToInt32(paras[4].Value);
+            lb3M = Convert.ToInt32(paras[5].Value);
+            lb3F = Convert.ToInt32(paras[6].Value);
+            lb2= Convert.ToInt32(paras[7].Value);
+            lb2M = Convert.ToInt32(paras[8].Value);
+            lb2F = Convert.ToInt32(paras[9].Value);
+            lb1= Convert.ToInt32(paras[10].Value);
+            lb1M = Convert.ToInt32(paras[11].Value);
+            lb1F = Convert.ToInt32(paras[12].Value);
+            lb0 = Convert.ToInt32(paras[13].Value);
+            lb0M = Convert.ToInt32(paras[14].Value);
+            lb0F = Convert.ToInt32(paras[15].Value);
+
+        }   
+    }       
+}           

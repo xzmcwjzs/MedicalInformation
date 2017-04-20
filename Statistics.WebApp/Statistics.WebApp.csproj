@@ -1156,7 +1156,6 @@
     <Content Include="Scripts\MyJs\Home\WelCome\Operate.js" />
     <Content Include="Scripts\MyJs\pccsc.js" />
     <Content Include="Web.config" />
-    <Content Include="挂号登记.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -1164,6 +1163,7 @@
     <Compile Include="Controllers\DemographicDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PCCSCController.cs" />
+    <Compile Include="Controllers\SystemManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1226,6 +1226,7 @@
     <Content Include="Views\DemographicData\Number.cshtml" />
     <Content Include="Views\DemographicData\Constitute.cshtml" />
     <None Include="Properties\PublishProfiles\Statistic.pubxml" />
+    <Content Include="Views\SystemManage\Logger.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

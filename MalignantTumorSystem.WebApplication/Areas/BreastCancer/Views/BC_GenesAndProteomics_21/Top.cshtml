@@ -27,14 +27,16 @@
 
 </head>
 <body>
-    <div style="padding:0px;">
-        <table style="width:100%;height:22px;">
-            <tr>
-                <td class="listTableHeadTR" style="height: 23px;">
-                    <img height="16" src="/images/imgs/Query.gif" width="16" style="vertical-align: middle" />21基因检测信息查询结果
-                </td>
-            </tr>
-        </table>
-    </div>
+    <table width="99%" border="0" cellpadding="0" cellspacing="0" class="toorbar2" style="margin:auto">
+        <tr>
+            <td style="width:1%;">|</td>
+
+            <td style="width:13%;" class='tbmout' onmouseover="this.className = 'tbmover'" onmouseout="    this.className = 'tbmout'" onclick="    OpenTopWindow('/BreastCancer/BC_GenesAndProteomics_21/Genes', 1020, 600);"><img src="/images/imgs/icon_add.gif" alt="" height="16" align="absmiddle" />新增21基因检测</td>
+            <td style="width:1%;">|</td>
+            <td style="width:9%;" class='tbmout' id='switchqrytd' title='打开查询页面' onmouseover="this.className='tbmover'" onmouseout="this.className='tbmout'" onclick="SwitchQryBar();"><img src="/images/imgs/arrow_left.gif" alt="" height="11" align="middle" id="qryImg" /><span id='qryTitle'> 打开查询</span></td>
+            <td style="width:1%;">|</td>
+            <td height="20" style="width:82%;">&nbsp;</td>
+        </tr>
+    </table>
 </body>
 </html>

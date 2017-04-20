@@ -47,7 +47,8 @@ namespace Statistics.WebApp.Controllers
         {
             string regionCode = CommonFunc.SafeGetStringFromObj(Request["regionCode"]);
             int lb4, lb4M, lb4F, lb3, lb3M, lb3F, lb2, lb2M, lb2F, lb1, lb1M, lb1F, lb0, lb0M, lb0F;
-            residentFileADORepository.GetDemographicDataNumberNum(regionCode, out lb4, out lb4M, out lb4F, out lb3, out lb3M, out lb3F, out lb2, out lb2M, out lb2F, out lb1, out lb1M, out lb1F, out lb0, out lb0M, out lb0F);
+            //residentFileADORepository.GetDemographicDataNumberNum(regionCode, out lb4, out lb4M, out lb4F, out lb3, out lb3M, out lb3F, out lb2, out lb2M, out lb2F, out lb1, out lb1M, out lb1F, out lb0, out lb0M, out lb0F);
+            residentFileADORepository.GetDemographicDataNumberNumSP(regionCode, out lb4, out lb4M, out lb4F, out lb3, out lb3M, out lb3F, out lb2, out lb2M, out lb2F, out lb1, out lb1M, out lb1F, out lb0, out lb0M, out lb0F);
             string year0 = DateTime.Now.AddYears(-0).ToString("yyyy年");
             string year1 = DateTime.Now.AddYears(-1).ToString("yyyy年");
             string year2 = DateTime.Now.AddYears(-2).ToString("yyyy年");
