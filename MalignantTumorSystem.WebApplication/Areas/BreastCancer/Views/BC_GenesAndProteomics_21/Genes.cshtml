@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "21基因检测";
+    Layout = "~/Views/Shared/MyLayoutH.cshtml";
+}
+
+@section head{
+
+}
+
+<table class="table table-border table-bordered table-hover" style="margin-top:5px;width:50%;margin-left:25%">
+    <thead class="text-c">
+        <tr>
+            <th style="width:80%" colspan="2">
+                21基因名称
+            </th>
+            <th style="width:20%">
+                ct值
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="5" style="text-align:center">
+                增殖相关基因
+            </td>
+            <td>Ki67</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>STK15</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>Survivin</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>CyclinB1</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>MYBL2</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="text-align:center">
+                侵袭相关基因
+            </td>
+            <td>Stromolysin 3</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>Cathepsin L2</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="text-align:center">
+                HER2相关基因
+            </td>
+            <td>GBR7</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>HER2</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="4" style="text-align:center">
+                激素相关基因
+            </td>
+            <td>ER</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>PR</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>BCL 2</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>SCUBE 2</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">GSTM1</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">CD68</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">BAG1</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="5" style="text-align:center">
+                5个参考基因
+            </td>
+            <td>β-actin</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>GAPDH</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>RPLPO</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>GUS</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+        <tr>
+            <td>TFRC</td>
+            <td>
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px">
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<table style="margin-bottom:50px;">
+    <thead class="text-c">
+        <tr>
+            <td>
+                <input class="btn btn-primary radius" type="button" value="RS复发评分计算">
+                结果及建议：<span id="suggession"></span>
+                <input class="btn btn-success radius" type="button" value="提交">
+            </td>
+        </tr>
+    </thead>  
+</table>
