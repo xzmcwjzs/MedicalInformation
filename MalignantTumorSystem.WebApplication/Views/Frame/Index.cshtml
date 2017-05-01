@@ -1,233 +1,83 @@
 ﻿@using MalignantTumorSystem.Model.Entities;
 @model Comm_Platform_Worker
 @{
-    ViewBag.Title = ViewBag.type+"智能化健康管理系统";
-    Layout = "~/Views/Shared/MyLayoutDWZ.cshtml";
+    Layout = null;
 }
 
-<div id="layout">
-    <div id="header">
-        <div class="headerNav">
-            <a href="javascript:void(0)" style="font: 800 24px 微软雅黑; color: #fff; line-height: 50px;padding-left:5px">@{@ViewBag.type}智能化健康管理系统</a>
-            <ul class="nav">
-                <li>
-
-                    <a href="/Frame/ModifyPassword?tag=" @Model.id target="dialog" mask="true">当前用户：@Html.Label(Model.real_name)（修改密码）</a>
-                </li>
-                <li>
-                    <a style="cursor:not-allowed">日期：@Html.Label(DateTime.Now.ToString("yyyy年MM月dd日"))</a>
-                </li>
-                <li>
-                    <a href="/Frame/LogOut">退出</a>
-                </li>
-            </ul>
-            <ul id="themeList" class="themeList">
-                <li class="default" theme="default">
-                    <div class="selected">蓝色</div>
-                </li>
-                <li class="green" theme="green">
-                    <div>绿色</div>
-                </li>
-                <li class="purple" theme="purple">
-                    <div>紫色</div>
-                </li>
-                <li class="silver" theme="silver">
-                    <div>银色</div>
-                </li>
-                <li class="azure" theme="azure">
-                    <div>天蓝</div>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="leftside">
-        <div id="sidebar_s">
-            <div class="collapse">
-                <div class="toggleCollapse"><div></div></div>
-            </div>
-        </div>
-        <div id="sidebar">
-            <div class="toggleCollapse"><h2>工作目录</h2><div>收缩</div></div>
-            <div class="accordion" fillSpace="sidebar">
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>基本信息</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BasicInformation/PersonalFrame" target="navTab" rel="BasicInformation" title="个人信息" fresh="true" external="true">个人信息</a></li>
-                        <li><a href="/FamilyInformation/Frame" target="navTab" rel="FamilyInformation" title="家庭信息" fresh="true" external="true">家庭信息</a></li>
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>生活方式</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/Lifestyle_SmokeAndDrink/Frame" target="navTab" rel="Lifestyle_SmokeAndDrink" title="吸烟与饮酒" fresh="true" external="true">吸烟与饮酒</a></li>
-                        <li><a href="/Lifestyle_EatingHabits/Frame" target="navTab" rel="Lifestyle_EatingHabits" title="饮食起居" fresh="true" external="true">饮食起居</a></li>
-                        <li><a href="/Lifestyle_PhysicalExercise/Frame" target="navTab" rel="Lifestyle_PhysicalExercise" title="体育锻炼" fresh="true" external="true">体育锻炼</a></li>
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>病史资料</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/MedicalHistory_Outpatient/Frame" target="navTab" rel="MedicalHistory_Outpatient" title="门诊病史" fresh="true" external="true">门诊病史</a></li>
-                        <li><a href="/MedicalHistory_Hospitalization/Frame" target="navTab" rel="MedicalHistory_Hospitalization" title="住院病史" fresh="true" external="true">住院病史</a></li>
-                        <li>
-                            <a href="javascript:void(0)" target="navTab">检测报告</a>
-                            <ul>
-                                <li><a href="/MedicalHistory_TestReport_Blood/Frame" target="navTab" rel="MedicalHistory_TestReport_Blood" title="血液检测" fresh="true" external="true">血液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_Urine/Frame" target="navTab" rel="MedicalHistory_TestReport_Urine" title="尿液检测" fresh="true" external="true">尿液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_Faeces/Frame" target="navTab" rel="MedicalHistory_TestReport_Faeces" title="粪便检测" fresh="true" external="true">粪便检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_Sputum/Frame" target="navTab" rel="MedicalHistory_TestReport_Sputum" title="痰液检测" fresh="true" external="true">痰液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_CSF/Frame" target="navTab" rel="MedicalHistory_TestReport_CSF" title="脑脊液检测" fresh="true" external="true">脑脊液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_SCE/Frame" target="navTab" rel="MedicalHistory_TestReport_SCE" title="浆膜腔积液检测" fresh="true" external="true">浆膜腔积液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_HumorCheck/Frame" target="navTab" rel="MedicalHistory_TestReport_HumorCheck" title="生殖系统体液检测" fresh="true" external="true">生殖系统体液检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_BMC/Frame" target="navTab" rel="MedicalHistory_TestReport_BMC" title="骨髓检测" fresh="true" external="true">骨髓检测</a></li>
-                                <li><a href="/MedicalHistory_TestReport_GeneDetection/Frame" target="navTab" rel="MedicalHistory_TestReport_GeneDetection" title="基因检测" fresh="true" external="true">基因检测</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" target="navTab">辅助检查</a>
-                            <ul>
-                                <li><a href="/MedicalHistory_AccessoryExamination_XCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_XCheck" title="X线检查" fresh="true" external="true">X线检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_CTCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_CTCheck" title="CT检查" fresh="true" external="true">CT检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_USCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_USCheck" title="超声检查" fresh="true" external="true">超声检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_MRICheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_MRICheck" title="磁共振检查" fresh="true" external="true">磁共振检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_StomachCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_StomachCheck" title="内镜检查" fresh="true" external="true">内镜检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_HeartCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_HeartCheck" title="心电图检查" fresh="true" external="true">心电图检查</a></li>
-                                <li><a href="/MedicalHistory_AccessoryExamination_LungCheck/Frame" target="navTab" rel="MedicalHistory_AccessoryExamination_LungCheck" title="肺功能检查" fresh="true" external="true">肺功能检查</a></li>
-
-                            </ul>
-                        </li>
-
-                        <li><a href="/MedicalHistory_DiagnosticInformation/Frame" target="navTab" rel="MedicalHistory_DiagnosticInformation" title="诊断信息" fresh="true" external="true">诊断信息</a></li>
-                        <li><a href="/MedicalHistory_MedicationInformation/Frame" target="navTab" rel="MedicalHistory_MedicationInformation" title="用药情况" fresh="true" external="true">用药情况</a></li>
-                        <li><a href="/MedicalHistory_ConsultationRecord/Frame" target="navTab" rel="MedicalHistory_ConsultationRecord" title="会诊记录" fresh="true" external="true">会诊记录</a></li>
-                        <li><a href="/MedicalHistory_OperationRecord/Frame" target="navTab" rel="MedicalHistory_OperationRecord" title="手术记录" fresh="true" external="true">手术记录</a></li>
-                        <li><a href="/MedicalHistory_CourseRecord/Frame" target="navTab" rel="MedicalHistory_CourseRecord" title="病程" fresh="true" external="true">病程</a></li>
-                        <li><a href="/MedicalHistory_DischargeAbstract/Frame" target="navTab" rel="MedicalHistory_DischargeAbstract" title="出院小结" fresh="true" external="true">出院小结</a></li>
-                        <li><a href="/MedicalHistory_HospitalizationExpenses/Frame" target="navTab" rel="MedicalHistory_HospitalizationExpenses" title="住院费用" fresh="true" external="true">住院费用</a></li>
-                    </ul>
-                </div>
-                @if (ViewBag.type == "乳腺癌")
-                {
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>随访与体检</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BreastCancer/BC_FollowupAndExamination_SFJL/Frame" target="navTab" rel="BC_FollowupAndExamination_SFJL" title="随访记录" fresh="true" external="true">随访记录</a></li>
-                        <li><a href="/BreastCancer/BC_FollowupAndExamination_BloodPressure/Frame" target="navTab" rel="BC_FollowupAndExamination_BloodPressure" title="血压监测" fresh="true" external="true">血压监测</a></li>
-                        <li><a href="/BreastCancer/BC_FollowupAndExamination_BloodGlucose/Frame" target="navTab" rel="BC_FollowupAndExamination_BloodGlucose" title="血糖监测" fresh="true" external="true">血糖监测</a></li>
-                        <li><a href="/BreastCancer/BC_FollowupAndExamination_Constitution/Frame" target="navTab" rel="BC_FollowupAndExamination_Constitution" title="体质监测" fresh="true" external="true">体质监测</a></li>
-                        <li><a href="/BreastCancer/BC_FollowupAndExamination_PE/Frame" target="navTab" rel="BC_FollowupAndExamination_PE" title="健康体检专用表" fresh="true" external="true">健康体检专用表</a></li>
-                    
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>乳腺癌筛查与诊断</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_SelfCheck/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_SelfCheck" title="自我检查" fresh="true" external="true">自我检查</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_ClinicalExamination/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_ClinicalExamination" title="临床检查" fresh="true" external="true">临床检查</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_Mammography/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_Mammography" title="钼靶X线检查" fresh="true" external="true">钼靶X线检查</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_Ultrasonography/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_Ultrasonography" title="超声检查" fresh="true" external="true">超声检查</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_MRIExamination/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_MRIExamination" title="MRI检查" fresh="true" external="true">MRI检查</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_PositioningBiopsy/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_PositioningBiopsy" title="定位活检" fresh="true" external="true">定位活检</a></li>
-                        <li><a href="/BreastCancer/BC_ScreeningAndDiagnosis_CTExamination/Frame" target="navTab" rel="BC_ScreeningAndDiagnosis_CTExamination" title="CT检查" fresh="true" external="true">CT检查</a></li>
-
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>基因与蛋白质组学</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BreastCancer/BC_GenesAndProteomics_21/Frame" target="navTab" rel="BC_GenesAndProteomics_21" title="21基因检测法" fresh="true" external="true">21基因检测法</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>健康素养</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BreastCancer/BC_QOL/Frame" target="navTab" rel="BC_QOL" title="生存质量量表" fresh="true" external="true">生存质量量表</a></li>
-
-                    </ul>
-                </div>
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>术后护理与康复</h2>
-                </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a href="/BreastCancer/BC_Nurse/Frame" target="navTab" rel="BC_Nurse" title="护理知识" fresh="true" external="true">护理知识</a></li>
-
-                    </ul>
-                </div>
-                }
-
-            </div>
-        </div>
-    </div>
-
-
-    <div id="container">
-        <div id="navTab" class="tabsPage">
-            <div class="tabsPageHeader">
-                <div class="tabsPageHeaderContent">
-                    <ul class="navTab-tab" style="left: 0px;">
-                        <li class="main selected" tabid="main">
-                            <a href="javascript:void(0);">
-                                <span>
-                                    <span class="home_icon">系统主页</span>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tabsLeft" style="display: none;">left</div>
-                <div class="tabsRight" style="display: none;">right</div>
-                <div class="tabsMore">more</div>
-
-            </div>
-            <ul class="tabsMoreList">
-                <li class="selected">
-                    <a href="javascript:;">系统主页</a>
-                </li>
-            </ul>
-            <div class="navTab-panel tabsPageContent layoutBox">
-                <div class="page unitBox">
-                    <table border="0" style="border-collapse: collapse;width:100%;" cellpadding="0" cellspacing="1" class="table">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@{@ViewBag.type}智能化健康管理系统<</title>
+            <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+            <script src="~/Scripts/MyJs/global.js"></script>
+            <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+            <script type="text/javascript">
+        if (self != top) {
+            top.location = self.location;
+        }
+            </script>
+        </head>
+        <body onscroll="no">
+            <form id="form1">
+                <div>
+                    <table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;">
                         <tr>
-                            <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访预警提示-<a href="/Frame/Alert" target="dialog" mask="true" title="随访预警" width="600" height="480">点击查看</a></td>
-                            <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访过期提示-<<<a href="/Frame/Overdue" target="dialog" mask="true" title="随访过期" width="600" height="480">点击查看</a></td>
+                            <td colspan="3" style="height: 30px;">
+                                <table width="100%" style="height: 38px;" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td colspan="2">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td width="290" rowspan="2" align="left" style="padding-left: 10px; background-color: white;">
+                                                        <div>
+                                                            <span style="color: blue; font-size: 20px; font-weight: bold;">@{@ViewBag.type}智能化健康管理系统</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #0066cc;color:#fff;">
+                                                <tr>
+                                                    <td align="right">
+                                                        <span style="color: White;">当前用户:</span>
+                                                        @Html.Label(Model.real_name, new { style = "color:white" })
+                                                        <a style="color: White;" href="javascript:OpenTopWindow('@Url.Action(" ModifyPassword", "Frame" , new { tag=Model.id})',500,140);">(修改密码)</a>
+                                                        <span>&nbsp;</span>
+                                                        <span style="color: White;">日期:</span>
+                                                        @Html.Label(DateTime.Now.ToString("yyyy年MM月dd日"), new { style = "color:white" })
+                                                        <span>&nbsp;</span>
+                                                        <a style="color: White;" href="/Frame/LogOut">安全退出</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
                         </tr>
                         <tr>
-                            <td height="24" style=" font-size:18px;" colspan="2">《恶性肿瘤智能化健康管理系统》使用手册-<a href="/index/download/《恶性肿瘤智能化健康管理系统》使用手册.pdf" target=_blank>点击查看</a></td>
-                        </tr>
-                        <tr>
-                            <td height="24" style=" font-size:18px;">@{@ViewBag.type}智能化健康管理系统建档统计汇总表-<a href="/index/download/tjhzb.xls" target="_blank">点击下载</a></td>
-                            <td height="24" style=" font-size:18px;">常见问题回答FAQ-<a href="/index/download/FAQ.doc" target=_blank>点击下载</a></td>
+                            <td align="center" valign="middle" id="frmTitle" style="width:169px;">
+                                @if (ViewBag.type == "乳腺癌")
+                                {
+                                    <iframe frameborder="0" id="LeftFrame" scrolling="auto" src='@Url.Action("LeftBreastCancer")' style="height:100%;width:165px;visibility:inherit;z-index:2;"></iframe>
+                                }
+                                else
+                                {
+                                    <iframe frameborder="0" id="LeftFrame" scrolling="auto" src='@Url.Action("LeftFrame")' style="height: 100%; visibility: inherit; width: 165px; z-index: 2"></iframe>
+                                }
+                            </td>
+                            <td style="width: 100%">
+                                <iframe frameborder="0" id="MainFrame" name="MainFrame" scrolling="no" src='@Url.Action("MainFrame")' style="height: 100%; visibility: inherit; width: 100%; z-index: 1"></iframe>
+                            </td>
                         </tr>
                     </table>
 
-                    <br />
-                    <iframe frameborder="0" style="width:100%" height="600" src="http://222.192.61.8:8082/liuyanben"></iframe>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="footer">
-    Copyright ©2009-2017
-    <a href="http://www.中国慢病网.com" target="_black">江苏中康软件有限责任公司</a>
-    苏ICP备16042896号
-</div>
+            </form>
+        </body>
+    </html>

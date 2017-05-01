@@ -48,6 +48,7 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             
             return View();
         }
+        
 
         public ActionResult LeftFrame()
         { 
@@ -55,6 +56,12 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         }
         public ActionResult LeftBreastCancer()
         {
+            Model.Entities.Comm_Platform_Worker workerModel = new Model.Entities.Comm_Platform_Worker();
+            workerModel = Session["worker"] as Model.Entities.Comm_Platform_Worker;
+            string password = CommonFunc.SafeGetStringFromObj(workerModel.password);
+            string name = CommonFunc.SafeGetStringFromObj(workerModel.user_name);
+            ViewBag.password = password;
+            ViewBag.name = name;
             return View();
         }
         public ActionResult MainFrame()
@@ -85,15 +92,17 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         public ActionResult ModifyPassword()
         {
             TempData["tag"] =CommonFunc.SafeGetStringFromObj(Request.QueryString["tag"]);
+            string id = TempData["tag"].ToString();
+            ViewBag.id = id;
             return View();
         }
         [HttpPost]
-        public ActionResult ModifyPassword(FormCollection form)
+        public ActionResult ModifyPsw()
         {
             Model.Entities.Comm_Platform_Worker workerModel = new Model.Entities.Comm_Platform_Worker();
-            string tag = CommonFunc.SafeGetStringFromObj(TempData["tag"]);
-            string txtPwd = CommonFunc.SafeGetStringFromObj(form["txtPwd"]);
-            string txtConfirmPwd = CommonFunc.SafeGetStringFromObj(form["txtConfirmPwd"]);
+            string tag = CommonFunc.SafeGetStringFromObj(Request.Form["tag"]);
+            string txtPwd = CommonFunc.SafeGetStringFromObj(Request.Form["txtPwd"]);
+            string txtConfirmPwd = CommonFunc.SafeGetStringFromObj(Request.Form["txtConfirmPwd"]);
             if (txtPwd.Equals(txtConfirmPwd))
             {
                 workerModel.id = tag;

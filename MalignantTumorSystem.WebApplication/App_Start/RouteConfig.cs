@@ -16,7 +16,8 @@ namespace MalignantTumorSystem.WebApplication
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "MalignantTumorSystem.WebApplication.Controllers" }
             );
          //   routes.MapRoute(
          //    name: "匹配所有的url",

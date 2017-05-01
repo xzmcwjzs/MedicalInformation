@@ -43,6 +43,71 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         public IComm_ResidentFile_Change_AddressService changeAddressService { get; set; }
         [Inject]
         public IComm_Platform_WorkerService platformWorkerService { get; set; }
+        public ActionResult DWZPersonalFrame()
+        { 
+            Comm_Platform_Worker workerModel = Session["worker"] as Comm_Platform_Worker;
+            if (workerModel == null)
+            {
+                redirectTo();
+                return null;
+            }
+            string region_code = CommonFunc.SafeGetStringFromObj(workerModel.region_code);
+            string dell_user_name = CommonFunc.SafeGetStringFromObj(workerModel.user_name);
+            string name = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["names"]).Trim());
+            string sex = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["sex"]).Trim());
+
+            string birthdateBegin = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["txtBirthDateBegin"]).Trim());
+            string birthdateEnd = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["txtBirthDateEnd"]).Trim());
+            string id_card_number = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["idCard"]).Trim());
+            string address = CommonFunc.FilterSpecialString(CommonFunc.SafeGetStringFromObj(Request["address"]).Trim());
+            string s = string.Empty;
+            //获取区域代码
+            if (!string.IsNullOrEmpty(CommonFunc.SafeGetStringFromObj(Request["ddlProvince"])))
+                s = CommonFunc.SafeGetStringFromObj(Request["ddlProvince"]);
+            if (!string.IsNullOrEmpty(CommonFunc.SafeGetStringFromObj(Request["ddlCity"])))
+                s = CommonFunc.SafeGetStringFromObj(Request["ddlCity"]);
+            if (!string.IsNullOrEmpty(CommonFunc.SafeGetStringFromObj(Request["ddlCounty"])))
+                s = CommonFunc.SafeGetStringFromObj(Request["ddlCounty"]);
+            if (!string.IsNullOrEmpty(CommonFunc.SafeGetStringFromObj(Request["ddlStreet"])))
+                s = CommonFunc.SafeGetStringFromObj(Request["ddlStreet"]);
+            if (!string.IsNullOrEmpty(CommonFunc.SafeGetStringFromObj(Request["ddlCommunity"])))
+                s = CommonFunc.SafeGetStringFromObj(Request["ddlCommunity"]);
+            if (s.Length > region_code.Length)
+                region_code = s;
+
+            int pageIndex = CommonFunc.SafeGetIntFromObj(this.Request["pageNum"], 1);
+            int pageSize = this.Request["numPerPage"] == null ? PageSize.GetPageSize : int.Parse(Request["numPerPage"]);
+            int totalCount = 0;
+            BasicInformationParam basicInformationParam = new BasicInformationParam()
+            {
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                TotalCount = totalCount,
+                region_code = region_code,
+                name = name,
+                sex = sex,
+                txtBirthDateBegin = birthdateBegin,
+                txtBirthDateEnd = birthdateEnd,
+                idCard = id_card_number,
+                address = address
+            };
+            var basicInformationList = basicInformationService.LoadSearchEntities(basicInformationParam);
+            totalCount = basicInformationParam.TotalCount;
+            int PageCount = Convert.ToInt32(Math.Ceiling((double)totalCount / pageSize));
+
+            List<BasicInformationViewModel> result = new List<BasicInformationViewModel>();
+            result.AddRange(basicInformationList);
+            PagerInfo pager = new PagerInfo();
+            pager.PageIndex = pageIndex;
+            pager.PageSize = pageSize;
+            pager.TotalCount = totalCount;
+            PagerQuery<PagerInfo, List<BasicInformationViewModel>> query = new PagerQuery<PagerInfo, List<BasicInformationViewModel>>(pager, result);
+            ViewData.Model = query;
+            ViewBag.dell_user_name = dell_user_name;
+          
+            return View();
+        }
+       
         public ActionResult PersonalFrame()
         {
             return View();
@@ -76,7 +141,8 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             ViewBag.resident_id = resident_id;
             return View();
         }
-       //加载显示列表页  
+       
+        //加载显示列表页  
         public ActionResult List()
         {
             Comm_Platform_Worker workerModel=Session["worker"] as Comm_Platform_Worker;

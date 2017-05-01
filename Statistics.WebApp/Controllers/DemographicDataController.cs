@@ -13,6 +13,8 @@ namespace Statistics.WebApp.Controllers
     {
         Comm_Platform_WorkerADORepository workerADORepository = new Comm_Platform_WorkerADORepository();
         Comm_ResidentFileADORepository residentFileADORepository = new Comm_ResidentFileADORepository();
+        
+
         //人口数量资料统计模块
         [HttpGet]
         public ActionResult Number()
@@ -33,6 +35,7 @@ namespace Statistics.WebApp.Controllers
             ViewBag.code = code;
             return View();
         }
+
         //获取人口数量资料数据填充表格
         public ActionResult InitNumberData()
         {

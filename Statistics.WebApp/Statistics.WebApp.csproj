@@ -1222,11 +1222,11 @@
     <Content Include="Scripts\H-ui_v3.0\static\h-ui\images\iCheck\Thumbs.db" />
     <Content Include="Scripts\H-ui_v3.0\static\h-ui\images\ucnter\Thumbs.db" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\WelCome.cshtml" />
     <Content Include="Views\DemographicData\Number.cshtml" />
     <Content Include="Views\DemographicData\Constitute.cshtml" />
     <None Include="Properties\PublishProfiles\Statistic.pubxml" />
     <Content Include="Views\SystemManage\Logger.cshtml" />
+    <Content Include="Views\Home\WelCome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

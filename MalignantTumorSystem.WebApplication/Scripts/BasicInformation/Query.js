@@ -1,5 +1,4 @@
-﻿$(function () {
-
+﻿$(function () { 
     if (no == "1") {
         $("#last").hide();
     } else if (no == "2") {

@@ -3393,7 +3393,7 @@ function stopDefault(e) {
 })(window.jQuery || window.Zepto);
 
 /* =======================================================================
- * jQuery.raty.js v2.4.5- A Star Rating Plugin
+ * jQuery.raty.js v3.0.5- A Star Rating Plugin
  * -------------------------------------------------------------------
  * jQuery Raty is a plugin that generates a customizable star rating.
  * Licensed under The MIT License

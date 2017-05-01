@@ -23,6 +23,8 @@ namespace MalignantTumorSystem.WebApplication
             #endregion
 
             AreaRegistration.RegisterAllAreas();
+            //提升命名空间的优先级
+            ControllerBuilder.Current.DefaultNamespaces.Add("MalignantTumorSystem.WebApplication.Controllers");
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);

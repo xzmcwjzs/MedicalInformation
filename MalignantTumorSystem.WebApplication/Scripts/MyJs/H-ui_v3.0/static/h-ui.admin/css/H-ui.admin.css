@@ -31,8 +31,6 @@ h4{line-height:30px}
 }
 /*组件*/
 /*logo*/
-.viewhome{ line-height:44px; padding-right:15px}
-.viewhome a{ color:#FFF; padding-left:20px; background:url(../images/icon_link.png) no-repeat 0 center}
 
 /*导航*/
 #Hui-nav > ul > li{ font-weight:normal}
@@ -42,7 +40,7 @@ h4{line-height:30px}
 	#Hui-nav > ul > li{ width: 24%;text-align:center;}
 	#Hui-nav > ul > li a{ text-align: center; padding: 0}
 }
-#Hui-userbar{right:20px}
+#Hui-userbar{right:20px; position:absolute; top:0}
 #Hui-userbar > ul > li > a{padding:0 10px}
 	
 #Hui-msg .badge{ position:absolute; left:19px; top:4px; font-size:12px; font-weight:normal; padding:1px 5px}
@@ -123,7 +121,7 @@ h4{line-height:30px}
 .portfolio-area li .checkbox{position: absolute; top: 10px; right: 5px; cursor:pointer}
 .portfolio-area li.hover .portfoliobox{ height:auto;padding-bottom:10px;box-shadow:0 1px 3px rgba(68, 68, 68,0.3);-moz-box-shadow:0 1px 3px rgba(68, 68, 68,0.3);-webkit-box-shadow:0 1px 3px rgba(68, 68, 68,0.3)}
 .portfolio-area li .picbox{width: 150px; height: 150px;overflow: hidden;text-align: center;vertical-align:middle;display:table-cell; line-height:150px;}
-.portfolio-area li .picbox img{max-width:150px; max-height:150px;vertical-align:middle;_margin-top: expression_r(( 150 - this.height ) / 2);}
+.portfolio-area li .picbox img{max-width:150px; max-height:150px;vertical-align:middle;}
 .portfolio-area li .textbox{ display: none; margin-top: 5px;}
 .portfolio-area li.hover .textbox{ display: block;}
 .portfolio-area li label{ display:block; cursor:pointer}

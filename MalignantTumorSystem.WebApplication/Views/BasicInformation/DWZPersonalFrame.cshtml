@@ -1,0 +1,181 @@
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.ViewModel.BasicInformationViewModel>>
+@using MalignantTumorSystem.Common;
+@using MalignantTumorSystem.WebApplication.Common.ComunityCode;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>个人信息</title> 
+    <script src="~/Scripts/MyJs/global.js"></script> 
+</head>
+<body>
+    <form id="pagerForm" method="post" action="/BasicInformation/DWZPersonalFrame">
+        <input type="hidden" name="pageNum" value="1" /><!--【必须】value=1可以写死-->
+        <input type="hidden" name="numPerPage" value="20"/><!--【可选】每页显示多少条-->
+    </form>
+
+    <div class="pageHeader">
+        <form rel="pagerForm" onsubmit="return navTabSearch(this);" action="/BasicInformation/DWZPersonalFrame" method="post">
+            <div class="searchBar">
+                <ul class="searchContent">
+                    <li style="width:500px;">
+                        <label>区域：</label>
+                        <select class="combox" name="ddlProvince" id="ddlProvince">
+                            <option value="">请选择</option>
+                        </select>
+                        <select class="combox" name="ddlCity" id="ddlCity">
+                            <option value="">请选择</option>
+                        </select>
+                        <select class="combox" name="ddlCounty" id="ddlCounty">
+                            <option value="">请选择</option>
+                        </select>
+                        <select class="combox" name="ddlStreet" id="ddlStreet">
+                            <option value="">请选择</option>
+                        </select>
+                        <select class="combox" name="ddlCommunity" id="ddlCommunity">
+                            <option value="">请选择</option>
+                        </select>
+                    </li>
+                </ul> 
+
+                <div class="subBar">
+                    <ul>
+                        <li><div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div></li>
+                        <li>@*<a class="button" href="demo_page6.html" target="dialog" mask="true" title="查询框"><span>高级检索</span></a>*@</li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="pageContent">
+        <div class="panelBar">
+            <ul class="toolBar">
+                <li><a class="add" href="demo_page4.html" target="navTab"><span>添加</span></a></li>
+                <li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" href="demo/common/ajaxDone.html" class="delete"><span>批量删除默认方式</span></a></li>
+                <li><a title="确实要删除这些记录吗?" target="selectedTodo" rel="ids" postType="string" href="demo/common/ajaxDone.html" class="delete"><span>批量删除逗号分隔</span></a></li>
+                <li><a class="edit" href="demo_page4.html?uid={sid_user}" target="navTab" warn="请选择一个用户"><span>修改</span></a></li>
+                <li class="line">line</li>
+                <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>
+                <!--<li><a target="selectedLoad" rel="ids" postType="string" href="demo_page1.html" class="icon"><span>批量Dialog Load逗号分隔</span></a></li>-->
+            </ul>
+        </div>
+        <table class="table" style="width:100%" layoutH="138">
+            <thead>
+                <tr> 
+                    <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                    <th class="center">姓名</th>
+                    <th class="center">性别</th>
+                    <th class="center">年龄</th>
+                    <th class="center">身份证号码</th>
+                    <th class="center">家庭常住地址</th>
+                    <th class="center">登记日期</th>
+                    <th class="center">查看</th>
+                    <th class="center">全记录</th>
+                    <th class="center">修改</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.EntityList.Count; i++)
+                {
+
+                    var item = Model.EntityList[i];
+                    string id, id2, resident_id = "";
+                    string resident_name = "", resident_other = "", sex = "", id_card = "", create_time = "", strAge = "", worker_user_name = "";
+                    resident_name = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.resident_name), 0);
+
+                    id = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id), 0);
+                    id2 = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id2), 0);
+                    resident_id = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.resident_id), 0);
+
+                    sex = (CommonFunc.SafeGetStringFromObj(item.sex2) == "01") ? "男" : "女";
+                    id_card = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id_card_number), 0);
+                    
+                    resident_other = new Address().GetForwardAddress(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.permanent_home_address), 0);
+                    string tempBirthDate = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.birth_date, "yyyy-MM-dd");
+                    if (!string.IsNullOrEmpty(tempBirthDate))
+                    {
+                        DateTime dtBirthDate = Convert.ToDateTime(tempBirthDate);
+                        int age = DateTime.Now.Year - dtBirthDate.Year;
+                        if (age > 0)
+                        { strAge = age.ToString() + "岁"; }
+                        else if (age == 0)
+                        {
+                            int month = DateTime.Now.Month - dtBirthDate.Month;
+                            if (month > 0)
+                            { strAge = month.ToString() + "月"; }
+                            else if (month == 0)
+                            {
+                                int day = DateTime.Now.Day - dtBirthDate.Day;
+                                if (day > 0)
+                                { strAge = day.ToString() + "天"; }
+                            }
+                        }
+                    }
+                    create_time = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.create_time, "yyyy-MM-dd");
+                    worker_user_name = CommonFunc.SafeGetStringFromObj(item.worker_user_name);
+                    <tr>
+                        <td><input name="ids" value="@item.id" type="checkbox"></td>
+                        @if (resident_name.Length == 2)
+                        {
+                            <td class="center">@resident_name.Substring(0, 1)<a style="padding-left:1em"></a>@resident_name.Substring(1, 1)</td>
+                        }
+                        else
+                        {
+                            <td  class="center">@resident_name</td>
+                        }
+                        <td class="center">@sex</td>
+                        <td class="center">@strAge</td>
+                        <td class="center">@id_card</td>
+                        <td>@resident_other &nbsp;</td>
+                        <td class="center">@create_time</td>
+                        <td class="center">
+                            <a onclick="OpenTopWindow('/BasicInformation/Personal?id=@id&resident_id=@resident_id&NO=1',1020,650)" href="javascript:void(0)"  class="btnView">
+                                查看
+                            </a>
+                        </td>
+                        <td class="center">
+                            <a onclick="OpenTopWindow('/BasicInformation/Records?id=@id2&resident_id=@resident_id',900,650)" href="javascript:void(0)"  class="btnInfo">
+                                全记录
+                            </a>
+                        </td>
+                        <td class="center">
+                            @if (!(ViewBag.dell_user_name == worker_user_name) && !Enum.GetNames(typeof(MalignantTumorSystem.Model.Enum.UserNameEnum)).Contains(ViewBag.dell_user_name as string))
+                {
+                                <a onclick="Alert();" href="javascript:void(0)" class="btnEdit">
+                                    修改
+                                </a>
+                            }
+                            else
+                            {
+                                <a onclick="OpenTopWindow('/BasicInformation/Personal?id=@id&resident_id=@resident_id&NO=2',1020,650)" href="javascript:void(0)"  class="btnEdit">
+                                    修改
+                                </a>
+                            }
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div class="panelBar">
+            <div class="pages">
+                <span>显示</span>
+                <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                </select>
+                <span>条，共 @Model.Pager.TotalCount 条</span>
+            </div>
+
+            <div class="pagination" targetType="navTab" totalCount="@Model.Pager.TotalCount" numPerPage="20" pageNumShown="10" currentPage="@Model.Pager.PageIndex"></div>
+        </div>
+    </div>
+</body>
+</html>
