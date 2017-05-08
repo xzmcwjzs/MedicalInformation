@@ -1,0 +1,525 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>功能列表</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            margin: 0px;
+            font: 12px 宋体;
+            background-color: #ECF0FB;
+        }
+
+        a:visited, a:link, a:hover {
+            text-decoration: none;
+            color: #000080;
+        }
+
+        .sec_menu {
+            border-left: 2px solid #84bf92;
+            border-right: 2px solid #84bf92;
+        }
+
+        .sec_menu1 {
+            border-left: 2px solid #84bf92;
+            border-right: 2px solid #84bf92;
+            border-bottom: 2px solid #84bf92;
+        }
+
+        .sec_menu td {
+            padding-left: 2px;
+        }
+
+        .menu_hide {
+            background: url(/images/main/hide.gif) right no-repeat;
+            background-color: #0066cc;
+            color: white;
+            font-size: 14px;
+            height: 26px;
+            border: 2px solid #84bf92;
+            padding-left: 13px;
+            cursor: pointer;
+        }
+
+        .menu_show {
+            background: url(/images/main/show.gif) right no-repeat;
+            background-color: #0066cc;
+            color: white;
+            font-size: 14px;
+            height: 26px;
+            border: 2px solid #84bf92;
+            border-bottom: 2px;
+            padding-left: 13px;
+            cursor: pointer;
+        }
+
+        .menu_title SPAN {
+            font-weight: bold;
+            left: 8px;
+            color: #215dc6;
+            position: relative;
+            top: 2px;
+        }
+
+        .auto-style1 {
+            border-left: 2px solid #84bf92;
+            border-right: 2px solid #84bf92;
+            border-top: 2px solid #84bf92;
+            border-bottom: 2px solid #84bf92;
+            background: #0066cc url('/images/main/show.gif') no-repeat right 50%;
+            color: white;
+            font-size: 14px;
+            height: 26px;
+            padding-left: 13px;
+            cursor: pointer;
+            width: 142px;
+            border-bottom-style: none;
+            border-bottom-color: inherit;
+            border-bottom-width: medium;
+        }
+
+        .auto-style1_1 {
+            border-left: 2px solid #84bf92;
+            border-right: 2px solid #84bf92;
+            border-top: 2px solid #84bf92;
+            border-bottom: 2px solid #84bf92;
+            background: #0066cc url('/images/main/hide.gif') no-repeat right 50%;
+            color: white;
+            font-size: 14px;
+            height: 26px;
+            padding-left: 13px;
+            cursor: pointer;
+            width: 142px;
+            border-bottom-style: none;
+            border-bottom-color: inherit;
+            border-bottom-width: medium;
+        }
+
+        .auto-style2 {
+            width: 142px;
+        }
+
+        .menu_hide1 {
+            width: 100px;
+            background: url(/images/title_bg_hide.gif) right no-repeat;
+        }
+
+        .menu_show1 {
+            width: 120PX;
+            background: url(/images/title_bg_show.gif) right no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        function showsubmenu(sid, f_id) {
+            whichEl = eval("submenu" + sid);
+            if (whichEl.style.display == "none") {
+                eval("submenu" + sid + ".style.display=\"\";");
+                eval("this.menuTitle" + sid + ".className=\"menu_show\";");
+            }
+            else {
+                eval("submenu" + sid + ".style.display=\"none\";");
+                eval("this.menuTitle" + sid + ".className=\"menu_hide\";");
+            }
+
+        }
+
+        function showsubmenu1(sid, f_id) {
+            whichEl = eval("submenu" + sid);
+            if (whichEl.style.display == "none") {
+                eval("submenu" + sid + ".style.display=\"\";");
+                eval("this.menuTitle" + sid + ".className=\"menu_show1\";");
+            }
+            else {
+                eval("submenu" + sid + ".style.display=\"none\";");
+                eval("this.menuTitle" + sid + ".className=\"menu_hide1\";");
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <form id="form1">
+
+        <div style="padding-left: 2px;">
+            <table cellspacing="0" cellpadding="0" width="140">
+                <tr>
+                    <td class="auto-style1" id="menuTitle1" onclick="showsubmenu(1,'05')">基本信息</td>
+                </tr>
+                <tr>
+                    <td id="submenu1" class="auto-style2">
+                        <div class="sec_menu" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BasicInformation/PersonalFrame" target="MainFrame">个人信息 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/FamilyInformation/Frame" target="MainFrame">家庭信息 </a></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" id="menuTitle4" onclick="showsubmenu(4,'05')">生活方式 </td>
+                </tr>
+                <tr>
+                    <td id="submenu4" class="auto-style2">
+                        <div class="sec_menu" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/Lifestyle_SmokeAndDrink/Frame" target="MainFrame">吸烟与饮酒 </a></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/Lifestyle_EatingHabits/Frame" target="MainFrame">饮食起居 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/Lifestyle_PhysicalExercise/Frame" target="MainFrame">体育锻炼 </a></td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="auto-style1_1" id="menuTitle5" onclick="showsubmenu(5,'05')">病史资料 </td>
+                </tr>
+                <tr>
+                    <td id="submenu5" class="auto-style2" style="display: none">
+                        <div class="sec_menu" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_Outpatient/Frame" target="MainFrame">门诊病史 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_Hospitalization/Frame" target="MainFrame">住院病史 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle8" onclick="showsubmenu1(8,'05')"><span style="color: #84bf92">&middot;</span>检测报告 </td>
+                                </tr>
+
+                                <tr>
+                                    <td id="submenu8" class="auto-style2" style="display: none">
+                                        <div style="width: 122px">
+                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_Blood/Frame" target="MainFrame">血液检测</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_Urine/Frame" target="MainFrame">尿液检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_Faeces/Frame" target="MainFrame">粪便检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_Sputum/Frame" target="MainFrame">痰液检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_CSF/Frame" target="MainFrame">脑脊液检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_SCE/Frame" target="MainFrame">浆膜腔积液检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_HumorCheck/Frame" target="MainFrame">生殖系统体液检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_BMC/Frame" target="MainFrame">骨髓检测 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_TestReport_GeneDetection/Frame" target="MainFrame">基因检测 </a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle9" onclick="showsubmenu1(9,'05')"><span style="color: #84bf92">&middot;</span>辅助检查 </td>
+                                </tr>
+                                <tr>
+                                    <td id="submenu9" class="auto-style2" style="display: none">
+                                        <div style="width: 122px">
+                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
+
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_XCheck/Frame" target="MainFrame">X线检查 </a></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_CTCheck/Frame" target="MainFrame">CT检查 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_USCheck/Frame" target="MainFrame">超声检查 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_MRICheck/Frame" target="MainFrame">磁共振检查 </a></td>
+                                                </tr>
+                                                @*<tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_StomachCheck/Frame" target="MainFrame">内镜检查 </a></td>
+                                                </tr>*@
+
+
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_HeartCheck/Frame" target="MainFrame">心电图检查 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_LungCheck/Frame" target="MainFrame">肺功能检查 </a></td>
+                                                </tr>
+
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_DiagnosticInformation/Frame" target="MainFrame">诊断信息</a> </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_MedicationInformation/Frame" target="MainFrame">用药情况</a> </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_ConsultationRecord/Frame" target="MainFrame">会诊记录</a> </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_OperationRecord/Frame" target="MainFrame">手术记录 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_CourseRecord/Frame" target="MainFrame">病<span style="padding-left: 0.5em"></span>程<span style="padding-left: 0.5em"></span>录</a> </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_DischargeAbstract/Frame" target="MainFrame">出院小结</a> </td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_HospitalizationExpenses/Frame" target="MainFrame">住院费用</a> </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" id="menuTitle6" onclick="showsubmenu(6,'05')">随访与体检 </td>
+                </tr>
+                <tr>
+                    <td id="submenu6" class="auto-style2">
+                        <div class="sec_menu1" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_FollowupAndExamination_SFJL/Frame" target="MainFrame">随访记录 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_FollowupAndExamination_BloodPressure/Frame" target="MainFrame">血压监测 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_FollowupAndExamination_BloodGlucose/Frame" target="MainFrame">血糖监测 </a></td>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_FollowupAndExamination_Constitution/Frame" target="MainFrame">体质监测 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_FollowupAndExamination_PE/Frame" target="MainFrame">健康体检专用表 </a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1" id="menuTitle10" onclick="showsubmenu(10,'05')">鼻咽癌检查与诊断</td>
+                </tr>
+                <tr>
+                    <td id="submenu10" class="auto-style2">
+                        <div class="sec_menu1" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">临床检查</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_NasalEndoscopicExamination/Frame" target="MainFrame">内镜检查</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_SerologicalExamination/Frame" target="MainFrame">血清学检查</a></td>
+                                </tr>
+                                @*<tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">X线检查</a></td>
+                                </tr> 
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">CT检查</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">MRI检查</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">超声检查</a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_CheckAndDiagnosis_RoutineExamination/Frame" target="MainFrame">核医学检查</a></td>
+                                </tr>*@ 
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/BC_ScreeningAndDiagnosis_PathologicalDiagnosis/Frame" target="MainFrame">病理诊断</a></td>
+                                </tr> 
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                        <td class="auto-style1" id="menuTitle11" onclick="showsubmenu(11,'05')">鼻咽癌治疗</td>
+                    </tr>
+                    <tr>
+                        <td id="submenu11" class="auto-style2">
+                            <div class="sec_menu1" style="width: 142px">
+                                <table cellspacing="0" cellpadding="0" width="140">
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_Treatment_OperativeTreatment/Frame" target="MainFrame">手术治疗</a></td>
+                                    </tr> 
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_Treatment_Radiotherapy/Frame" target="MainFrame">放射治疗</a></td>
+                                    </tr> 
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_Treatment_ChemicalTreatment/Frame" target="MainFrame">化学治疗</a></td>
+                                    </tr> 
+                                    <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/NasopharynxCancer/NC_Treatment_TCMTreatment/Frame" target="MainFrame">中医药治疗</a></td></tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                
+                <tr>
+                    <td class="auto-style1" id="menuTitle32" onclick="showsubmenu(32,'05')">统计分析 </td>
+                </tr>
+
+                <tr>
+                    <td id="submenu32" class="auto-style2">
+                        <div class="sec_menu" style="width: 142px">
+                            <table cellspacing="0" cellpadding="0" width="140">
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/Home/WelCome?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">建档人数 </a></td>
+                                </tr>
+                                <tr>
+                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle33" onclick="showsubmenu1(33,'05')"><span style="color: #84bf92">&middot;</span>人口学资料 </td>
+                                </tr>
+
+                                <tr>
+                                    <td id="submenu33" class="auto-style2" style="display: none">
+                                        <div style="width: 122px">
+                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/DemographicData/Number?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口数量资料 </a></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/DemographicData/Constitute?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口构成 </a></td>
+                                                </tr>
+                                                @*<tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口负担 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口文化程度构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口职业构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口婚姻状况 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">医疗保障构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">吸烟情况分析 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">饮酒情况分析 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死亡统计 </a></td>
+                                                    </tr>*@
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                @*<tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle34" onclick="showsubmenu1(34,'05')"><span style="color: #84bf92">&middot;</span>慢性病统计 </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td id="submenu34" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">高血压 </a></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">糖尿病 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">冠心病 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">肿瘤 </a></td>
+                                                    </tr>
+
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle35" onclick="showsubmenu1(35,'05')"><span style="color: #84bf92">&middot;</span>卫生学资料 </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td id="submenu35" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">疾病顺位 </a></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死因顺位 </a></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle36" onclick="showsubmenu1(36,'05')"><span style="color: #84bf92">&middot;</span>行政统计 </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td id="submenu36" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">主要慢病年报表 </a></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>*@
+
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+
+
+            </table>
+            <br />
+        </div>
+    </form>
+</body>
+</html>

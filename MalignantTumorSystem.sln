@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.Abstra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebAPI", "MalignantTumorSystem.WebAPI\MalignantTumorSystem.WebAPI.csproj", "{5A031C5F-A2A5-4CDB-BFAD-82CF63007802}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC.Demo.SignalR", "MVC.Demo.SignalR\MVC.Demo.SignalR.csproj", "{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC.Demo", "MVC.Demo.SignalR\MVC.Demo.csproj", "{FE3DDD5A-8E09-4A39-B994-9262A2517D0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalignantTumorSystem.WebApplication", "MalignantTumorSystem.WebApplication\MalignantTumorSystem.WebApplication.csproj", "{0E781B71-400C-4D26-A9EE-DAB921CED88A}"
 EndProject

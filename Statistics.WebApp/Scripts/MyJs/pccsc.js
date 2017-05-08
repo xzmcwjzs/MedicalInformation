@@ -15,7 +15,7 @@ $(function () {
             }
         }
     });
-    $.post("/PCCSC/City", function (data) {
+    $.post("/PCCSC/City", { code: code }, function (data) {
         dat = eval(data);
         $("#ddlCity").empty();
         $("#ddlCity").append("<option value=" + "" + ">请选择</option>");
@@ -30,7 +30,7 @@ $(function () {
             }
         }
     });
-    $.post("/PCCSC/County", function (data) {
+    $.post("/PCCSC/County", { code: code }, function (data) {
         dat = eval(data);
         $("#ddlCounty").empty();
         $("#ddlCounty").append("<option value=" + "" + ">请选择</option>");
@@ -45,7 +45,7 @@ $(function () {
             }
         }
     });
-    $.post("/PCCSC/Street", function (data) {
+    $.post("/PCCSC/Street", { code: code }, function (data) {
         dat = eval(data);
         $("#ddlStreet").empty();
         $("#ddlStreet").append("<option value=" + "" + ">请选择</option>");
@@ -60,7 +60,7 @@ $(function () {
             }
         }
     });
-    $.post("/PCCSC/Community", function (data) {
+    $.post("/PCCSC/Community", { code: code }, function (data) {
         dat = eval(data);
         $("#ddlCommunity").empty();
         $("#ddlCommunity").append("<option value=" + "" + ">请选择</option>");

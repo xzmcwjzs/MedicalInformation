@@ -17,7 +17,7 @@
         }
             </script>
         </head>
-        <body onscroll="no">
+        <body>
             <form id="form1">
                 <div>
                     <table border="0" cellpadding="0" cellspacing="0" style="height: 100%; width: 100%;">
@@ -46,7 +46,7 @@
                                                     <td align="right">
                                                         <span style="color: White;">当前用户:</span>
                                                         @Html.Label(Model.real_name, new { style = "color:white" })
-                                                        <a style="color: White;" href="javascript:OpenTopWindow('@Url.Action(" ModifyPassword", "Frame" , new { tag=Model.id})',500,140);">(修改密码)</a>
+                                                        <a style="color: White;" href="javascript:OpenTopWindow('@Url.Action("ModifyPassword", "Frame" , new { tag=Model.id})',500,140);">(修改密码)</a>
                                                         <span>&nbsp;</span>
                                                         <span style="color: White;">日期:</span>
                                                         @Html.Label(DateTime.Now.ToString("yyyy年MM月dd日"), new { style = "color:white" })
@@ -66,13 +66,18 @@
                                 {
                                     <iframe frameborder="0" id="LeftFrame" scrolling="auto" src='@Url.Action("LeftBreastCancer")' style="height:100%;width:165px;visibility:inherit;z-index:2;"></iframe>
                                 }
+                                else if (ViewBag.type == "鼻咽癌")
+                                {
+                                    <iframe frameborder="0" id="LeftFrame" scrolling="auto" src='@Url.Action("LeftNasopharynxCancer")' style="height:100%;width:165px;visibility:inherit;z-index:2;"></iframe>
+
+                                }
                                 else
                                 {
                                     <iframe frameborder="0" id="LeftFrame" scrolling="auto" src='@Url.Action("LeftFrame")' style="height: 100%; visibility: inherit; width: 165px; z-index: 2"></iframe>
                                 }
                             </td>
                             <td style="width: 100%">
-                                <iframe frameborder="0" id="MainFrame" name="MainFrame" scrolling="no" src='@Url.Action("MainFrame")' style="height: 100%; visibility: inherit; width: 100%; z-index: 1"></iframe>
+                                <iframe frameborder="0" id="MainFrame" name="MainFrame" scrolling="auto" src='@Url.Action("MainFrame")' style="height: 100%; visibility: inherit; width: 100%; z-index: 1"></iframe>
                             </td>
                         </tr>
                     </table>

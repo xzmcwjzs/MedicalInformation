@@ -23,10 +23,11 @@
         function RedirectTo(id) {
             location.href = "/Frame/Index?type=" + id;
         }
+         
     </script>
 </head>
 <body>
-    @MiniProfiler.RenderIncludes();
+    @*@MiniProfiler.RenderIncludes();*@
     @{
         List<string> roleInfoList = new List<string>();
         foreach (var item in ViewBag.RoleInfo)

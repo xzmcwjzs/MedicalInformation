@@ -23,7 +23,7 @@ namespace MalignantTumorSystem.Model.Entities
         public string login_power { get; set; }
         public string id_card_number { get; set; }
         public string phone { get; set; }
-        public string email { get; set; }
+        public string eamil { get; set; }
         public string weixin { get; set; }
         public string qq { get; set; }
         public Nullable<System.DateTime> create_time { get; set; }

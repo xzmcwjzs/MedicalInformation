@@ -11,7 +11,7 @@ using MalignantTumorSystem.WebApplication.Common.MyAttributes;
 
 namespace MalignantTumorSystem.WebApplication.Controllers
 { 
-    public class FrameController : BaseController
+    public class FrameController : Controller
     {
         //
         // GET: /Frame/
@@ -21,8 +21,23 @@ namespace MalignantTumorSystem.WebApplication.Controllers
         public IComm_TumourService tumourService { get; set; }
         public ActionResult Index()
         {
+            string UserName = CommonFunc.SafeGetStringFromObj(Request.QueryString["user_name"]);
+            string Password = CommonFunc.SafeGetStringFromObj(Request.QueryString["password"]);
             Model.Entities.Comm_Platform_Worker workerModel = new Model.Entities.Comm_Platform_Worker();
-            workerModel = Session["worker"] as Model.Entities.Comm_Platform_Worker;
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            {
+                var loginInfo = workerService.LoadEntityAsNoTracking(u => u.user_name == UserName && u.password == Password).FirstOrDefault(); 
+                if (loginInfo != null)
+                {
+                    Session["worker"] = loginInfo;
+                    workerModel= Session["worker"] as Model.Entities.Comm_Platform_Worker;
+                }
+            }
+            else
+            { 
+                workerModel = Session["worker"] as Model.Entities.Comm_Platform_Worker;
+            }
+             
             ViewData.Model = workerModel;
             string type = CommonFunc.SafeGetStringFromObj(Request.QueryString["type"]);
             TempData["type"] = type;
@@ -131,6 +146,8 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             string regionCode = CommonFunc.SafeGetStringFromObj(entity.region_code);
             int itemCount = tumourService.GetBreastCancerFollowupAlertCount(regionCode);
             ViewBag.count = itemCount;
+            string type = CommonFunc.SafeGetStringFromObj(Request.QueryString["type"]);
+            ViewBag.type = type;
             return View();
         }
         //随访过期提示
@@ -140,6 +157,8 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             string regionCode = CommonFunc.SafeGetStringFromObj(entity.region_code);
             int itemCount = tumourService.GetBreastCancerFollowupExpireCount(regionCode);
             ViewBag.count = itemCount;
+            string type = CommonFunc.SafeGetStringFromObj(Request.QueryString["type"]);
+            ViewBag.type = type;
             return View();
         }
         //随访预警列表
@@ -158,6 +177,18 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             Session.Clear();
             System.Web.HttpContext.Current.Application["Online"] = null;
             return Redirect("/Home/Index");
+        }
+
+        //鼻咽癌 页面
+        public ActionResult LeftNasopharynxCancer()
+        {
+            Model.Entities.Comm_Platform_Worker workerModel = new Model.Entities.Comm_Platform_Worker();
+            workerModel = Session["worker"] as Model.Entities.Comm_Platform_Worker;
+            string password = CommonFunc.SafeGetStringFromObj(workerModel.password);
+            string name = CommonFunc.SafeGetStringFromObj(workerModel.user_name);
+            ViewBag.password = password;
+            ViewBag.name = name;
+            return View();
         }
     }
 }

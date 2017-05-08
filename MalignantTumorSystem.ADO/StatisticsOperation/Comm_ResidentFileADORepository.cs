@@ -303,5 +303,95 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             lb0F = Convert.ToInt32(paras[15].Value);
 
         }   
+        //人口构成 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataConstituteNumSP(string regionCode,out int lb0m,out int lb0f,out int lb10m,out int lb10f, out int lb20m, out int lb20f, out int lb30m, out int lb30f, out int lb40m, out int lb40f, out int lb50m, out int lb50f, out int lb60m, out int lb60f, out int lb70m, out int lb70f, out int lb80m, out int lb80f, out int lb90m, out int lb90f)
+        {
+            lb0m = 0;
+            lb0f = 0;
+            lb10m = 0;
+            lb10f = 0;
+            lb20m = 0;
+            lb20f = 0;
+            lb30m = 0;
+            lb30f = 0;
+            lb40m = 0;
+            lb40f = 0;
+            lb50m = 0;
+            lb50f = 0;
+            lb60m = 0;
+            lb60f = 0;
+            lb70m = 0;
+            lb70f = 0;
+            lb80m = 0;
+            lb80f = 0;
+            lb90m = 0;
+            lb90f = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@lb0m",lb0m),
+                new SqlParameter("@lb0f",lb0f),
+                 new SqlParameter("@lb10m",lb10m),
+                new SqlParameter("@lb10f",lb10f),
+                new SqlParameter("@lb20m",lb20m),
+                new SqlParameter("@lb20f",lb20f),
+                new SqlParameter("@lb30m",lb30m),
+                new SqlParameter("@lb30f",lb30f),
+                new SqlParameter("@lb40m",lb40m),
+                new SqlParameter("@lb40f",lb40f),
+                new SqlParameter("@lb50m",lb50m),
+                new SqlParameter("@lb50f",lb50f),
+                new SqlParameter("@lb60m",lb60m),
+                new SqlParameter("@lb60f",lb60f),
+                new SqlParameter("@lb70m",lb70m),
+                new SqlParameter("@lb70f",lb70f),
+                new SqlParameter("@lb80m",lb80m),
+                new SqlParameter("@lb80f",lb80f),
+                new SqlParameter("@lb90m",lb90m),
+                new SqlParameter("@lb90f",lb90f),
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+            paras[11].Direction = ParameterDirection.Output;
+            paras[12].Direction = ParameterDirection.Output;
+            paras[13].Direction = ParameterDirection.Output;
+            paras[14].Direction = ParameterDirection.Output;
+            paras[15].Direction = ParameterDirection.Output;
+            paras[16].Direction = ParameterDirection.Output;
+            paras[17].Direction = ParameterDirection.Output;
+            paras[18].Direction = ParameterDirection.Output;
+            paras[19].Direction = ParameterDirection.Output;
+            paras[20].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataConstituteNumProcedure", paras);
+            lb0m = Convert.ToInt32(paras[1].Value);
+            lb0f = Convert.ToInt32(paras[2].Value);
+            lb10m = Convert.ToInt32(paras[3].Value);
+            lb10f = Convert.ToInt32(paras[4].Value);
+            lb20m = Convert.ToInt32(paras[5].Value);
+            lb20f = Convert.ToInt32(paras[6].Value);
+            lb30m = Convert.ToInt32(paras[7].Value);
+            lb30f = Convert.ToInt32(paras[8].Value);
+            lb40m = Convert.ToInt32(paras[9].Value);
+            lb40f = Convert.ToInt32(paras[10].Value);
+            lb50m = Convert.ToInt32(paras[11].Value);
+            lb50f = Convert.ToInt32(paras[12].Value);
+            lb60m = Convert.ToInt32(paras[12].Value);
+            lb60f = Convert.ToInt32(paras[14].Value);
+            lb70m = Convert.ToInt32(paras[15].Value);
+            lb70f = Convert.ToInt32(paras[16].Value);
+            lb80m = Convert.ToInt32(paras[17].Value);
+            lb80f = Convert.ToInt32(paras[18].Value);
+            lb90m = Convert.ToInt32(paras[19].Value);
+            lb90f = Convert.ToInt32(paras[20].Value);
+        }
+
     }       
 }           

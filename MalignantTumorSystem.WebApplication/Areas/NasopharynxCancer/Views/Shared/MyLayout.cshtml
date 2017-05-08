@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/MyJs/global.js"></script>
+    <link href="~/Content/MyCss/global.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/jquery.autocomplete.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    <script src="~/Scripts/PCCSC/pccsc.js"></script>
+    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    <script src="~/Scripts/Common/matchName.show.js"></script>
+    @RenderSection("head", required: false)
+    <style type="text/css">
+        body {
+            font-size: 12px;
+        }
+
+        .auto-style117 {
+            background-image: url('/images/admin_bg_1.jpg');
+            color: White;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            height: 26px;
+        }
+
+        .detailContent {
+            background-color: #f1f3f5;
+            text-align: left;
+            border: 1px white solid;
+            height: 20px;
+        }
+
+        .auto-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style11 {
+            text-align: left;
+            height: 25px;
+            width: 13%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style19 {
+            text-align: left;
+            height: 25px;
+            width: 65px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style27 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 10%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style28 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 16%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style29 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 8%;
+            border: 1px white solid;
+        }
+
+        .auto-style31 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 100px;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style33 {
+            text-align: left;
+            height: 25px;
+            width: 90px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        #values {
+            width: 85px;
+        }
+
+        .auto-style133 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 9%;
+            border: 1px white solid;
+        }
+
+        .auto-style134 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 7%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style135 {
+            text-align: left;
+            height: 25px;
+            width: 24%;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+
+        .auto-style137 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 6%;
+            border: 1px white solid;
+        }
+
+        .auto-style138 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: Black;
+            text-align: right;
+            height: 25px;
+            width: 30px;
+            border: 1px white solid;
+        }
+
+        .auto-style139 {
+            background-color: #f1f3f5;
+            padding: 2px;
+            height: 20px;
+            width: 8%;
+            text-align: left;
+            border: 1px white solid;
+        }
+
+        .auto-style140 {
+            text-align: left;
+            height: 25px;
+            width: 95px;
+            border: 1px solid white;
+            padding: 2px;
+            background-color: #f1f3f5;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <form id="form1">
+            <table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;" cellpadding="0" cellspacing="1">
+                <tr>
+                    <td align="center" colspan="10" class="auto-style117">
+                        <a id="titles" style="font-size: 14px;">新增@{@ViewBag.Title}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style1">姓名<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style27">
+                        <input id="name" type="text" name="name" style="padding-top: 2px; width: 100px; height: 14px;" />
+                    </td>
+                    <td class="auto-style1">性别<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="radio" name="sex" value="01" checked="checked" />男
+                        <input type="radio" name="sex" value="02" />女
+                    </td>
+                    <td class="auto-style1">身份证号码<span style="color: #ff0000">*</span></td>
+                    <td class="auto-style28">
+                        <input type="text" style="padding-top: 2px; width: 137px" id="id_card_number" name="id_card_number" />
+                    </td>
+                    <td class="auto-style29">出生日期</td>
+                    <td class="auto-style33">
+                        <input type="text" style="padding-top: 2px; width: 100px" id="birth_date" name="birth_date" readonly="readonly" />
+
+                    </td>
+                    <td class="auto-style133">年龄</td>
+                    <td class="auto-style19">
+                        <input id="age" name="age" style="width: 65px;" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr id="t4">
+                    <td class="auto-style1">常住地址<span style="color: #ff0000">*</span></td>
+                    <td colspan="5" class="detailContent" style="height: 25px">
+                        <select style="width: 80px" id="ddlProvince" name="ddlProvince">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCity" name="ddlCity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 80px" id="ddlCounty" name="ddlCounty">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 85px" id="ddlStreet" name="ddlStreet">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <select style="width: 105px" id="ddlCommunity" name="ddlCommunity">
+                            <option value="">=请选择=</option>
+                        </select>
+                        <input type="text" id="perment_community_address" name="perment_community_address" style="width: 20%; height: 18px; padding-top: 2px" />
+                    </td>
+
+                    <td class="auto-style29">手机号码</td>
+                    <td class="auto-style33">
+                        <input type="text" id="txtIndividualPhone" name="txtIndividualPhone" style="padding-top: 2px; width: 100px" />
+                    </td>
+                    <td class="auto-style133">
+                        <input type="text" id="resident_id" name="resident_id" style="display: none" />
+                    </td>
+                    <td class="auto-style31"></td>
+                </tr>
+
+            </table>
+            @RenderBody()
+
+        </form>
+    </div>
+</body>
+</html>

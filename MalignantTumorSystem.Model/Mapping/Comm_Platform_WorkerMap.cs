@@ -57,7 +57,7 @@ namespace MalignantTumorSystem.Model.Mapping
           this.Property(t => t.phone)
               .HasMaxLength(50);
 
-          this.Property(t => t.email)
+          this.Property(t => t.eamil)
               .HasMaxLength(50);
 
           this.Property(t => t.weixin)
@@ -84,7 +84,7 @@ namespace MalignantTumorSystem.Model.Mapping
           this.Property(t => t.login_power).HasColumnName("login_power");
           this.Property(t => t.id_card_number).HasColumnName("id_card_number");
           this.Property(t => t.phone).HasColumnName("phone");
-          this.Property(t => t.email).HasColumnName("email");
+          this.Property(t => t.eamil).HasColumnName("eamil");
           this.Property(t => t.weixin).HasColumnName("weixin");
           this.Property(t => t.qq).HasColumnName("qq");
           this.Property(t => t.create_time).HasColumnName("create_time");

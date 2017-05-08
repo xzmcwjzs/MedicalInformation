@@ -17,14 +17,14 @@
         <div>
             <table width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="1" class="detailTable" id="yujing">
                 <tr>
-                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访预警提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Alert',600,600)">点击查看</a></td>
-                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访过期提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Overdue', 600, 600)">点击查看</a></td>
+                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访预警提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Alert?type=@ViewBag.type',600,600)">点击查看</a></td>
+                    <td height="24" style=" font-size:18px;">@{@ViewBag.type}随访过期提示-<a href="javascript:void(0)" onclick="OpenTopWindow('/Frame/Overdue?type=@ViewBag.type', 600, 600)">点击查看</a></td>
                 </tr> 
             </table>
             <br />
             <table width="100%" border="0" style="border-collapse: collapse" cellpadding="0" cellspacing="1" class="detailTable" id="guoqi">
                 <tr>
-                    <td height="24" style=" font-size:18px;">《恶性肿瘤智能化健康管理系统》使用手册-<a href="/index/download/《恶性肿瘤智能化健康管理系统》使用手册.pdf" target=_blank>点击查看</a></td>
+                    <td height="24" style=" font-size:18px;">《@{@ViewBag.type}智能化健康管理系统》使用手册-<a href="/index/download/鼻咽癌智能化健康管理系统使用手册.pdf" target=_blank>点击查看</a></td>
                 </tr>
             </table>
             <br />
