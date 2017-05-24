@@ -24,16 +24,14 @@
                 var username=$("#txtUserName").val();
                 var password=$("#txtPassword").val();
                 var validatecode = $("#txtValidateCode").val();
-                $.ajax({
-                    cache: true,
-                    asycn: false,
+                $.ajax({ 
                     type: "post",
                     url: "/Home/DengLu",
                     dataType: "text",
                     data: { txtUserName: username, txtPassword: password, txtValidateCode: validatecode },
                     success: function (data) {
                         if (data == "ok") { 
-                            location.href = "/Main/Index";
+                            location.href = "/Main/HuiIndex";
                         } else {
                             alert(data);
                             $("#txtPassword").val("");

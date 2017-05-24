@@ -85,7 +85,8 @@
             border-bottom-color: inherit;
             border-bottom-width: medium;
         }
-         .auto-style1_1 {
+
+        .auto-style1_1 {
             border-left: 2px solid #84bf92;
             border-right: 2px solid #84bf92;
             border-top: 2px solid #84bf92;
@@ -101,6 +102,7 @@
             border-bottom-color: inherit;
             border-bottom-width: medium;
         }
+
         .auto-style2 {
             width: 142px;
         }
@@ -146,7 +148,6 @@
 </head>
 <body>
     <form id="form1">
-         
         <div style="padding-left: 2px;">
             <table cellspacing="0" cellpadding="0" width="140">
                 <tr>
@@ -156,14 +157,12 @@
                     <td id="submenu1" class="auto-style2">
                         <div class="sec_menu" style="width: 142px">
                             <table cellspacing="0" cellpadding="0" width="140">
-
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BasicInformation/PersonalFrame" target="MainFrame">个人信息 </a></td>
                                 </tr>
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/FamilyInformation/Frame" target="MainFrame">家庭信息 </a></td>
                                 </tr>
-
                             </table>
                         </div>
                     </td>
@@ -253,16 +252,16 @@
                                         <div style="width: 122px">
                                             <table cellspacing="0" cellpadding="0" style="width: 135px">
 
-                                                <tr>
+                                                @*<tr>
                                                     <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_XCheck/Frame" target="MainFrame">X线检查 </a></td>
-                                                </tr>
+                                                </tr>*@
 
                                                 <tr>
                                                     <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_CTCheck/Frame" target="MainFrame">CT检查 </a></td>
                                                 </tr>
-                                                <tr>
+                                                @*<tr>
                                                     <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_USCheck/Frame" target="MainFrame">超声检查 </a></td>
-                                                </tr>
+                                                </tr>*@
                                                 <tr>
                                                     <td style="height: 20px;">&nbsp<span style="color: #84bf92">&middot;</span><a href="/MedicalHistory_AccessoryExamination_MRICheck/Frame" target="MainFrame">磁共振检查 </a></td>
                                                 </tr>
@@ -306,7 +305,7 @@
                             </table>
                         </div>
                     </td>
-                </tr> 
+                </tr>
                 <tr>
                     <td class="auto-style1" id="menuTitle6" onclick="showsubmenu(6,'05')">随访与体检 </td>
                 </tr>
@@ -333,7 +332,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1" id="menuTitle10" onclick="showsubmenu(10,'05')">乳腺癌筛查与诊断</td>
+                    <td class="auto-style1" id="menuTitle10" onclick="showsubmenu(10,'05')">乳腺癌检查与诊断</td>
                 </tr>
                 <tr>
                     <td id="submenu10" class="auto-style2">
@@ -347,57 +346,40 @@
                                 </tr>
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_Mammography/Frame" target="MainFrame">钼靶X线检查</a></td>
-                                </tr>
-                                @*<tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">X线检查</a></td>
-                                                                </tr>*@
+                                </tr> 
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_Ultrasonography/Frame" target="MainFrame">超声检查</a></td>
                                 </tr>
                                 <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_MRIExamination/Frame" target="MainFrame">MRI检查</a></td>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_PathologicalDiagnosis/Frame" target="MainFrame">病理诊断</a></td>
                                 </tr>
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_PositioningBiopsy/Frame" target="MainFrame">定位活检</a></td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_CTExamination/Frame" target="MainFrame">CT检查</a></td>
-                                </tr>
-                                @*<tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_NippleDischarge/Frame" target="MainFrame">乳头溢液诊断</a></td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_ScreeningAndDiagnosis_Nuclear/Frame" target="MainFrame">核医学技术</a></td>
-                                </tr>*@
+                                
                             </table>
                         </div>
                     </td>
-                </tr>
-                @*<tr>
-                    <td class="auto-style1" id="menuTitle11" onclick="showsubmenu(11,'05')">乳腺癌治疗</td>
                 </tr>
                 <tr>
-                    <td id="submenu11" class="auto-style2">
-                        <div class="sec_menu1" style="width: 142px">
-                            <table cellspacing="0" cellpadding="0" width="140">
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">外科治疗</a></td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">术后修复与再造</a></td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">放射治疗</a></td>
-                                </tr>
-                                <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">化学治疗</a></td></tr>
-                                <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">内分泌治疗</a></td></tr>
-                                <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">双膦酸盐治疗</a></td></tr>
-                                <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">分子靶向治疗</a></td></tr>
-                                <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">中医药治疗</a></td></tr>
-                            </table>
-                        </div>
-                    </td>
-                </tr>*@
+                        <td class="auto-style1" id="menuTitle11" onclick="showsubmenu(11,'05')">乳腺癌治疗</td>
+                    </tr>
+                    <tr>
+                        <td id="submenu11" class="auto-style2">
+                            <div class="sec_menu1" style="width: 142px">
+                                <table cellspacing="0" cellpadding="0" width="140">
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Treatment_OperativeTreatment/Frame" target="MainFrame">手术治疗</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Treatment_Radiotherapy/Frame" target="MainFrame">放射治疗</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Treatment_Endocrinotherapy/Frame" target="MainFrame">内分泌治疗</a></td>
+                                    </tr>
+                                    <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Treatment_ChemicalTreatment/Frame" target="MainFrame">化学治疗</a></td></tr> 
+                                    <tr> <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Treatment_TCMTreatment/Frame" target="MainFrame">中医药治疗</a></td></tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
                 <tr>
                     <td class="auto-style1" id="menuTitle7" onclick="showsubmenu(7,'05')">基因与蛋白质组学</td>
                 </tr>
@@ -405,21 +387,13 @@
                     <td id="submenu7" class="auto-style2">
                         <div class="sec_menu1" style="width: 142px">
                             <table cellspacing="0" cellpadding="0" width="140">
-
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_GenesAndProteomics_21/Frame" target="MainFrame">21基因检测法</a></td>
                                 </tr>
-                                @*<tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">70基因检测法</a></td>
-                                </tr>*@
                             </table>
                         </div>
                     </td>
                 </tr>
-                @*<tr>
-                    <td class="auto-style1" id="menuTitle12" onclick="showsubmenu(12,'05')">循证医学的应用</td>
-                </tr>*@
-               
                 <tr>
                     <td class="auto-style1" id="menuTitle14" onclick="showsubmenu(14,'05')">健康素养</td>
                 </tr>
@@ -427,26 +401,23 @@
                     <td id="submenu14" class="auto-style2">
                         <div class="sec_menu1" style="width: 142px">
                             <table cellspacing="0" cellpadding="0" width="140">
-                                @*<tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">乳腺癌知识与测试</a></td></tr>
-                                <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">焦虑自评量表</a></td></tr>
-                                <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/Test/Frame" target="MainFrame">抑郁自评量表</a></td></tr>*@
                                 <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_QOL/Frame" target="MainFrame">生存质量量表</a></td></tr>
                                 <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Nurse/Frame" target="MainFrame">护理知识</a></td></tr>
                             </table>
                         </div>
                     </td>
                 </tr>
- 
+
                 <tr>
                     <td class="auto-style1" id="menuTitle32" onclick="showsubmenu(32,'05')">统计分析 </td>
                 </tr>
- 
+
                 <tr>
                     <td id="submenu32" class="auto-style2">
                         <div class="sec_menu" style="width: 142px">
                             <table cellspacing="0" cellpadding="0" width="140">
                                 <tr>
-                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/Home/WelCome?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">建档人数 </a></td>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/Home/WelCome?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">建档人数 </a></td>
                                 </tr>
                                 <tr>
                                     <td style="height: 20px;" class="menu_hide1" id="menuTitle33" onclick="showsubmenu1(33,'05')"><span style="color: #84bf92">&middot;</span>人口学资料 </td>
@@ -457,109 +428,106 @@
                                         <div style="width: 122px">
                                             <table cellspacing="0" cellpadding="0" style="width: 135px">
                                                 <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/DemographicData/Number?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口数量资料 </a></td>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Number?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口数量资料 </a></td>
                                                 </tr>
 
                                                 <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.10:8060/DemographicData/Constitute?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口构成 </a></td>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Constitute?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口构成 </a></td>
                                                 </tr>
                                                 @*<tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口负担 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口文化程度构成 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口职业构成 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口婚姻状况 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">医疗保障构成 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">吸烟情况分析 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">饮酒情况分析 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死亡统计 </a></td>
-                                                </tr>*@
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口负担 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口文化程度构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口职业构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口婚姻状况 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">医疗保障构成 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">吸烟情况分析 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">饮酒情况分析 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死亡统计 </a></td>
+                                                    </tr>*@
                                             </table>
                                         </div>
                                     </td>
                                 </tr>
-                                 
+
                                 @*<tr>
-                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle34" onclick="showsubmenu1(34,'05')"><span style="color: #84bf92">&middot;</span>慢性病统计 </td>
-                                </tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle34" onclick="showsubmenu1(34,'05')"><span style="color: #84bf92">&middot;</span>慢性病统计 </td>
+                                    </tr>
 
-                                <tr>
-                                    <td id="submenu34" class="auto-style2" style="display: none">
-                                        <div style="width: 122px">
-                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">高血压 </a></td>
-                                                </tr>
+                                    <tr>
+                                        <td id="submenu34" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">高血压 </a></td>
+                                                    </tr>
 
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">糖尿病 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">冠心病 </a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">肿瘤 </a></td>
-                                                </tr>
-                                                
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">糖尿病 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">冠心病 </a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">肿瘤 </a></td>
+                                                    </tr>
 
-                                <tr>
-                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle35" onclick="showsubmenu1(35,'05')"><span style="color: #84bf92">&middot;</span>卫生学资料 </td>
-                                </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                <tr>
-                                    <td id="submenu35" class="auto-style2" style="display: none">
-                                        <div style="width: 122px">
-                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">疾病顺位 </a></td>
-                                                </tr>
+                                    <tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle35" onclick="showsubmenu1(35,'05')"><span style="color: #84bf92">&middot;</span>卫生学资料 </td>
+                                    </tr>
 
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死因顺位 </a></td>
-                                                </tr> 
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="height: 20px;" class="menu_hide1" id="menuTitle36" onclick="showsubmenu1(36,'05')"><span style="color: #84bf92">&middot;</span>行政统计 </td>
-                                </tr>
+                                    <tr>
+                                        <td id="submenu35" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">疾病顺位 </a></td>
+                                                    </tr>
 
-                                <tr>
-                                    <td id="submenu36" class="auto-style2" style="display: none">
-                                        <div style="width: 122px">
-                                            <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                <tr>
-                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">主要慢病年报表 </a></td>
-                                                </tr> 
-                                            </table>
-                                        </div>
-                                    </td>
-                                </tr>*@
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死因顺位 </a></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle36" onclick="showsubmenu1(36,'05')"><span style="color: #84bf92">&middot;</span>行政统计 </td>
+                                    </tr>
 
+                                    <tr>
+                                        <td id="submenu36" class="auto-style2" style="display: none">
+                                            <div style="width: 122px">
+                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
+                                                    <tr>
+                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">主要慢病年报表 </a></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>*@ 
                             </table>
                         </div>
                     </td>
-                </tr>
-
-
+                </tr> 
             </table>
             <br />
         </div>

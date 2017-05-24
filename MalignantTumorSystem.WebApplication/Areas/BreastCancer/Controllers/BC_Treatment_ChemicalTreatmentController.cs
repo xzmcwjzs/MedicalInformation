@@ -6,11 +6,10 @@ using System.Web.Mvc;
 
 namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
 {
-    public class BC_ScreeningAndDiagnosis_CTExaminationController : Controller
+    public class BC_Treatment_ChemicalTreatmentController : Controller
     {
-        // GET: BreastCancer/BC_ScreeningAndDiagnosis_CTExamination
-        #region 框架页
-
+        // GET: BreastCancer/BC_Treatment_ChemicalTreatment
+        #region 框架页 
         public ActionResult Frame()
         {
             return View();
@@ -36,7 +35,7 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
         }
 
         //新增页
-        public ActionResult CTExamination()
+        public ActionResult ChemicalTreatment()
         {
             return View();
         }

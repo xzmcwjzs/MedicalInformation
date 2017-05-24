@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "化学治疗";
+    Layout = "~/Areas/NasopharynxCancer/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:10%" rowspan="1">化疗前诊断</td>
+        <td class="my-style3" style="width:90%">
+            <input type="text" id="hlqzd" name="hlqzd" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:100%;text-align:center" rowspan="1" colspan="2">
+       <span style="font-size:large">同期化学治疗</span> 
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style1" style="width:10%">用药方案</td>
+        <td class="my-style3" style="width:90%">
+            <textarea style="width:100%;" rows="4" id="tqyyfa" name="tqyyfa"></textarea>
+        </td> 
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:100%;text-align:center" rowspan="1" colspan="2">
+            <span style="font-size:large">辅助化学治疗</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%">用药方案</td>
+        <td class="my-style3" style="width:90%">
+            <textarea style="width:100%;" rows="4" id="fzyyfa" name="fzyyfa"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:100%;text-align:center" rowspan="1" colspan="2">
+            <span style="font-size:large">诱导化学治疗</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%">用药方案</td>
+        <td class="my-style3" style="width:90%">
+            <textarea style="width:100%;" rows="4" id="ydyyfa" name="ydyyfa"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" colspan="1"></td>
+        <td class="my-style3" colspan="1" style="text-align:right">
+            医师<input type="text" id="doctor" name="doctor" style="width:100px;" />化疗日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                <a style="padding-left: 2em"></a>
+                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+            </div>
+        </td>
+    </tr>
+</table>

@@ -11,7 +11,7 @@ using MalignantTumorSystem.WebApplication.Common.MyAttributes;
 
 namespace MalignantTumorSystem.WebApplication.Controllers
 { 
-    public class FrameController : Controller
+    public class FrameController : BaseController
     {
         //
         // GET: /Frame/

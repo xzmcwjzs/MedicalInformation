@@ -10,7 +10,6 @@ using MalignantTumorSystem.Common;
 
 namespace MalignantTumorSystem.WebApplication.Controllers
 {
-    [MyLogin]
     public class PCCSCController : Controller
     {
         //

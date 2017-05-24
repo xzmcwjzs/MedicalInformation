@@ -1,4 +1,6 @@
-﻿@{
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.MT_BC_SelfCheck>>
+@using MalignantTumorSystem.Common;
+@{
     Layout = null;
 }
 
@@ -17,7 +19,7 @@
         <table style="width:100%;height:22px;">
             <tr>
                 <td class="listTableHeadTR" style="height: 23px;">
-                    <img height="16" src="/images/imgs/Query.gif" width="16" style="vertical-align: middle" />鼻咽癌手术治疗信息查询结果
+                    <img height="16" src="/images/imgs/Query.gif" width="16" style="vertical-align: middle" />乳腺癌病理诊断信息查询结果
                 </td>
             </tr>
         </table>
@@ -29,9 +31,9 @@
                 <td>姓名</td>
                 <td>性别</td>
                 <td>年龄</td>
-                <td>身份证号码</td>
                 <td>家庭常住地址</td>
-                <td>手术日期</td>
+                <td>检查日期</td>
+                <td>初步诊断</td>
                 <td>查看</td>
                 <td>修改</td>
             </tr>

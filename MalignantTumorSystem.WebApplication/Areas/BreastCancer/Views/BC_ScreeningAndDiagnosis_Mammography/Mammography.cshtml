@@ -39,5 +39,179 @@
 
 <table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
 
+    <tr>
+        <td class="my-style1" style="width:10%;">X线投照</td> 
+        <td class="my-style3" style="width:90%" colspan="9">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="xxtz" id="xxtzmlo" />内外侧斜位(MLO)</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="xxtz" id="xxtzcc" />头足位(CC)</label>
+        </td> 
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="4">肿块</td>
+        <td class="my-style2" style="width:10%" rowspan="1">大小</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" style="width:20%" colspan="2">
+            <input type="text" id="zkdxz" name="zkdxz"  style="width:20px;"/>cm
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="4">
+            <input type="text" id="zkdxy" name="zkdxy" style="width:20px;" />cm
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:10%" rowspan="1">形状</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3"  colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkxzz" id="zkxzz1" /> 圆形</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="zkxzz" id="zkxzz2" />卵圆形 </label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="zkxzz" id="zkxzz3" /> 分叶形</label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="zkxzz" id="zkxzz4" />不规则形 </label>
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkxzy" id="zkxzy1" /> 圆形</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="zkxzy" id="zkxzy2" /> 卵圆形</label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="zkxzy" id="zkxzy3" />分叶形 </label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="zkxzy" id="zkxzy4" /> 不规则形</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">边缘</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkbyz" id="zkbyz1" /> 清晰</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="2" name="zkbyz" id="zkbyz2" />模糊 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="3" name="zkbyz" id="zkbyz3" /> 微小分叶</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="4" name="zkbyz" id="zkbyz4" />浸润 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="5" name="zkbyz" id="zkbyz5" />毛刺状 </label> 
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkbyy" id="zkbyy1" /> 清晰</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="zkbyy" id="zkbyy2" /> 模糊</label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="zkbyy" id="zkbyy3" />微小分叶 </label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="zkbyy" id="zkbyy4" /> 浸润</label>
+            <label style="padding-left:1em;"><input type="radio" value="5" name="zkbyy" id="zkbyy5" />毛刺状 </label> 
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">密度</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkmdz" id="zkmdz1" /> 高密度</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="zkmdz" id="zkmdz2" />等密度 </label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="zkmdz" id="zkmdz3" /> 低密度</label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="zkmdz" id="zkmdz4" />含脂肪密度 </label> 
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="zkmdy" id="zkmdy1" /> 高密度</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="zkmdy" id="zkmdy2" /> 等密度</label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="zkmdy" id="zkmdy3" />低密度 </label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="zkmdy" id="zkmdy4" /> 含脂肪密度</label> 
+        </td>
+    </tr>
 
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="4">钙化</td>
+        <td class="my-style2" style="width:10%" rowspan="1">大小</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" style="width:20%" colspan="2">
+            <input type="text" id="ghdxz" name="ghdxz" style="width:20px;" />mm
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="4">
+            <input type="text" id="ghdxy" name="ghdxy" style="width:20px;" />mm
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:10%" rowspan="1">数目</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" style="width:20%" colspan="2">
+            <input type="text" id="ghsmz" name="ghsmz" style="width:20px;" />枚
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="4">
+            <input type="text" id="ghsmy" name="ghsmy" style="width:20px;" />枚
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">形态</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3"  colspan="3">
+            <label style="padding-left:0.5em;"><input type="radio" value="1" name="ghxtz" id="ghxtz1" /> 典型良性钙化</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="2" name="ghxtz" id="ghxtz2" /> 中间性钙化</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="3" name="ghxtz" id="ghxtz3" />高度恶性钙化 </label>
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:0.5em;"><input type="radio" value="1" name="ghxty" id="ghxty1" /> 典型良性钙化</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="2" name="ghxty" id="ghxty2" /> 中间性钙化</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="3" name="ghxty" id="ghxty3" />高度恶性钙化 </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">分布</td>
+        <td class="my-style1" style="width:10%">左</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:0.5em;"><input type="radio" value="1" name="ghfbz" id="ghfbz1" /> 弥散或散在</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="2" name="ghfbz" id="ghfbz2" />区域性 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="3" name="ghfbz" id="ghfbz3" /> 成簇</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="4" name="ghfbz" id="ghfbz4" />线样 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="5" name="ghfbz" id="ghfbz5" />段样 </label> 
+        </td>
+        <td class="my-style1" style="width:10%">右</td>
+        <td class="my-style3" colspan="3">
+            <label style="padding-left:0.5em;"><input type="radio" value="1" name="ghfby" id="ghfby1" /> 弥散或散在</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="2" name="ghfby" id="ghfby2" />区域性 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="3" name="ghfby" id="ghfby3" /> 成簇</label>
+            <label style="padding-left:0.5em;"><input type="radio" value="4" name="ghfby" id="ghfby4" />线样 </label>
+            <label style="padding-left:0.5em;"><input type="radio" value="5" name="ghfby" id="ghfby5" />段样 </label> 
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1"  >
+            <label><input type="checkbox" value="1" name="jgnq" id="jgnq" />结构扭曲</label> 
+        </td>
+        <td class="my-style2" colspan="1"></td>
+        <td class="my-style1" style="text-align:left" colspan="8">
+            <label><input type="checkbox" value="1" name="bdczmy" id="bdczmy" />不对称致密影</label> 
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1">其他合并征象</td>
+        <td class="my-style2" colspan="9" style="text-align:left">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="qthbzx" id="qthbzx1" />导管征</label>
+            <label style="padding-left:1em;"><input type="checkbox" value="2" name="qthbzx" id="qthbzx2" />晕圈征</label> 
+            <label style="padding-left:1em;"><input type="checkbox" value="3" name="qthbzx" id="qthbzx3" />局限性皮肤增厚、凹陷</label> 
+            <label style="padding-left:1em;"><input type="checkbox" value="4" name="qthbzx" id="qthbzx4" />乳头凹陷</label> 
+            <label style="padding-left:1em;"><input type="checkbox" value="5" name="qthbzx" id="qthbzx5" />血管增粗迂曲</label> 
+            <label style="padding-left:1em;"><input type="checkbox" value="6" name="qthbzx" id="qthbzx6" />腋窝淋巴结肿大</label>  
+        </td>
+    </tr>
+     
+  <tr>
+        <td class="my-style3" colspan="6" style="width:60%"></td>
+        <td class="my-style1" style="width:10%">
+            医师
+        </td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" id="doctor" name="doctor" style="width:100px;" />
+        </td>
+        <td class="my-style1" style="width:10%">
+            日期
+        </td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" value="@DateTime.Now.ToString("yyyy-MM-dd")"/>
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                <a style="padding-left: 2em"></a>
+                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+            </div>
+        </td>
+    </tr>
 </table>

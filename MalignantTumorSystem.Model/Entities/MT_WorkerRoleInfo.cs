@@ -14,7 +14,7 @@ namespace MalignantTumorSystem.Model.Entities
        public string worker_name { get; set; }
        public string comment { get; set; }
 
-       public virtual Comm_Platform_Worker Comm_Platform_Worker { get; set; }
-       public virtual MT_RoleInfo MT_RoleInfo { get; set; }
+       //public virtual Comm_Platform_Worker Comm_Platform_Worker { get; set; }
+       //public virtual MT_RoleInfo MT_RoleInfo { get; set; }
     }
 }

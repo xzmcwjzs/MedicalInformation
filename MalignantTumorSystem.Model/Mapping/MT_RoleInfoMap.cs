@@ -21,6 +21,7 @@ namespace MalignantTumorSystem.Model.Mapping
            this.Property(t => t.comment).HasMaxLength(500).HasColumnName("comment");
            this.Property(t => t.image_name).HasMaxLength(50).HasColumnName("image_name");
            this.Property(t => t.first_letter).HasMaxLength(10).HasColumnName("first_letter");
+             
        }
     }
 }

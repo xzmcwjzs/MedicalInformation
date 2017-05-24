@@ -14,7 +14,7 @@ namespace MalignantTumorSystem.Model.Entities
        public string comment { get; set; }
        public string image_name { get; set; }
         //疾病拼音首字母
-       public string first_letter { get; set; }
-       public virtual ICollection<MT_WorkerRoleInfo> MT_WorkerRoleInfo { get; set; }
+       public string first_letter { get; set; } 
+        //public virtual ICollection<MT_WorkerRoleInfo> MT_WorkerRoleInfo { get; set; }
     }
 }

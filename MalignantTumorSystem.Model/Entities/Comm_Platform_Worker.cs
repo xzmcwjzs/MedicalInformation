@@ -28,7 +28,8 @@ namespace MalignantTumorSystem.Model.Entities
         public string qq { get; set; }
         public Nullable<System.DateTime> create_time { get; set; }
         public string system_power { get; set; }
-        public virtual ICollection<MT_WorkerRoleInfo> MT_WorkerRoleInfo { get; set; }
+        public string cancer_type { get; set; } 
+        //public virtual ICollection<MT_WorkerRoleInfo> MT_WorkerRoleInfo { get; set; }
 
     }
 }

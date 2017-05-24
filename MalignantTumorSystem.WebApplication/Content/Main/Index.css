@@ -52,7 +52,7 @@
 .center {
     width: 90%;
     height: 450px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 5%;
     float: left;
     text-align: center;
@@ -65,7 +65,7 @@
 }
 
 .center_right {
-    height: 450px;
+    height: 430px;
     float: left;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.31);

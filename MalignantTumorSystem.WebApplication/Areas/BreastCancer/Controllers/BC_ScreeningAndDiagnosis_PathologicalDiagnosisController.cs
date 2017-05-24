@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
 {
-    public class BC_ScreeningAndDiagnosis_PositioningBiopsyController : Controller
+    public class BC_ScreeningAndDiagnosis_PathologicalDiagnosisController : Controller
     {
-        // GET: BreastCancer/BC_ScreeningAndDiagnosis_PositioningBiopsy
+        // GET: BreastCancer/BC_ScreeningAndDiagnosis_PathologicalDiagnosis
         #region 框架页
 
         public ActionResult Frame()
@@ -36,7 +36,7 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
         }
 
         //新增页
-        public ActionResult PositioningBiopsy()
+        public ActionResult PathologicalDiagnosis()
         {
             return View();
         }

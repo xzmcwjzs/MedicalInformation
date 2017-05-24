@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>D:\王杰\王杰-锅只是个传说\肿瘤系统\MalignantTumorSystem\packages\Lib\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -50,11 +47,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AbstractFactory.tt</DependentUpon>
     </Compile>
-    <Compile Include="NinjectDI.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NinjectDI.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +63,6 @@
     <Content Include="AbstractFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AbstractFactory1.cs</LastGenOutput>
-    </Content>
-    <Content Include="NinjectDI.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>NinjectDI.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

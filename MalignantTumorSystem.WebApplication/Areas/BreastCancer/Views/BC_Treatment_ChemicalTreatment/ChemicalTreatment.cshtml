@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "化学治疗";
+    Layout = "~/Views/Shared/MyLayoutH.cshtml";
+}
+<table class="table table-border table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td style="width:20%" rowspan="2" class="text-r">
+                新辅助化疗
+            </td>
+            <td style="width:10%" class="text-r">
+                药物
+            </td>
+            <td style="width:70%">
+                <textarea id="hl1y" name="hl1y" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:10%" class="text-r">
+                方案
+            </td>
+            <td style="width:70%">
+                <textarea id="hl1f" name="hl1f" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="2" class="text-r">
+                术后辅助化疗
+            </td>
+            <td style="width:10%" class="text-r">
+                药物
+            </td>
+            <td style="width:70%">
+                <textarea id="hl2y" name="hl2y" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:10%" class="text-r">
+                方案
+            </td>
+            <td style="width:70%">
+                <textarea id="hl2f" name="hl2f" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="2" class="text-r">
+                晚期乳腺癌化疗
+            </td>
+            <td style="width:10%" class="text-r">
+                药物
+            </td>
+            <td style="width:70%">
+                <textarea id="hl3y" name="hl3y" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:10%" class="text-r">
+                方案
+            </td>
+            <td style="width:70%">
+                <textarea id="hl3f" name="hl3f" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align:right">
+                医师<input type="text" id="doctor" name="doctor" style="width:100px;" class="input-text radius" />
+                日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="input-text radius" />
+            </td>
+        </tr>
+        <tr id="last">
+            <td colspan="3" style="text-align:center">
+                <input class="btn btn-success radius" type="button" value="提交" id="bt1">
+                <a style="padding-left: 2em"></a>
+                <input class="btn btn-default radius" type="reset" value="重置">
+            </td>
+        </tr>
+
+    </tbody>
+</table>

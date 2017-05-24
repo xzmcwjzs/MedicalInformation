@@ -1,0 +1,381 @@
+﻿
+@{
+    ViewBag.Title = "中医药治疗";
+    Layout = "~/Areas/NasopharynxCancer/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="12">内治法</td>
+        <td class="my-style2" style="width:20%" rowspan="4">放化疗前辩证分型治疗</td> 
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" name="nzf1" id="nzf11" />
+            痰浊结聚型（<span style="color:red;">方药：清气化痰丸加减治疗</span>）</label> 
+        </td>
+    </tr>
+    <tr>  
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf1" id="nzf12" />
+                气血凝结型（<span style="color:red;">方药：丹栀逍遥散加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf1" id="nzf13" />
+                火毒困结型（<span style="color:red;">方药：柴胡清肝散加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf1" id="nzf14" />
+                正虚毒滞型（<span style="color:red;">方药：和荣散坚丸加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%" rowspan="4">放化疗期间辩证分型治疗</td> 
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf2" id="nzf21" />
+                津液耗伤型（<span style="color:red;">方药：泻白散合沙参麦冬汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf2" id="nzf22" />
+                热毒瘀结型（<span style="color:red;">方药：凉膈散加犀角地黄汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf2" id="nzf23" />
+                脾胃失调型（<span style="color:red;">方药：陈夏六君子汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf2" id="nzf24" />
+                气阴两虚型（<span style="color:red;">方药：生脉汤合四君子汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:20%" rowspan="4">放化疗后辩证分型治疗</td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf3" id="nzf31" />
+                肺胃阴虚型（<span style="color:red;">方药：养阴清肺汤合麦门冬汤加减治疗</span>）
+            </label>
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf3" id="nzf32" />
+                气血亏虚型（<span style="color:red;">方药：归脾汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf3" id="nzf33" />
+                脾胃虚弱型（<span style="color:red;">方药：香砂六君子汤合益胃汤加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="nzf3" id="nzf33" />
+                肾精亏损型（<span style="color:red;">方药：知柏地黄丸加减</span>）
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="4">外治法</td>
+        <td class="my-style2" style="width:20%" rowspan="1">
+           <label><input type="checkbox" name="wzf1" id="wzf1" />滴鼻</label> </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="radio" id="wzfdb1" name="wzfdb" />滴鼻灵 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfdb2" name="wzfdb" />鱼腥草滴眼液 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfdb1" name="wzfdb" />薄荷油 </label>
+            <a style="padding-left:1em;"></a> 其他<input type="text" id="wzfdbqt" name="wzfdbqt" />
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:20%" rowspan="1">
+          <label><input type="checkbox" name="wzf2" id="wzf2" />熏鼻</label>  </td>
+        <td class="my-style3" style="width:70%;vertical-align:middle"> 
+            <a style="padding-left:1em;"></a> 药方<textarea rows="2" style="width:90%" id="wzfxbyf" name="wzfxbyf"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%" rowspan="1">
+          <label><input type="checkbox" name="wzf3" id="wzf3" />鼻咽冲洗</label>  
+        </td>
+        <td class="my-style3" style="width:70%;vertical-align:middle">
+            <a style="padding-left:1em;"></a> 药方<textarea rows="2" style="width:90%" id="wzfbyyf" name="wzfbyyf"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%" rowspan="1">
+           <label><input type="checkbox" name="wzf4" id="wzf4" />外敷</label>
+        </td>
+        <td class="my-style3" style="width:70%;vertical-align:middle">
+            <label style="padding-left:1em;"><input type="radio" id="wzfwf1" name="wzfwf" />阳和解凝膏 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfwf2" name="wzfwf" />湿润烧伤膏 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfwf3" name="wzfwf" />白玉膏 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfwf4" name="wzfwf" />芦荟汁 </label>
+            <label style="padding-left:1em;"><input type="radio" id="wzfwf5" name="wzfwf" />珍珠末 </label>
+            <a style="padding-left:1em;"></a> 其他<input type="text" id="wzfwfqt" name="wzfwfqt" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="6">针灸治疗</td>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl1" />
+                头痛或三叉神经痛者
+            </label>
+        </td> 
+        <td class="my-style3" style="width:70%"> 
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlscsj" name="zjzlscsj" style="width:400px;"/>
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl2" />
+                鼻咽癌鼻出血
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlbyabcx" name="zjzlbyabcx" style="width:400px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl3" />
+                放化疗期间引起恶心呕吐者
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlbyabcx" name="zjzlbyabcx" style="width:400px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl4" />
+                放化疗引起血细胞减少者
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlxxbjs" name="zjzlxxbjs" style="width:400px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl5" />
+                放化疗后张口困难者
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlzkkn" name="zjzlzkkn" style="width:400px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="zjzl" id="zjzl6" />
+                放射性脑病患者
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <a style="padding-left:1em;"></a> 针刺详情<input type="text" id="zjzlnbhz" name="zjzlnbhz" style="width:400px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="4">按摩与导引</td>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="amdy" id="amdy1" />
+                耳部按摩导引
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyeb1" name="amdyeb" />鼓膜按摩法 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyeb2" name="amdyeb" />鸣天鼓法 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyeb3" name="amdyeb" />除耳鸣功 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyeb4" name="amdyeb" />营治城郭法 </label>
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="amdy" id="amdy2" />
+                鼻部按摩导引
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="amdybb1" name="amdybb" />局部按摩 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdybb2" name="amdybb" />远端按摩 </label> 
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="amdy" id="amdy3" />
+                口及咽部按摩导引
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="amdykyb1" name="amdykyb" />咽喉疼痛按摩法 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdykyb2" name="amdykyb" />吞金津玉液法 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdykyb3" name="amdykyb" />张口训练 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdykyb4" name="amdykyb" />伸舌训练 </label>
+
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            <label style="padding-left:1em;">
+                <input type="checkbox" name="amdy" id="amdy4" />
+                颈部按摩导引
+            </label>
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyjb1" name="amdyjb" />局部按摩 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="amdyjb2" name="amdyjb" />颈操 </label> 
+
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="5">鼻咽癌食疗方</td>
+        <td class="my-style2" style="width:20%"> 
+                汤类 
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl1" name="sltl" />时尚柏煲瘦肉汤 </label> 
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl2" name="sltl" />天葵子煲瘦肉汤 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl3" name="sltl" />土茯苓煲龟 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl4" name="sltl" />沙参玉竹煲瘦肉 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl5" name="sltl" />黄芪枸杞甲鱼汤</label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltl6" name="sltl" />灵芝桂圆煲龟</label> 
+        </td>
+    </tr>
+    <tr> 
+        <td class="my-style2" style="width:20%">
+            茶类
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl1" name="slcl" />银花茯苓茶 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl2" name="slcl" />蛇舌金莲茶 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl3" name="slcl" />生姜茶 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl4" name="slcl" />罗汉果菊花茶 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl5" name="slcl" />半边莲茶</label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slcl6" name="slcl" />西洋参茶</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            糖水类
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl1" name="sltsl" />雪耳炖冰糖 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl2" name="sltsl" />石斛生地饮 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl3" name="sltsl" />杏仁蜜奶 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl4" name="sltsl" />半枝莲蜜饮 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl5" name="sltsl" />桂圆膏</label>
+            <label style="padding-left:1em;"><input type="checkbox" id="sltsl6" name="sltsl" />荸荠豆浆</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            粥类
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="slzl1" name="slzl" />山药莲苡粥 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slzl2" name="slzl" />荞麦土牛膝粥 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slzl3" name="slzl" />白果红枣粥 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slzl4" name="slzl" />大枣龙眼枸杞粥 </label> 
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%">
+            蔬菜汁类
+        </td>
+        <td class="my-style3" style="width:70%">
+            <label style="padding-left:1em;"><input type="checkbox" id="slsczl1" name="slsczl" />桂圆疏果饮 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slsczl2" name="slsczl" />芦笋汁 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slsczl3" name="slsczl" />大蒜萝卜汁 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slsczl4" name="slsczl" />西红柿胡萝卜汁 </label>
+            <label style="padding-left:1em;"><input type="checkbox" id="slsczl5" name="slsczl" />梨汁 </label>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="my-style3" colspan="2"></td>
+        <td class="my-style3" colspan="1" style="text-align:right">
+            医师<input type="text" id="doctor" name="doctor" style="width:100px;" />日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                <a style="padding-left: 2em"></a>
+                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+            </div>
+        </td>
+    </tr>
+</table>
+

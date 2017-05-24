@@ -57,8 +57,8 @@
                        $.post("/Data/StreetName?code=" + dts[0].community_code.substring(0, 9),
                   function (data4) {
                       $.post("/Data/CommunityName?code=" + dts[0].community_code.substring(0, 12),
-                  function (data5) {
-                      $("#address").html(data1 + data2 + data3 + data4 + data5 + dts[0].permanent_address);
+                  function (data5) { 
+                      $("#address").html(data1 + data2 + data3 + data4 + data5 + dts[0].permanent_address); 
                   })
                   })
                    })

@@ -604,7 +604,7 @@ namespace MalignantTumorSystem.WebApplication.Controllers
             string name = "";
             if (code != "")
             {
-                name = CommonFunc.SafeGetStringFromObj(cityService.LoadEntityAsNoTracking(t => t.parent_code == code).Select(t => t.name).FirstOrDefault());
+                name = CommonFunc.SafeGetStringFromObj(cityService.LoadEntityAsNoTracking(t => t.code == code).Select(t => t.name).FirstOrDefault());
                 return Content(name);
             }
             else

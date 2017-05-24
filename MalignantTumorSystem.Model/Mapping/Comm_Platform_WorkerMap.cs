@@ -69,8 +69,11 @@ namespace MalignantTumorSystem.Model.Mapping
           this.Property(t => t.system_power)
               .HasMaxLength(50);
 
-          // Table & Column Mappings
-          this.ToTable("Comm_Platform_Worker");
+            this.Property(t => t.cancer_type)
+              .HasMaxLength(500);
+
+            // Table & Column Mappings
+            this.ToTable("Comm_Platform_Worker");
           this.Property(t => t.id).HasColumnName("id");
           this.Property(t => t.user_name).HasColumnName("user_name");
           this.Property(t => t.password).HasColumnName("password");
@@ -89,6 +92,7 @@ namespace MalignantTumorSystem.Model.Mapping
           this.Property(t => t.qq).HasColumnName("qq");
           this.Property(t => t.create_time).HasColumnName("create_time");
           this.Property(t => t.system_power).HasColumnName("system_power");
+            this.Property(t => t.cancer_type).HasColumnName("cancer_type");
       }
     }
 }

@@ -14,9 +14,14 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <title>恶性肿瘤主页</title>
-    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <!--[if lt IE 9]>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.ie.css" rel="stylesheet" />
+    <![endif]-->
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    @*<script src="~/Scripts/bootstrap.min.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
     <script src="~/Scripts/Main/Index.js"></script>
     <link href="~/Content/Main/Index.css" rel="stylesheet" />
     <script>
@@ -30,11 +35,14 @@
     @*@MiniProfiler.RenderIncludes();*@
     @{
         List<string> roleInfoList = new List<string>();
-        foreach (var item in ViewBag.RoleInfo)
+        if (ViewBag.RoleInfo!=null)
         {
-            roleInfoList.Add(item.role);
+            foreach (var item in ViewBag.RoleInfo)
+            {
+                roleInfoList.Add(item.role);
+            }
         }
-
+         
     }
     <div class="main">
         <div class="top">
@@ -48,31 +56,27 @@
                 <span style="font-size:15pt;font-family:LiSu">欢迎</span>@ViewBag.RealName<span style="font-size:15pt;font-family:LiSu">@ViewBag.Sex</span>
             </div>
         </div>
-        <div class="center">
-            @*<div class="center_left">
-                    <img alt="" src="/images/sys/yiliao1.jpg" style=" height:399px;width:100%;" />
-                </div>*@
+        <div class="center"> 
             <div class="center_right" id="ScrollHeight">
                 <div style="padding-top:10px;text-align:center" id="CancerList">
                     <ul>
-                        @foreach (var item in ((List<MT_RoleInfo>)ViewBag.RoleInfo).OrderBy(t => t.first_letter))
-                        {
-                            @*<li><input id="@item.role" name="@item.role" type="button" class="btn btn-success" value="@item.role_name" onclick="RedirectTo(this.id)"/></li>*@
-                            <li>
-                                <button id="@item.role" name="@item.role" type="button" class="btn btn-success  radius" style="text-align:left; width:180px;height:45px;font-size:15pt;" onclick="RedirectTo(this.id)">
-                                           <span>
+                        @{
+                            if (ViewBag.RoleInfo!=null)
+                            {
+                                foreach (var item in ((List<MT_RoleInfo>)ViewBag.RoleInfo).OrderBy(t => t.first_letter))
+                                {
+                                    <li>
+                                        <button id="@item.role" name="@item.role" type="button" class="btn btn-success  radius" style="text-align:left; width:180px;height:45px;font-size:15pt;" onclick="RedirectTo(this.id)">
+                                            <span>
                                                 <img src="/Content/CancerImages/@item.image_name" style="width: 20px; height: 20px;" />
-                                                 @item.role_name
-                                           </span>
-                                    </button>
-                                @*<a href="javascript:void(0)" id="@item.role" name="@item.role" class="btn btn-primary" style="text-align:left; width:180px;height:45px;font-size:15pt;" onclick="RedirectTo(this.id)">
-                                    <span>
-                                        <img src="/Content/CancerImages/@item.image_name" style="width: 20px; height: 20px;" />
-                                        @item.role_name
-                                    </span>
-                                </a>*@
-                            </li>
+                                                @item.role_name
+                                            </span>
+                                        </button> 
+                                    </li>
+                                }
+                            }
                         }
+                        
                     </ul>
                     <ul><li style="margin:0;height:15px;"><span style="color:red;font-size: 12pt;font-weight:bold">以下待开通模块按拼音首字母排序</span></li></ul>
                     <ul style="padding-top:15px">
@@ -87,13 +91,7 @@
                                                         <img src="/Content/CancerImages/@item.image_name" style="width:20px;height:20px;" />
                                                         @item.role_name
                                                     </span>
-                                        </button>
-                                    @*<a href="javascript:void(0)" id="@item.role" name="@item.role" class="btn btn-primary" style="text-align:left; width:180px;height:45px;font-size:15pt;">
-                                        <span>
-                                            <img src="/Content/CancerImages/@item.image_name" style="width: 20px; height: 20px;" />
-                                            @item.role_name
-                                        </span>
-                                    </a>*@
+                                        </button> 
                                 </li>
                             }
                         }

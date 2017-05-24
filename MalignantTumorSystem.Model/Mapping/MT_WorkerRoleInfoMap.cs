@@ -21,9 +21,9 @@ namespace MalignantTumorSystem.Model.Mapping
             this.Property(t => t.worker_name).HasMaxLength(50).HasColumnName("worker_name");
             this.Property(t => t.comment).HasMaxLength(500).HasColumnName("comment");
 
-            this.HasRequired(t => t.Comm_Platform_Worker).WithMany(t => t.MT_WorkerRoleInfo).HasForeignKey(t => t.worker_id).WillCascadeOnDelete(false);
+            //this.HasRequired(t => t.Comm_Platform_Worker).WithMany(t => t.MT_WorkerRoleInfo).HasForeignKey(t => t.worker_id).WillCascadeOnDelete(false);
 
-            this.HasRequired(t => t.MT_RoleInfo).WithMany(t => t.MT_WorkerRoleInfo).HasForeignKey(t => t.roleinfo_id).WillCascadeOnDelete(false);
+            //this.HasRequired(t => t.MT_RoleInfo).WithMany(t => t.MT_WorkerRoleInfo).HasForeignKey(t => t.roleinfo_id).WillCascadeOnDelete(false);
 
        }
 
