@@ -220,6 +220,7 @@
     <Compile Include="Areas\BreastCancer\Controllers\BC_GenesAndProteomics_21Controller.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_NurseController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_QOLController.cs" />
+    <Compile Include="Areas\BreastCancer\Controllers\BC_RobotChatController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_ClinicalExaminationController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_MammographyController.cs" />
     <Compile Include="Areas\BreastCancer\Controllers\BC_ScreeningAndDiagnosis_PathologicalDiagnosisController.cs" />
@@ -1062,9 +1063,11 @@
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\Control.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_Constitution\Show.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_PE\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Show.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Submit.js" />
-    <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Update.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Control.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Control.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Submit.js" />
@@ -1255,6 +1258,16 @@
     <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\Top.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\Body.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\Left.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_RobotChat\Frame.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_RobotChat\Top.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_RobotChat\Body.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_RobotChat\List.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\ListAll.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\SFJLShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_SFJL\SFJLUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\PEShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\PEUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\ListAll.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />

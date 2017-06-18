@@ -811,4 +811,31 @@ namespace MalignantTumorSystem.BLL
             //CurrentDal =NinjectDI.GetMT_BC_SelfCheckDal;
         } 
 	}  
+	
+	public partial class MT_BC_FollowupService:BaseService<MT_BC_Followup>,IMT_BC_FollowupService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_FollowupDal();
+            //CurrentDal =NinjectDI.GetMT_BC_FollowupDal;
+        } 
+	}  
+	
+	public partial class MT_BC_Followup_DoseService:BaseService<MT_BC_Followup_Dose>,IMT_BC_Followup_DoseService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_Followup_DoseDal();
+            //CurrentDal =NinjectDI.GetMT_BC_Followup_DoseDal;
+        } 
+	}  
+	
+	public partial class MT_Comm_Adults_Health_Examination_NewService:BaseService<MT_Comm_Adults_Health_Examination_New>,IMT_Comm_Adults_Health_Examination_NewService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_Comm_Adults_Health_Examination_NewDal();
+            //CurrentDal =NinjectDI.GetMT_Comm_Adults_Health_Examination_NewDal;
+        } 
+	}  
 }

@@ -402,6 +402,9 @@
                         <div class="sec_menu1" style="width: 142px">
                             <table cellspacing="0" cellpadding="0" width="140">
                                 <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_QOL/Frame" target="MainFrame">生存质量量表</a></td></tr>
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_RobotChat/Frame" target="MainFrame">智能问答</a></td>
+                                </tr>
                                 <tr><td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_Nurse/Frame" target="MainFrame">护理知识</a></td></tr>
                             </table>
                         </div>
@@ -528,6 +531,26 @@
                         </div>
                     </td>
                 </tr> 
+                 
+                @*@if (ViewBag.name == "wangj")
+                {
+                    <tr>
+                        <td class="auto-style1" id="menuTitle33" onclick="showsubmenu(33,'05')">人工智能 </td>
+                    </tr>
+
+                    <tr>
+                        <td id="submenu33" class="auto-style2">
+                            <div class="sec_menu" style="width: 142px">
+                                <table cellspacing="0" cellpadding="0" width="140">
+                                    <tr>
+                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="/BreastCancer/BC_RobotChat/Frame" target="MainFrame">智能聊天 </a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                }*@
+                 
             </table>
             <br />
         </div>

@@ -999,59 +999,7 @@
             $("input[name='every_time17']").attr("disabled", true);
         }
     })
-
-
-
-    //==============================保存页面=======================================
-    $("#bt1").click(function () {
-        if ($("#name").val() == "") {
-            alert("姓名不能为空！")
-        }
-        else if ($("#id_card_number").val() == "") {
-            alert("身份证号码不能为空！")
-        }
-        else if ($("#ddlProvince").val() == "" && $("#ddlCity").val() == "" && $("#ddlCounty").val() == "" && $("#perment_community_address").val() == "") {
-            alert("常住地址不能为空！")
-        }
-        else if ($("#time").val() == "") {
-            alert("体检时间不能为空！")
-        }
-        else {
-            $.post("ASHX/AddAndUpdate.ashx?id=" + id + "&worker=" + worker + "&community_code=" + community_code,
-                    $("#form1").serialize(),
-                    function (msgs) {
-                        var msg = msgs.split(',');
-                        alert(msg[0]);
-                        window.close();
-                    })
-        }
-    })
-
-    //==============================提交页面=======================================
-    $("#bt2").click(function () {
-        if ($("#name").val() == "") {
-            alert("姓名不能为空！")
-        }
-        else if ($("#id_card_number").val() == "") {
-            alert("身份证号码不能为空！")
-        }
-        else if ($("#ddlProvince").val() == "" && $("#ddlCity").val() == "" && $("#ddlCounty").val() == "" && $("#perment_community_address").val() == "") {
-            alert("常住地址不能为空！")
-        }
-        else if ($("#time").val() == "") {
-            alert("体检时间不能为空！")
-        }
-        else {
-            $.post("ASHX/AddAndUpdate.ashx?id=" + id + "&worker=" + worker + "&community_code=" + community_code,
-                    $("#form1").serialize(),
-                    function (msgs) {
-                        var msg = msgs.split(',');
-                        alert(msg[0]);
-                        //window.location.href = 'View.aspx?resident_id=' + msg[1];
-                        window.close();
-                    })
-        }
-    })
+   
 })
 
 var d = 1;

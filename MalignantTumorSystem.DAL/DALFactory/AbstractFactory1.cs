@@ -546,6 +546,24 @@ Chronic_disease_ConstitutionDal;
 
 MT_BC_SelfCheckDal;
 		    }
+	  	    public static MT_BC_FollowupDal GetMT_BC_FollowupDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_FollowupDal") as 
+
+MT_BC_FollowupDal;
+		    }
+	  	    public static MT_BC_Followup_DoseDal GetMT_BC_Followup_DoseDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_Followup_DoseDal") as 
+
+MT_BC_Followup_DoseDal;
+		    }
+	  	    public static MT_Comm_Adults_Health_Examination_NewDal GetMT_Comm_Adults_Health_Examination_NewDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_Comm_Adults_Health_Examination_NewDal") as 
+
+MT_Comm_Adults_Health_Examination_NewDal;
+		    }
 	   
    }
 }

@@ -364,4 +364,16 @@ namespace MalignantTumorSystem.IDAL
 	public partial interface IMT_BC_SelfCheckDal : IBaseDal<MT_BC_SelfCheck>
     { 
     }   
+	
+	public partial interface IMT_BC_FollowupDal : IBaseDal<MT_BC_Followup>
+    { 
+    }   
+	
+	public partial interface IMT_BC_Followup_DoseDal : IBaseDal<MT_BC_Followup_Dose>
+    { 
+    }   
+	
+	public partial interface IMT_Comm_Adults_Health_Examination_NewDal : IBaseDal<MT_Comm_Adults_Health_Examination_New>
+    { 
+    }   
 }

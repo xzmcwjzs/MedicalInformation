@@ -550,6 +550,15 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 		
 	 
             //modelBuilder.Configurations.Add(new MT_BC_SelfCheckMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_FollowupMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_Followup_DoseMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_Comm_Adults_Health_Examination_NewMap());
      }
 		
 	     public DbSet<Comm_Platform_Worker> Comm_Platform_Worker { get; set; }
@@ -729,5 +738,11 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 	     public DbSet<Chronic_disease_Constitution> Chronic_disease_Constitution { get; set; }
 		
 	     public DbSet<MT_BC_SelfCheck> MT_BC_SelfCheck { get; set; }
+		
+	     public DbSet<MT_BC_Followup> MT_BC_Followup { get; set; }
+		
+	     public DbSet<MT_BC_Followup_Dose> MT_BC_Followup_Dose { get; set; }
+		
+	     public DbSet<MT_Comm_Adults_Health_Examination_New> MT_Comm_Adults_Health_Examination_New { get; set; }
    }
 }

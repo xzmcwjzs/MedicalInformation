@@ -11,15 +11,14 @@
     <script src="~/Scripts/jquery-1.8.2.min.js"></script>
     <script src="~/Scripts/PCCSC/pccsc.js"></script>
     <script src="~/Scripts/MyJs/global.js"></script>
-     <script src="~/Scripts/MyJs/jquery.autocomplete.js"></script>
-    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />
+    @*<script src="~/Scripts/MyJs/jquery.autocomplete.js"></script>
+    <link href="~/Scripts/MyJs/jqueryAutocomplete/jquery.autocomplete.css" rel="stylesheet" />*@
     <link href="~/Content/MyCss/global.css" rel="stylesheet" />
-    <script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
+    @*<script src="~/Scripts/MyJs/My97DatePicker/WdatePicker.js"></script>
     <script src="~/Scripts/Common/matchName.show.js"></script>
-    <script src="~/Scripts/MyJs/jquery-form.js"></script> 
-    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_SFJL/Update.js"></script>
-    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_SFJL/Control.js"></script>
-    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_SFJL/Submit.js"></script> 
+    <script src="~/Scripts/MyJs/jquery-form.js"></script>*@
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_SFJL/Show.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_FollowupAndExamination_SFJL/Control.js"></script> 
     <style type="text/css">
         .detailContent {
             background-color: #f1f3f5;
@@ -44,7 +43,7 @@
             color: Black;
             text-align: left;
             height: 25px;
-            width: 8%; 
+            width: 8%;
             border: 1px white solid;
         }
 
@@ -107,7 +106,7 @@
             background-color: #f1f3f5;
             padding: 2px;
             height: 20px;
-            text-align: left; 
+            text-align: left;
             border: 1px white solid;
         }
 
@@ -197,12 +196,12 @@
         }
     </style>
     <script>
-        var id = "@ViewBag.id"; 
+        var id = "@ViewBag.id";
         var no = "@ViewBag.no";
         var resident_id = "@ViewBag.resident_id";
         var worker = "@ViewBag.worker";
         var real_name = "@ViewBag.real_name";
-        var community_code = "@ViewBag.community_code"; 
+        var community_code = "@ViewBag.community_code";
         var create_time = "@ViewBag.create_time";
     </script>
 </head>
@@ -229,7 +228,7 @@
                     </td>
                     <td class="auto-style29">出生日期</td>
                     <td class="auto-style33">
-                        <input type="text" style="padding-top: 2px; width: 90px; height: 18px;" id="birth_date" name="birth_date" readonly="readonly" /> 
+                        <input type="text" style="padding-top: 2px; width: 90px; height: 18px;" id="birth_date" name="birth_date" readonly="readonly" />
                     </td>
                     <td class="auto-style29">年龄</td>
                     <td class="auto-style19">
@@ -278,9 +277,9 @@
                     <td class="auto-style247"></td>
                     <td class="auto-style28"></td>
                     @*<td class="auto-style247">健康档案号</td>
-                    <td class="auto-style28">
-                        <input type="text" id="resident_id" name="resident_id" style="padding-top: 2px; width: 137px; height: 18px;" />
-                    </td>*@
+                        <td class="auto-style28">
+                            <input type="text" id="resident_id" name="resident_id" style="padding-top: 2px; width: 137px; height: 18px;" />
+                        </td>*@
                     <td class="auto-style29"></td>
                     <td class="auto-style33"></td>
                     <td class="auto-style29"></td>
@@ -312,7 +311,7 @@
 
                 <tr>
                     <td class="auto-style247">确诊依据</td>
-                    <td colspan="9" class="auto-style231"> 
+                    <td colspan="9" class="auto-style231">
                         <label><input type="checkbox" name="diagnosisbasis" value="01" />病理<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="diagnosisbasis" value="02" />脱落细胞<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="diagnosisbasis" value="03" />手术<a style="padding-left: 1em"></a></label>
@@ -328,29 +327,29 @@
                         <label><input type="checkbox" name="diagnosisbasis" value="13" />不详<a style="padding-left: 1em"></a></label>
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="auto-style247">病理类型</td>
                     <td class="auto-style27">
-                        <input type="text"  name="pathologictype" id="pathologictype" style="padding-top: 2px; width: 100px; height: 18px;" />
+                        <input type="text" name="pathologictype" id="pathologictype" style="padding-top: 2px; width: 100px; height: 18px;" />
                     </td>
                     <td class="auto-style1">治疗情况</td>
-                    <td class="auto-style50"> 
+                    <td class="auto-style50">
                         <label><input type="radio" id="treatmentsituation1" name="treatmentsituation" value="01" />治疗<a style="padding-left: 1em"></a></label>
                         <label><input type="radio" id="treatmentsituationn2" name="treatmentsituation" value="02" />未治疗<a style="padding-left: 1em"></a></label>
                     </td>
                     <td class="auto-style247">并发症</td>
                     <td class="auto-style28" colspan="5">
-                        <input type="text"  name="complication" id="complication" style="padding-top: 2px; width: 300px; height: 18px;" />
+                        <input type="text" name="complication" id="complication" style="padding-top: 2px; width: 300px; height: 18px;" />
                     </td>
-                 </tr>
+                </tr>
                 <tr id="istreatment">
                     <td class="auto-style247">治疗医院</td>
                     <td class="auto-style27">
                         <input type="text" name="treatmenthospital" id="treatmenthospital" style="padding-top: 2px; width: 120px; height: 18px;" />
                     </td>
                     <td class="auto-style1">治疗</td>
-                    <td class="auto-style50" colspan="7"> 
+                    <td class="auto-style50" colspan="7">
                         <label><input type="checkbox" name="treatment" value="01" />手术<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="treatment" value="02" />化疗<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="treatment" value="03" />放疗<a style="padding-left: 1em"></a></label>
@@ -389,30 +388,30 @@
                         <span id="istransfer">
                             转移部位：<input type="text" name="transferposition" id="transferposition" style="padding-top: 2px; width: 120px; height: 18px;" />
                         </span>
-                    </td>  
+                    </td>
                     <td class="auto-style247">复发</td>
                     <td class="auto-style28" colspan="5">
                         <label><input type="radio" id="recrudescence1" name="recrudescence" value="01" />有<a style="padding-left: 1em"></a></label>
                         <label><input type="radio" id="recrudescence1" name="recrudescence" value="02" />无<a style="padding-left: 1em"></a></label>
-                        <span  id="isrecrudescence">
+                        <span id="isrecrudescence">
                             复发日期：<input type="text" name="recrudescencedate" id="recrudescencedate" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="padding-top: 2px; width: 120px; height: 18px;" />
                         </span>
-                    </td>  
-                 </tr>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="auto-style247" rowspan="2" id="tumorhistoryrowspan">肿瘤家族史</td>
                     <td class="auto-style28" colspan="9">
                         <label><input type="radio" id="tumorhistory1" name="tumorhistory" value="01" />有<a style="padding-left: 1em"></a></label>
-                        <label><input type="radio" id="tumorhistory2" name="tumorhistory" value="02" />无<a style="padding-left: 1em"></a></label> 
+                        <label><input type="radio" id="tumorhistory2" name="tumorhistory" value="02" />无<a style="padding-left: 1em"></a></label>
                         <span id="istumorhistory1">
                             关系：
                             <label><input type="radio" id="tumorhistoryrelation1" name="tumorhistoryrelation" value="01" />祖父辈<a style="padding-left: 1em"></a></label>
-                            <label><input type="radio" id="tumorhistoryrelation2" name="tumorhistoryrelation" value="02" />父母辈<a style="padding-left: 1em"></a></label> 
-                            <label><input type="radio" id="tumorhistoryrelation3" name="tumorhistoryrelation" value="03" />同辈<a style="padding-left: 1em"></a></label> 
-                            <label><input type="radio" id="tumorhistoryrelation4" name="tumorhistoryrelation" value="04" />子女辈<a style="padding-left: 1em"></a></label> 
+                            <label><input type="radio" id="tumorhistoryrelation2" name="tumorhistoryrelation" value="02" />父母辈<a style="padding-left: 1em"></a></label>
+                            <label><input type="radio" id="tumorhistoryrelation3" name="tumorhistoryrelation" value="03" />同辈<a style="padding-left: 1em"></a></label>
+                            <label><input type="radio" id="tumorhistoryrelation4" name="tumorhistoryrelation" value="04" />子女辈<a style="padding-left: 1em"></a></label>
                         </span>
-                    </td>  
+                    </td>
                 </tr>
                 <tr id="istumorhistory2">
                     <td class="auto-style211">瘤别</td>
@@ -432,7 +431,7 @@
                         <label><input type="checkbox" name="tumorhistorytype" value="13" />甲状腺癌<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="tumorhistorytype" value="14" />肾癌<a style="padding-left: 1em"></a></label>
                         其他：<input type="text" id="tumorhistorytypeother" name="tumorhistorytypeother" style="padding-top: 2px; width: 120px; height: 18px;" />
-                    </td>  
+                    </td>
                 </tr>
 
                 <tr>
@@ -442,7 +441,7 @@
                         <label><input type="radio" id="correctdiagnosis2" name="correctdiagnosis" value="02" />无<a style="padding-left: 1em"></a></label>
                         <span id="iscorrectdiagnosis">
                             更正诊断部位：<input type="text" name="correctdiagnosissite" id="correctdiagnosissite" style="padding-top: 2px; width: 120px; height: 18px;" /><a style="padding-left:1em"></a>
-                            更正诊断日期：<input type="text" name="correctdiagnosisdate" id="correctdiagnosisdate" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })"  style="padding-top: 2px; width: 120px; height: 18px;" /> 
+                            更正诊断日期：<input type="text" name="correctdiagnosisdate" id="correctdiagnosisdate" onclick="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" style="padding-top: 2px; width: 120px; height: 18px;" />
                         </span>
                     </td>
                 </tr>
@@ -463,7 +462,7 @@
                         <label><input type="checkbox" name="guidecontent" value="06" />住院<a style="padding-left: 1em"></a></label>
                         <label><input type="checkbox" name="guidecontent" value="07" />出诊<a style="padding-left: 1em"></a></label>
                     </td>
-                 </tr>
+                </tr>
                 <tr>
                     <td class="auto-style247">卡氏评分<span style="color: #ff0000">*</span></td>
                     <td class="auto-style28" colspan="9">
@@ -505,7 +504,7 @@
                     <td class="auto-style33" colspan="3">
                         <label><input type="radio" id="isdeathy" name="isdeath" value="01" />是<a style="padding-left: 1em"></a></label>
                         <label><input type="radio" id="isdeathn" name="isdeath" value="02" />否<a style="padding-left: 1em"></a></label>
-                    </td> 
+                    </td>
                 </tr>
 
                 <tr id="isdeatht">
@@ -525,17 +524,17 @@
                         <label><input type="radio" id="deathsite3" name="deathsite" value="03" />外地<a style="padding-left: 1em"></a></label>
                         <label><input type="radio" id="deathsite4" name="deathsite" value="04" />其他<a style="padding-left: 1em"></a></label>
                     </td>
-                
+
                     <td class="auto-style29">生存期</td>
                     <td class="auto-style33">
                         <input type="text" id="surviveyear" name="surviveyear" style="height: 18px; width: 30px" />
                         年
                         <input type="text" id="survivemonth" name="survivemonth" style="height: 18px; width: 30px" />月
                     </td>
-                     
+
                 </tr>
                 @* ------------------------------------------------------------------------------------- *@
-               <tr>
+                <tr>
                     <td class="auto-style247" rowspan="2" valign="top" style="padding-top: 10px">体征</td>
                     <td class="auto-style211">血压</td>
                     <td class="auto-style221" colspan="2">
@@ -1271,7 +1270,7 @@
                         其他<input type="text" name="other_diet_other" id="other_diet_other" style="width: 50px" />
                     </td>
                 </tr>
-                
+
                 <tr>
                     <td class="auto-style211">心理调整</td>
                     <td class="auto-style221" colspan="2">
@@ -1321,7 +1320,7 @@
                     <td class="auto-style211">药物名称1</td>
                     <td class="auto-style221" colspan="2">
                         <input type="text" id="name1" name="name1" style="width: 98%; height: 20px" />
-                        
+
                     </td>
                     <td class="auto-style247">规格</td>
                     <td class="auto-style28">
@@ -1337,7 +1336,7 @@
                     <td class="auto-style211">药物名称2</td>
                     <td class="auto-style221" colspan="2">
                         <input type="text" id="name2" name="name2" style="width: 98%; height: 20px" />
-                         
+
                     </td>
                     <td class="auto-style247">规格</td>
                     <td class="auto-style28">
@@ -1353,7 +1352,7 @@
                     <td class="auto-style211">药物名称3</td>
                     <td class="auto-style221" colspan="2">
                         <input type="text" id="name3" name="name3" style="width: 98%; height: 20px" />
-                       
+
                     </td>
                     <td class="auto-style247">规格</td>
                     <td class="auto-style28">
@@ -1422,21 +1421,12 @@
                     </td>
                     <td class="auto-style29">随访医生</td>
                     <td class="auto-style33">
-                        <input style="width: 90px; height: 20px; padding-top: 4px;" type="text" id="doctorname" name="doctorname" value="@ViewBag.real_name " />
+                        <input style="width: 90px; height: 20px; padding-top: 4px;" type="text" id="doctorname" name="doctorname"  />
                     </td>
                     <td class="auto-style29"></td>
                     <td class="auto-style19"></td>
-                </tr>
-                <tr id="last">
-                    <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
-                        <div style="text-align: center; margin-top: 8px;">
-                            <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
-                            <a style="padding-left: 2em"></a>
-                            <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
-                        </div>
-                    </td>
-                </tr>
-            </table> 
+                </tr> 
+            </table>
         </div>
     </form>
 </body>

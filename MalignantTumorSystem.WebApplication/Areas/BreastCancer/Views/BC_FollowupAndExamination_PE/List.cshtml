@@ -1,4 +1,7 @@
-﻿ @{
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.MT_Comm_Adults_Health_Examination_New>>
+@using MalignantTumorSystem.Common;
+@using MalignantTumorSystem.WebApplication.Common.ComunityCode; 
+@{
     Layout = null;
 }
 
@@ -41,9 +44,119 @@
                 <td>全部体检</td>
                 <td>修改</td>
             </tr>
-        </table>
-        @Html.ShowPager(1, 15, 0)
-    </div>
+            <tbody>
 
+                @for (int i = 0; i < Model.EntityList.Count; i++)
+                {
+
+                    var item = Model.EntityList[i];
+                    string id, no;
+                    string family_detail_address = "", name = "", sex = "", id_card_number = "", resident_id = "", sign = "";
+                    string create_time, tijianriqi;
+                    string strAge = "";
+                    string worker_user_name = "";
+                    name = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.name), 0);
+                    no = CommonFunc.SafeGetStringFromObj((ViewBag.PageIndex - 1) * ViewBag.PageSize + i + 1);
+                    id = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id), 0);
+                    resident_id = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.resident_id), 0);
+
+                    sex = (CommonFunc.SafeGetStringFromObj(item.sex) == "01") ? "男" : "女";
+                    id_card_number = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.id_card_number), 0);
+                    if (!string.IsNullOrEmpty(item.community_code.ToString()))
+                    {
+                        if (item.community_code.ToString().Length == 2)
+                        {
+                            family_detail_address = new Address().GetForwardAddress4(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 4)
+                        {
+                            family_detail_address = new Address().GetForwardAddress3(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 6)
+                        {
+                            family_detail_address = new Address().GetForwardAddress1(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 9)
+                        {
+                            family_detail_address = new Address().GetForwardAddress2(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.address), 0);
+                        }
+                        else if (item.community_code.ToString().Length == 12)
+                        {
+                            family_detail_address = new Address().GetForwardAddress(item.community_code.ToString()) + CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.address), 0);
+                        }
+
+                    }
+
+                    string tempBirthDate = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.birth_date, "yyyy-MM-dd");
+                    if (!string.IsNullOrEmpty(tempBirthDate))
+                    {
+                        DateTime dtBirthDate = Convert.ToDateTime(tempBirthDate);
+                        int age = DateTime.Now.Year - dtBirthDate.Year;
+                        if (age > 0)
+                        { strAge = age.ToString() + "岁"; }
+                        else if (age == 0)
+                        {
+                            int month = DateTime.Now.Month - dtBirthDate.Month;
+                            if (month > 0)
+                            { strAge = month.ToString() + "月"; }
+                            else if (month == 0)
+                            {
+                                int day = DateTime.Now.Day - dtBirthDate.Day;
+                                if (day > 0)
+                                { strAge = day.ToString() + "天"; }
+                            }
+                        }
+                    }
+                    tijianriqi = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.tijianriqi, "yyyy-MM-dd");
+                    create_time = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.create_time, "yyyy-MM-dd");
+                    worker_user_name = CommonFunc.SafeGetStringFromObj(item.worker_user_name);
+                    //sign = CommonFunc.EncodeString(CommonFunc.SafeGetStringFromObj(item.sign), 0);
+
+                    <tr class="listTableContentRow" onmouseover="this.className='listTableContentRowMouseOver' " onmouseout="this.className='listTableContentRow'">
+                        @if (name.Length == 2)
+                        {
+                            <td style="height:21px;">@name.Substring(0, 1)<a style="padding-left:1em"></a>@name.Substring(1, 1)</td>
+                        }
+                        else
+                        {
+                            <td style="height:21px;">@name</td>
+                        }
+                        <td>@sex &nbsp;</td>
+                        <td>@strAge</td>
+                        <td>@id_card_number</td>
+                        <td style="text-align:left;padding-left:1em">@family_detail_address &nbsp;</td>
+                        <td>@tijianriqi</td>
+                        <td>
+                            <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_PE/PEShow?id=@id&resident_id=@resident_id&create_time=@create_time&NO=1',1020,600)" href="javascript:void(0)">
+                                <img alt="查看详细资料" src="/images/imgs/icon_show.gif" />
+                            </a>
+                        </td>
+                        <td>
+                            <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_PE/ListAll?resident_id=@resident_id&resident_name=@name',820,650)" href="javascript:void(0)">
+                                <img alt="查看详细资料" src="/images/imgs/icon_show.gif" />
+                            </a>
+                        </td>
+
+                        <td>
+                            @if (!(ViewBag.dell_user_name == worker_user_name) && !Enum.GetNames(typeof(MalignantTumorSystem.Model.Enum.UserNameEnum)).Contains(ViewBag.dell_user_name as string))
+                            {
+                                <a onclick="Alert();" href="javascript:void(0)">
+                                    <img alt="修改该记录" src="/images/imgs/icon_edit.gif" />
+                                </a>
+                            }
+                            else
+                            {
+                                <a onclick="OpenTopWindow('/BreastCancer/BC_FollowupAndExamination_PE/PEUpdate?id=@id&NO=2',1020,600)" href="javascript:void(0)">
+                                    <img alt="修改该记录" src="/images/imgs/icon_edit.gif" />
+                                </a>
+                            }
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.ShowPager(Model.Pager.PageIndex, Model.Pager.PageSize, Model.Pager.TotalCount)
+    </div>
 </body>
 </html>

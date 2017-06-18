@@ -368,4 +368,16 @@ namespace MalignantTumorSystem.DAL{
 	public partial class MT_BC_SelfCheckDal:BaseDal<MT_BC_SelfCheck>,IMT_BC_SelfCheckDal
     {
 	}
+		
+	public partial class MT_BC_FollowupDal:BaseDal<MT_BC_Followup>,IMT_BC_FollowupDal
+    {
+	}
+		
+	public partial class MT_BC_Followup_DoseDal:BaseDal<MT_BC_Followup_Dose>,IMT_BC_Followup_DoseDal
+    {
+	}
+		
+	public partial class MT_Comm_Adults_Health_Examination_NewDal:BaseDal<MT_Comm_Adults_Health_Examination_New>,IMT_Comm_Adults_Health_Examination_NewDal
+    {
+	}
 }

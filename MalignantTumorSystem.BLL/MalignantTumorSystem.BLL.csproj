@@ -111,7 +111,9 @@
     <Compile Include="Comm_ResidentFile_Followup_SurgeryService.cs" />
     <Compile Include="Comm_ResidentFile_Followup_TraumaService.cs" />
     <Compile Include="Comm_TumourService.cs" />
+    <Compile Include="MT_BC_FollowupService.cs" />
     <Compile Include="MT_BC_SelfCheckService.cs" />
+    <Compile Include="MT_Comm_Adults_Health_Examination_NewService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchTest.cs" />
     <Compile Include="BLLT4\Services.cs">

@@ -302,6 +302,15 @@ namespace MalignantTumorSystem.WebApplication.Ninject
 		
             Kernel.Bind<IMT_BC_SelfCheckDal>().To<MT_BC_SelfCheckDal>();
 	        Kernel.Bind<IMT_BC_SelfCheckService>().To<MT_BC_SelfCheckService>();
+		
+            Kernel.Bind<IMT_BC_FollowupDal>().To<MT_BC_FollowupDal>();
+	        Kernel.Bind<IMT_BC_FollowupService>().To<MT_BC_FollowupService>();
+		
+            Kernel.Bind<IMT_BC_Followup_DoseDal>().To<MT_BC_Followup_DoseDal>();
+	        Kernel.Bind<IMT_BC_Followup_DoseService>().To<MT_BC_Followup_DoseService>();
+		
+            Kernel.Bind<IMT_Comm_Adults_Health_Examination_NewDal>().To<MT_Comm_Adults_Health_Examination_NewDal>();
+	        Kernel.Bind<IMT_Comm_Adults_Health_Examination_NewService>().To<MT_Comm_Adults_Health_Examination_NewService>();
         }
     }
 }

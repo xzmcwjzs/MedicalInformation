@@ -453,4 +453,19 @@ namespace MalignantTumorSystem.IBLL
     {
        
     }
+	
+	 public partial interface IMT_BC_FollowupService:IBaseService<MT_BC_Followup>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_Followup_DoseService:IBaseService<MT_BC_Followup_Dose>
+    {
+       
+    }
+	
+	 public partial interface IMT_Comm_Adults_Health_Examination_NewService:IBaseService<MT_Comm_Adults_Health_Examination_New>
+    {
+       
+    }
 }

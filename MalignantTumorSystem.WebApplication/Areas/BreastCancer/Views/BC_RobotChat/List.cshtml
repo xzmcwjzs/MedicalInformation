@@ -1,0 +1,116 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>智能聊天</title>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <!--[if lt IE 9]>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.ie.css" rel="stylesheet" />
+    <![endif]-->
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <script>
+        function chat() {
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/BreastCancer/BC_RobotChat/RobotChat",
+                data: { information: $("#information").val() },
+                success: function (data) {
+                    if (data == "" || data == null) {
+                        alert("请输入聊天内容");
+                        return;
+                    }
+                    var str = eval("(" + data + ")");
+                    var msg = str.text;
+                    var ques = $("#information").val();
+                    var code = str.code;
+                    if (code == "100000") {
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                     '<div class="panel-header">' + ques + '</div>' +
+                     '<div class="panel-body">' + msg + '</div>' +
+                     '</div>');
+                    } else if (code == "200000") {
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                    '<div class="panel-header">' + ques + '</div>' +
+                    '<div class="panel-body">' + msg + '<br/><a href=' + str.url + ' target="_blank">' + str.url + '</a></div>' +
+                    '</div>');
+                    } else if (code == "302000") {
+                        var list = str.list;
+                        var content = "";
+                        for (var i = 0; i < 5; i++) {
+                            content += "<a href=" + list[i].detailurl + " target='_blank'>" + list[i].article + "</a><br/>";
+                        }
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                   '<div class="panel-header">' + ques + '</div>' +
+                   '<div class="panel-body">' + msg + '<br/>' + content + ''
+                   + '</div>' +
+                   '</div>');
+                    } else if (code == "200000") {
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                   '<div class="panel-header">' + ques + '</div>' +
+                   '<div class="panel-body">' + msg + '<br/><a href=' + str.url + ' target="_blank">' + str.url + '</a></div>' +
+                   '</div>');
+                    } else if (code == "308000") {
+                        var list = str.list;
+                        var content = "<a href=" + list[0].detailurl + " target='_blank'>" + list[i].info + "</a>";
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                  '<div class="panel-header">' + ques + '</div>' +
+                  '<div class="panel-body">' + msg + '<br/>' + content + ''
+                  + '</div>' +
+                  '</div>');
+                    } else {
+                        $("#table1").after('<div class="panel panel-success mt-10">' +
+                    '<div class="panel-header">' + ques + '</div>' +
+                    '<div class="panel-body">' + msg + '</div>' +
+                    '</div>');
+                    }
+
+                }
+            })
+        }
+
+        function qingkong() { 
+            $("#information").val("");
+            $("#div1 div").remove();
+        }
+
+    </script>
+
+</head>
+<body style="text-align:center">
+    <div style="width:90%;margin:0 auto" id="div1">
+        <form id="form1">
+            <table class="table table-hover" id="table1">
+                <thead>
+                    <tr>
+                        <th style="font-size:larger" colspan="2">乳腺癌智能问答</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="width:90%">
+                            <textarea id="information" name="information" style="width:98%" class="textarea radius"></textarea>
+                        </td>
+                        <td style="width:10%">
+                            <input class="btn btn-success radius" type="button" value="确定" onclick="chat();">
+                            <br /><br />
+                            <input class="btn btn-default radius" type="button" value="清空" onclick="qingkong();">
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+            @*<div class="panel panel-success mt-10">
+                    <div class="panel-header">面板标题</div>
+                    <div class="panel-body">面板内容</div>
+                </div>*@
+        </form>
+    </div>
+</body>
+</html>

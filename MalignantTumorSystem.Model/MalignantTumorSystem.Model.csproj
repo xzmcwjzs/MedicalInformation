@@ -147,7 +147,10 @@
     <Compile Include="Entities\Comm_Tumour.cs" />
     <Compile Include="Entities\ICD_10_old.cs" />
     <Compile Include="Entities\ICD_9_old.cs" />
+    <Compile Include="Entities\MT_BC_Followup.cs" />
+    <Compile Include="Entities\MT_BC_Followup_Dose.cs" />
     <Compile Include="Entities\MT_BC_SelfCheck.cs" />
+    <Compile Include="Entities\MT_Comm_Adults_Health_Examination_New.cs" />
     <Compile Include="Entities\MT_RoleInfo.cs" />
     <Compile Include="Entities\MT_WorkerRoleInfo.cs" />
     <Compile Include="Entities\Share_City.cs" />
@@ -249,12 +252,21 @@
     <Compile Include="Mapping\Share_ProvinceMap.cs" />
     <Compile Include="Mapping\Share_StreetMap.cs" />
     <Compile Include="Mapping\TestMap.cs" />
+    <Compile Include="Migrations\201706011342091_add_followup.cs" />
+    <Compile Include="Migrations\201706011342091_add_followup.Designer.cs">
+      <DependentUpon>201706011342091_add_followup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706170323460_add_MT_Comm_Adults_Health_Examination_New.cs" />
+    <Compile Include="Migrations\201706170323460_add_MT_Comm_Adults_Health_Examination_New.Designer.cs">
+      <DependentUpon>201706170323460_add_MT_Comm_Adults_Health_Examination_New.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchParam\BaseParam.cs" />
     <Compile Include="SearchParam\BasicInformationParam.cs" />
     <Compile Include="SearchParam\CommonParam.cs" />
     <Compile Include="SearchParam\FamilyInformationParam.cs" />
+    <Compile Include="SearchParam\FollowupParam.cs" />
     <Compile Include="SearchParam\MedicalHistory_HospitalizationParam.cs" />
     <Compile Include="SearchParam\MedicalHistory_OutpatientParam.cs" />
     <Compile Include="ViewModel\BasicAndConstitutionViewModel.cs" />
@@ -270,10 +282,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassMap\ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706011342091_add_followup.resx">
+      <DependentUpon>201706011342091_add_followup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706170323460_add_MT_Comm_Adults_Health_Examination_New.resx">
+      <DependentUpon>201706170323460_add_MT_Comm_Adults_Health_Examination_New.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

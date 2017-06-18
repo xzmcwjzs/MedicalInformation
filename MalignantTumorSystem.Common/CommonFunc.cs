@@ -62,7 +62,7 @@ namespace MalignantTumorSystem.Common
         {
             if (o == null || o == DBNull.Value || o.ToString().Trim() == "")
             {
-                return CommonFunc.DateTimeNull;
+               return CommonFunc.DateTimeNull; 
             }
             DateTime dateTimeNull = CommonFunc.DateTimeNull;
             DateTime.TryParse(o.ToString(), out dateTimeNull);

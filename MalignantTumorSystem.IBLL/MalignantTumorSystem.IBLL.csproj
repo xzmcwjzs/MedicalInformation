@@ -115,7 +115,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="IMT_BC_FollowupService.cs" />
     <Compile Include="IMT_BC_SelfCheckService.cs" />
+    <Compile Include="IMT_Comm_Adults_Health_Examination_NewService.cs" />
     <Compile Include="IShare_CountyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

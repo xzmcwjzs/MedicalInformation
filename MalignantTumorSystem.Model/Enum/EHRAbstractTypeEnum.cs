@@ -68,7 +68,11 @@ namespace MalignantTumorSystem.Model.Enum
        [Description("Chronic_disease_Constitution")]
        Constitution,
        [Description("MT_BC_SelfCheck")]
-       SelfCheck
+       SelfCheck,
+        [Description("MT_BC_Followup")]
+        Followup,
+        [Description("MT_Comm_Adults_Health_Examination_New")]
+        AdultsHealthExamination
 
     }
 }
