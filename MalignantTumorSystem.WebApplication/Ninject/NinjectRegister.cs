@@ -311,6 +311,39 @@ namespace MalignantTumorSystem.WebApplication.Ninject
 		
             Kernel.Bind<IMT_Comm_Adults_Health_Examination_NewDal>().To<MT_Comm_Adults_Health_Examination_NewDal>();
 	        Kernel.Bind<IMT_Comm_Adults_Health_Examination_NewService>().To<MT_Comm_Adults_Health_Examination_NewService>();
+		
+            Kernel.Bind<IErrorLogDal>().To<ErrorLogDal>();
+	        Kernel.Bind<IErrorLogService>().To<ErrorLogService>();
+		
+            Kernel.Bind<IUserLogDal>().To<UserLogDal>();
+	        Kernel.Bind<IUserLogService>().To<UserLogService>();
+		
+            Kernel.Bind<IMT_BC_ClinicalExaminationDal>().To<MT_BC_ClinicalExaminationDal>();
+	        Kernel.Bind<IMT_BC_ClinicalExaminationService>().To<MT_BC_ClinicalExaminationService>();
+		
+            Kernel.Bind<IMT_BC_MammographyDal>().To<MT_BC_MammographyDal>();
+	        Kernel.Bind<IMT_BC_MammographyService>().To<MT_BC_MammographyService>();
+		
+            Kernel.Bind<IMT_BC_UltrasonographyDal>().To<MT_BC_UltrasonographyDal>();
+	        Kernel.Bind<IMT_BC_UltrasonographyService>().To<MT_BC_UltrasonographyService>();
+		
+            Kernel.Bind<IMT_BC_PathologicalDiagnosisDal>().To<MT_BC_PathologicalDiagnosisDal>();
+	        Kernel.Bind<IMT_BC_PathologicalDiagnosisService>().To<MT_BC_PathologicalDiagnosisService>();
+		
+            Kernel.Bind<IMT_BC_OperativeTreatmentDal>().To<MT_BC_OperativeTreatmentDal>();
+	        Kernel.Bind<IMT_BC_OperativeTreatmentService>().To<MT_BC_OperativeTreatmentService>();
+		
+            Kernel.Bind<IMT_BC_RadiotherapyDal>().To<MT_BC_RadiotherapyDal>();
+	        Kernel.Bind<IMT_BC_RadiotherapyService>().To<MT_BC_RadiotherapyService>();
+		
+            Kernel.Bind<IMT_BC_EndocrinotherapyDal>().To<MT_BC_EndocrinotherapyDal>();
+	        Kernel.Bind<IMT_BC_EndocrinotherapyService>().To<MT_BC_EndocrinotherapyService>();
+		
+            Kernel.Bind<IMT_BC_ChemicalTreatmentDal>().To<MT_BC_ChemicalTreatmentDal>();
+	        Kernel.Bind<IMT_BC_ChemicalTreatmentService>().To<MT_BC_ChemicalTreatmentService>();
+		
+            Kernel.Bind<IMT_BC_TCMTreatmentDal>().To<MT_BC_TCMTreatmentDal>();
+	        Kernel.Bind<IMT_BC_TCMTreatmentService>().To<MT_BC_TCMTreatmentService>();
         }
     }
 }

@@ -10,7 +10,6 @@ namespace MalignantTumorSystem.Common.Log
     public class Log4NetWriter : ILogWriter
     {
 
-
         public void WriteLogInfo(string txt)
         {
             ILog logWriter = log4net.LogManager.GetLogger("Tumor");

@@ -3,6 +3,21 @@
     ViewBag.Title = "内分泌治疗";
     Layout = "~/Views/Shared/MyLayoutH.cshtml";
 }
+
+@section head{
+    <script src="~/Scripts/Areas/BreastCancer/BC_Treatment_Endocrinotherapy/Submit.js"></script>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments";
+    </script>
+}
+
 <table class="table table-border table-bordered table-hover">
     <tbody>
         <tr>
@@ -10,7 +25,7 @@
                 辅助内分泌治疗
             </td>
             <td style="width:10%" class="text-r">
-               绝经前
+                绝经前
             </td>
             <td style="width:70%">
                 <textarea id="zl1q" name="zl1q" style="width:98%" rows="3" class="textarea radius"></textarea>
@@ -35,7 +50,7 @@
                 <textarea id="zl2q" name="zl2q" style="width:98%" rows="3" class="textarea radius"></textarea>
             </td>
         </tr>
-        <tr> 
+        <tr>
             <td style="width:10%" class="text-r">
                 绝经后
             </td>
@@ -46,7 +61,7 @@
         <tr>
             <td style="width:20%" rowspan="2" class="text-r">
                 复发转移性乳腺癌的内分泌治疗
-            </td> 
+            </td>
             <td style="width:10%" class="text-r">
                 绝经前
             </td>

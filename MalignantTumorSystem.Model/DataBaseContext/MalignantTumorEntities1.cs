@@ -559,6 +559,39 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 		
 	 
             //modelBuilder.Configurations.Add(new MT_Comm_Adults_Health_Examination_NewMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new ErrorLogMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new UserLogMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_ClinicalExaminationMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_MammographyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_UltrasonographyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_PathologicalDiagnosisMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_OperativeTreatmentMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_RadiotherapyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_EndocrinotherapyMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_ChemicalTreatmentMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_TCMTreatmentMap());
      }
 		
 	     public DbSet<Comm_Platform_Worker> Comm_Platform_Worker { get; set; }
@@ -744,5 +777,27 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 	     public DbSet<MT_BC_Followup_Dose> MT_BC_Followup_Dose { get; set; }
 		
 	     public DbSet<MT_Comm_Adults_Health_Examination_New> MT_Comm_Adults_Health_Examination_New { get; set; }
+		
+	     public DbSet<ErrorLog> ErrorLog { get; set; }
+		
+	     public DbSet<UserLog> UserLog { get; set; }
+		
+	     public DbSet<MT_BC_ClinicalExamination> MT_BC_ClinicalExamination { get; set; }
+		
+	     public DbSet<MT_BC_Mammography> MT_BC_Mammography { get; set; }
+		
+	     public DbSet<MT_BC_Ultrasonography> MT_BC_Ultrasonography { get; set; }
+		
+	     public DbSet<MT_BC_PathologicalDiagnosis> MT_BC_PathologicalDiagnosis { get; set; }
+		
+	     public DbSet<MT_BC_OperativeTreatment> MT_BC_OperativeTreatment { get; set; }
+		
+	     public DbSet<MT_BC_Radiotherapy> MT_BC_Radiotherapy { get; set; }
+		
+	     public DbSet<MT_BC_Endocrinotherapy> MT_BC_Endocrinotherapy { get; set; }
+		
+	     public DbSet<MT_BC_ChemicalTreatment> MT_BC_ChemicalTreatment { get; set; }
+		
+	     public DbSet<MT_BC_TCMTreatment> MT_BC_TCMTreatment { get; set; }
    }
 }

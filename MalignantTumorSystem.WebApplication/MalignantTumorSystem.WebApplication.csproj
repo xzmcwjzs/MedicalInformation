@@ -53,7 +53,8 @@
     <Reference Include="Framework">
       <HintPath>..\packages\WebForm\Framework.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -256,6 +257,8 @@
     <Compile Include="Controllers\Lifestyle_EatingHabitsController.cs" />
     <Compile Include="Controllers\Lifestyle_PhysicalExerciseController.cs" />
     <Compile Include="Controllers\Lifestyle_SmokeAndDrinkController.cs" />
+    <Compile Include="Controllers\Log_ExceptionController.cs" />
+    <Compile Include="Controllers\Log_UserController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MedicalHistory_AccessoryExamination_CTCheckController.cs" />
     <Compile Include="Controllers\MedicalHistory_AccessoryExamination_HeartCheckController.cs" />
@@ -1069,9 +1072,28 @@
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Show.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_Mammography\Control.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_Mammography\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_Mammography\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_PathologicalDiagnosis\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_PathologicalDiagnosis\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Control.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_SelfCheck\Update.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_Ultrasonography\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_Ultrasonography\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_ChemicalTreatment\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_ChemicalTreatment\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_Endocrinotherapy\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_Endocrinotherapy\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_OperativeTreatment\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_OperativeTreatment\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_Radiotherapy\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_Radiotherapy\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_TCMTreatment\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_Treatment_TCMTreatment\Submit.js" />
     <Content Include="Scripts\Areas\NasopharynxCancer\NC_FollowupAndExamination_SFJL\Control.js" />
     <Content Include="Scripts\BasicInformation\Query.js" />
     <Content Include="Scripts\BasicInformation\Records_FirstPage.js" />
@@ -1268,6 +1290,25 @@
     <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\PEShow.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\PEUpdate.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_FollowupAndExamination_PE\ListAll.cshtml" />
+    <Content Include="Common\Config\log4net.config" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\ClinicalExaminationShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_ClinicalExamination\ClinicalExaminationUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\MammographyShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Mammography\MammographyUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\UltrasonographyShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_Ultrasonography\UltrasonographyUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PathologicalDiagnosis\PathologicalDiagnosisShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_ScreeningAndDiagnosis_PathologicalDiagnosis\PathologicalDiagnosisUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_OperativeTreatment\OperativeTreatmentShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_OperativeTreatment\OperativeTreatmentUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_Radiotherapy\RadiotherapyShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_Radiotherapy\RadiotherapyUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_Endocrinotherapy\EndocrinotherapyShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_Endocrinotherapy\EndocrinotherapyUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_ChemicalTreatment\ChemicalTreatmentShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_ChemicalTreatment\ChemicalTreatmentUpdate.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\TCMTreatmentShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\TCMTreatmentUpdate.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />
@@ -2768,6 +2809,15 @@
     <Content Include="Views\BasicInformation\DWZPersonalFrame.cshtml" />
     <Content Include="Views\Frame\LeftNasopharynxCancer.cshtml" />
     <Content Include="Views\Main\HuiIndex.cshtml" />
+    <Content Include="Views\Log_Exception\Frame.cshtml" />
+    <Content Include="Views\Log_Exception\Top.cshtml" />
+    <Content Include="Views\Log_Exception\Body.cshtml" />
+    <Content Include="Views\Log_Exception\List.cshtml" />
+    <Content Include="Views\Log_Exception\Show.cshtml" />
+    <Content Include="Views\Log_User\Frame.cshtml" />
+    <Content Include="Views\Log_User\Top.cshtml" />
+    <Content Include="Views\Log_User\Body.cshtml" />
+    <Content Include="Views\Log_User\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -145,11 +145,21 @@
     <Compile Include="Entities\Comm_ResidentFile_Followup_Surgery.cs" />
     <Compile Include="Entities\Comm_ResidentFile_Followup_Trauma.cs" />
     <Compile Include="Entities\Comm_Tumour.cs" />
+    <Compile Include="Entities\ErrorLog.cs" />
     <Compile Include="Entities\ICD_10_old.cs" />
     <Compile Include="Entities\ICD_9_old.cs" />
+    <Compile Include="Entities\MT_BC_ChemicalTreatment.cs" />
+    <Compile Include="Entities\MT_BC_ClinicalExamination.cs" />
+    <Compile Include="Entities\MT_BC_Endocrinotherapy.cs" />
     <Compile Include="Entities\MT_BC_Followup.cs" />
     <Compile Include="Entities\MT_BC_Followup_Dose.cs" />
+    <Compile Include="Entities\MT_BC_Mammography.cs" />
+    <Compile Include="Entities\MT_BC_OperativeTreatment.cs" />
+    <Compile Include="Entities\MT_BC_PathologicalDiagnosis.cs" />
+    <Compile Include="Entities\MT_BC_Radiotherapy.cs" />
     <Compile Include="Entities\MT_BC_SelfCheck.cs" />
+    <Compile Include="Entities\MT_BC_TCMTreatment.cs" />
+    <Compile Include="Entities\MT_BC_Ultrasonography.cs" />
     <Compile Include="Entities\MT_Comm_Adults_Health_Examination_New.cs" />
     <Compile Include="Entities\MT_RoleInfo.cs" />
     <Compile Include="Entities\MT_WorkerRoleInfo.cs" />
@@ -160,6 +170,7 @@
     <Compile Include="Entities\Share_Province.cs" />
     <Compile Include="Entities\Share_Street.cs" />
     <Compile Include="Entities\Test.cs" />
+    <Compile Include="Entities\UserLog.cs" />
     <Compile Include="Enum\EHRAbstractTypeEnum.cs" />
     <Compile Include="Enum\EntityTypeEnum.cs" />
     <Compile Include="Enum\UserNameEnum.cs" />
@@ -260,6 +271,50 @@
     <Compile Include="Migrations\201706170323460_add_MT_Comm_Adults_Health_Examination_New.Designer.cs">
       <DependentUpon>201706170323460_add_MT_Comm_Adults_Health_Examination_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706181446078_add_ErrorLog.cs" />
+    <Compile Include="Migrations\201706181446078_add_ErrorLog.Designer.cs">
+      <DependentUpon>201706181446078_add_ErrorLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706190805465_add_MT_BC_ClinicalExamination.cs" />
+    <Compile Include="Migrations\201706190805465_add_MT_BC_ClinicalExamination.Designer.cs">
+      <DependentUpon>201706190805465_add_MT_BC_ClinicalExamination.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706200729096_add_UserLog.cs" />
+    <Compile Include="Migrations\201706200729096_add_UserLog.Designer.cs">
+      <DependentUpon>201706200729096_add_UserLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706201017202_add_MT_BC_Mammography.cs" />
+    <Compile Include="Migrations\201706201017202_add_MT_BC_Mammography.Designer.cs">
+      <DependentUpon>201706201017202_add_MT_BC_Mammography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706210129085_add_MT_BC_Ultrasonography.cs" />
+    <Compile Include="Migrations\201706210129085_add_MT_BC_Ultrasonography.Designer.cs">
+      <DependentUpon>201706210129085_add_MT_BC_Ultrasonography.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706210816038_add_MT_BC_PathologicalDiagnosis.cs" />
+    <Compile Include="Migrations\201706210816038_add_MT_BC_PathologicalDiagnosis.Designer.cs">
+      <DependentUpon>201706210816038_add_MT_BC_PathologicalDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706220705169_add_MT_BC_OperativeTreatment.cs" />
+    <Compile Include="Migrations\201706220705169_add_MT_BC_OperativeTreatment.Designer.cs">
+      <DependentUpon>201706220705169_add_MT_BC_OperativeTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706220827577_add_MT_BC_Radiotherapy.cs" />
+    <Compile Include="Migrations\201706220827577_add_MT_BC_Radiotherapy.Designer.cs">
+      <DependentUpon>201706220827577_add_MT_BC_Radiotherapy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706221011492_add_MT_BC_Endocrinotherapy.cs" />
+    <Compile Include="Migrations\201706221011492_add_MT_BC_Endocrinotherapy.Designer.cs">
+      <DependentUpon>201706221011492_add_MT_BC_Endocrinotherapy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706221250036_add_MT_BC_ChemicalTreatment.cs" />
+    <Compile Include="Migrations\201706221250036_add_MT_BC_ChemicalTreatment.Designer.cs">
+      <DependentUpon>201706221250036_add_MT_BC_ChemicalTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706221326491_add_MT_BC_TCMTreatment.cs" />
+    <Compile Include="Migrations\201706221326491_add_MT_BC_TCMTreatment.Designer.cs">
+      <DependentUpon>201706221326491_add_MT_BC_TCMTreatment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchParam\BaseParam.cs" />
@@ -295,7 +350,41 @@
     <EmbeddedResource Include="Migrations\201706170323460_add_MT_Comm_Adults_Health_Examination_New.resx">
       <DependentUpon>201706170323460_add_MT_Comm_Adults_Health_Examination_New.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706181446078_add_ErrorLog.resx">
+      <DependentUpon>201706181446078_add_ErrorLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706190805465_add_MT_BC_ClinicalExamination.resx">
+      <DependentUpon>201706190805465_add_MT_BC_ClinicalExamination.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706200729096_add_UserLog.resx">
+      <DependentUpon>201706200729096_add_UserLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706201017202_add_MT_BC_Mammography.resx">
+      <DependentUpon>201706201017202_add_MT_BC_Mammography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706210129085_add_MT_BC_Ultrasonography.resx">
+      <DependentUpon>201706210129085_add_MT_BC_Ultrasonography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706210816038_add_MT_BC_PathologicalDiagnosis.resx">
+      <DependentUpon>201706210816038_add_MT_BC_PathologicalDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706220705169_add_MT_BC_OperativeTreatment.resx">
+      <DependentUpon>201706220705169_add_MT_BC_OperativeTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706220827577_add_MT_BC_Radiotherapy.resx">
+      <DependentUpon>201706220827577_add_MT_BC_Radiotherapy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706221011492_add_MT_BC_Endocrinotherapy.resx">
+      <DependentUpon>201706221011492_add_MT_BC_Endocrinotherapy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706221250036_add_MT_BC_ChemicalTreatment.resx">
+      <DependentUpon>201706221250036_add_MT_BC_ChemicalTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706221326491_add_MT_BC_TCMTreatment.resx">
+      <DependentUpon>201706221326491_add_MT_BC_TCMTreatment.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

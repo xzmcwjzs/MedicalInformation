@@ -72,7 +72,23 @@ namespace MalignantTumorSystem.Model.Enum
         [Description("MT_BC_Followup")]
         Followup,
         [Description("MT_Comm_Adults_Health_Examination_New")]
-        AdultsHealthExamination
+        AdultsHealthExamination,
+        [Description("MT_BC_ClinicalExamination")]
+        ClinicalExamination,
+        [Description("MT_BC_Mammography")]
+        Mammography,
+        [Description("MT_BC_Ultrasonography")]
+        Ultrasonography,
+        [Description("MT_BC_OperativeTreatment")]
+        OperativeTreatment,
+        [Description("MT_BC_Radiotherapy")]
+        Radiotherapy,
+        [Description("MT_BC_Endocrinotherapy")]
+        Endocrinotherapy,
+        [Description("MT_BC_ChemicalTreatment")]
+        ChemicalTreatment,
+        [Description("MT_BC_TCMTreatment")]
+        TCMTreatment
 
     }
 }

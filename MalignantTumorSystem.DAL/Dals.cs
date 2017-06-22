@@ -380,4 +380,48 @@ namespace MalignantTumorSystem.DAL{
 	public partial class MT_Comm_Adults_Health_Examination_NewDal:BaseDal<MT_Comm_Adults_Health_Examination_New>,IMT_Comm_Adults_Health_Examination_NewDal
     {
 	}
+		
+	public partial class ErrorLogDal:BaseDal<ErrorLog>,IErrorLogDal
+    {
+	}
+		
+	public partial class UserLogDal:BaseDal<UserLog>,IUserLogDal
+    {
+	}
+		
+	public partial class MT_BC_ClinicalExaminationDal:BaseDal<MT_BC_ClinicalExamination>,IMT_BC_ClinicalExaminationDal
+    {
+	}
+		
+	public partial class MT_BC_MammographyDal:BaseDal<MT_BC_Mammography>,IMT_BC_MammographyDal
+    {
+	}
+		
+	public partial class MT_BC_UltrasonographyDal:BaseDal<MT_BC_Ultrasonography>,IMT_BC_UltrasonographyDal
+    {
+	}
+		
+	public partial class MT_BC_PathologicalDiagnosisDal:BaseDal<MT_BC_PathologicalDiagnosis>,IMT_BC_PathologicalDiagnosisDal
+    {
+	}
+		
+	public partial class MT_BC_OperativeTreatmentDal:BaseDal<MT_BC_OperativeTreatment>,IMT_BC_OperativeTreatmentDal
+    {
+	}
+		
+	public partial class MT_BC_RadiotherapyDal:BaseDal<MT_BC_Radiotherapy>,IMT_BC_RadiotherapyDal
+    {
+	}
+		
+	public partial class MT_BC_EndocrinotherapyDal:BaseDal<MT_BC_Endocrinotherapy>,IMT_BC_EndocrinotherapyDal
+    {
+	}
+		
+	public partial class MT_BC_ChemicalTreatmentDal:BaseDal<MT_BC_ChemicalTreatment>,IMT_BC_ChemicalTreatmentDal
+    {
+	}
+		
+	public partial class MT_BC_TCMTreatmentDal:BaseDal<MT_BC_TCMTreatment>,IMT_BC_TCMTreatmentDal
+    {
+	}
 }

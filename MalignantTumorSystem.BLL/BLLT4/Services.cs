@@ -838,4 +838,103 @@ namespace MalignantTumorSystem.BLL
             //CurrentDal =NinjectDI.GetMT_Comm_Adults_Health_Examination_NewDal;
         } 
 	}  
+	
+	public partial class ErrorLogService:BaseService<ErrorLog>,IErrorLogService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetErrorLogDal();
+            //CurrentDal =NinjectDI.GetErrorLogDal;
+        } 
+	}  
+	
+	public partial class UserLogService:BaseService<UserLog>,IUserLogService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetUserLogDal();
+            //CurrentDal =NinjectDI.GetUserLogDal;
+        } 
+	}  
+	
+	public partial class MT_BC_ClinicalExaminationService:BaseService<MT_BC_ClinicalExamination>,IMT_BC_ClinicalExaminationService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_ClinicalExaminationDal();
+            //CurrentDal =NinjectDI.GetMT_BC_ClinicalExaminationDal;
+        } 
+	}  
+	
+	public partial class MT_BC_MammographyService:BaseService<MT_BC_Mammography>,IMT_BC_MammographyService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_MammographyDal();
+            //CurrentDal =NinjectDI.GetMT_BC_MammographyDal;
+        } 
+	}  
+	
+	public partial class MT_BC_UltrasonographyService:BaseService<MT_BC_Ultrasonography>,IMT_BC_UltrasonographyService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_UltrasonographyDal();
+            //CurrentDal =NinjectDI.GetMT_BC_UltrasonographyDal;
+        } 
+	}  
+	
+	public partial class MT_BC_PathologicalDiagnosisService:BaseService<MT_BC_PathologicalDiagnosis>,IMT_BC_PathologicalDiagnosisService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_PathologicalDiagnosisDal();
+            //CurrentDal =NinjectDI.GetMT_BC_PathologicalDiagnosisDal;
+        } 
+	}  
+	
+	public partial class MT_BC_OperativeTreatmentService:BaseService<MT_BC_OperativeTreatment>,IMT_BC_OperativeTreatmentService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_OperativeTreatmentDal();
+            //CurrentDal =NinjectDI.GetMT_BC_OperativeTreatmentDal;
+        } 
+	}  
+	
+	public partial class MT_BC_RadiotherapyService:BaseService<MT_BC_Radiotherapy>,IMT_BC_RadiotherapyService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_RadiotherapyDal();
+            //CurrentDal =NinjectDI.GetMT_BC_RadiotherapyDal;
+        } 
+	}  
+	
+	public partial class MT_BC_EndocrinotherapyService:BaseService<MT_BC_Endocrinotherapy>,IMT_BC_EndocrinotherapyService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_EndocrinotherapyDal();
+            //CurrentDal =NinjectDI.GetMT_BC_EndocrinotherapyDal;
+        } 
+	}  
+	
+	public partial class MT_BC_ChemicalTreatmentService:BaseService<MT_BC_ChemicalTreatment>,IMT_BC_ChemicalTreatmentService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_ChemicalTreatmentDal();
+            //CurrentDal =NinjectDI.GetMT_BC_ChemicalTreatmentDal;
+        } 
+	}  
+	
+	public partial class MT_BC_TCMTreatmentService:BaseService<MT_BC_TCMTreatment>,IMT_BC_TCMTreatmentService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_TCMTreatmentDal();
+            //CurrentDal =NinjectDI.GetMT_BC_TCMTreatmentDal;
+        } 
+	}  
 }

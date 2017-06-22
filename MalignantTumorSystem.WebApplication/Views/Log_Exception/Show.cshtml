@@ -1,0 +1,30 @@
+﻿@model MalignantTumorSystem.Model.Entities.ErrorLog
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>详细信息</title>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script> 
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.ie.css" rel="stylesheet" />
+    <![endif]-->
+    
+</head>
+<body>
+    <div style="width:96%;padding-left:2%">
+        <div class="panel panel-default">
+            <div class="panel-header">异常消息</div>
+            <div class="panel-body">
+                @Model.sMessage
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

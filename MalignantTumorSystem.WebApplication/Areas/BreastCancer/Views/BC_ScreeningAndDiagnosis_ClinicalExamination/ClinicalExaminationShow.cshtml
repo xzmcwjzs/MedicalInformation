@@ -1,0 +1,305 @@
+﻿@{
+    ViewBag.Title = "临床检查";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_ClinicalExamination/Show.js"></script>
+    <script>
+    var id = "@ViewBag.id";
+    var no = "@ViewBag.no";
+    var resident_id = "@ViewBag.resident_id";
+    var worker = "@ViewBag.worker";
+    var real_name = "@ViewBag.real_name";
+    var community_code = "@ViewBag.community_code";
+    var type = "@ViewBag.type";
+    var departments = "@ViewBag.departments";
+    </script>
+
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:8%;" rowspan="10">肿块</td>
+        <td class="my-style2" style="width:8%" rowspan="2">大小</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="tumorsizeleft" id="tumorsizeleft1" />&lt;1cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="tumorsizeleft" id="tumorsizeleft2" />1-2cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="tumorsizeleft" id="tumorsizeleft3" />2-5cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="tumorsizeleft" id="tumorsizeleft4" />&gt;5cm</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="tumorsizeright" id="tumorsizeright1" />&lt;1cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="tumorsizeright" id="tumorsizeright2" />1-2cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="tumorsizeright" id="tumorsizeright3" />2-5cm</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="tumorsizeright" id="tumorsizeright4" />&gt;5cm</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:8%" rowspan="2">部位</td>
+        <td class="my-style1" style="width:4%;">左</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="tumorpositionleft" id="tumorpositionleft1" />外上象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="tumorpositionleft" id="tumorpositionleft2" />内上象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="tumorpositionleft" id="tumorpositionleft3" />外下象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="tumorpositionleft" id="tumorpositionleft4" />内下象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="tumorpositionleft" id="tumorpositionleft5" />中央区</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="tumorpositionright" id="tumorpositionright1" />外上象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="tumorpositionright" id="tumorpositionright2" />内上象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="tumorpositionright" id="tumorpositionright3" />外下象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="tumorpositionright" id="tumorpositionright4" />内下象限</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="tumorpositionright" id="tumorpositionright5" />中央区</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:8%" rowspan="2">形态</td>
+        <td class="my-style1" style="width:4%;">左</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorshapeleft" id="tumorshapeleft1" />圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorshapeleft" id="tumorshapeleft2" />椭圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorshapeleft" id="tumorshapeleft3" />分叶形</label>
+            <label style="padding-left:2em;"><input type="radio" value="4" name="tumorshapeleft" id="tumorshapeleft4" />不规则性</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorshaperight" id="tumorshaperight1" />圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorshaperight" id="tumorshaperight2" />椭圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorshaperight" id="tumorshaperight3" />分叶形</label>
+            <label style="padding-left:2em;"><input type="radio" value="4" name="tumorshaperight" id="tumorshaperight4" />不规则性</label>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="my-style2" style="width:8%" rowspan="2">质地</td>
+        <td class="my-style1" style="width:4%;">左</td>
+        <td class="my-style3" style="width:30%" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorqualityleft" id="tumorqualityleft1" />软</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorqualityleft" id="tumorqualityleft2" />较硬</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorqualityleft" id="tumorqualityleft3" />硬</label>
+        </td>
+        <td class="my-style2" style="width:8%" rowspan="2">边界</td>
+        <td class="my-style1" style="width:4%;">左</td>
+        <td class="my-style3" style="width:30%" colspan="2">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorborderleft" id="tumorborderleft1" />清楚</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorborderleft" id="tumorborderleft2" />不清楚</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:30%" colspan="3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorqualityright" id="tumorqualityright1" />软</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorqualityright" id="tumorqualityright2" />较硬</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorqualityright" id="tumorqualityright3" />硬</label>
+        </td>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:30%" colspan="2">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorborderright" id="tumorborderright1" />清楚</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorborderright" id="tumorborderright2" />不清楚</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:8%" rowspan="2">活动度</td>
+        <td class="my-style1" style="width:4%;">左</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumoractivityleft" id="tumoractivityleft1" />活动</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumoractivityleft" id="tumoractivityleft2" />较差</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumoractivityleft" id="tumoractivityleft3" />固定于皮肤</label>
+            <label style="padding-left:2em;"><input type="radio" value="4" name="tumoractivityleft" id="tumoractivityleft4" />固定于胸壁</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%;">右</td>
+        <td class="my-style3" style="width:80%" colspan="7">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumoractivityright" id="tumoractivityright1" />活动</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumoractivityright" id="tumoractivityright2" />较差</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumoractivityright" id="tumoractivityright3" />固定于皮肤</label>
+            <label style="padding-left:2em;"><input type="radio" value="4" name="tumoractivityright" id="tumoractivityright4" />固定于胸壁</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:8%;" rowspan="2">溢液</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="dischargeleft" id="dischargeleft1" />无</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="dischargeleft" id="dischargeleft2" />单管</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="dischargeleft" id="dischargeleft3" />多管</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="dischargeleft" id="dischargeleft4" />血性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="dischargeleft" id="dischargeleft5" />血清样</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="6" name="dischargeleft" id="dischargeleft6" />水样</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="7" name="dischargeleft" id="dischargeleft7" />浆液性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="8" name="dischargeleft" id="dischargeleft8" />脓性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="9" name="dischargeleft" id="dischargeleft9" />乳汁样</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%">右</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="dischargeright" id="dischargeright1" />无</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="dischargeright" id="dischargeright2" />单管</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="dischargeright" id="dischargeright3" />多管</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="dischargeright" id="dischargeright4" />血性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="dischargeright" id="dischargeright5" />血清样</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="6" name="dischargeright" id="dischargeright6" />水样</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="7" name="dischargeright" id="dischargeright7" />浆液性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="8" name="dischargeright" id="dischargeright8" />脓性</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="9" name="dischargeright" id="dischargeright9" />乳汁样</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:8%;" rowspan="2">乳头</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="papillaleft" id="papilllaleft1" />正常</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="papillaleft" id="papilllaleft2" />回缩</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="papillaleft" id="papilllaleft3" />凹陷</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="papillaleft" id="papilllaleft4" />糜烂</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="papillaleft" id="papilllaleft5" />上抬</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%">右</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="papillaright" id="papilllaright1" />正常</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="papillaright" id="papilllaright2" />回缩</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="papillaright" id="papilllaright3" />凹陷</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="papillaright" id="papilllaright4" />糜烂</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="papillaright" id="papilllaright5" />上抬</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:8%;" rowspan="2">皮肤</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="skinleft" id="skinleft1" />正常</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="skinleft" id="skinleft2" />粘连</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="skinleft" id="skinleft3" />红肿</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="skinleft" id="skinleft4" />静脉曲张</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="skinleft" id="skinleft5" />凹陷</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="6" name="skinleft" id="skinleft6" />水肿</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="7" name="skinleft" id="skinleft7" />溃疡</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="8" name="skinleft" id="skinleft8" />卫星结节</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%">右</td>
+        <td class="my-style3" style="width:80%" colspan="8">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="skinright" id="skinright1" />正常</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="skinright" id="skinright2" />粘连</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="skinright" id="skinright3" />红肿</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="4" name="skinright" id="skinright4" />静脉曲张</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="5" name="skinright" id="skinright5" />凹陷</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="6" name="skinright" id="skinright6" />水肿</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="7" name="skinright" id="skinright7" />溃疡</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="8" name="skinright" id="skinright8" />卫星结节</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:8%;" rowspan="2">腋淋巴结</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:25%" colspan="3">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="ylymphleft" id="ylymphleft1" />未触及</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="ylymphleft" id="ylymphleft2" />触及不疑癌</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="ylymphleft" id="ylymphleft3" />触及可疑癌</label>
+        </td>
+        <td class="my-style1" style="width:8%;" rowspan="2">锁骨上淋巴结</td>
+        <td class="my-style1" style="width:4%">左</td>
+        <td class="my-style3" style="width:25%" colspan="3">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="sglymphleft" id="sglymphleft1" />未触及</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="sglymphleft" id="sglymphleft2" />触及不疑癌</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="sglymphleft" id="sglymphleft3" />触及可疑癌</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:4%">右</td>
+        <td class="my-style3" style="width:25%" colspan="3">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="ylymphright" id="ylymphright1" />未触及</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="ylymphright" id="ylymphright2" />触及不疑癌</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="ylymphright" id="ylymphright3" />触及可疑癌</label>
+        </td>
+        <td class="my-style1" style="width:4%">右</td>
+        <td class="my-style3" style="width:25%" colspan="3">
+            <label style="padding-left:1em;"><input type="checkbox" value="1" name="sglymphright" id="sglymphright1" />未触及</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="2" name="sglymphright" id="sglymphright2" />触及不疑癌</label>
+            <label style="padding-left:2em;"><input type="checkbox" value="3" name="sglymphright" id="sglymphright3" />触及可疑癌</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" colspan="2">是否需要进一步检查</td>
+        <td class="my-style3" colspan="2">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="isre_examine" id="isre_examiney" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="isre_examine" id="isre_examinen" />否</label>
+        </td>
+        <td class="my-style1" colspan="2">初步诊断印象</td>
+        <td class="my-style3" colspan="4">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="firstresult" id="firstresult1" />未见异常</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="firstresult" id="firstresult2" />良性病变</label>
+            <label style="padding-left:1em;"><input type="radio" value="3" name="firstresult" id="firstresult3" />良性肿瘤</label>
+            <label style="padding-left:1em;"><input type="radio" value="4" name="firstresult" id="firstresult4" />可疑恶性</label>
+            <label style="padding-left:1em;"><input type="radio" value="5" name="firstresult" id="firstresult5" />恶性</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1">备注</td>
+        <td class="my-style3" colspan="9">
+            <textarea id="comment" name="comment" style="width:90%;" rows="2"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" colspan="6"></td>
+        <td class="my-style1">
+            医师
+        </td>
+        <td class="my-style3">
+            <input type="text" id="doctor" name="doctor" style="width:100px;" />
+        </td>
+        <td class="my-style1">
+            日期
+        </td>
+        <td class="my-style3">
+            <input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" />
+        </td>
+    </tr> 
+</table>
+
+

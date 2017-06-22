@@ -376,4 +376,48 @@ namespace MalignantTumorSystem.IDAL
 	public partial interface IMT_Comm_Adults_Health_Examination_NewDal : IBaseDal<MT_Comm_Adults_Health_Examination_New>
     { 
     }   
+	
+	public partial interface IErrorLogDal : IBaseDal<ErrorLog>
+    { 
+    }   
+	
+	public partial interface IUserLogDal : IBaseDal<UserLog>
+    { 
+    }   
+	
+	public partial interface IMT_BC_ClinicalExaminationDal : IBaseDal<MT_BC_ClinicalExamination>
+    { 
+    }   
+	
+	public partial interface IMT_BC_MammographyDal : IBaseDal<MT_BC_Mammography>
+    { 
+    }   
+	
+	public partial interface IMT_BC_UltrasonographyDal : IBaseDal<MT_BC_Ultrasonography>
+    { 
+    }   
+	
+	public partial interface IMT_BC_PathologicalDiagnosisDal : IBaseDal<MT_BC_PathologicalDiagnosis>
+    { 
+    }   
+	
+	public partial interface IMT_BC_OperativeTreatmentDal : IBaseDal<MT_BC_OperativeTreatment>
+    { 
+    }   
+	
+	public partial interface IMT_BC_RadiotherapyDal : IBaseDal<MT_BC_Radiotherapy>
+    { 
+    }   
+	
+	public partial interface IMT_BC_EndocrinotherapyDal : IBaseDal<MT_BC_Endocrinotherapy>
+    { 
+    }   
+	
+	public partial interface IMT_BC_ChemicalTreatmentDal : IBaseDal<MT_BC_ChemicalTreatment>
+    { 
+    }   
+	
+	public partial interface IMT_BC_TCMTreatmentDal : IBaseDal<MT_BC_TCMTreatment>
+    { 
+    }   
 }

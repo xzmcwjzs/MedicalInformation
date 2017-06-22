@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "病理诊断";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+    <script src="~/Scripts/MyJs/jquery-form.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_PathologicalDiagnosis/Show.js"></script>
+    <script>
+    var id = "@ViewBag.id";
+    var no = "@ViewBag.no";
+    var resident_id = "@ViewBag.resident_id";
+    var worker = "@ViewBag.worker";
+    var real_name = "@ViewBag.real_name";
+    var community_code = "@ViewBag.community_code";
+    var type = "@ViewBag.type";
+    var departments = "@ViewBag.departments";
+    </script>
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:10%;">送检日期</td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" name="sjrq" id="sjrq" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" />
+        </td>
+        <td class="my-style1" style="width:10%;">送检医师</td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" name="sjys" id="sjys" />
+        </td>
+        <td class="my-style3" style="width:60%"></td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align:center" class="my-style1">送检材料</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="my-style3" style="text-align:center">
+            <textarea id="sjcl" name="sjcl" style="width:98%;" rows="5"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">临床诊断</td>
+        <td class="my-style3" colspan="4">
+            <input type="text" name="lczd" id="lczd" />
+        </td>
+    </tr>
+    <tr id="trfiles">
+        <td class="my-style1" colspan="2">
+            光镜所见（附图）
+        </td>
+        <td class="my-style3" colspan="3">
+            <input type="file" id="gjsj" name="gjsj" multiple="multiple" /><span style="color:red">支持多张病理图片上传，格式为：dcm、jpg、jpeg、png、gif、bmp、tif</span>
+        </td> 
+    </tr> 
+
+    <tr  id="trpics">
+        <td class="my-style3" colspan="5" id="tdpics" style="text-align:center">
+            <input type="hidden" id="pic_path" name="pic_path" />  
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align:center" class="my-style1">肉眼所见</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="my-style3" style="text-align:center">
+            <textarea id="rysj" name="rysj" style="width:98%;" rows="5"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align:center" class="my-style1">病理诊断</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="my-style3" style="text-align:center">
+            <textarea id="blzd" name="blzd" style="width:98%;" rows="5"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" style="text-align:center" class="my-style1">结论</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="my-style3" style="text-align:center">
+            <textarea id="jl" name="jl" style="width:98%;" rows="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" colspan="5" style="text-align:right">
+            报告医师<input type="text" id="bgys" name="bgys" style="width:100px;" />
+            审核医师<input type="text" id="shys" name="shys" style="width:100px;" />
+            报告日期<input type="text" id="bgri" name="bgri" style="width:100px;" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: {left:-20}})" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        </td>
+    </tr> 
+</table>

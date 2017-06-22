@@ -468,4 +468,59 @@ namespace MalignantTumorSystem.IBLL
     {
        
     }
+	
+	 public partial interface IErrorLogService:IBaseService<ErrorLog>
+    {
+       
+    }
+	
+	 public partial interface IUserLogService:IBaseService<UserLog>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_ClinicalExaminationService:IBaseService<MT_BC_ClinicalExamination>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_MammographyService:IBaseService<MT_BC_Mammography>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_UltrasonographyService:IBaseService<MT_BC_Ultrasonography>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_PathologicalDiagnosisService:IBaseService<MT_BC_PathologicalDiagnosis>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_OperativeTreatmentService:IBaseService<MT_BC_OperativeTreatment>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_RadiotherapyService:IBaseService<MT_BC_Radiotherapy>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_EndocrinotherapyService:IBaseService<MT_BC_Endocrinotherapy>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_ChemicalTreatmentService:IBaseService<MT_BC_ChemicalTreatment>
+    {
+       
+    }
+	
+	 public partial interface IMT_BC_TCMTreatmentService:IBaseService<MT_BC_TCMTreatment>
+    {
+       
+    }
 }

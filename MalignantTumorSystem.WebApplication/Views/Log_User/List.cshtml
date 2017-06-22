@@ -1,0 +1,91 @@
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.UserLog>>
+@using MalignantTumorSystem.Common;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>列表页</title>
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/css/H-ui.admin.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/skin/default/skin.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/layer/2.4/skin/layer.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/skin/WdatePicker.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 用户日志列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="page-container">
+        <div class="text-c">
+            日期范围：
+            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+            -
+            <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;">
+            <button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜日志</button>
+        </div>
+        <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+                <tr class="text-c">
+                    <th width="5%">ID</th>
+                    <th width="7%">用户编号</th>
+                    <th width="8%">用户名</th>
+                    <th width="10%">ip地址</th>
+                    <th width="7%">是否支持cookies</th>
+                    <th width="8%">平台</th>
+                    <th width="32%">浏览器</th>
+                    <th width="8%">语言</th>
+                    <th width="15%">登录时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                 @{
+                         int length = Model.EntityList.Count+1;
+                         for (int i = 0; i < Model.EntityList.Count; i++)
+                         {
+                             var item = Model.EntityList[i];
+                             string id = CommonFunc.SafeGetStringFromObj(item.id);
+                             string user_id = CommonFunc.SafeGetStringFromObj(item.user_id);
+                             string user_name = CommonFunc.SafeGetStringFromObj(item.user_real_name);
+                             string ip = CommonFunc.SafeGetStringFromObj(item.ip);
+                             if (ip == "::1")
+                             {
+                                 ip = "127.0.0.1";
+                             }
+                             bool cookie = item.cookies;
+                             string platform = CommonFunc.SafeGetStringFromObj(item.platform);
+                             string user_agent = CommonFunc.SafeGetStringFromObj(item.user_agent);
+                             string language = CommonFunc.SafeGetStringFromObj(item.language);
+                             string date = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.login_time, "yyyy-MM-dd hh:mm:ss");
+                        <tr class="text-c">
+                            <td>@(--length)</td>
+                            <td>@user_id</td>
+                            <td>@user_name</td>
+                            <td>@ip</td>
+                            <td>@cookie</td>
+                            <td>@platform</td>
+                            <td style="text-align:left;">@user_agent</td>
+                            <td>@language</td>
+                            <td>@date</td>
+                        </tr>
+                     }
+
+                } 
+            </tbody>
+        </table>
+        @Html.ShowPagerM5(Model.Pager.PageIndex, Model.Pager.PageSize, Model.Pager.TotalCount)
+    </div>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/layer/2.4/layer.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/laypage/1.2/laypage.js"></script>
+     
+</body>
+</html>

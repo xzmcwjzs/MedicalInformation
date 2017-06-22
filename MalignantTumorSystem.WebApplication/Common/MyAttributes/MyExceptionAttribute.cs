@@ -15,7 +15,7 @@ namespace MalignantTumorSystem.WebApplication.Common.MyAttributes
 
             LogHelper.WriteLog(filterContext.Exception.ToString());
 
-            //filterContext.HttpContext.Response.Redirect("/Common/Error.html");
+            filterContext.HttpContext.Response.Redirect("/Common/Error.html");
             //filterContext.HttpContext.Response.Redirect("/Home/Index");
             //filterContext.HttpContext.Response.Write("<script type='text/javascript'> window.top.location.href='/Home/Index';</script>"); 
         }

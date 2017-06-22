@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "超声检查";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_Ultrasonography/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_Ultrasonography/Show.js"></script>
+
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments";
+    </script>
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:10%;">适应症</td>
+        <td class="my-style3" style="width:90%">
+            <label style="padding-left:0.5em;"><input type="checkbox" value="1" name="syz" id="syz1" />乳腺炎症性病变</label>
+            <label style="padding-left:0.5em;"><input type="checkbox" value="2" name="syz" id="syz2" />乳腺增生性病变</label>
+            <label style="padding-left:0.5em;"><input type="checkbox" value="2" name="syz" id="syz2" />乳腺占位性病变</label>
+            <label style="padding-left:0.5em;"><input type="checkbox" value="2" name="syz" id="syz2" />乳腺导管病变</label>
+            <a style="padding-left:0.5em;"></a>其他
+            <input type="text" name="syzqt" id="syzqt" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">检查部位</td>
+        <td class="my-style3" style="width:90%">
+            <textarea name="jcbw" id="jcbw" style="width:100%" cols="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">临床表现</td>
+        <td class="my-style3" style="width:90%">
+            <textarea name="lcbx" id="lcbx" style="width:100%" cols="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">超声表现</td>
+        <td class="my-style3" style="width:90%">
+            <textarea name="csbx" id="csbx" style="width:100%" cols="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">检查诊断</td>
+        <td class="my-style3" style="width:90%">
+            <textarea name="jczd" id="jczd" style="width:100%" cols="3"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:10%;">医生建议</td>
+        <td class="my-style3" style="width:90%">
+            <textarea name="ysjy" id="ysjy" style="width:100%" cols="3"></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="my-style3" colspan="2" style="text-align:right">
+            医师<input type="text" id="doctor" name="doctor" style="width:100px;" />
+            日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="2" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+            </div>
+        </td>
+    </tr>
+</table>
+

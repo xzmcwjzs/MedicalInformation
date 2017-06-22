@@ -1,41 +1,51 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "临床检查";
     Layout = "~/Views/Shared/MyLayout.cshtml";
 }
 
 @section head{
-    <script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_ClinicalExamination/Control.js"></script>
-    <style>
-        .my-style1 {
-            background-color: #e2ebfb;
-            padding: 3px;
-            color: black;
-            text-align: right;
-            height: 25px;
-            /*width:10%;*/
-            border: 1px white solid;
-        }
+<script src="~/Scripts/Areas/BreastCancer/BC_ScreeningAndDiagnosis_ClinicalExamination/Submit.js"></script>
+<script>
+    var id = "@ViewBag.id";
+    var no = "@ViewBag.no";
+    var resident_id = "@ViewBag.resident_id";
+    var worker = "@ViewBag.worker";
+    var real_name = "@ViewBag.real_name";
+    var community_code = "@ViewBag.community_code";
+    var type = "@ViewBag.type";
+    var departments = "@ViewBag.departments";
+</script>
 
-        .my-style2 {
-            background-color: #f1f3f5;
-            padding: 3px;
-            color: black;
-            text-align: right;
-            height: 25px;
-            /*width:10%;*/
-            border: 1px white solid;
-        }
+<style>
+    .my-style1 {
+        background-color: #e2ebfb;
+        padding: 3px;
+        color: black;
+        text-align: right;
+        height: 25px;
+        /*width:10%;*/
+        border: 1px white solid;
+    }
 
-        .my-style3 {
-            background-color: #f1f3f5;
-            padding: 3px;
-            height: 25px;
-            /*width:10%;*/
-            text-align: left;
-            border: 1px white solid;
-        }
-    </style>
+    .my-style2 {
+        background-color: #f1f3f5;
+        padding: 3px;
+        color: black;
+        text-align: right;
+        height: 25px;
+        /*width:10%;*/
+        border: 1px white solid;
+    }
+
+    .my-style3 {
+        background-color: #f1f3f5;
+        padding: 3px;
+        height: 25px;
+        /*width:10%;*/
+        text-align: left;
+        border: 1px white solid;
+    }
+</style>
 }
 
 <table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
@@ -93,10 +103,10 @@
     <tr>
         <td class="my-style1" style="width:4%;">右</td>
         <td class="my-style3" style="width:80%" colspan="7">
-            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorshapeleft" id="tumorshapeleft1" />圆形</label>
-            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorshapeleft" id="tumorshapeleft2" />椭圆形</label>
-            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorshapeleft" id="tumorshapeleft3" />分叶形</label>
-            <label style="padding-left:2em;"><input type="radio" value="4" name="tumorshapeleft" id="tumorshapeleft4" />不规则性</label>
+            <label style="padding-left:1em;"><input type="radio" value="1" name="tumorshaperight" id="tumorshaperight1" />圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="2" name="tumorshaperight" id="tumorshaperight2" />椭圆形</label>
+            <label style="padding-left:2em;"><input type="radio" value="3" name="tumorshaperight" id="tumorshaperight3" />分叶形</label>
+            <label style="padding-left:2em;"><input type="radio" value="4" name="tumorshaperight" id="tumorshaperight4" />不规则性</label>
         </td>
     </tr>
 
@@ -266,12 +276,12 @@
             <label style="padding-left:1em;"><input type="radio" value="2" name="firstresult" id="firstresult2" />良性病变</label>
             <label style="padding-left:1em;"><input type="radio" value="3" name="firstresult" id="firstresult3" />良性肿瘤</label>
             <label style="padding-left:1em;"><input type="radio" value="4" name="firstresult" id="firstresult4" />可疑恶性</label>
-            <label style="padding-left:1em;"><input type="radio" value="5" name="firstresult" id="firstresult5" />恶性</label> 
+            <label style="padding-left:1em;"><input type="radio" value="5" name="firstresult" id="firstresult5" />恶性</label>
         </td>
     </tr>
     <tr>
         <td class="my-style1">备注</td>
-        <td class="my-style3"colspan="9">
+        <td class="my-style3" colspan="9">
             <textarea id="comment" name="comment" style="width:90%;" rows="2"></textarea>
         </td>
     </tr>
@@ -281,13 +291,13 @@
             医师
         </td>
         <td class="my-style3">
-            <input type="text" id="doctor" name="doctor" style="width:100px;"/>
+            <input type="text" id="doctor" name="doctor" style="width:100px;" />
         </td>
         <td class="my-style1">
             日期
         </td>
         <td class="my-style3">
-            <input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})"/>
+            <input type="text" id="checkdate" name="checkdate" style="width:100px;" value="@DateTime.Now.ToString(" yyyy-MM-dd")" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" />
         </td>
     </tr>
     <tr id="last">

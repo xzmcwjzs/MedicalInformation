@@ -565,6 +565,72 @@ MT_BC_Followup_DoseDal;
 
 MT_Comm_Adults_Health_Examination_NewDal;
 		    }
+	  	    public static ErrorLogDal GetErrorLogDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".ErrorLogDal") as 
+
+ErrorLogDal;
+		    }
+	  	    public static UserLogDal GetUserLogDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".UserLogDal") as 
+
+UserLogDal;
+		    }
+	  	    public static MT_BC_ClinicalExaminationDal GetMT_BC_ClinicalExaminationDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_ClinicalExaminationDal") as 
+
+MT_BC_ClinicalExaminationDal;
+		    }
+	  	    public static MT_BC_MammographyDal GetMT_BC_MammographyDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_MammographyDal") as 
+
+MT_BC_MammographyDal;
+		    }
+	  	    public static MT_BC_UltrasonographyDal GetMT_BC_UltrasonographyDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_UltrasonographyDal") as 
+
+MT_BC_UltrasonographyDal;
+		    }
+	  	    public static MT_BC_PathologicalDiagnosisDal GetMT_BC_PathologicalDiagnosisDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_PathologicalDiagnosisDal") as 
+
+MT_BC_PathologicalDiagnosisDal;
+		    }
+	  	    public static MT_BC_OperativeTreatmentDal GetMT_BC_OperativeTreatmentDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_OperativeTreatmentDal") as 
+
+MT_BC_OperativeTreatmentDal;
+		    }
+	  	    public static MT_BC_RadiotherapyDal GetMT_BC_RadiotherapyDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_RadiotherapyDal") as 
+
+MT_BC_RadiotherapyDal;
+		    }
+	  	    public static MT_BC_EndocrinotherapyDal GetMT_BC_EndocrinotherapyDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_EndocrinotherapyDal") as 
+
+MT_BC_EndocrinotherapyDal;
+		    }
+	  	    public static MT_BC_ChemicalTreatmentDal GetMT_BC_ChemicalTreatmentDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_ChemicalTreatmentDal") as 
+
+MT_BC_ChemicalTreatmentDal;
+		    }
+	  	    public static MT_BC_TCMTreatmentDal GetMT_BC_TCMTreatmentDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_TCMTreatmentDal") as 
+
+MT_BC_TCMTreatmentDal;
+		    }
 	   
    }
 }

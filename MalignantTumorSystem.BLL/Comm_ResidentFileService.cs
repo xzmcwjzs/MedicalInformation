@@ -26,6 +26,7 @@ namespace MalignantTumorSystem.BLL
 
         public string GetNumberByCode1(string community_code)
         {
+            System.Web.HttpContext.Current.Application.Lock();
             string code = "";
             string sql = "select MAX(resident_id) from Comm_ResidentFile where  LEN(resident_id)=17 and SUBSTRING(resident_id,1,12)=@community_code";
             SqlParameter[] parms = new SqlParameter[] { new SqlParameter("@community_code", community_code) };
@@ -64,6 +65,7 @@ namespace MalignantTumorSystem.BLL
             {
                 code = community_code + "00001";
             }
+            System.Web.HttpContext.Current.Application.UnLock();
             return code;
         }
 

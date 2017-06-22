@@ -1,0 +1,82 @@
+﻿@model MalignantTumorSystem.WebApplication.Helpers.PagerQuery<MalignantTumorSystem.WebApplication.Helpers.PagerInfo, List<MalignantTumorSystem.Model.Entities.ErrorLog>>
+@using MalignantTumorSystem.Common;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>列表页</title> 
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/css/H-ui.admin.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/Hui-iconfont/1.0.8/iconfont.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/skin/default/skin.css" rel="stylesheet" /> 
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/layer/2.4/skin/layer.css" rel="stylesheet" />
+    <link href="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/skin/WdatePicker.css" rel="stylesheet" />
+     
+</head>
+<body>
+    <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 异常日志列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+    <div class="page-container">
+        <div class="text-c">
+            日期范围：
+            <input type="text" onfocus="WdatePicker({ maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}' })" id="datemin" class="input-text Wdate" style="width:120px;">
+            -
+            <input type="text" onfocus="WdatePicker({ minDate:'#F{$dp.$D(\'datemin\')}',maxDate:'%y-%M-%d' })" id="datemax" class="input-text Wdate" style="width:120px;"> 
+            <button type="submit" class="btn btn-success" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜日志</button>
+        </div>
+        <table class="table table-border table-bordered table-hover table-bg table-sort">
+            <thead>
+                <tr class="text-c">
+                    <th width="5%">ID</th>
+                    <th width="8%">日期</th>
+                    <th width="5%">线程号</th>
+                    <th width="8%">级别</th>
+                    <th width="10%">日志名称</th>
+                    <th width="59%">消息</th> 
+                    <th width="5%">详细</th> 
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (int i = 0; i < Model.EntityList.Count; i++)
+                {
+
+                    var item = Model.EntityList[i];
+                    string id = CommonFunc.SafeGetStringFromObj(item.nId);
+                    string date = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.dtDate, "yyyy-MM-dd");
+                    string threadId= CommonFunc.SafeGetStringFromObj(item.sThread);
+                    string level = CommonFunc.SafeGetStringFromObj(item.sLevel);
+                    string logger = CommonFunc.SafeGetStringFromObj(item.sLogger);
+                    string msg = CommonFunc.SafeGetStringFromObj(item.sMessage.Substring(0,80)+"...");
+                    <tr class="text-c">
+                        <td>@id</td>
+                        <td>@date</td>
+                        <td>@threadId</td>
+                        <td>@level</td>
+                        <td>@logger</td>
+                        <td style="text-align:left;">@msg</td> 
+                        <td><a title="查看" href="javascript:void(0);" onclick="log_show('日志查看','/Log_Exception/Show?id=@id','@id','850','500')" style="text-decoration:none"><i class="Hui-iconfont">&#xe695;</i></a> </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @Html.ShowPagerM10(Model.Pager.PageIndex, Model.Pager.PageSize, Model.Pager.TotalCount)
+    </div>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/layer/2.4/layer.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/static/h-ui.admin/js/H-ui.admin.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/MyJs/H-ui_v3.0/lib/laypage/1.2/laypage.js"></script> 
+    <script>
+        function log_show(title,url,id,w,h) { 
+            layer_show(title,url,w,h); 
+        }
+    </script>
+</body>
+</html>

@@ -4,6 +4,20 @@
     Layout = "~/Views/Shared/MyLayoutH.cshtml";
 }
 
+@section head{
+<script src="~/Scripts/Areas/BreastCancer/BC_Treatment_Radiotherapy/Submit.js"></script> 
+    <script>
+    var id = "@ViewBag.id";
+    var no = "@ViewBag.no";
+    var resident_id = "@ViewBag.resident_id";
+    var worker = "@ViewBag.worker";
+    var real_name = "@ViewBag.real_name";
+    var community_code = "@ViewBag.community_code";
+    var type = "@ViewBag.type";
+    var departments = "@ViewBag.departments";
+    </script>
+}
+
 <table class="table table-border table-bordered table-hover">
     <tbody>
         <tr>

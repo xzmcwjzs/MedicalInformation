@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "手术治疗";
+    Layout = "~/Views/Shared/MyLayoutH.cshtml";
+}
+
+@section head{
+    <script src="~/Scripts/Areas/BreastCancer/BC_Treatment_OperativeTreatment/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_Treatment_OperativeTreatment/Show.js"></script> 
+    <script>
+    var id = "@ViewBag.id";
+    var no = "@ViewBag.no";
+    var resident_id = "@ViewBag.resident_id";
+    var worker = "@ViewBag.worker";
+    var real_name = "@ViewBag.real_name";
+    var community_code = "@ViewBag.community_code";
+    var type = "@ViewBag.type";
+    var departments = "@ViewBag.departments";
+    </script>
+}
+
+<table class="table table-border table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td style="width:15%">
+                <label><input type="checkbox" id="sh1" name="sh" /> 乳腺癌保乳手术</label>
+            </td>
+            <td style="width:85%">
+                <textarea id="shxj1" name="shxj1" style="width:98%" rows="4" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:15%">
+                <label><input type="checkbox" id="sh2" name="sh" /> 乳腺癌乳房单纯切除术</label>
+            </td>
+            <td style="width:85%">
+                <textarea id="shxj2" name="shxj2" style="width:98%" rows="4" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:15%">
+                <label><input type="checkbox" id="sh3" name="sh" /> 乳腺癌改良根治术</label>
+            </td>
+            <td style="width:85%">
+                <textarea id="shxj3" name="shxj3" style="width:98%" rows="4" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:15%">
+                <label><input type="checkbox" id="sh4" name="sh" /> 乳腺癌Halsted根治术</label>
+            </td>
+            <td style="width:85%">
+                <textarea id="shxj4" name="shxj4" style="width:98%" rows="4" class="textarea radius"></textarea>
+            </td>
+        </tr>
+    </tbody>
+    <tr>
+        <td colspan="2" style="text-align:right">
+            医师<input type="text" id="doctor" name="doctor" style="width:100px;" class="input-text radius" />
+            日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="input-text radius" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="2" style="text-align:center">
+            <input class="btn btn-success radius" type="button" value="提交" id="bt1"> 
+        </td>
+    </tr>
+</table>

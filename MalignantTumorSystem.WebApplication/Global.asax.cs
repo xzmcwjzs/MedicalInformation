@@ -35,7 +35,7 @@ namespace MalignantTumorSystem.WebApplication
             #endregion
             #region LOG4Net读取配置
             //从配置文件读取log4net的配置，然后进行一个初始化工作。
-            log4net.Config.XmlConfigurator.Configure();
+            log4net.Config.XmlConfigurator.Configure(new System.IO.FileInfo("Common\\Config\\log4net.config"));
             #endregion
 
             //code first数据迁移 先删除  后新建

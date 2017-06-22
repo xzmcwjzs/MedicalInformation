@@ -217,7 +217,7 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
             resident.id_card_number = Request["id_card_number"];
             resident.birth_date = entity.birth_date;
             resident.community_code = Request["ddlCommunity"];
-            resident.individual_phone = Request["phone"];
+            resident.individual_phone = Request["txtIndividualPhone"];
             resident.permanent_home_address = Request["perment_community_address"];
             resident.nationality_name = "中国";
             resident.nationality_code = "156";

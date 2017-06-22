@@ -122,6 +122,7 @@ namespace MalignantTumorSystem.DAL
         {
             try
             {
+                Db.Configuration.ValidateOnSaveEnabled = false;
                 Db.Set<T>().Add(entity);
                 Db.Entry(entity).State = EntityState.Added;
                 return Db.SaveChanges() > 0;
@@ -131,6 +132,10 @@ namespace MalignantTumorSystem.DAL
                 if (!string.IsNullOrEmpty(ex.InnerException.Message))
                     throw new Exception("新增失败：" + ex.InnerException.Message);
                 throw new Exception("新增失败：" + ex.Message);
+            }
+            finally
+            {
+                Db.Configuration.ValidateOnSaveEnabled = true;
             }
 
         }

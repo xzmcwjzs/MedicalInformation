@@ -115,8 +115,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="IMT_BC_ChemicalTreatmentService.cs" />
+    <Compile Include="IMT_BC_ClinicalExaminationService.cs" />
+    <Compile Include="IMT_BC_EndocrinotherapyService.cs" />
     <Compile Include="IMT_BC_FollowupService.cs" />
+    <Compile Include="IMT_BC_MammographyService.cs" />
+    <Compile Include="IMT_BC_OperativeTreatmentService.cs" />
+    <Compile Include="IMT_BC_PathologicalDiagnosisService.cs" />
+    <Compile Include="IMT_BC_RadiotherapyService.cs" />
     <Compile Include="IMT_BC_SelfCheckService.cs" />
+    <Compile Include="IMT_BC_TCMTreatmentService.cs" />
+    <Compile Include="IMT_BC_UltrasonographyService.cs" />
     <Compile Include="IMT_Comm_Adults_Health_Examination_NewService.cs" />
     <Compile Include="IShare_CountyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
