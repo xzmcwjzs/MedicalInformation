@@ -88,7 +88,9 @@ namespace MalignantTumorSystem.Model.Enum
         [Description("MT_BC_ChemicalTreatment")]
         ChemicalTreatment,
         [Description("MT_BC_TCMTreatment")]
-        TCMTreatment
+        TCMTreatment,
+        [Description("MT_BC_21Genes")]
+        Genes
 
     }
 }

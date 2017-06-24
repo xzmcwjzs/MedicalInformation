@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/MyLayoutH.cshtml";
 }
 @section head{
-<script src="~/Scripts/Areas/BreastCancer/BC_GenesAndProteomics_21/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_GenesAndProteomics_21/Show.js"></script>
     <script>
         var id = "@ViewBag.id";
         var no = "@ViewBag.no";
@@ -149,34 +149,34 @@
         <tr>
             <td>GAPDH</td>
             <td>
-                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px"id="GAPDH" name="GAPDH">
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px" id="GAPDH" name="GAPDH">
             </td>
         </tr>
         <tr>
             <td>RPLPO</td>
             <td>
-                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px"id="RPLPO" name="RPLPO">
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px" id="RPLPO" name="RPLPO">
             </td>
         </tr>
         <tr>
             <td>GUS</td>
             <td>
-                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px"id="GUS" name="GUS">
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px" id="GUS" name="GUS">
             </td>
         </tr>
         <tr>
             <td>TFRC</td>
             <td>
-                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px"id="TFRC" name="TFRC">
+                <input type="text" placeholder="ct值" class="input-text radius size-S" style="width:50px" id="TFRC" name="TFRC">
             </td>
         </tr>
         <tr>
             <td style="text-align:right" colspan="3">
                 医师<input type="text" class="input-text radius size-S" style="width:100px" id="doctor" name="doctor">
-                日期<input type="text" id="checkdate" name="checkdate"  class="input-text radius size-S" style="width:100px" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")">
-            
+                日期<input type="text" id="checkdate" name="checkdate" class="input-text radius size-S" style="width:100px" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")">
+
             </td>
-            
+
         </tr>
     </tbody>
 </table>
@@ -184,19 +184,19 @@
     <thead class="text-c">
         <tr>
             <td style="text-align:left">
-                <input type="hidden" id="RS" name="RS" /> 
+                <input type="hidden" id="RS" name="RS" />
                 <input class="btn btn-primary radius" type="button" value="RS复发评分计算" id="rsbtn">
-                 得分：<span id="rsscore" style="color:red"></span>
+                得分：<span id="rsscore" style="color:red"></span>
                 <div>
                     <textarea id="advice" name="advice" class="textarea radius" style="width:100%" placeholder="建议"></textarea>
                 </div>
-                 
+
             </td>
         </tr>
-        <tr>
+        @*<tr>
             <td>
                 <input class="btn btn-success radius" type="button" value="提交" id="tijiaobtn">
             </td>
-        </tr>
-    </thead>  
+        </tr>*@
+    </thead>
 </table>

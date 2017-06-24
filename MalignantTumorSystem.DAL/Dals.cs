@@ -424,4 +424,8 @@ namespace MalignantTumorSystem.DAL{
 	public partial class MT_BC_TCMTreatmentDal:BaseDal<MT_BC_TCMTreatment>,IMT_BC_TCMTreatmentDal
     {
 	}
+		
+	public partial class MT_BC_21GenesDal:BaseDal<MT_BC_21Genes>,IMT_BC_21GenesDal
+    {
+	}
 }

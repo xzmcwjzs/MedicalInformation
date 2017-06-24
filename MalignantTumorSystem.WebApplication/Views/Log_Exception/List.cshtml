@@ -46,6 +46,7 @@
                 {
 
                     var item = Model.EntityList[i];
+                    string no = CommonFunc.SafeGetStringFromObj((ViewBag.PageIndex - 1) * ViewBag.PageSize + i + 1);
                     string id = CommonFunc.SafeGetStringFromObj(item.nId);
                     string date = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.dtDate, "yyyy-MM-dd");
                     string threadId= CommonFunc.SafeGetStringFromObj(item.sThread);
@@ -53,7 +54,7 @@
                     string logger = CommonFunc.SafeGetStringFromObj(item.sLogger);
                     string msg = CommonFunc.SafeGetStringFromObj(item.sMessage.Substring(0,80)+"...");
                     <tr class="text-c">
-                        <td>@id</td>
+                        <td>@no</td>
                         <td>@date</td>
                         <td>@threadId</td>
                         <td>@level</td>

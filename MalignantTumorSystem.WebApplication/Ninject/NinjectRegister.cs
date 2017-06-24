@@ -344,6 +344,9 @@ namespace MalignantTumorSystem.WebApplication.Ninject
 		
             Kernel.Bind<IMT_BC_TCMTreatmentDal>().To<MT_BC_TCMTreatmentDal>();
 	        Kernel.Bind<IMT_BC_TCMTreatmentService>().To<MT_BC_TCMTreatmentService>();
+		
+            Kernel.Bind<IMT_BC_21GenesDal>().To<MT_BC_21GenesDal>();
+	        Kernel.Bind<IMT_BC_21GenesService>().To<MT_BC_21GenesService>();
         }
     }
 }

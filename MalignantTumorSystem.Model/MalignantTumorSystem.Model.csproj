@@ -148,6 +148,7 @@
     <Compile Include="Entities\ErrorLog.cs" />
     <Compile Include="Entities\ICD_10_old.cs" />
     <Compile Include="Entities\ICD_9_old.cs" />
+    <Compile Include="Entities\MT_BC_21Genes.cs" />
     <Compile Include="Entities\MT_BC_ChemicalTreatment.cs" />
     <Compile Include="Entities\MT_BC_ClinicalExamination.cs" />
     <Compile Include="Entities\MT_BC_Endocrinotherapy.cs" />
@@ -315,6 +316,10 @@
     <Compile Include="Migrations\201706221326491_add_MT_BC_TCMTreatment.Designer.cs">
       <DependentUpon>201706221326491_add_MT_BC_TCMTreatment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706230721393_add_MT_BC_21Genes.cs" />
+    <Compile Include="Migrations\201706230721393_add_MT_BC_21Genes.Designer.cs">
+      <DependentUpon>201706230721393_add_MT_BC_21Genes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchParam\BaseParam.cs" />
@@ -382,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706221326491_add_MT_BC_TCMTreatment.resx">
       <DependentUpon>201706221326491_add_MT_BC_TCMTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706230721393_add_MT_BC_21Genes.resx">
+      <DependentUpon>201706230721393_add_MT_BC_21Genes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

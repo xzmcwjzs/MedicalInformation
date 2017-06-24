@@ -112,6 +112,7 @@
     <Compile Include="Comm_ResidentFile_Followup_SurgeryService.cs" />
     <Compile Include="Comm_ResidentFile_Followup_TraumaService.cs" />
     <Compile Include="Comm_TumourService.cs" />
+    <Compile Include="MT_BC_21GenesService.cs" />
     <Compile Include="MT_BC_ChemicalTreatmentService.cs" />
     <Compile Include="MT_BC_ClinicalExaminationService.cs" />
     <Compile Include="MT_BC_EndocrinotherapyService.cs" />

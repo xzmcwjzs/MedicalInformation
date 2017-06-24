@@ -44,25 +44,26 @@
             </thead>
             <tbody>
                  @{
-                         int length = Model.EntityList.Count+1;
-                         for (int i = 0; i < Model.EntityList.Count; i++)
+                     int length = Model.EntityList.Count+1;
+                     for (int i = 0; i < Model.EntityList.Count; i++)
+                     {
+                         var item = Model.EntityList[i];
+                         string id = CommonFunc.SafeGetStringFromObj(item.id);
+                         string user_id = CommonFunc.SafeGetStringFromObj(item.user_id);
+                         string user_name = CommonFunc.SafeGetStringFromObj(item.user_real_name);
+                         string ip = CommonFunc.SafeGetStringFromObj(item.ip);
+                         if (ip == "::1")
                          {
-                             var item = Model.EntityList[i];
-                             string id = CommonFunc.SafeGetStringFromObj(item.id);
-                             string user_id = CommonFunc.SafeGetStringFromObj(item.user_id);
-                             string user_name = CommonFunc.SafeGetStringFromObj(item.user_real_name);
-                             string ip = CommonFunc.SafeGetStringFromObj(item.ip);
-                             if (ip == "::1")
-                             {
-                                 ip = "127.0.0.1";
-                             }
-                             bool cookie = item.cookies;
-                             string platform = CommonFunc.SafeGetStringFromObj(item.platform);
-                             string user_agent = CommonFunc.SafeGetStringFromObj(item.user_agent);
-                             string language = CommonFunc.SafeGetStringFromObj(item.language);
-                             string date = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.login_time, "yyyy-MM-dd hh:mm:ss");
+                             ip = "127.0.0.1";
+                         }
+                         string no = CommonFunc.SafeGetStringFromObj((ViewBag.PageIndex - 1) * ViewBag.PageSize + i + 1);
+                         bool cookie = item.cookies;
+                         string platform = CommonFunc.SafeGetStringFromObj(item.platform);
+                         string user_agent = CommonFunc.SafeGetStringFromObj(item.user_agent);
+                         string language = CommonFunc.SafeGetStringFromObj(item.language);
+                         string date = CommonFunc.SafeGetMyDateTimeStringFromObjectByFormat(item.login_time, "yyyy-MM-dd hh:mm:ss");
                         <tr class="text-c">
-                            <td>@(--length)</td>
+                            <td>@no</td>
                             <td>@user_id</td>
                             <td>@user_name</td>
                             <td>@ip</td>

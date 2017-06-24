@@ -3,10 +3,22 @@
     ViewBag.Title = "生命质量测定";
     Layout = "~/Views/Shared/MyLayoutH.cshtml";
 }
-
 @section head{
 
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments";
+    </script>
 }
+
+
+
 
 <table class="table table-border table-hover" style="margin-top:5px;width:80%;margin-left:10%;">
     <thead class="text-l">
@@ -274,14 +286,23 @@
         </tr>
     </tbody>
 </table>
-<table style="margin-bottom:50px;">
+<table style="margin-bottom:50px;margin-top:5px;width:50%;margin-left:25%">
     <thead class="text-c">
         <tr>
-            <td>
-                <input class="btn btn-primary radius" type="button" value="生命质量分数计算">
-                结果及建议：<span id="suggession"></span>
-                <input class="btn btn-success radius" type="button" value="提交">
+            <td style="text-align:left">
+                <input type="hidden" id="qol" name="qol" /> 
+                <input class="btn btn-primary radius" type="button" value="生命质量分数计算" id="qolbtn">
+                 得分：<span id="qolscore" style="color:red"></span>
+                <div>
+                    <textarea id="advice" name="advice" class="textarea radius" style="width:100%" placeholder="建议"></textarea>
+                </div>
+                 
             </td>
         </tr>
-    </thead>
+        <tr>
+            <td>
+                <input class="btn btn-success radius" type="button" value="提交" id="tijiaobtn">
+            </td>
+        </tr>
+    </thead>  
 </table>

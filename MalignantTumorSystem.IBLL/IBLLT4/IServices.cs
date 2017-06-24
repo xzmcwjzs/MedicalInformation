@@ -523,4 +523,9 @@ namespace MalignantTumorSystem.IBLL
     {
        
     }
+	
+	 public partial interface IMT_BC_21GenesService:IBaseService<MT_BC_21Genes>
+    {
+       
+    }
 }

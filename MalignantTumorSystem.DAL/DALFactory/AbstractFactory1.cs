@@ -630,6 +630,12 @@ MT_BC_ChemicalTreatmentDal;
 
 MT_BC_TCMTreatmentDal;
 		    }
+	  	    public static MT_BC_21GenesDal GetMT_BC_21GenesDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_21GenesDal") as 
+
+MT_BC_21GenesDal;
+		    }
 	   
    }
 }

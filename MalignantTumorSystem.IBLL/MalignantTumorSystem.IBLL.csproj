@@ -115,6 +115,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IServices.tt</DependentUpon>
     </Compile>
+    <Compile Include="IMT_BC_21GenesService.cs" />
     <Compile Include="IMT_BC_ChemicalTreatmentService.cs" />
     <Compile Include="IMT_BC_ClinicalExaminationService.cs" />
     <Compile Include="IMT_BC_EndocrinotherapyService.cs" />

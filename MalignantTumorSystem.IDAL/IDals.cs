@@ -420,4 +420,8 @@ namespace MalignantTumorSystem.IDAL
 	public partial interface IMT_BC_TCMTreatmentDal : IBaseDal<MT_BC_TCMTreatment>
     { 
     }   
+	
+	public partial interface IMT_BC_21GenesDal : IBaseDal<MT_BC_21Genes>
+    { 
+    }   
 }
