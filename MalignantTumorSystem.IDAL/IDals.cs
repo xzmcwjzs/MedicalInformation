@@ -424,4 +424,8 @@ namespace MalignantTumorSystem.IDAL
 	public partial interface IMT_BC_21GenesDal : IBaseDal<MT_BC_21Genes>
     { 
     }   
+	
+	public partial interface IMT_BC_QOLDal : IBaseDal<MT_BC_QOL>
+    { 
+    }   
 }

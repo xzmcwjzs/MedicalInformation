@@ -376,5 +376,7 @@ namespace MalignantTumorSystem.WebApplication.Areas.BreastCancer.Controllers
                 return Json("", JsonRequestBehavior.AllowGet);
             }
         }
+
+
     }
 }

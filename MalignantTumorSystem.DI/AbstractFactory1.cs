@@ -637,6 +637,12 @@ MT_BC_TCMTreatmentDal;
 
 MT_BC_21GenesDal;
 		    }
+	  	    public static MT_BC_QOLDal GetMT_BC_QOLDal()
+		    {
+		        return Assembly.Load(AssemblyPath).CreateInstance(NameSpacePath + ".MT_BC_QOLDal") as 
+
+MT_BC_QOLDal;
+		    }
 	   
    }
 }

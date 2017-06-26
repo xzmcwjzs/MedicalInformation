@@ -595,6 +595,9 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 		
 	 
             //modelBuilder.Configurations.Add(new MT_BC_21GenesMap());
+		
+	 
+            //modelBuilder.Configurations.Add(new MT_BC_QOLMap());
      }
 		
 	     public DbSet<Comm_Platform_Worker> Comm_Platform_Worker { get; set; }
@@ -804,5 +807,7 @@ namespace MalignantTumorSystem.Model.DataBaseContext
 	     public DbSet<MT_BC_TCMTreatment> MT_BC_TCMTreatment { get; set; }
 		
 	     public DbSet<MT_BC_21Genes> MT_BC_21Genes { get; set; }
+		
+	     public DbSet<MT_BC_QOL> MT_BC_QOL { get; set; }
    }
 }

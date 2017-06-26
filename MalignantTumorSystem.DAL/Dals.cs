@@ -428,4 +428,8 @@ namespace MalignantTumorSystem.DAL{
 	public partial class MT_BC_21GenesDal:BaseDal<MT_BC_21Genes>,IMT_BC_21GenesDal
     {
 	}
+		
+	public partial class MT_BC_QOLDal:BaseDal<MT_BC_QOL>,IMT_BC_QOLDal
+    {
+	}
 }

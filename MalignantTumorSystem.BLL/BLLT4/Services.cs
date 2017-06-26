@@ -946,4 +946,13 @@ namespace MalignantTumorSystem.BLL
             //CurrentDal =NinjectDI.GetMT_BC_21GenesDal;
         } 
 	}  
+	
+	public partial class MT_BC_QOLService:BaseService<MT_BC_QOL>,IMT_BC_QOLService
+    {	
+		public override void SetCurrentDal()
+        {
+            CurrentDal =AbstractFactory.GetMT_BC_QOLDal();
+            //CurrentDal =NinjectDI.GetMT_BC_QOLDal;
+        } 
+	}  
 }

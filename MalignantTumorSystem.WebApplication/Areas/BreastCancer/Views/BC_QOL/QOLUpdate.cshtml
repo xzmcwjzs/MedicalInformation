@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/MyLayoutH.cshtml";
 }
 @section head{
-<script src="~/Scripts/Areas/BreastCancer/BC_QOL/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_QOL/Submit.js"></script>
+    <script src="~/Scripts/Areas/BreastCancer/BC_QOL/Show.js"></script>
     <script>
         var id = "@ViewBag.id";
         var no = "@ViewBag.no";
@@ -16,9 +17,6 @@
         var departments = "@ViewBag.departments";
     </script>
 }
-
-
-
 
 <table class="table table-border table-hover" style="margin-top:5px;width:80%;margin-left:10%;">
     <thead class="text-l">
@@ -259,7 +257,7 @@
                     <label style="padding-left:2em;"><input type="radio" name="radio29" value="5">5</label>
                     <label style="padding-left:2em;"><input type="radio" name="radio29" value="6">6</label>
                     <label style="padding-left:2em;"><input type="radio" name="radio29" value="7">7</label>
-                </div> 
+                </div>
                 <div>
                     <span style="color:red">1表示非常差，7表示非常好</span>
                 </div>
@@ -286,7 +284,7 @@
             <td style="text-align:right" colspan="5">
                 医师<input type="text" class="input-text radius size-S" style="width:100px" id="doctor" name="doctor">
                 日期<input type="text" id="checkdate" name="checkdate" class="input-text radius size-S" style="width:100px" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")">
-            </td> 
+            </td>
         </tr>
     </tbody>
 </table>
@@ -333,5 +331,5 @@
 
             </td>
         </tr>
-    </thead>  
+    </thead>
 </table>

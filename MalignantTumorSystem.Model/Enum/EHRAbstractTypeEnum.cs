@@ -90,7 +90,9 @@ namespace MalignantTumorSystem.Model.Enum
         [Description("MT_BC_TCMTreatment")]
         TCMTreatment,
         [Description("MT_BC_21Genes")]
-        Genes
+        Genes,
+        [Description("MT_BC_QOL")]
+        QOL
 
     }
 }

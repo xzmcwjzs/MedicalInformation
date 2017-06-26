@@ -528,4 +528,9 @@ namespace MalignantTumorSystem.IBLL
     {
        
     }
+	
+	 public partial interface IMT_BC_QOLService:IBaseService<MT_BC_QOL>
+    {
+       
+    }
 }

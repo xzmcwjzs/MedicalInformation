@@ -1073,6 +1073,8 @@
     <Content Include="Scripts\Areas\BreastCancer\BC_FollowupAndExamination_SFJL\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_GenesAndProteomics_21\Show.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_GenesAndProteomics_21\Submit.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_QOL\Show.js" />
+    <Content Include="Scripts\Areas\BreastCancer\BC_QOL\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Control.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Submit.js" />
     <Content Include="Scripts\Areas\BreastCancer\BC_ScreeningAndDiagnosis_ClinicalExamination\Show.js" />
@@ -1313,6 +1315,8 @@
     <Content Include="Areas\BreastCancer\Views\BC_Treatment_TCMTreatment\TCMTreatmentUpdate.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\GenesUpdate.cshtml" />
     <Content Include="Areas\BreastCancer\Views\BC_GenesAndProteomics_21\GenesShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_QOL\QOLShow.cshtml" />
+    <Content Include="Areas\BreastCancer\Views\BC_QOL\QOLUpdate.cshtml" />
     <None Include="Properties\PublishProfiles\BreastCancer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Common\matchName.show.js" />

@@ -123,6 +123,7 @@
     <Compile Include="IMT_BC_MammographyService.cs" />
     <Compile Include="IMT_BC_OperativeTreatmentService.cs" />
     <Compile Include="IMT_BC_PathologicalDiagnosisService.cs" />
+    <Compile Include="IMT_BC_QOLService.cs" />
     <Compile Include="IMT_BC_RadiotherapyService.cs" />
     <Compile Include="IMT_BC_SelfCheckService.cs" />
     <Compile Include="IMT_BC_TCMTreatmentService.cs" />
