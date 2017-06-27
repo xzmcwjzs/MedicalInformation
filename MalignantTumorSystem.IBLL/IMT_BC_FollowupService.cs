@@ -11,5 +11,9 @@ namespace MalignantTumorSystem.IBLL
     public partial interface IMT_BC_FollowupService : IBaseService<MT_BC_Followup>
     {
         IQueryable<MT_BC_Followup> LoadSearchEntities(FollowupParam pam);
+
+        int GetBreastCancerFollowupAlertCount(string regionCode);
+        int GetBreastCancerFollowupExpireCount(string regionCode);
+        
     }
 }

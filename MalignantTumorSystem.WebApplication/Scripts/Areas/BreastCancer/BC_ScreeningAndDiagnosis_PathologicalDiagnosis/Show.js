@@ -96,7 +96,7 @@
             //--------------------------------------------------特有字段------------------------
             
             if (data[0].checkdate != "") {
-                $("#sjrq").val(data[0].sjrq);
+                $("#sjrq").val(ConvertDate(data[0].sjrq));
             }
             $("#sjys").val(data[0].sjys);
             $("#sjcl").val(data[0].sjcl);

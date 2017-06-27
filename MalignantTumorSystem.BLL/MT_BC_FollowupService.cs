@@ -1,8 +1,10 @@
-﻿using MalignantTumorSystem.IBLL;
+﻿using MalignantTumorSystem.Common;
+using MalignantTumorSystem.IBLL;
 using MalignantTumorSystem.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +61,22 @@ namespace MalignantTumorSystem.BLL
             pam.TotalCount = totalCount;
             var temp = CurrentDal.LoadEntityBySql(sql);
             return temp;
+        }
+
+        public int GetBreastCancerFollowupAlertCount(string regionCode)
+        {
+            string sql = "select count(id) from MT_BC_Followup where community_code like @community_code and DATEDIFF(d , next_time , getdate())<=0";
+            SqlParameter[] parms = new SqlParameter[] { new SqlParameter("@community_code", regionCode + "%") };
+            int count = CommonFunc.SafeGetIntFromObj(Db.Database.SqlQuery<int>(sql, parms).FirstOrDefault(), 0);
+            return count;
+        }
+         
+        public int GetBreastCancerFollowupExpireCount(string regionCode)
+        {
+            string sql = "select count(id) from MT_BC_Followup where community_code like @community_code and DATEDIFF(d , next_time , getdate())>=0";
+            SqlParameter[] parms = new SqlParameter[] { new SqlParameter("@community_code", regionCode + "%") };
+            int count = CommonFunc.SafeGetIntFromObj(Db.Database.SqlQuery<int>(sql, parms).FirstOrDefault(), 0);
+            return count;
         }
     }
 }
