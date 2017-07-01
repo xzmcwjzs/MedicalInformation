@@ -147,7 +147,7 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
         //主页表格数据处理  存储过程版
         public void GetInitJCDANumSP(string regionCode, out int lbJKDA, out int lb0_6, out int lb7_17, out int lb18_44, out int lb45_59, out int lb60_74, out int lb75_89, out int lb90, out int lbGXY, out int lbTNB, out int lbGXB, out int lbJSB, out int lbZL, out int lb65M, out int lb65F)
         {
-            lbJKDA = 0; lb0_6 = 0; lb7_17 = 0; lb18_44 = 0; lb45_59 = 0; lb60_74 = 0; lb75_89 = 0; lb90 = 0; lbGXY = 0; lbTNB = 0; lbGXB = 0; lbJSB = 0; lbZL = 0;  lb65M = 0; lb65F = 0;
+            lbJKDA = 0; lb0_6 = 0; lb7_17 = 0; lb18_44 = 0; lb45_59 = 0; lb60_74 = 0; lb75_89 = 0; lb90 = 0; lbGXY = 0; lbTNB = 0; lbGXB = 0; lbJSB = 0; lbZL = 0; lb65M = 0; lb65F = 0;
             SqlParameter[] paras = {
                 new SqlParameter("@regionCode",regionCode),
                 new SqlParameter("@lbJKDA",lbJKDA),
@@ -182,8 +182,8 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             paras[14].Direction = ParameterDirection.Output;
             paras[15].Direction = ParameterDirection.Output;
 
-            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetInitJCDANumProcedure", paras); 
-            lbJKDA =Convert.ToInt32(paras[1].Value);
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetInitJCDANumProcedure", paras);
+            lbJKDA = Convert.ToInt32(paras[1].Value);
             lb0_6 = Convert.ToInt32(paras[2].Value);
             lb7_17 = Convert.ToInt32(paras[3].Value);
             lb18_44 = Convert.ToInt32(paras[4].Value);
@@ -202,7 +202,7 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
         //主页图表数据处理 存储过程版
         public void GetInitJCDACharSP(string regionCode, out int month0, out int month1, out int month2, out int month3, out int month4, out int month5, out int month6, out int month7, out int month8, out int month9, out int month10, out int month11)
         {
-            month0 = 0;month1 = 0;month2 = 0;month3 = 0;month4 = 0;month5 = 0;month6 = 0;month7 = 0;month8 = 0;month9 = 0;month10 = 0;month11 = 0;
+            month0 = 0; month1 = 0; month2 = 0; month3 = 0; month4 = 0; month5 = 0; month6 = 0; month7 = 0; month8 = 0; month9 = 0; month10 = 0; month11 = 0;
             SqlParameter[] paras = {
                 new SqlParameter("@regionCode",regionCode),
                 new SqlParameter("@month0",month0),
@@ -243,8 +243,8 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             month8 = Convert.ToInt32(paras[9].Value);
             month9 = Convert.ToInt32(paras[10].Value);
             month10 = Convert.ToInt32(paras[11].Value);
-            month11= Convert.ToInt32(paras[12].Value); 
-            
+            month11 = Convert.ToInt32(paras[12].Value);
+
         }
 
         //人口数量资料表格、图表数据处理  存储过程版
@@ -286,25 +286,25 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             paras[15].Direction = ParameterDirection.Output;
 
             SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataNumberNumProcedure", paras);
-            lb4= Convert.ToInt32(paras[1].Value);
+            lb4 = Convert.ToInt32(paras[1].Value);
             lb4M = Convert.ToInt32(paras[2].Value);
-            lb4F= Convert.ToInt32(paras[3].Value);
+            lb4F = Convert.ToInt32(paras[3].Value);
             lb3 = Convert.ToInt32(paras[4].Value);
             lb3M = Convert.ToInt32(paras[5].Value);
             lb3F = Convert.ToInt32(paras[6].Value);
-            lb2= Convert.ToInt32(paras[7].Value);
+            lb2 = Convert.ToInt32(paras[7].Value);
             lb2M = Convert.ToInt32(paras[8].Value);
             lb2F = Convert.ToInt32(paras[9].Value);
-            lb1= Convert.ToInt32(paras[10].Value);
+            lb1 = Convert.ToInt32(paras[10].Value);
             lb1M = Convert.ToInt32(paras[11].Value);
             lb1F = Convert.ToInt32(paras[12].Value);
             lb0 = Convert.ToInt32(paras[13].Value);
             lb0M = Convert.ToInt32(paras[14].Value);
             lb0F = Convert.ToInt32(paras[15].Value);
 
-        }   
+        }
         //人口构成 表格 图表 数据处理 存储过程版
-        public void GetDemographicDataConstituteNumSP(string regionCode,out int lb0m,out int lb0f,out int lb10m,out int lb10f, out int lb20m, out int lb20f, out int lb30m, out int lb30f, out int lb40m, out int lb40f, out int lb50m, out int lb50f, out int lb60m, out int lb60f, out int lb70m, out int lb70f, out int lb80m, out int lb80f, out int lb90m, out int lb90f)
+        public void GetDemographicDataConstituteNumSP(string regionCode, out int lb0m, out int lb0f, out int lb10m, out int lb10f, out int lb20m, out int lb20f, out int lb30m, out int lb30f, out int lb40m, out int lb40f, out int lb50m, out int lb50f, out int lb60m, out int lb60f, out int lb70m, out int lb70f, out int lb80m, out int lb80f, out int lb90m, out int lb90f)
         {
             lb0m = 0;
             lb0f = 0;
@@ -347,7 +347,7 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
                 new SqlParameter("@lb80m",lb80m),
                 new SqlParameter("@lb80f",lb80f),
                 new SqlParameter("@lb90m",lb90m),
-                new SqlParameter("@lb90f",lb90f),
+                new SqlParameter("@lb90f",lb90f)
             };
             paras[1].Direction = ParameterDirection.Output;
             paras[2].Direction = ParameterDirection.Output;
@@ -392,6 +392,322 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             lb90m = Convert.ToInt32(paras[19].Value);
             lb90f = Convert.ToInt32(paras[20].Value);
         }
+        //人口负担 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataBurdenNumSP(string regionCode, out int lb0m, out int lb0f, out int lb15m, out int lb15f, out int lb65m, out int lb65f)
+        {
+            lb0m = 0;
+            lb0f = 0;
+            lb15m = 0;
+            lb15f = 0;
+            lb65m = 0;
+            lb65f = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@lb0m",lb0m),
+                new SqlParameter("@lb0f",lb0f),
+                 new SqlParameter("@lb15m",lb15m),
+                new SqlParameter("@lb15f",lb15f),
+                 new SqlParameter("@lb65m",lb65m),
+                new SqlParameter("@lb65f",lb65f)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
 
-    }       
-}           
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataBurdenNumProcedure", paras);
+            lb0m = Convert.ToInt32(paras[1].Value);
+            lb0f = Convert.ToInt32(paras[2].Value);
+            lb15m = Convert.ToInt32(paras[3].Value);
+            lb15f = Convert.ToInt32(paras[4].Value);
+            lb65m = Convert.ToInt32(paras[5].Value);
+            lb65f = Convert.ToInt32(paras[6].Value);
+        }
+
+        //人口文化程度构成 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataEducationNumSP(string regionCode, out int s1, out int s2, out int s3, out int s4, out int s5, out int s6, out int s7, out int s8, out int s9, out int s10)
+        {
+            s1 = 0;
+            s2 = 0;
+            s3 = 0;
+            s4 = 0;
+            s5 = 0;
+            s6 = 0;
+            s7 = 0;
+            s8 = 0;
+            s9 = 0;
+            s10 = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1",s1),
+                new SqlParameter("@s2",s2),
+                 new SqlParameter("@s3",s3),
+                new SqlParameter("@s4",s4),
+                 new SqlParameter("@s5",s5),
+                new SqlParameter("@s6",s6),
+                 new SqlParameter("@s7",s7),
+                  new SqlParameter("@s8",s8),
+                   new SqlParameter("@s9",s9),
+                    new SqlParameter("@s10",s10)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataEducationNumProcedure", paras);
+            s1 = Convert.ToInt32(paras[1].Value);
+            s2 = Convert.ToInt32(paras[2].Value);
+            s3 = Convert.ToInt32(paras[3].Value);
+            s4 = Convert.ToInt32(paras[4].Value);
+            s5 = Convert.ToInt32(paras[5].Value);
+            s6 = Convert.ToInt32(paras[6].Value);
+            s7 = Convert.ToInt32(paras[7].Value);
+            s8 = Convert.ToInt32(paras[8].Value);
+            s9 = Convert.ToInt32(paras[9].Value);
+            s10 = Convert.ToInt32(paras[10].Value);
+        }
+
+        //人口职业构成 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataOccupationNumSP(string regionCode, out int s1, out int s2, out int s3, out int s4, out int s5, out int s6, out int s7, out int s8, out int s9)
+        {
+            s1 = 0;
+            s2 = 0;
+            s3 = 0;
+            s4 = 0;
+            s5 = 0;
+            s6 = 0;
+            s7 = 0;
+            s8 = 0;
+            s9 = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1",s1),
+                new SqlParameter("@s2",s2),
+                 new SqlParameter("@s3",s3),
+                new SqlParameter("@s4",s4),
+                 new SqlParameter("@s5",s5),
+                new SqlParameter("@s6",s6),
+                 new SqlParameter("@s7",s7),
+                   new SqlParameter("@s8",s8),
+                     new SqlParameter("@s9",s9)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataOccupationNumProcedure", paras);
+            s1 = Convert.ToInt32(paras[1].Value);
+            s2 = Convert.ToInt32(paras[2].Value);
+            s3 = Convert.ToInt32(paras[3].Value);
+            s4 = Convert.ToInt32(paras[4].Value);
+            s5 = Convert.ToInt32(paras[5].Value);
+            s6 = Convert.ToInt32(paras[6].Value);
+            s7 = Convert.ToInt32(paras[7].Value);
+            s8 = Convert.ToInt32(paras[8].Value);
+            s9 = Convert.ToInt32(paras[9].Value);
+        }
+
+        //人口婚姻状况 表格图表 数据处理 存储过程版
+        public void GetDemographicDataMarriageNumSP(string regionCode, out int s1, out int s2, out int s3, out int s4, out int s5)
+        {
+            s1 = 0;
+            s2 = 0;
+            s3 = 0;
+            s4 = 0;
+            s5 = 0; 
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1",s1),
+                new SqlParameter("@s2",s2),
+                 new SqlParameter("@s3",s3),
+                new SqlParameter("@s4",s4),
+                 new SqlParameter("@s5",s5)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output; 
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataMarriageNumProcedure", paras);
+            s1 = Convert.ToInt32(paras[1].Value);
+            s2 = Convert.ToInt32(paras[2].Value);
+            s3 = Convert.ToInt32(paras[3].Value);
+            s4 = Convert.ToInt32(paras[4].Value);
+            s5 = Convert.ToInt32(paras[5].Value); 
+        }
+
+        //医疗保障构成 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataMedicalSecurityNumSP(string regionCode, out int s1, out int s2, out int s3, out int s4, out int s5, out int s6, out int s7, out int s8)
+        {
+            s1 = 0;
+            s2 = 0;
+            s3 = 0;
+            s4 = 0;
+            s5 = 0;
+            s6 = 0;
+            s7 = 0;
+            s8 = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1",s1),
+                new SqlParameter("@s2",s2),
+                 new SqlParameter("@s3",s3),
+                new SqlParameter("@s4",s4),
+                 new SqlParameter("@s5",s5),
+                new SqlParameter("@s6",s6),
+                 new SqlParameter("@s7",s7),
+                   new SqlParameter("@s8",s8)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataMedicalSecurityNumProcedure", paras);
+            s1 = Convert.ToInt32(paras[1].Value);
+            s2 = Convert.ToInt32(paras[2].Value);
+            s3 = Convert.ToInt32(paras[3].Value);
+            s4 = Convert.ToInt32(paras[4].Value);
+            s5 = Convert.ToInt32(paras[5].Value);
+            s6 = Convert.ToInt32(paras[6].Value);
+            s7 = Convert.ToInt32(paras[7].Value);
+            s8 = Convert.ToInt32(paras[8].Value);
+        }
+
+        //吸烟情况分析 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataSmokeNumSP(string regionCode, out int s1_1, out int s2_1, out int s3_1, out int s4_1, out int s5_1, out int s6_1, out int s1_2, out int s2_2, out int s3_2, out int s4_2, out int s5_2, out int s6_2)
+        {
+            s1_1 = 0;
+            s2_1 = 0;
+            s3_1 = 0;
+            s4_1 = 0;
+            s5_1 = 0;
+            s6_1 = 0;
+            s1_2 = 0;
+            s2_2 = 0;
+            s3_2 = 0;
+            s4_2 = 0;
+            s5_2 = 0;
+            s6_2 = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1_1",s1_1),
+                new SqlParameter("@s2_1",s2_1),
+                new SqlParameter("@s3_1",s3_1),
+                new SqlParameter("@s4_1",s4_1),
+                new SqlParameter("@s5_1",s5_1),
+                new SqlParameter("@s6_1",s6_1),
+                new SqlParameter("@s1_2",s1_2),
+                new SqlParameter("@s2_2",s2_2),
+                new SqlParameter("@s3_2",s3_2),
+                new SqlParameter("@s4_2",s4_2),
+                new SqlParameter("@s5_2",s5_2),
+                new SqlParameter("@s6_2",s6_2)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+            paras[11].Direction = ParameterDirection.Output;
+            paras[12].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataSmokeNumProcedure", paras);
+            s1_1 = Convert.ToInt32(paras[1].Value);
+            s2_1 = Convert.ToInt32(paras[2].Value);
+            s3_1 = Convert.ToInt32(paras[3].Value);
+            s4_1 = Convert.ToInt32(paras[4].Value);
+            s5_1 = Convert.ToInt32(paras[5].Value);
+            s6_1 = Convert.ToInt32(paras[6].Value);
+            s1_2 = Convert.ToInt32(paras[7].Value);
+            s2_2 = Convert.ToInt32(paras[8].Value);
+            s3_2 = Convert.ToInt32(paras[9].Value);
+            s4_2 = Convert.ToInt32(paras[10].Value);
+            s5_2 = Convert.ToInt32(paras[11].Value);
+            s6_2 = Convert.ToInt32(paras[12].Value);
+        }
+
+        //饮酒情况分析 表格 图表 数据处理 存储过程版
+        public void GetDemographicDataDrinkNumSP(string regionCode, out int s1_1, out int s2_1, out int s3_1, out int s4_1, out int s5_1, out int s6_1, out int s1_2, out int s2_2, out int s3_2, out int s4_2, out int s5_2, out int s6_2)
+        {
+            s1_1 = 0;
+            s2_1 = 0;
+            s3_1 = 0;
+            s4_1 = 0;
+            s5_1 = 0;
+            s6_1 = 0;
+            s1_2 = 0;
+            s2_2 = 0;
+            s3_2 = 0;
+            s4_2 = 0;
+            s5_2 = 0;
+            s6_2 = 0;
+            SqlParameter[] paras = {
+                new SqlParameter("@regionCode",regionCode),
+                new SqlParameter("@s1_1",s1_1),
+                new SqlParameter("@s2_1",s2_1),
+                new SqlParameter("@s3_1",s3_1),
+                new SqlParameter("@s4_1",s4_1),
+                new SqlParameter("@s5_1",s5_1),
+                new SqlParameter("@s6_1",s6_1),
+                new SqlParameter("@s1_2",s1_2),
+                new SqlParameter("@s2_2",s2_2),
+                new SqlParameter("@s3_2",s3_2),
+                new SqlParameter("@s4_2",s4_2),
+                new SqlParameter("@s5_2",s5_2),
+                new SqlParameter("@s6_2",s6_2)
+            };
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+            paras[11].Direction = ParameterDirection.Output;
+            paras[12].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetDemographicDataDrinkNumProcedure", paras);
+            s1_1 = Convert.ToInt32(paras[1].Value);
+            s2_1 = Convert.ToInt32(paras[2].Value);
+            s3_1 = Convert.ToInt32(paras[3].Value);
+            s4_1 = Convert.ToInt32(paras[4].Value);
+            s5_1 = Convert.ToInt32(paras[5].Value);
+            s6_1 = Convert.ToInt32(paras[6].Value);
+            s1_2 = Convert.ToInt32(paras[7].Value);
+            s2_2 = Convert.ToInt32(paras[8].Value);
+            s3_2 = Convert.ToInt32(paras[9].Value);
+            s4_2 = Convert.ToInt32(paras[10].Value);
+            s5_2 = Convert.ToInt32(paras[11].Value);
+            s6_2 = Convert.ToInt32(paras[12].Value);
+        }
+    }
+}

@@ -1151,8 +1151,15 @@
     <Content Include="Scripts\H-ui_v3.0\static\h-ui\images\verticalTab\tab_bg.png" />
     <Content Include="Scripts\H-ui_v3.0\static\h-ui\js\H-ui.js" />
     <Content Include="Scripts\H-ui_v3.0\static\h-ui\js\H-ui.min.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Burden\Operate.js" />
     <Content Include="Scripts\MyJs\DemographicData\Constitute\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Drink\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Education\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Marriage\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\MedicalSecurity\Operate.js" />
     <Content Include="Scripts\MyJs\DemographicData\Number\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Occupation\Operate.js" />
+    <Content Include="Scripts\MyJs\DemographicData\Smoke\Operate.js" />
     <Content Include="Scripts\MyJs\Home\WelCome\Operate.js" />
     <Content Include="Scripts\MyJs\pccsc.js" />
     <Content Include="Web.config" />
@@ -1225,6 +1232,13 @@
     <Content Include="Views\DemographicData\Constitute.cshtml" />
     <None Include="Properties\PublishProfiles\Statistic.pubxml" />
     <Content Include="Views\Home\WelCome.cshtml" />
+    <Content Include="Views\DemographicData\Burden.cshtml" />
+    <Content Include="Views\DemographicData\Education.cshtml" />
+    <Content Include="Views\DemographicData\Occupation.cshtml" />
+    <Content Include="Views\DemographicData\Marriage.cshtml" />
+    <Content Include="Views\DemographicData\MedicalSecurity.cshtml" />
+    <Content Include="Views\DemographicData\Smoke.cshtml" />
+    <Content Include="Views\DemographicData\Drink.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

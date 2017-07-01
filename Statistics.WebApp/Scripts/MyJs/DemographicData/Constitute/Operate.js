@@ -1,5 +1,6 @@
 ﻿/// <reference path="../../../H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js" />
 $(function () {
+ 
     var regionCode = code;
     var regionName = "";
     $.ajax({
@@ -7,7 +8,7 @@ $(function () {
         dataType: "json",
         url: "/DemographicData/InitConstituteData",
         data: { regionCode: regionCode },
-        success: function (data) { 
+        success: function (data) {  
             $("#lb0m").text(data.lb0m);
             $("#lb0mb").text(data.lb0mb);
             $("#lb0f").text(data.lb0f);
@@ -75,6 +76,8 @@ $(function () {
             $("#lb100fb").text(data.lb100fb);
             $("#lb100h").text(data.lb100h);
             $("#lb100hb").text(data.lb100hb);
+
+            //alert(data.second);
         }
     })
 
@@ -289,9 +292,11 @@ $(function () {
             seriesData3 = [["0~", data.lb0hb], ["10~", data.lb10hb], ["20~", data.lb20hb], ["30~", data.lb30hb], ["40~", data.lb40hb], ["50~", data.lb50hb], ["60~", data.lb60hb], ["70~", data.lb70hb], ["80~", data.lb80hb], ["90~", data.lb90hb]]
             
             chart2.series[0].setData(seriesData3);
-
+             
         }
     })
+
+   
 })
 
 function CodeToName(num) {
