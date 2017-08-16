@@ -1,0 +1,380 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>人口详细分布</title>
+    <script src="~/Scripts/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <link href="~/Scripts/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/pccsc.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/highmaps.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/modules/drilldown.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/modules/exporting.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highcharts/5.0.6/js/highcharts-zh_CN.js"></script> 
+</head>
+<body style="text-align:center">
+    <div id="container" style="height:600px;width:90%;margin: 0 auto;"></div>
+    <script>
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: "/Home/InitDistributionData",
+            success: function (data) { 
+                var dt = data;
+                Highcharts.setOptions({
+                    lang: {
+                        drillUpText: '< 返回 “{series.name}”'
+                    }
+                });
+
+                var map = null,
+                    geochina = 'https://data.jianshukeji.com/jsonp?filename=geochina/';
+
+                $.getJSON(geochina + 'china.json&callback=?', function (mapdata) {
+                    var data = [];
+                    // 随机数据
+                    Highcharts.each(mapdata.features, function (md, index) {
+                        //alert(md.properties.name);
+                        //alert(md.properties.drilldown);
+                        var tmp;
+                        if (md.properties.name == "江苏") { 
+                             tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s1
+                            };
+                        }else if(md.properties.name == "北京"){
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s2
+                            };
+                        } else if (md.properties.name == "海南") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s3
+                            };
+                        } else if (md.properties.name == "天津") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s4
+                            };
+                        } else if (md.properties.name == "青海") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s5
+                            };
+                        } else if (md.properties.name == "河南") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s6
+                            };
+                        } else if (md.properties.name == "香港") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s7
+                            };
+                        } else if (md.properties.name == "江西") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s8
+                            };
+                        } else if (md.properties.name == "广东") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s9
+                            };
+                        } else if (md.properties.name == "广西") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s10
+                            };
+                        } else if (md.properties.name == "台湾") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s11
+                            };
+                        } else if (md.properties.name == "安徽") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s12
+                            };
+                        } else if (md.properties.name == "澳门") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s13
+                            };
+                        } else if (md.properties.name == "四川") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s14
+                            };
+                        } else if (md.properties.name == "辽宁") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s15
+                            };
+                        } else if (md.properties.name == "黑龙江") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s16
+                            };
+                        } else if (md.properties.name == "新疆") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s17
+                            };
+                        } else if (md.properties.name == "内蒙古") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s18
+                            };
+                        } else if (md.properties.name == "山西") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s19
+                            };
+                        } else if (md.properties.name == "重庆") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s20
+                            };
+                        } else if (md.properties.name == "河北") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s21
+                            };
+                        } else if (md.properties.name == "甘肃") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s22
+                            };
+                        } else if (md.properties.name == "贵州") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s23
+                            };
+                        } else if (md.properties.name == "湖南") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s24
+                            };
+                        } else if (md.properties.name == "湖北") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s25
+                            };
+                        } else if (md.properties.name == "上海") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s26
+                            };
+                        } else if (md.properties.name == "陕西") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s27
+                            };
+                        } else if (md.properties.name == "福建") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s28
+                            };
+                        } else if (md.properties.name == "吉林") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s29
+                            };
+                        } else if (md.properties.name == "宁夏") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s30
+                            };
+                        } else if (md.properties.name == "云南") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s31
+                            };
+                        } else if (md.properties.name == "山东") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s32
+                            };
+                        } else if (md.properties.name == "西藏") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s33
+                            };
+                        } else if (md.properties.name == "浙江") {
+                            tmp = {
+                                name: md.properties.name,
+                                value: dt.res[0].s34
+                            };
+                        }
+                        else {
+                            tmp = {
+                                name: md.properties.name,
+                                value: Math.floor((Math.random() * 100) + 1) // 生成 1 ~ 100 随机值
+                            };
+                        }
+                        
+                        if (md.properties.drilldown) {
+                            tmp.drilldown = md.properties.drilldown;
+                        }
+                        data.push(tmp);
+                    });
+                    map = new Highcharts.Map('container', {
+                        chart: {
+                            events: {
+                                drilldown: function (e) {
+                                    //console.log(e);
+                                    // 异步下钻
+                                    if (e.point.drilldown) {
+                                        var pointName = e.point.properties.fullname;
+                                        //alert(e.point.drilldown);
+                                        //alert(pointName);
+                                        map.showLoading('下钻中，请稍后...');
+                                        // 获取二级行政地区数据并更新图表
+                                        $.getJSON(geochina + e.point.drilldown + '.json&callback=?', function (data) {
+                                            data = Highcharts.geojson(data);
+                                            Highcharts.each(data, function (d) { 
+                                                if (d.properties.drilldown) {
+                                                    d.drilldown = d.properties.drilldown;
+                                                }
+                                                if (d.name == "无锡") {
+                                                    d.value = dt.res[0].s1_1;
+                                                } else if (d.name == "苏州") {
+                                                    d.value = dt.res[0].s1_2;
+                                                } else if (d.name == "镇江") {
+                                                    d.value = dt.res[0].s1_3;
+                                                } else if (d.name == "连云港") {
+                                                    d.value = dt.res[0].s1_4;
+                                                } else if (d.name == "盐城") {
+                                                    d.value = dt.res[0].s1_5;
+                                                } else if (d.name == "南京") {
+                                                    d.value = dt.res[0].s1_6;
+                                                } else if (d.name == "常州") {
+                                                    d.value = dt.res[0].s1_7;
+                                                } else if (d.name == "徐州") {
+                                                    d.value = dt.res[0].s1_8;
+                                                } else if (d.name == "宿迁") {
+                                                    d.value = dt.res[0].s1_9;
+                                                } else if (d.name == "南通") {
+                                                    d.value = dt.res[0].s1_10;
+                                                } else if (d.name == "扬州") {
+                                                    d.value = dt.res[0].s1_11;
+                                                } else if (d.name == "淮安") {
+                                                    d.value = dt.res[0].s1_12;
+                                                } else if (d.name == "泰州") {
+                                                    d.value = dt.res[0].s1_13;
+                                                } else if (d.name == "海安县") {
+                                                    d.value = dt.res[0].s1_10_1;
+                                                } else if (d.name == "如皋") {
+                                                    d.value = dt.res[0].s1_10_2;
+                                                } else if (d.name == "通州区") {
+                                                    d.value = dt.res[0].s1_10_3;
+                                                } else if (d.name == "如东县") {
+                                                    d.value = dt.res[0].s1_10_4;
+                                                } else if (d.name == "海门") {
+                                                    d.value = dt.res[0].s1_10_5;
+                                                } else if (d.name == "港闸区") {
+                                                    d.value = dt.res[0].s1_10_6;
+                                                } else if (d.name == "启东") {
+                                                    d.value = dt.res[0].s1_10_7;
+                                                } else if (d.name == "崇川区") {
+                                                    d.value = dt.res[0].s1_10_8;
+                                                }
+                                                else {
+                                                    d.value = Math.floor((Math.random() * 100) + 1); // 生成 1 ~ 100 随机值
+                                                }
+                                             
+                                            });
+                                            map.hideLoading();
+                                            map.addSeriesAsDrilldown(e.point, {
+                                                name: e.point.name,
+                                                data: data,
+                                                dataLabels: {
+                                                    enabled: true,
+                                                    format: '{point.name}'
+                                                }
+                                            });
+                                            map.setTitle({
+                                                text: pointName
+                                            });
+                                        });
+                                    }
+                                },
+                                drillup: function () {
+                                    map.setTitle({
+                                        text: '中国'
+                                    });
+                                }
+                            }
+                        },
+                        title: {
+                            text: '人口详细分布'
+                        },
+                        credits:{
+                            enabled:false
+                        },
+                        subtitle: {
+                            text: '可下钻'
+                        },
+                        mapNavigation: {
+                            enabled: true,
+                            buttonOptions: {
+                                verticalAlign: 'bottom'
+                            }
+                        },
+                        colorAxis: {
+                        },
+                        tooltip: {
+                            useHTML: true,
+                            headerFormat: '<table><tr><td>{point.name}</td></tr>',
+                            pointFormat: '<tr><td>全称</td><td>{point.properties.fullname}</td></tr>' +
+                            '<tr><td>行政编号：</td><td>{point.properties.areacode}</td></tr>' +
+                            '<tr><td>父级</td><td>{point.properties.parent}</td></tr>' +
+                            '<tr><td>人口分布：</td><td>{point.value}</td></tr>',
+                            // '<tr><td>经纬度</td><td>{point.properties.longitude},{point.properties.latitude}</td></tr>',
+                            footerFormat: '</table>'
+                        },
+                        colorAxis: {
+                            min: 0,
+                            minColor: '#fff',
+                            maxColor: '#006cee',
+                            labels: {
+                                style: {
+                                    "color": "red", "fontWeight": "bold"
+                                }
+                            }
+                        },
+                        series: [{
+                            data: data,
+                            mapData: mapdata,
+                            joinBy: 'name',
+                            name: '建档人数',
+                            states: {
+                                hover: {
+                                    color: '#a4edba'
+                                }
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                format: '{point.name}'
+                            }
+                        }]
+
+                    });
+                });
+
+
+            }
+        });
+
+
+    </script>
+</body>
+</html>

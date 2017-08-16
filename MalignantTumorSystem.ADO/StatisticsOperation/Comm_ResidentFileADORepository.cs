@@ -709,5 +709,231 @@ select count (id_card_number) from Comm_ResidentFile where community_code like '
             s5_2 = Convert.ToInt32(paras[11].Value);
             s6_2 = Convert.ToInt32(paras[12].Value);
         }
+
+        //人口地图分布
+        public void GetHomeDataDistributionNumSP(out int s1, out int s2, out int s3, out int s4, out int s5, out int s6, out int s7, out int s8, out int s9, out int s10, out int s11, out int s12, out int s13, out int s14, out int s15, out int s16, out int s17, out int s18, out int s19, out int s20, out int s21, out int s22, out int s23, out int s24, out int s25, out int s26, out int s27, out int s28, out int s29, out int s30, out int s31, out int s32, out int s33, out int s34, out int s1_1, out int s1_2, out int s1_3, out int s1_4, out int s1_5, out int s1_6, out int s1_7, out int s1_8, out int s1_9, out int s1_10, out int s1_11, out int s1_12, out int s1_13, out int s1_10_1, out int s1_10_2, out int s1_10_3, out int s1_10_4, out int s1_10_5, out int s1_10_6, out int s1_10_7, out int s1_10_8)
+        {
+            s1 = 0;
+            s2 = 0;
+            s3 = 0;
+            s4 = 0;
+            s5 = 0;
+            s6 = 0;
+            s7 = 0;
+            s8 = 0;
+            s9 = 0;
+            s10 = 0;
+            s11= 0;
+            s12= 0;
+            s13= 0;
+            s14= 0;
+            s15= 0;
+            s16= 0;
+            s17= 0;
+            s18= 0;
+            s19= 0;
+            s20= 0;
+            s21= 0;
+            s22= 0;
+            s23= 0;
+            s24= 0;
+            s25= 0;
+            s26= 0;
+            s27= 0;
+            s28= 0;
+            s29= 0;
+            s30= 0;
+            s31= 0;
+            s32= 0;
+            s33= 0;
+            s34 = 0;
+            s1_1 = 0;
+            s1_2 = 0;
+            s1_3  =0;
+            s1_4  =0;
+            s1_5  =0;
+            s1_6  =0;
+            s1_7  =0;
+            s1_8  =0;
+            s1_9  =0;
+            s1_10=0;
+            s1_11=0;
+            s1_12=0;
+            s1_13=0;
+            s1_10_1 = 0; s1_10_2 = 0; s1_10_3 = 0; s1_10_4 = 0; s1_10_5 = 0; s1_10_6 = 0; s1_10_7 = 0; s1_10_8 = 0;
+
+            SqlParameter[] paras = { 
+                new SqlParameter("@s1",s1),
+                new SqlParameter("@s2",s2),
+                new SqlParameter("@s3",s3),
+                new SqlParameter("@s4",s4),
+                new SqlParameter("@s5",s5),
+                new SqlParameter("@s6",s6),
+                new SqlParameter("@s7",s7),
+                new SqlParameter("@s8",s8),
+                new SqlParameter("@s9",s9),
+                new SqlParameter("@s10",s10),
+                new SqlParameter("@s11",s11),
+                new SqlParameter("@s12",s12),
+                new SqlParameter("@s13",s13),
+                new SqlParameter("@s14",s14),
+                new SqlParameter("@s15",s15),
+                new SqlParameter("@s16",s16),
+                new SqlParameter("@s17",s17),
+                new SqlParameter("@s18",s18),
+                new SqlParameter("@s19",s19),
+                new SqlParameter("@s20",s20),
+                new SqlParameter("@s21",s21),
+                new SqlParameter("@s22",s22),
+                new SqlParameter("@s23",s23),
+                new SqlParameter("@s24",s24),
+                new SqlParameter("@s25",s25),
+                new SqlParameter("@s26",s26),
+                new SqlParameter("@s27",s27),
+                new SqlParameter("@s28",s28),
+                new SqlParameter("@s29",s29),
+                new SqlParameter("@s30",s30),
+                new SqlParameter("@s31",s31),
+                new SqlParameter("@s32",s32),
+                new SqlParameter("@s33",s33),
+                new SqlParameter("@s34",s34),
+                new SqlParameter("@s1_1",s1_1),
+                new SqlParameter("@s1_2",s1_2),
+                new SqlParameter("@s1_3",s1_3),
+                new SqlParameter("@s1_4",s1_4),
+                new SqlParameter("@s1_5",s1_5),
+                new SqlParameter("@s1_6",s1_6),
+                new SqlParameter("@s1_7",s1_7),
+                new SqlParameter("@s1_8",s1_8),
+                new SqlParameter("@s1_9",s1_9),
+                new SqlParameter("@s1_10",s1_10),
+                new SqlParameter("@s1_11",s1_11),
+                new SqlParameter("@s1_12",s1_12),
+                new SqlParameter("@s1_13",s1_13),
+                new SqlParameter("@s1_10_1",s1_10_1),
+                new SqlParameter("@s1_10_2",s1_10_2),
+                new SqlParameter("@s1_10_3",s1_10_3),
+                new SqlParameter("@s1_10_4",s1_10_4),
+                new SqlParameter("@s1_10_5",s1_10_5),
+                new SqlParameter("@s1_10_6",s1_10_6),
+                new SqlParameter("@s1_10_7",s1_10_7),
+                new SqlParameter("@s1_10_8",s1_10_8)
+            };
+            paras[0].Direction = ParameterDirection.Output;
+            paras[1].Direction = ParameterDirection.Output;
+            paras[2].Direction = ParameterDirection.Output;
+            paras[3].Direction = ParameterDirection.Output;
+            paras[4].Direction = ParameterDirection.Output;
+            paras[5].Direction = ParameterDirection.Output;
+            paras[6].Direction = ParameterDirection.Output;
+            paras[7].Direction = ParameterDirection.Output;
+            paras[8].Direction = ParameterDirection.Output;
+            paras[9].Direction = ParameterDirection.Output;
+            paras[10].Direction = ParameterDirection.Output;
+            paras[11].Direction = ParameterDirection.Output;
+            paras[12].Direction = ParameterDirection.Output;
+            paras[13].Direction = ParameterDirection.Output;
+            paras[14].Direction = ParameterDirection.Output;
+            paras[15].Direction = ParameterDirection.Output;
+            paras[16].Direction = ParameterDirection.Output;
+            paras[17].Direction = ParameterDirection.Output;
+            paras[18].Direction = ParameterDirection.Output;
+            paras[19].Direction = ParameterDirection.Output;
+            paras[20].Direction = ParameterDirection.Output;
+            paras[21].Direction = ParameterDirection.Output;
+            paras[22].Direction = ParameterDirection.Output;
+            paras[23].Direction = ParameterDirection.Output;
+            paras[24].Direction = ParameterDirection.Output;
+            paras[25].Direction = ParameterDirection.Output;
+            paras[26].Direction = ParameterDirection.Output;
+            paras[27].Direction = ParameterDirection.Output;
+            paras[28].Direction = ParameterDirection.Output;
+            paras[29].Direction = ParameterDirection.Output;
+            paras[30].Direction = ParameterDirection.Output;
+            paras[31].Direction = ParameterDirection.Output;
+            paras[32].Direction = ParameterDirection.Output;
+            paras[33].Direction = ParameterDirection.Output;
+            paras[34].Direction = ParameterDirection.Output;
+            paras[35].Direction = ParameterDirection.Output;
+            paras[36].Direction = ParameterDirection.Output;
+            paras[37].Direction = ParameterDirection.Output;
+            paras[38].Direction = ParameterDirection.Output;
+            paras[39].Direction = ParameterDirection.Output;
+            paras[40].Direction = ParameterDirection.Output;
+            paras[41].Direction = ParameterDirection.Output;
+            paras[42].Direction = ParameterDirection.Output;
+            paras[43].Direction = ParameterDirection.Output;
+            paras[44].Direction = ParameterDirection.Output;
+            paras[45].Direction = ParameterDirection.Output;
+            paras[46].Direction = ParameterDirection.Output;
+
+            paras[47].Direction = ParameterDirection.Output;
+            paras[48].Direction = ParameterDirection.Output;
+            paras[49].Direction = ParameterDirection.Output;
+            paras[50].Direction = ParameterDirection.Output;
+            paras[51].Direction = ParameterDirection.Output;
+            paras[52].Direction = ParameterDirection.Output;
+            paras[53].Direction = ParameterDirection.Output;
+            paras[54].Direction = ParameterDirection.Output;
+
+            SqlHelper.ExecuteNonQuery(CommandType.StoredProcedure, "GetHomeDataDistributionNumProcedure", paras);
+            s1 = Convert.ToInt32(paras[0].Value);
+            s2 = Convert.ToInt32(paras[1].Value);
+            s3 = Convert.ToInt32(paras[2].Value);
+            s4 = Convert.ToInt32(paras[3].Value);
+            s5 = Convert.ToInt32(paras[4].Value);
+            s6 = Convert.ToInt32(paras[5].Value);
+            s7 = Convert.ToInt32(paras[6].Value);
+            s8 = Convert.ToInt32(paras[7].Value);
+            s9 = Convert.ToInt32(paras[8].Value);
+            s10 = Convert.ToInt32(paras[9].Value);
+            s11  = Convert.ToInt32(paras[10].Value);
+            s12  = Convert.ToInt32(paras[11].Value);
+            s13  = Convert.ToInt32(paras[12].Value);
+            s14  = Convert.ToInt32(paras[13].Value);
+            s15  = Convert.ToInt32(paras[14].Value);
+            s16  = Convert.ToInt32(paras[15].Value);
+            s17  = Convert.ToInt32(paras[16].Value);
+            s18  = Convert.ToInt32(paras[17].Value);
+            s19  = Convert.ToInt32(paras[18].Value);
+            s20  = Convert.ToInt32(paras[19].Value);
+            s21  = Convert.ToInt32(paras[20].Value);
+            s22  = Convert.ToInt32(paras[21].Value);
+            s23  = Convert.ToInt32(paras[22].Value);
+            s24  = Convert.ToInt32(paras[23].Value);
+            s25  = Convert.ToInt32(paras[24].Value);
+            s26  = Convert.ToInt32(paras[25].Value);
+            s27  = Convert.ToInt32(paras[26].Value);
+            s28  = Convert.ToInt32(paras[27].Value);
+            s29  = Convert.ToInt32(paras[28].Value);
+            s30  = Convert.ToInt32(paras[29].Value);
+            s31  = Convert.ToInt32(paras[30].Value);
+            s32  = Convert.ToInt32(paras[31].Value);
+            s33  = Convert.ToInt32(paras[32].Value);
+            s34 = Convert.ToInt32(paras[33].Value); 
+            s1_1  =  Convert.ToInt32(paras[34].Value);
+            s1_2  =  Convert.ToInt32(paras[35].Value);
+            s1_3   = Convert.ToInt32(paras[36].Value);
+            s1_4   = Convert.ToInt32(paras[37].Value);
+            s1_5   = Convert.ToInt32(paras[38].Value);
+            s1_6   = Convert.ToInt32(paras[39].Value);
+            s1_7   = Convert.ToInt32(paras[40].Value);
+            s1_8   = Convert.ToInt32(paras[41].Value);
+            s1_9   = Convert.ToInt32(paras[42].Value);
+            s1_10 = Convert.ToInt32(paras[43].Value);
+            s1_11 = Convert.ToInt32(paras[44].Value);
+            s1_12 = Convert.ToInt32(paras[45].Value);
+            s1_13 = Convert.ToInt32(paras[46].Value);
+
+            s1_10_1 = Convert.ToInt32(paras[47].Value);
+            s1_10_2 = Convert.ToInt32(paras[48].Value);
+            s1_10_3 = Convert.ToInt32(paras[49].Value);
+            s1_10_4 = Convert.ToInt32(paras[50].Value);
+            s1_10_5 = Convert.ToInt32(paras[51].Value);
+            s1_10_6 = Convert.ToInt32(paras[52].Value);
+            s1_10_7 = Convert.ToInt32(paras[53].Value);
+            s1_10_8 = Convert.ToInt32(paras[54].Value);
+        }
+
     }
 }

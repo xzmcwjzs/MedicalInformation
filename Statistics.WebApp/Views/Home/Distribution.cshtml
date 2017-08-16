@@ -1,0 +1,196 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>人口分布</title>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="~/Scripts/H-ui_v3.0/lib/html5shiv.js"></script>
+    <script type="text/javascript" src="~/Scripts/H-ui_v3.0/lib/respond.min.js"></script>
+    <![endif]-->
+    <script src="~/Scripts/H-ui_v3.0/lib/jquery/1.9.1/jquery.min.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/static/h-ui/js/H-ui.min.js"></script>
+    <link href="~/Scripts/H-ui_v3.0/static/h-ui/css/H-ui.min.css" rel="stylesheet" />
+    <script src="~/Scripts/MyJs/pccsc.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/highmaps.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/modules/drilldown.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highmaps-5.0.12/code/modules/exporting.js"></script>
+    <script src="~/Scripts/H-ui_v3.0/lib/hcharts/Highcharts/5.0.6/js/highcharts-zh_CN.js"></script>
+    <!--[if lt IE 9]>
+    <link href="~/Scripts/H-ui_v3.0/static/h-ui/css/H-ui.ie.css" rel="stylesheet" />
+    <![endif]-->
+    <script>
+        var code = "@ViewBag.code";
+    </script>
+</head>
+<body style="text-align:center">
+    <div id="container" style="height:600px;width:90%;margin: 0 auto;"></div>
+    <script>
+        $(function () {
+
+            $.ajax({
+                type: "post",
+                dataType: "json",
+                url: "/Home/InitDistributionData",
+                success: function (data) {
+                    var res = [
+                          {
+                              "name": "江苏",
+                              "value": data.res[0].s1
+                          },
+                          {
+                              "name": "北京",
+                              "value": data.res[0].s2
+                          },
+                          {
+                              "name": "海南",
+                              "value": data.res[0].s3
+                          },
+                          {
+                              "name": "天津",
+                              "value": data.res[0].s4
+                          },
+                          {
+                              name: "青海",
+                              value: data.res[0].s5
+                          },
+                           {
+                               name: "河南",
+                               value: data.res[0].s6
+                           },
+                            {
+                                name: "香港",
+                                value: data.res[0].s7
+                            },
+                             {
+                                 name: "江西",
+                                 value: data.res[0].s8
+                             },
+                              {
+                                  name: "广东",
+                                  value: data.res[0].s9
+                              },
+                               {
+                                   name: "广西",
+                                   value: data.res[0].s10
+                               }, {
+                                   name: "台湾",
+                                   value: data.res[0].s11
+                               }, {
+                                   name: "安徽",
+                                   value: data.res[0].s12
+                               }, {
+                                   name: "澳门",
+                                   value: data.res[0].s13
+                               }, {
+                                   name: "四川",
+                                   value: data.res[0].s14
+                               }, {
+                                   name: "辽宁",
+                                   value: data.res[0].s15
+                               }, {
+                                   name: "黑龙江",
+                                   value: data.res[0].s16
+                               }, {
+                                   name: "新疆",
+                                   value: data.res[0].s17
+                               }, {
+                                   name: "内蒙古",
+                                   value: data.res[0].s18
+                               }, {
+                                   name: "山西",
+                                   value: data.res[0].s19
+                               }, {
+                                   name: "重庆",
+                                   value: data.res[0].s20
+                               }, {
+                                   name: "河北",
+                                   value: data.res[0].s21
+                               }, {
+                                   name: "甘肃",
+                                   value: data.res[0].s22
+                               }, {
+                                   name: "贵州",
+                                   value: data.res[0].s23
+                               }, {
+                                   name: "湖南",
+                                   value: data.res[0].s24
+                               }, {
+                                   name: "湖北",
+                                   value: data.res[0].s25
+                               }, {
+                                   name: "上海",
+                                   value: data.res[0].s26
+                               }, {
+                                   name: "陕西",
+                                   value: data.res[0].s27
+                               }, {
+                                   name: "福建",
+                                   value: data.res[0].s28
+                               }, {
+                                   name: "吉林",
+                                   value: data.res[0].s29
+                               }, {
+                                   name: "宁夏",
+                                   value: data.res[0].s30
+                               }, {
+                                   name: "云南",
+                                   value: data.res[0].s31
+                               }, {
+                                   name: "山东",
+                                   value: data.res[0].s32
+                               }, {
+                                   name: "西藏",
+                                   value: data.res[0].s33
+                               }, {
+                                   name: "浙江",
+                                   value: data.res[0].s34
+                               },
+                    ];
+                    $.getJSON('https://data.jianshukeji.com/jsonp?filename=geochina/china.json&callback=?', function (geojson) {
+                        // Initiate the chart
+                        $('#container').highcharts('Map', {
+                            title: {
+                                text: '人口分布'
+                            },
+                            credits: {
+                                enabled: false
+                            },
+                            mapNavigation: {
+                                enabled: true,
+                                buttonOptions: {
+                                    verticalAlign: 'bottom'
+                                }
+                            },
+                            colorAxis: {
+                            },
+                            series: [{
+                                data: res,
+                                mapData: geojson,
+                                joinBy: ['name', 'name'],
+                                name: '建档人数',
+                                states: {
+                                    hover: {
+                                        color: '#BADA55'
+                                    }
+                                },
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '{point.name}'
+                                }
+                            }]
+                        });
+                    });
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>

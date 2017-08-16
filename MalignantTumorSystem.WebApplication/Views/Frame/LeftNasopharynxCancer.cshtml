@@ -404,6 +404,14 @@
                             <table cellspacing="0" cellpadding="0" width="140">
                                 <tr>
                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/Home/WelCome?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">建档人数 </a></td>
+
+                                </tr>
+                                @*<tr>
+            <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/Home/Distribution?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口分布</a></td>
+
+        </tr>*@
+                                <tr>
+                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/Home/Distribution2?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口分布</a></td>
                                 </tr>
                                 <tr>
                                     <td style="height: 20px;" class="menu_hide1" id="menuTitle33" onclick="showsubmenu1(33,'05')"><span style="color: #84bf92">&middot;</span>人口学资料 </td>
@@ -420,96 +428,32 @@
                                                 <tr>
                                                     <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Constitute?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口构成 </a></td>
                                                 </tr>
-                                                @*<tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口负担 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口文化程度构成 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口职业构成 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">人口婚姻状况 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">医疗保障构成 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">吸烟情况分析 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">饮酒情况分析 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死亡统计 </a></td>
-                                                    </tr>*@
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Burden?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口负担 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Education?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口文化程度构成 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Occupation?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口职业构成 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Marriage?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">人口婚姻状况 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/MedicalSecurity?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">医疗保障构成 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Smoke?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">吸烟情况分析 </a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="http://222.192.61.8:8060/DemographicData/Drink?name=@ViewBag.name&password=@ViewBag.password" target="MainFrame">饮酒情况分析 </a></td>
+                                                </tr>
+                                                
                                             </table>
                                         </div>
                                     </td>
                                 </tr>
-
-                                @*<tr>
-                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle34" onclick="showsubmenu1(34,'05')"><span style="color: #84bf92">&middot;</span>慢性病统计 </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td id="submenu34" class="auto-style2" style="display: none">
-                                            <div style="width: 122px">
-                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">高血压 </a></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">糖尿病 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">冠心病 </a></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">肿瘤 </a></td>
-                                                    </tr>
-
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle35" onclick="showsubmenu1(35,'05')"><span style="color: #84bf92">&middot;</span>卫生学资料 </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td id="submenu35" class="auto-style2" style="display: none">
-                                            <div style="width: 122px">
-                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">疾病顺位 </a></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">死因顺位 </a></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="height: 20px;" class="menu_hide1" id="menuTitle36" onclick="showsubmenu1(36,'05')"><span style="color: #84bf92">&middot;</span>行政统计 </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td id="submenu36" class="auto-style2" style="display: none">
-                                            <div style="width: 122px">
-                                                <table cellspacing="0" cellpadding="0" style="width: 135px">
-                                                    <tr>
-                                                        <td style="height: 20px;"><span style="color: #84bf92">&middot;</span><a href="#" target="MainFrame">主要慢病年报表 </a></td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </td>
-                                    </tr>*@
 
                             </table>
                         </div>
