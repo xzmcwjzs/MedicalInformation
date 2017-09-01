@@ -1,0 +1,437 @@
+﻿
+@{
+    ViewBag.Title = "临床检查";
+    Layout = "~/Areas/NasopharynxCancer/Views/Shared/MyLayout.cshtml";
+}
+
+@section head{
+     
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+
+    @*=====================外耳检查=====================================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="6">外耳检查</td>
+        <td class="my-style2" style="width:10%" rowspan="2">耳廓</td>
+        <td class="my-style1" style="width:5%">对称</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekdc" id="weekdcs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekdc" id="weekdcf" />否</label>
+        </td>
+        <td class="my-style1" style="width:5%">畸形</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekjx" id="weekjxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekjx" id="weekjxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">充血</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekcx" id="weekcxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekcx" id="weekcxw" />无</label>
+        </td>
+        <td class="my-style3" style="width:35%" colspan="2"></td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:5%">肿胀</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekzz" id="weekzzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekzz" id="weekzzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">皲裂</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekjl" id="weekjly" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekjl" id="weekjlw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">损伤</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weekss" id="weekssy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weekss" id="weekssw" />无</label>
+        </td>
+        <td class="my-style3" style="width:35%" colspan="2"></td>
+
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%">耳前</td>
+        <td class="my-style1" style="width:5%">肿胀</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="weeqzz" id="weeqzzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="weeqzz" id="weeqzzw" />无</label>
+        </td>
+        <td class="my-style3" colspan="6">
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%">乳突区</td>
+        <td class="my-style1" style="width:5%">红肿</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wertqhz" id="wertqhzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wertqhz" id="wertqhzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">压痛</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wertqyt" id="wertqyty" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wertqyt" id="wertqytw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">脓肿</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wertqnz" id="wertqnzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wertqnz" id="wertqnzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">瘘管</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wertqlg" id="wertqlgy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wertqlg" id="wertqlgw" />无</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="2">外耳道</td>
+        <td class="my-style1" style="width:5%">狭窄</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedxz" id="wewedxzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedxz" id="wewedxzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">肉芽</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedry" id="wewedryy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedry" id="wewedryw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">分泌物</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedfmw" id="wewedfmwy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedfmw" id="wewedfmww" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">水肿</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedsz" id="wewedszy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedsz" id="wewedszw" />无</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:5%">充血</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedcx" id="wewedcxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedcx" id="wewedcxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">压痛</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedyt" id="wewedyty" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedyt" id="wewedytw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">骨质破坏</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedgzph" id="wewedgzphy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedgzph" id="wewedgzphw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">后壁塌陷</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wewedhbtx" id="wewedhbtxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wewedhbtx" id="wewedhbtxw" />无</label>
+        </td>
+    </tr>
+    @*========================鼓膜检查===================================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="2">鼓膜检查</td>
+        <td class="my-style2" style="width:5%" rowspan="2">鼓膜</td>
+        <td class="my-style1" style="width:5%">形态</td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" id="gmjcxt" name="gmjcxt" style="width:100px;" />
+        </td>
+        <td class="my-style1" style="width:5%">颜色</td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" id="gmjcys" name="gmjcys" style="width:100px;" />
+        </td>
+        <td class="my-style1" style="width:5%">活动度</td>
+        <td class="my-style3" style="width:10%" colspan="3">
+            <input type="text" id="gmjchdd" name="gmjchdd" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:5%">内陷</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="gmjcnx" id="gmjcnxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="gmjcnx" id="gmjcnxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">萎缩</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="gmjcws" id="gmjcwsy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="gmjcws" id="gmjcwsw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">混浊</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="gmjchz" id="gmjchzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="gmjchz" id="gmjchzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">增厚</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="gmjczh" id="gmjczhy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="gmjczh" id="gmjczhw" />无</label>
+        </td>
+    </tr>
+    @*========================咽鼓管检查===================================*@
+    <tr>
+        <td class="my-style1" rowspan="2">咽鼓管检查</td>
+        <td class="my-style2">吞咽试验法</td>
+        <td class="my-style1" colspan="2">咽鼓管功能</td>
+        <td class="my-style3" colspan="6">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="yggty" id="yggtyz" />正常</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="yggty" id="yggtyy" />异常</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2">咽鼓管吹张法</td>
+        <td class="my-style1" colspan="2">是否通畅</td>
+        <td class="my-style3" colspan="2">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="yggcz" id="yggczs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="yggcz" id="yggczf" />否</label>
+        </td>
+        <td class="my-style2" colspan="2">声导抗仪检查法</td>
+        <td class="my-style1" colspan="1">是否通畅</td>
+        <td class="my-style3" colspan="1">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="yggsdky" id="yggsdkys" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="yggsdky" id="yggsdkyf" />否</label>
+        </td>
+    </tr>
+    @*========================外鼻检查===================================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="2">外鼻检查</td>
+        <td class="my-style2" style="width:10%" rowspan="1">外鼻</td>
+        <td class="my-style1" style="width:5%">皮肤色泽</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wbpfse" id="wbpfsezc" />正常</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wbpfse" id="wbpfseyc" />异常</label>
+        </td>
+        <td class="my-style1" style="width:5%">红肿</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wbhz" id="wbhzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wbhz" id="wbhzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">压痛</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="wbyt" id="wbyty" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="wbyt" id="wbytw" />无</label>
+        </td>
+        <td class="my-style3" colspan="2"></td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">鼻梁</td>
+        <td class="my-style1" style="width:5%">压痛</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blyt" id="blyty" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blyt" id="blytw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">塌陷</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bltx" id="bltxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bltx" id="bltxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">歪斜</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blwx" id="blwxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blwx" id="blwxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">增宽</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blzk" id="blzky" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blzk" id="blzkw" />无</label>
+        </td>
+    </tr>
+    @*========================鼻腔检查===================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="2">鼻腔检查</td>
+        <td class="my-style2" style="width:10%" rowspan="1">鼻前庭</td>
+        <td class="my-style1" style="width:5%">红肿 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqthz" id="bqthzy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqthz" id="bqthzw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">糜烂 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqtml" id="bqtmly" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqtml" id="bqtmlw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">皲裂 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqtjl" id="bqtjly" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqtjl" id="bqtjlw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">结痂 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqtjj" id="bqtjjy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqtjj" id="bqtjjw" />无</label>
+        </td> 
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:10%" rowspan="1">鼻腔</td>
+        <td class="my-style1" style="width:5%">分泌物 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqfmw" id="bqfmwy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqfmw" id="bqfmww" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">结构 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="bqjg" id="bqjgzc" />正常</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="bqjg" id="bqjgyc" />异常</label>
+        </td>
+        <td class="my-style1" colspan="2">黏膜色泽、形状 </td>
+        <td class="my-style3"  colspan="2">
+             <input type="text" id="bqnmszxz" name="bqnmszxz" style="width:100px;" />
+        </td>
+    </tr>
+    @*====================后鼻孔、鼻咽部检查==================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="2">后鼻孔、鼻咽部检查</td>
+        <td class="my-style2" style="width:10%" rowspan="2">黏膜</td>
+        <td class="my-style1" style="width:5%">颜色 </td>
+        <td class="my-style3" style="width:10%">
+            <input type="text" id="hbknmys" name="hbknmys" style="width:100px;" />
+        </td>
+        <td class="my-style1">是否光滑</td>
+        <td class="my-style3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmgh" id="hbknmghs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmgh" id="hbknmghf" />否</label>
+        </td>
+        <td class="my-style1">增厚</td>
+        <td class="my-style3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmzh" id="hbknmzhy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmzh" id="hbknmzhw" />无</label>
+        </td>
+        <td class="my-style1">充血</td>
+        <td class="my-style3">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmcx" id="hbknmcxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmcx" id="hbknmcxw" />无</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:5%">分泌物黏附 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmfmw" id="hbknmfmwy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmfmw" id="hbknmfmww" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">黏膜下隆起 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmlq" id="hbknmlqy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmlq" id="hbknmlqw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">溃烂 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmkl" id="hbknmkly" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmkl" id="hbknmklw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">新生物 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hbknmxsw" id="hbknmxswy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hbknmxsw" id="hbknmxsww" />无</label>
+        </td>
+    </tr>
+    @*===============口咽部检查==========================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="1">口咽部检查</td>
+        <td class="my-style2" style="width:10%" rowspan="1">有无出血</td>
+        <td class="my-style1" style="width:5%">部位 </td>
+        <td class="my-style3" style="width:10%">
+            <select name="kybcxbw" id="kybcxbw">
+                <option value="无">无</option>
+                <option value="牙">牙</option>
+                <option value="牙龈">牙龈</option>
+                <option value="硬腭">硬腭</option>
+                <option value="舌">舌</option>
+                <option value="口底">口底</option>
+            </select>
+        </td>
+        <td class="my-style1" style="width:5%">黏膜光滑</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="kybnmgh" id="kybnmghs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="kybnmgh" id="kybnmghf" />否</label>
+        </td>
+        <td class="my-style1" style="width:5%">充血</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="kybnmcx" id="kybnmcxs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="kybnmcx" id="kybnmcxf" />否</label>
+        </td>
+        <td class="my-style1" style="width:5%">肿胀</td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="kybnmzz" id="kybnmzzs" />是</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="kybnmzz" id="kybnmzzf" />否</label>
+        </td>
+    </tr>
+    @*===============喉咽部检查==========================*@
+    <tr>
+        <td class="my-style1" style="width:10%;" rowspan="1">喉咽部检查</td>
+        <td class="my-style2" style="width:10%" rowspan="1">舌根滤泡</td>
+        <td class="my-style1" style="width:5%">溃疡 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hyblpky" id="hyblpkyy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hyblpky" id="hyblpkyw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">新生物 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hyblpxsw" id="hyblpxswy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hyblpxsw" id="hyblpxsww" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">会厌充血 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hybhycx" id="hybhycxy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hybhycx" id="hybhycxw" />无</label>
+        </td>
+        <td class="my-style1" style="width:5%">水肿 </td>
+        <td class="my-style3" style="width:10%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="hybhysz" id="hybhyszy" />有</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="hybhysz" id="hybhyszw" />无</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" colspan="6"></td>
+        <td class="my-style1">
+            医师
+        </td>
+        <td class="my-style3">
+            <input type="text" id="doctor" name="doctor" style="width:100px;" />
+        </td>
+        <td class="my-style1">
+            检查日期
+        </td>
+        <td class="my-style3">
+            <input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                <a style="padding-left: 2em"></a>
+                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+            </div>
+        </td>
+    </tr>
+
+
+</table>

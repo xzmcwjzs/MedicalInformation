@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "病理诊断";
+    Layout = "~/Areas/NasopharynxCancer/Views/Shared/MyLayout.cshtml";
+}
+@section head{
+    <script>
+        $(function () { 
+            var i=3;
+            $("#addhj").click(function () {
+                $("#hjrs").attr("rowspan",++i);
+                $("#qcbw3").after('<tr id="qcbw3">'+
+'        <td class="my-style2" style="width:20%" rowspan="1">取材部位</td>'+
+'        <td class="my-style3" style="width:20%">'+
+'            <input type="text" id="blhjqc3" name="blhjqc3" style="width:100px;" />'+
+'        </td>'+
+'        <td class="my-style2" style="width:20%" rowspan="1">活检结果</td>'+
+'        <td class="my-style3" style="width:20%">'+
+'            <label style="padding-left:1em;"><input type="radio" value="1" name="blhjjg3" id="blhjjgyi3" />阴性</label>'+
+'            <label style="padding-left:1em;"><input type="radio" value="2" name="blhjjg3" id="blhjjgya3" />阳性</label>'+
+'        </td>'+
+'    </tr>');
+            })
+        })
+    </script>
+
+    <style>
+        .my-style1 {
+            background-color: #e2ebfb;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style2 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            color: black;
+            text-align: right;
+            height: 25px;
+            /*width:10%;*/
+            border: 1px white solid;
+        }
+
+        .my-style3 {
+            background-color: #f1f3f5;
+            padding: 3px;
+            height: 25px;
+            /*width:10%;*/
+            text-align: left;
+            border: 1px white solid;
+        }
+    </style>
+}
+
+<table border="1" style="border-collapse: collapse; width: 100%;background-color:#f1f3f5;text-align:center;" cellpadding="0" cellspacing="1">
+    <tr>
+        <td class="my-style1" style="width:20%;" rowspan="3" id="hjrs">
+            病理活检<br />
+            <input type="button" id="addhj" name="addhj" value="增加" />
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">取材部位</td>
+        <td class="my-style3" style="width:20%">
+            <input type="text" id="blhjqc1" name="vcaigaod1" style="width:100px;" />
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">活检结果</td>
+        <td class="my-style3" style="width:20%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blhjjg1" id="blhjjgyi1" />阴性</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blhjjg1" id="blhjjgya1" />阳性</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style2" style="width:20%" rowspan="1">取材部位</td>
+        <td class="my-style3" style="width:20%">
+            <input type="text" id="blhjqc2" name="blhjqc2" style="width:100px;" />
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">活检结果</td>
+        <td class="my-style3" style="width:20%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blhjjg2" id="blhjjgyi2" />阴性</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blhjjg2" id="blhjjgya2" />阳性</label>
+        </td>
+    </tr>
+    <tr id="qcbw3">
+        <td class="my-style2" style="width:20%" rowspan="1">取材部位</td>
+        <td class="my-style3" style="width:20%">
+            <input type="text" id="blhjqc3" name="blhjqc3" style="width:100px;" />
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">活检结果</td>
+        <td class="my-style3" style="width:20%">
+            <label style="padding-left:1em;"><input type="radio" value="1" name="blhjjg3" id="blhjjgyi3" />阴性</label>
+            <label style="padding-left:1em;"><input type="radio" value="2" name="blhjjg3" id="blhjjgya3" />阳性</label>
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:20%;" rowspan="1">
+            颈淋巴结摘除活检
+        </td> 
+        <td class="my-style2" style="width:20%" rowspan="1">活检结果</td>
+        <td class="my-style3" colspan="3">
+            <input type="text" id="zchjjg" name="zchjjg" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:20%;" rowspan="1">
+            颈淋巴穿刺涂片检查
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">检查结果</td>
+        <td class="my-style3" colspan="3">
+            <input type="text" id="tpjcjg" name="tpjcjg" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:20%;" rowspan="1">
+            鼻咽脱落细胞学诊断
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">诊断结果</td>
+        <td class="my-style3" colspan="3">
+            <input type="text" id="xbxzdjg" name="xbxzdjg" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style1" style="width:20%;" rowspan="1">
+            细针抽吸细胞学(FNA)检查
+        </td>
+        <td class="my-style2" style="width:20%" rowspan="1">检查结果</td>
+        <td class="my-style3" colspan="3">
+            <input type="text" id="fnajcjg" name="fnajcjg" style="width:100px;" />
+        </td>
+    </tr>
+    <tr>
+        <td class="my-style3" colspan="3"></td>
+        <td class="my-style3" colspan="2"style="text-align:right">
+            医师<input type="text" id="doctor" name="doctor" style="width:100px;" />诊断日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({dataFmt:'yyyy-MM-dd', maxDate: '%y-%M-%d'})" />
+        </td>
+    </tr>
+    <tr id="last">
+        <td colspan="10" style="height: 25px; padding-top: 3px; border-left: 1px solid white; border-right: 1px solid white; border-bottom: 1px solid white">
+            <div style="text-align: center; margin-top: 8px;">
+                <input type="button" style="cursor: pointer; background-image: url(/images/image/1.jpg); border: none; height: 22px; width: 91px;" id="bt1" />
+                <a style="padding-left: 2em"></a>
+                <input type="button" id="cd" style="cursor: pointer; background-image: url(/images/image/2.jpg); border: none; height: 22px; width: 91px;" onclick="form1.reset()" />
+            </div>
+        </td>
+    </tr>
+
+</table>

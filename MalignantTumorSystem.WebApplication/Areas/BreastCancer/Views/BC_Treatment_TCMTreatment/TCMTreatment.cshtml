@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "中医药治疗";
+    Layout = "~/Views/Shared/MyLayoutH.cshtml";
+}
+
+@section head{
+<script src="~/Scripts/Areas/BreastCancer/BC_Treatment_TCMTreatment/Submit.js"></script>
+    <script>
+        var id = "@ViewBag.id";
+        var no = "@ViewBag.no";
+        var resident_id = "@ViewBag.resident_id";
+        var worker = "@ViewBag.worker";
+        var real_name = "@ViewBag.real_name";
+        var community_code = "@ViewBag.community_code";
+        var type = "@ViewBag.type";
+        var departments = "@ViewBag.departments";
+    </script>
+}
+
+
+<table class="table table-border table-bordered table-hover">
+    <tbody>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl1" name="zl" value="1"/>肝郁气滞、痰瘀互结证</label>
+            </td>
+            <td style="width:15%" class="text-r">
+                方药&nbsp;<span style="color:red">逍遥散加减</span>
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl1jj" name="zl1jj" class="input-text radius"/>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl2" name="zl" value="2"/>肝肾阴虚、冲任失调证</label>
+            </td>
+            <td style="width:15%" class="text-r">
+                方药&nbsp;<span style="color:red">左归丸加减</span>
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl2jj" name="zl2jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl3" name="zl" value="3" />气血两虚、毒邪瘀滞证</label>
+            </td>
+            <td style="width:15%" class="text-r">
+                方药&nbsp;<span style="color:red">香贝养营汤合八珍汤加减</span>
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl3jj" name="zl3jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl4" name="zl" value="4"/>痰瘀阻滞、邪毒内结证</label>
+            </td>
+            <td style="width:15%" class="text-r">
+                方药&nbsp;<span style="color:red">海藻玉壶汤加减</span>
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl4jj" name="zl4jj" class="input-text radius" />
+            </td>
+        </tr> 
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl5" name="zl" value="5"/>中医药与手术治疗相结合</label>
+            </td> 
+            <td colspan="2">
+                <input type="text" id="zl5jj" name="zl5jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl6" name="zl" value="6"/>中医药与化学治疗相结合</label>
+            </td>
+            <td colspan="2">
+                <input type="text" id="zl6jj" name="zl6jj" class="input-text radius" />
+            </td>
+        </tr> 
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl7" name="zl" value="7"/>中医药与放射治疗相结合</label>
+            </td>
+            <td colspan="2">
+                <input type="text" id="zl7jj" name="zl7jj" class="input-text radius" />
+            </td>
+        </tr> 
+        <tr>
+            <td style="width:20%" rowspan="5" class="text-r">
+                <label><input type="checkbox" id="zl8" name="zl" value="8"/>中成药及单方验方治疗</label>
+            </td>
+            <td style="width:15%" class="text-r">
+                小金丸
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl8jj" name="zl8jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr> 
+            <td style="width:15%" class="text-r">
+                西黄丸
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl9jj" name="zl9jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr> 
+            <td style="width:15%" class="text-r">
+                醒消丸
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl10jj" name="zl10jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:15%" class="text-r">
+                平消片（胶囊）
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl11jj" name="zl11jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:15%" class="text-r">
+                中成药
+            </td>
+            <td style="width:65%">
+                <input type="text" id="zl12jj" name="zl12jj" class="input-text radius" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl9" name="zl" value="9"/>外用药</label>
+            </td>
+            <td colspan="2">
+                <label style="padding-left:1em"><input type="checkbox" id="wyy1" name="wyy" value="1"/>蟾酥锭</label>
+                <label style="padding-left:1em"><input type="checkbox" id="wyy2" name="wyy" value="2"/>红灵丹（膏）</label>
+                <label style="padding-left:1em"><input type="checkbox" id="wyy3" name="wyy" value="3"/>生肌玉红膏</label>
+                <label style="padding-left:1em"><input type="checkbox" id="wyy4" name="wyy" value="4"/>黄连膏</label>
+                <label style="padding-left:1em"><input type="checkbox" id="wyy5" name="wyy" value="5"/>三黄二香散</label>
+                <label style="padding-left:1em"><input type="checkbox" id="wyy6" name="wyy" value="6"/>七厘散</label>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:20%" rowspan="1" class="text-r">
+                <label><input type="checkbox" id="zl10" name="zl" value="10"/>其他治疗</label>
+            </td>
+            <td colspan="2">
+                <textarea id="zl13jj" name="zl13jj" style="width:98%" rows="3" class="textarea radius"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align:right">
+                医师<input type="text" id="doctor" name="doctor" style="width:100px;" class="input-text radius" />
+                日期<input type="text" id="checkdate" name="checkdate" style="width:100px;" onclick="WdatePicker({ dataFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d', position: { left: -20 }})" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="input-text radius" />
+            </td>
+        </tr>
+        <tr id="last">
+            <td colspan="3" style="text-align:center">
+                <input class="btn btn-success radius" type="button" value="提交" id="bt1">
+                <a style="padding-left: 2em"></a>
+                <input class="btn btn-default radius" type="reset" value="重置">
+            </td>
+        </tr> 
+    </tbody>
+</table>

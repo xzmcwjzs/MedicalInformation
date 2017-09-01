@@ -31,7 +31,8 @@
                     data: { txtUserName: username, txtPassword: password, txtValidateCode: validatecode },
                     success: function (data) {
                         if (data == "ok") { 
-                            location.href = "/Main/HuiIndex";
+                            //location.href = "/Main/HuiIndex";
+                            location.href = "/Frame/Index?type=BreastCancer";
                         } else {
                             alert(data);
                             $("#txtPassword").val("");
