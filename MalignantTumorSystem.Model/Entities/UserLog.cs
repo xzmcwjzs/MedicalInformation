@@ -32,5 +32,6 @@ namespace MalignantTumorSystem.Model.Entities
         public string platform { get; set; }
         [MaxLength(500)]
         public string user_agent { get; set; }
+
     }
 }

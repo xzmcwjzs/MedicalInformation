@@ -325,6 +325,10 @@
     <Compile Include="Migrations\201706260640096_add_MT_BC_QOL.Designer.cs">
       <DependentUpon>201706260640096_add_MT_BC_QOL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709140139570_user_log.cs" />
+    <Compile Include="Migrations\201709140139570_user_log.Designer.cs">
+      <DependentUpon>201709140139570_user_log.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchParam\BaseParam.cs" />
@@ -398,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706260640096_add_MT_BC_QOL.resx">
       <DependentUpon>201706260640096_add_MT_BC_QOL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709140139570_user_log.resx">
+      <DependentUpon>201709140139570_user_log.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
